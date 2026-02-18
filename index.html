@@ -45,95 +45,91 @@
     <a href="#main-content" class="skip-link">Lompat ke konten utama</a>
 
     <!-- Header -->
-    <header class="header" role="banner">
-        <nav class="navbar" role="navigation" aria-label="Navigasi utama">
-            <div class="container navbar-container">
-                <div class="navbar-brand">
-                    <a href="#home" class="logo">
-                        <div class="logo-circle-apple">
-                            <img src="assets/images/Logo_YPBGlobal.jpeg" alt="YPBG Logo" class="logo-img-apple">
-                        </div>
-                        <span class="brand-name-apple" data-i18n="brand.name">Yayasan Persada Bakti Global</span>
-                    </a>
+    <header class="ios-header" role="banner">
+        <nav role="navigation" aria-label="Navigasi utama">
+            <a href="#home" class="ios-logo">
+                <div class="ios-logo-circle">
+                    <img src="assets/images/Logo_YPBGlobal.jpeg" alt="YPBG Logo" class="ios-logo-img">
                 </div>
+                <span class="ios-logo-text" data-i18n="brand.name">Yayasan Persada Bakti Global</span>
+            </a>
 
-                <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-expanded="false" aria-label="Buka menu">
-                    <span class="hamburger"></span>
-                    <span class="hamburger"></span>
-                    <span class="hamburger"></span>
+            <button id="mobile-menu-toggle" class="ios-mobile-toggle" aria-expanded="false" aria-label="Buka menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul id="nav-menu" class="ios-nav" role="menubar">
+                <li role="none"><a role="menuitem" class="nav-link" data-smooth href="#home" data-i18n="nav.home">Beranda</a></li>
+                <li role="none"><a role="menuitem" class="nav-link" data-smooth href="#about" data-i18n="nav.about">Tentang</a></li>
+                <li role="none"><a role="menuitem" class="nav-link" data-smooth href="#programs" data-i18n="nav.programs">Program</a></li>
+                <li role="none" class="nav-dropdown">
+                    <a role="menuitem" class="nav-link nav-dropdown-toggle" href="javascript:void(0)">Pustaka ▾</a>
+                    <ul class="nav-dropdown-menu">
+                        <li><a href="pustaka/akta-notaris.html">Akta Notaris & SK Kemenkumham</a></li>
+                        <li><a href="pustaka/npwp-spt.html">NPWP & SPT Tahunan</a></li>
+                    </ul>
+                </li>
+                <li role="none"><a role="menuitem" class="nav-link" data-smooth href="#news" data-i18n="nav.news">Berita</a></li>
+                <li role="none"><a role="menuitem" class="nav-link" data-smooth href="#contact" data-i18n="nav.contact">Kontak</a></li>
+            </ul>
+
+            <!-- Language Selector -->
+            <div class="language-selector">
+                <button class="lang-toggle" aria-label="Pilih bahasa" aria-expanded="false">
+                    <span class="lang-current">🌐 ID</span>
+                    <span class="lang-arrow">▼</span>
                 </button>
-
-                <ul id="nav-menu" class="nav-menu" role="menubar">
-                    <li role="none"><a role="menuitem" class="nav-link" data-smooth href="#home" data-i18n="nav.home">Beranda</a></li>
-                    <li role="none"><a role="menuitem" class="nav-link" data-smooth href="#about" data-i18n="nav.about">Tentang</a></li>
-                    <li role="none"><a role="menuitem" class="nav-link" data-smooth href="#programs" data-i18n="nav.programs">Program</a></li>
-                    <li role="none" class="nav-dropdown">
-                        <a role="menuitem" class="nav-link nav-dropdown-toggle" href="javascript:void(0)">Pustaka ▾</a>
-                        <ul class="nav-dropdown-menu">
-                            <li><a href="pustaka/akta-notaris.html">Akta Notaris & SK Kemenkumham</a></li>
-                            <li><a href="pustaka/npwp-spt.html">NPWP & SPT Tahunan</a></li>
-                        </ul>
-                    </li>
-                    <li role="none"><a role="menuitem" class="nav-link" data-smooth href="#news" data-i18n="nav.news">Berita</a></li>
-                    <li role="none"><a role="menuitem" class="nav-link" data-smooth href="#contact" data-i18n="nav.contact">Kontak</a></li>
-                </ul>
-
-                <!-- Language Selector -->
-                <div class="language-selector">
-                    <button class="lang-toggle" aria-label="Pilih bahasa" aria-expanded="false">
-                        <span class="lang-current">🌐 ID</span>
-                        <span class="lang-arrow">▼</span>
-                    </button>
-                    <div class="lang-dropdown">
-                        <div class="lang-region">
-                            <div class="lang-region-title">Americas</div>
-                            <a href="#" class="lang-option" data-lang="en-us">English (US)</a>
-                            <a href="#" class="lang-option" data-lang="es-latam">Español (Latinoamérica)</a>
-                            <a href="#" class="lang-option" data-lang="pt-br">Português (Brasil)</a>
-                        </div>
-                        <div class="lang-region">
-                            <div class="lang-region-title">Europe</div>
-                            <a href="#" class="lang-option" data-lang="en-uk">English (UK)</a>
-                            <a href="#" class="lang-option" data-lang="de">Deutsch</a>
-                            <a href="#" class="lang-option" data-lang="fr">Français</a>
-                            <a href="#" class="lang-option" data-lang="it">Italiano</a>
-                            <a href="#" class="lang-option" data-lang="es">Español (España)</a>
-                        </div>
-                        <div class="lang-region">
-                            <div class="lang-region-title">Asia-Pacific</div>
-                            <a href="#" class="lang-option active" data-lang="id">Bahasa Indonesia</a>
-                            <a href="#" class="lang-option" data-lang="zh">中文</a>
-                            <a href="#" class="lang-option" data-lang="ja">日本語</a>
-                            <a href="#" class="lang-option" data-lang="ko">한국어</a>
-                            <a href="#" class="lang-option" data-lang="hi">हिन्दी</a>
-                        </div>
-                        <div class="lang-region">
-                            <div class="lang-region-title">Middle East & Africa</div>
-                            <a href="#" class="lang-option" data-lang="ar">العربية</a>
-                            <a href="#" class="lang-option" data-lang="tr">Türkçe</a>
-                            <a href="#" class="lang-option" data-lang="af">Afrikaans</a>
-                        </div>
+                <div class="lang-dropdown">
+                    <div class="lang-region">
+                        <div class="lang-region-title">Americas</div>
+                        <a href="#" class="lang-option" data-lang="en-us">English (US)</a>
+                        <a href="#" class="lang-option" data-lang="es-latam">Español (Latinoamérica)</a>
+                        <a href="#" class="lang-option" data-lang="pt-br">Português (Brasil)</a>
+                    </div>
+                    <div class="lang-region">
+                        <div class="lang-region-title">Europe</div>
+                        <a href="#" class="lang-option" data-lang="en-uk">English (UK)</a>
+                        <a href="#" class="lang-option" data-lang="de">Deutsch</a>
+                        <a href="#" class="lang-option" data-lang="fr">Français</a>
+                        <a href="#" class="lang-option" data-lang="it">Italiano</a>
+                        <a href="#" class="lang-option" data-lang="es">Español (España)</a>
+                    </div>
+                    <div class="lang-region">
+                        <div class="lang-region-title">Asia-Pacific</div>
+                        <a href="#" class="lang-option active" data-lang="id">Bahasa Indonesia</a>
+                        <a href="#" class="lang-option" data-lang="zh">中文</a>
+                        <a href="#" class="lang-option" data-lang="ja">日本語</a>
+                        <a href="#" class="lang-option" data-lang="ko">한국어</a>
+                        <a href="#" class="lang-option" data-lang="hi">हिन्दी</a>
+                    </div>
+                    <div class="lang-region">
+                        <div class="lang-region-title">Middle East & Africa</div>
+                        <a href="#" class="lang-option" data-lang="ar">العربية</a>
+                        <a href="#" class="lang-option" data-lang="tr">Türkçe</a>
+                        <a href="#" class="lang-option" data-lang="af">Afrikaans</a>
                     </div>
                 </div>
-
-                <!-- Theme Toggle -->
-                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-                    <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                    <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                </button>
             </div>
+
+            <!-- Theme Toggle -->
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
         </nav>
     </header>
 
