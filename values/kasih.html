@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kasih - Nilai Inti YPBG">
+    <title>Kasih - Yayasan Persada Bakti Global</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style-elegan.css">
+    <link rel="stylesheet" href="../style-mobile.css">
+    <link rel="stylesheet" href="../style-darkmode.css">
+    <style>
+        .value-detail {
+            min-height: 100vh;
+            position: relative;
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 50%, #c44569 100%);
+            padding: 80px 20px 40px;
+        }
+        
+        .value-hero {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto 60px;
+            text-align: center;
+            color: #ffffff;
+            padding: 60px 40px;
+        }
+        
+        .value-icon-large {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 30px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        
+        .value-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 64px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        
+        .value-tagline {
+            font-size: 24px;
+            font-weight: 300;
+            opacity: 0.95;
+            font-style: italic;
+        }
+        
+        .value-content {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.98);
+            border-radius: 20px;
+            padding: 60px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        .value-section {
+            margin-bottom: 50px;
+        }
+        
+        .value-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .value-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            color: #c44569;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #ff6b6b;
+        }
+        
+        .value-section p {
+            font-size: 18px;
+            line-height: 2;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        
+        .value-quote {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+            color: #ffffff;
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(196,69,105,0.3);
+        }
+        
+        .value-quote p {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-style: italic;
+            color: #ffffff !important;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .value-quote cite {
+            font-size: 16px;
+            opacity: 0.9;
+            font-style: normal;
+        }
+        
+        .value-principles {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .principle-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 5px solid #ff6b6b;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .principle-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .principle-card h3 {
+            font-size: 20px;
+            color: #c44569;
+            margin-bottom: 15px;
+        }
+        
+        .principle-card p {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 0;
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 30px;
+            background: rgba(255,255,255,0.2);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            margin-bottom: 40px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+        
+        .back-btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateX(-5px);
+        }
+        
+        @media (max-width: 768px) {
+            .value-title { font-size: 42px; }
+            .value-tagline { font-size: 18px; }
+            .value-content { padding: 30px; }
+            .value-section h2 { font-size: 28px; }
+            .value-section p { font-size: 16px; }
+            .value-quote p { font-size: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="value-detail">
+        <div class="value-hero">
+            <a href="../index.html#about" class="back-btn">← Kembali ke Beranda</a>
+            <div class="value-icon-large">❤️</div>
+            <h1 class="value-title">Kasih</h1>
+            <p class="value-tagline">"Melayani dengan kasih, membangun dengan harapan"</p>
+        </div>
+        
+        <div class="value-content">
+            <!-- Makna Kasih -->
+            <div class="value-section">
+                <h2>💕 Makna Kasih</h2>
+                <p>
+                    Kasih adalah fondasi utama dari setiap tindakan kami di Yayasan Persada Bakti Global. Kasih bukan sekadar perasaan, melainkan sebuah keputusan untuk bertindak demi kebaikan sesama tanpa mengharap imbalan. Dalam setiap program yang kami jalankan, kasih menjadi motivasi terdalam yang menggerakkan hati para relawan, pengurus, dan seluruh elemen yayasan.
+                </p>
+                <p>
+                    Kasih yang kami maksud adalah kasih yang aktif, kasih yang terwujud dalam tindakan nyata. Kasih yang tidak hanya diucapkan, tetapi dibuktikan melalui dedikasi, pengorbanan, dan komitmen untuk mengangkat martabat mereka yang membutuhkan. Kasih ini melampaui batas suku, agama, dan latar belakang sosial, karena kami percaya bahwa setiap manusia berharga dan layak mendapat kasih sayang.
+                </p>
+            </div>
+            
+            <!-- Quote -->
+            <div class="value-quote">
+                <p>"Kasih itu sabar, kasih itu murah hati; kasih itu tidak cemburu. Kasih tidak memegahkan diri dan tidak sombong. Kasih tidak melakukan yang tidak sopan dan tidak mencari keuntungan diri sendiri."</p>
+                <cite>— 1 Korintus 13:4-5</cite>
+            </div>
+            
+            <!-- Kasih dalam Visi Misi -->
+            <div class="value-section">
+                <h2>🌟 Kasih dalam Visi & Misi YPBG</h2>
+                <p>
+                    Visi kami untuk menjadi organisasi terdepan dalam pemberdayaan masyarakat dan pembangunan berkelanjutan tidak akan tercapai tanpa kasih. Kasih adalah roh yang menghidupkan setiap program, setiap inisiatif, dan setiap interaksi kami dengan masyarakat. Ketika kami membangun infrastruktur, ketika kami memberikan beasiswa, ketika kami melayani kesehatan masyarakat—semuanya dilandasi oleh kasih yang tulus.
+                </p>
+                <p>
+                    Misi kami untuk memberdayakan melalui pendidikan dan pelatihan, mendorong inovasi sosial, dan membangun kemitraan strategis—semuanya bermula dari kasih. Kasih mendorong kami untuk tidak hanya memberikan bantuan sesaat, tetapi untuk memberdayakan masyarakat agar mandiri dan mampu membantu sesama.
+                </p>
+            </div>
+            
+            <!-- Prinsip Kasih -->
+            <div class="value-section">
+                <h2>✨ Prinsip Kasih YPBG</h2>
+                <div class="value-principles">
+                    <div class="principle-card">
+                        <h3>🤲 Kasih Tanpa Syarat</h3>
+                        <p>Kami melayani tanpa memandang latar belakang, suku, agama, atau status sosial. Setiap manusia adalah saudara yang layak mendapat kasih.</p>
+                    </div>
+                    <div class="principle-card">
+                        <h3>💝 Kasih dalam Tindakan</h3>
+                        <p>Kasih bukan hanya kata-kata, tetapi dibuktikan melalui tindakan nyata yang memberikan dampak positif bagi masyarakat.</p>
+                    </div>
+                    <div class="principle-card">
+                        <h3>🌈 Kasih yang Memberdayakan</h3>
+                        <p>Kami tidak hanya memberi ikan, tetapi mengajarkan cara memancing. Kasih sejati memberdayakan untuk kemandirian.</p>
+                    </div>
+                    <div class="principle-card">
+                        <h3>❤️ Kasih yang Tulus</h3>
+                        <p>Kami melayani dengan hati yang tulus, tanpa mengharap pujian atau imbalan. Kepuasan kami adalah melihat senyum mereka yang kami bantu.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Implementasi -->
+            <div class="value-section">
+                <h2>🎯 Implementasi Kasih</h2>
+                <p>
+                    Dalam Program Beasiswa, kasih terwujud melalui perhatian kami terhadap setiap siswa, tidak hanya memberikan bantuan finansial tetapi juga pendampingan dan doa. Dalam Program Kesehatan, kasih terlihat dari kesabaran tenaga medis kami melayani setiap pasien dengan penuh perhatian. Dalam Program Infrastruktur, kasih tercermin dari kualitas pekerjaan yang kami lakukan—kami membangun seolah-olah kami sendiri yang akan menggunakannya.
+                </p>
+                <p>
+                    Kasih adalah DNA dari Yayasan Persada Bakti Global. Tanpa kasih, kami hanyalah organisasi biasa. Dengan kasih, kami menjadi saluran berkat dan harapan bagi mereka yang membutuhkan. Kasih membuat setiap program kami bermakna, setiap interaksi kami berharga, dan setiap dampak kami berkelanjutan.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../translations.js" defer></script>
+    <script src="../translations-patch.js" defer></script>
+    <script src="../translations-org-en.js" defer></script>
+    <script src="../translations-arabic.js" defer></script>
+    <script src="../translations-hindi.js" defer></script>
+    <script src="../translate-all.js" defer></script>
+    <script src="../script.js" defer></script>
+</body>
+</html>

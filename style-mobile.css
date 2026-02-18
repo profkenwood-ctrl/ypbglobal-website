@@ -1,0 +1,308 @@
+/* ===== MOBILE OVERRIDES (Max Width 768px) ===== */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    .section-title {
+        font-size: 36px;
+        margin-bottom: 40px;
+    }
+
+    .subsection-title {
+        font-size: 26px;
+        margin: 60px 0 30px;
+    }
+
+    /* Header */
+    .navbar-container {
+        padding: 0 20px;
+    }
+
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: var(--header-height);
+        left: 0;
+        right: 0;
+        background: rgba(255,255,255,0.98);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        padding: 24px;
+        gap: 0;
+        border-bottom: 1px solid var(--border);
+        transform: translateY(-100%);
+        opacity: 0;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        pointer-events: none;
+        max-height: calc(100vh - var(--header-height));
+        overflow-y: auto;
+    }
+
+    .nav-menu.active {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .nav-menu li {
+        border-bottom: 1px solid var(--border-light);
+        width: 100%;
+    }
+
+    .nav-menu li:last-child {
+        border-bottom: none;
+    }
+
+    .nav-link {
+        display: block;
+        padding: 16px 0;
+        font-size: 16px;
+    }
+
+    /* Language Selector - Show in mobile menu */
+    .language-selector {
+        display: block;
+        margin-top: 16px;
+        padding-top: 16px;
+        border-top: 1px solid var(--border-light);
+    }
+
+    .lang-toggle {
+        width: 100%;
+        justify-content: space-between;
+        padding: 12px 16px;
+        background: var(--bg-secondary);
+        border-radius: 8px;
+    }
+
+    .lang-dropdown {
+        position: static;
+        margin-top: 8px;
+        box-shadow: none;
+        border: 1px solid var(--border-light);
+    }
+
+    .language-selector.active .lang-dropdown {
+        transform: none;
+    }
+
+    /* Theme Toggle - Mobile */
+    .theme-toggle {
+        position: absolute;
+        top: 16px;
+        right: 60px;
+        margin-left: 0;
+        width: 36px;
+        height: 36px;
+    }
+
+    /* Hero */
+    .hero {
+        height: 75vh;
+        min-height: 500px;
+    }
+
+    .hero-title {
+        font-size: 40px;
+    }
+
+    .hero-subtitle {
+        font-size: 18px;
+    }
+
+    .hero-cta {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    /* Highlights */
+    .highlights-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Apple Highlights Mobile */
+    .highlights-apple-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .highlight-apple-card {
+        height: 350px;
+    }
+
+    .highlight-apple-title {
+        font-size: 42px;
+    }
+
+    .highlight-apple-description {
+        font-size: 18px;
+    }
+
+    .highlight-apple-icon {
+        font-size: 60px;
+    }
+
+    /* About */
+    .visi-misi-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .visi-misi-apple {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .apple-hero-card {
+        height: 500px;
+    }
+
+    .apple-hero-title {
+        font-size: 48px;
+    }
+
+    .apple-hero-description {
+        font-size: 18px;
+    }
+
+    .apple-hero-list li {
+        font-size: 16px;
+        line-height: 2;
+    }
+
+    .apple-hero-icon {
+        font-size: 60px;
+    }
+
+    /* Apple Values Grid Mobile */
+    .values-apple-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .value-apple-card {
+        height: 400px;
+    }
+
+    .value-apple-title {
+        font-size: 48px;
+    }
+
+    .value-apple-description {
+        font-size: 18px;
+    }
+
+    .value-apple-icon {
+        font-size: 70px;
+    }
+
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .org-level {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .org-connector {
+        width: 100%;
+        height: 1px;
+    }
+
+    /* Apple Org Chart Mobile */
+    .org-chart-apple {
+        padding: 20px;
+    }
+
+    .org-level-apple {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .org-id-card {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .org-id-photo {
+        width: 150px;
+        height: 150px;
+    }
+
+    .org-id-jabatan {
+        font-size: 12px;
+    }
+
+    .org-id-name {
+        font-size: 16px;
+    }
+
+    .org-connector-apple {
+        height: 30px;
+        width: 2px;
+    }
+
+    /* Programs & News */
+    .programs-grid,
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Contact */
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    /* Footer */
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+}
+
+/* ===== SMALL MOBILE (Max Width 480px) ===== */
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 32px;
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .value-card {
+        padding: 20px 16px;
+    }
+
+    .value-card img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .program-image {
+        height: 200px;
+    }
+
+    .about-card {
+        padding: 24px;
+    }
+}

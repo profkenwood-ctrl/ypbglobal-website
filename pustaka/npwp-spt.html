@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NPWP & SPT Tahunan - YPBG</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style-elegan.css">
+    <link rel="stylesheet" href="../style-mobile.css">
+    <link rel="stylesheet" href="../style-darkmode.css">
+    <style>
+        :root {
+            --apple-bg: #ffffff;
+            --apple-bg-secondary: #f5f5f7;
+            --apple-text: #1d1d1f;
+            --apple-text-secondary: #6e6e73;
+            --apple-accent: #0071e3;
+            --apple-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            --apple-radius: 24px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #24243e 100%);
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Hero Header */
+        .document-hero {
+            position: relative;
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 20px 60px;
+            overflow: hidden;
+        }
+
+        .document-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(102, 126, 234, 0.3) 0%, transparent 70%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 24px;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 500;
+            font-size: 14px;
+            margin-bottom: 40px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .back-link:hover {
+            transform: translateX(-5px);
+            background: rgba(255,255,255,0.25);
+        }
+
+        .hero-icon {
+            font-size: 100px;
+            margin-bottom: 30px;
+            filter: drop-shadow(0 10px 40px rgba(0,0,0,0.5));
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(40px, 6vw, 72px);
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 20px;
+            letter-spacing: -0.03em;
+            text-shadow: 0 4px 30px rgba(0,0,0,0.5);
+            animation: titleFadeIn 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        @keyframes titleFadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-subtitle {
+            font-size: clamp(18px, 3vw, 24px);
+            color: rgba(255,255,255,0.9);
+            font-weight: 300;
+            line-height: 1.6;
+            animation: textFadeIn 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            animation-delay: 0.3s;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        @keyframes textFadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Document Viewer */
+        .document-viewer {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px 100px;
+        }
+
+        .document-panel {
+            background: var(--apple-bg);
+            border-radius: var(--apple-radius);
+            box-shadow: var(--apple-shadow);
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+
+        .document-content {
+            padding: 80px 60px;
+        }
+
+        .document-header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding-bottom: 50px;
+            border-bottom: 3px solid var(--apple-accent);
+        }
+
+        .document-badge {
+            display: inline-block;
+            padding: 10px 24px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #ffffff;
+            border-radius: 25px;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .document-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 700;
+            color: var(--apple-text);
+            margin-bottom: 15px;
+            letter-spacing: -0.02em;
+        }
+
+        .document-meta {
+            font-size: 15px;
+            color: var(--apple-text-secondary);
+        }
+
+        .document-body {
+            font-size: 17px;
+            line-height: 2;
+            color: var(--apple-text);
+        }
+
+        .document-body p {
+            margin-bottom: 24px;
+        }
+
+        .document-body strong {
+            font-weight: 600;
+            color: var(--apple-text);
+        }
+
+        /* NPWP Card */
+        .npwp-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 20px;
+            padding: 50px;
+            margin: 40px 0;
+            color: #ffffff;
+            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .npwp-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+        }
+
+        .npwp-card-header {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .npwp-card-icon {
+            font-size: 60px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .npwp-card-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .npwp-card-subtitle {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .npwp-number-box {
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            margin: 30px 0;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .npwp-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.8;
+            margin-bottom: 15px;
+        }
+
+        .npwp-number {
+            font-family: 'Courier New', monospace;
+            font-size: clamp(24px, 4vw, 32px);
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: #ffffff;
+        }
+
+        .npwp-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .npwp-info-item {
+            background: rgba(255,255,255,0.15);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .npwp-info-label {
+            font-size: 12px;
+            opacity: 0.8;
+            margin-bottom: 8px;
+        }
+
+        .npwp-info-value {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        /* SPT Card */
+        .spt-card {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.08) 0%, rgba(118, 75, 162, 0.08) 100%);
+            border-left: 4px solid var(--apple-accent);
+            border-radius: 16px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+
+        .spt-card-title {
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--apple-text);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .spt-status {
+            display: inline-block;
+            padding: 8px 16px;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: #ffffff;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .compliance-box {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(5, 150, 105, 0.1) 100%);
+            border: 2px solid #10b981;
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .compliance-icon {
+            font-size: 50px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .compliance-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #10b981;
+            margin-bottom: 10px;
+        }
+
+        .compliance-text {
+            font-size: 15px;
+            color: var(--apple-text-secondary);
+        }
+
+        /* Info List */
+        .info-list {
+            list-style: none;
+            margin: 30px 0;
+        }
+
+        .info-list li {
+            padding: 15px 0;
+            padding-left: 35px;
+            position: relative;
+            border-bottom: 1px solid #e8e8ed;
+        }
+
+        .info-list li:last-child {
+            border-bottom: none;
+        }
+
+        .info-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        /* Footer Info */
+        .document-footer {
+            background: var(--apple-bg-secondary);
+            padding: 40px;
+            border-radius: 16px;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .footer-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .footer-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--apple-text);
+            margin-bottom: 10px;
+        }
+
+        .footer-text {
+            font-size: 15px;
+            color: var(--apple-text-secondary);
+            margin-bottom: 20px;
+        }
+
+        .footer-date {
+            font-size: 14px;
+            color: var(--apple-text-secondary);
+            padding-top: 20px;
+            border-top: 1px solid #e8e8ed;
+        }
+
+        /* Dark Mode */
+        body.dark-mode {
+            --apple-bg: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+            --apple-text: #ffffff;
+            --apple-text-secondary: rgba(255,255,255,0.7);
+        }
+
+        body.dark-mode .document-panel {
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        body.dark-mode .spt-card {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%);
+        }
+
+        body.dark-mode .document-footer {
+            background: rgba(255,255,255,0.05);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .document-content {
+                padding: 50px 30px;
+            }
+
+            .npwp-card {
+                padding: 30px;
+            }
+
+            .npwp-info {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="document-hero">
+        <div class="hero-content">
+            <a href="../index.html" class="back-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+                Kembali ke Beranda
+            </a>
+            <div class="hero-icon">📋</div>
+            <h1 class="hero-title">NPWP & SPT Tahunan</h1>
+            <p class="hero-subtitle">Dokumen perpajakan Yayasan Persada Bakti Global - Terdaftar dan patuh terhadap ketentuan perpajakan yang berlaku di Indonesia</p>
+        </div>
+    </div>
+
+    <!-- Document Viewer -->
+    <div class="document-viewer">
+        
+        <!-- NPWP Document -->
+        <div class="document-panel">
+            <div class="document-content">
+                <div class="document-header">
+                    <span class="document-badge">Dokumen Perpajakan</span>
+                    <h2 class="document-title">Kartu NPWP</h2>
+                    <p class="document-meta">Nomor Pokok Wajib Pajak - Yayasan Persada Bakti Global</p>
+                </div>
+
+                <div class="document-body">
+                    <p><strong>Nomor Pokok Wajib Pajak (NPWP)</strong> adalah nomor yang diberikan kepada Wajib Pajak sebagai sarana dalam administrasi perpajakan yang dipergunakan sebagai tanda pengenal diri atau identitas Wajib Pajak dalam melaksanakan hak dan kewajiban perpajakan sesuai dengan peraturan perundang-undangan perpajakan yang berlaku.</p>
+
+                    <!-- NPWP Card -->
+                    <div class="npwp-card">
+                        <div class="npwp-card-header">
+                            <span class="npwp-card-icon">🏛️</span>
+                            <h3 class="npwp-card-title">YAYASAN PERSADA BAKTI GLOBAL</h3>
+                            <p class="npwp-card-subtitle">Kartu NPWP Resmi</p>
+                        </div>
+
+                        <div class="npwp-number-box">
+                            <p class="npwp-label">Nomor Pokok Wajib Pajak</p>
+                            <p class="npwp-number">01.234.567.8-901.000</p>
+                        </div>
+
+                        <div class="npwp-info">
+                            <div class="npwp-info-item">
+                                <p class="npwp-info-label">Nama Wajib Pajak</p>
+                                <p class="npwp-info-value">YAYASAN PERSADA BAKTI GLOBAL</p>
+                            </div>
+                            <div class="npwp-info-item">
+                                <p class="npwp-info-label">Status WP</p>
+                                <p class="npwp-info-value">Badan</p>
+                            </div>
+                            <div class="npwp-info-item">
+                                <p class="npwp-info-label">Tanggal Terdaftar</p>
+                                <p class="npwp-info-value">15 Januari 2015</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p><strong>FUNGSI NPWP:</strong></p>
+                    <ul class="info-list">
+                        <li>Sarana administrasi perpajakan untuk mengidentifikasi Wajib Pajak</li>
+                        <li>Tanda pengenal diri Wajib Pajak dalam melaksanakan hak dan kewajiban perpajakan</li>
+                        <li>Syarat untuk mengurus dokumen perpajakan seperti SPT, SSP, dan lainnya</li>
+                        <li>Menghindari sanksi perpajakan sesuai ketentuan yang berlaku</li>
+                        <li>Digunakan untuk keperluan transaksi perbankan dan bisnis</li>
+                    </ul>
+
+                    <p>NPWP Yayasan Persada Bakti Global telah terdaftar dan aktif sejak tahun 2015 sesuai dengan ketentuan peraturan perundang-undangan perpajakan yang berlaku di Indonesia. Yayasan senantiasa mematuhi kewajiban perpajakan dengan menyampaikan laporan SPT Tahunan secara tepat waktu.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SPT Document -->
+        <div class="document-panel">
+            <div class="document-content">
+                <div class="document-header">
+                    <span class="document-badge">Laporan Perpajakan</span>
+                    <h2 class="document-title">SPT Tahunan Badan</h2>
+                    <p class="document-meta">Surat Pemberitahuan Tahunan - Tahun Pajak 2023</p>
+                </div>
+
+                <div class="document-body">
+                    <p><strong>Surat Pemberitahuan (SPT) Tahunan</strong> adalah surat yang digunakan oleh Wajib Pajak untuk melaporkan penghitungan dan pembayaran pajak terutang, serta pembayaran atau pelunasan pajak yang telah dilakukan sendiri serta pembayaran atau pelunasan yang dilakukan oleh pihak lain dalam satu Tahun Pajak.</p>
+
+                    <!-- SPT Card -->
+                    <div class="spt-card">
+                        <h3 class="spt-card-title">
+                            <span>📊</span>
+                            Ringkasan SPT Tahunan
+                            <span class="spt-status">Terlapor</span>
+                        </h3>
+                        <div class="npwp-number-box" style="background: rgba(255,255,255,0.3);">
+                            <p class="npwp-label">Tahun Pajak</p>
+                            <p class="npwp-number" style="font-size: 24px;">2023</p>
+                        </div>
+                        <div class="npwp-info">
+                            <div class="npwp-info-item">
+                                <p class="npwp-info-label">Jenis SPT</p>
+                                <p class="npwp-info-value">Tahunan Badan</p>
+                            </div>
+                            <div class="npwp-info-item">
+                                <p class="npwp-info-label">Status Laporan</p>
+                                <p class="npwp-info-value">Lengkap</p>
+                            </div>
+                            <div class="npwp-info-item">
+                                <p class="npwp-info-label">Metode Penyampaian</p>
+                                <p class="npwp-info-value">e-Filing</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p><strong>KEWAJIBAN PELAPORAN SPT TAHUNAN:</strong></p>
+                    <ul class="info-list">
+                        <li>Wajib Pajak Badan wajib menyampaikan SPT Tahunan paling lama 4 (empat) bulan setelah akhir tahun pajak</li>
+                        <li>SPT disampaikan secara elektronik melalui e-Filing DJP Online</li>
+                        <li>Dilampiri dengan laporan keuangan yang telah diaudit oleh akuntan publik terdaftar</li>
+                        <li>Mencantumkan seluruh penghasilan dan harta yang dimiliki</li>
+                        <li>Menyampaikan Surat Setoran Pajak (SSP) jika terdapat pajak yang masih kurang bayar</li>
+                    </ul>
+
+                    <p>Yayasan Persada Bakti Global telah menyampaikan SPT Tahunan secara tertib dan tepat waktu sesuai dengan ketentuan yang berlaku. Semua laporan keuangan telah diaudit oleh akuntan publik terdaftar dan disampaikan melalui sistem e-Filing Direktorat Jenderal Pajak.</p>
+
+                    <!-- Compliance Status -->
+                    <div class="compliance-box">
+                        <span class="compliance-icon">✅</span>
+                        <h3 class="compliance-title">STATUS KEPATUHAN PAJAK</h3>
+                        <p class="compliance-text"><strong>Patuh</strong> - Tidak ada tunggakan pajak</p>
+                        <p class="compliance-text" style="margin-top: 10px; font-size: 14px;">Yayasan Persada Bakti Global memenuhi seluruh kewajiban perpajakan sesuai ketentuan</p>
+                    </div>
+
+                    <!-- Footer -->
+                    <div class="document-footer">
+                        <span class="footer-icon">📄</span>
+                        <h3 class="footer-title">Dokumen Lengkap & Sah</h3>
+                        <p class="footer-text">Semua dokumen perpajakan Yayasan Persada Bakti Global telah lengkap, sah, dan sesuai dengan ketentuan peraturan perundang-undangan perpajakan yang berlaku di Indonesia</p>
+                        <p class="footer-date">Ditetapkan di Jakarta, Tahun 2024</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Smooth scroll animation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.document-panel').forEach(panel => {
+            panel.style.opacity = '0';
+            panel.style.transform = 'translateY(30px)';
+            panel.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(panel);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,353 @@
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* Dark Mode Colors - FIXED CONTRAST */
+        --bg-primary: #000000;
+        --bg-secondary: #1c1c1e;
+        --bg-tertiary: #2c2c2e;
+        --text-primary: #f5f5f7;
+        --text-secondary: #a1a1a6;
+        --text-tertiary: #86868b;
+        --accent: #2997ff;
+        --accent-hover: #40a3ff;
+        --border: #424245;
+        --border-light: #38383a;
+        --glass: rgba(0,0,0,0.72);
+        --shadow-sm: 0 2px 8px rgba(0,0,0,0.3);
+        --shadow-md: 0 8px 24px rgba(0,0,0,0.4);
+        --shadow-lg: 0 16px 48px rgba(0,0,0,0.5);
+    }
+
+    /* Base */
+    body {
+        background: var(--bg-primary);
+        color: var(--text-primary);
+    }
+
+    /* Header */
+    .header {
+        background: var(--glass);
+        border-bottom-color: var(--border-light);
+    }
+
+    .header.scrolled {
+        background: rgba(0,0,0,0.9);
+    }
+
+    .nav-link {
+        color: var(--text-secondary);
+    }
+
+    .nav-link:hover {
+        color: var(--text-primary);
+    }
+
+    .hamburger {
+        background: var(--text-primary);
+    }
+
+    .brand-name {
+        color: var(--text-primary);
+    }
+
+    /* Hero */
+    .hero {
+        background: #000;
+    }
+
+    .hero-title {
+        color: #ffffff;
+    }
+
+    .hero-subtitle {
+        color: rgba(255,255,255,0.9);
+    }
+
+    .btn-secondary {
+        background: rgba(255,255,255,0.1);
+        color: #ffffff;
+        border-color: rgba(255,255,255,0.3);
+    }
+
+    /* Sections */
+    .about, .news, .contact {
+        background: var(--bg-primary);
+    }
+
+    .programs {
+        background: var(--bg-secondary);
+    }
+
+    .home-highlights {
+        background: var(--bg-primary);
+    }
+
+    /* Cards */
+    .highlight-card,
+    .about-card,
+    .value-card,
+    .program-card,
+    .news-item,
+    .contact-form-box,
+    .contact-info-box {
+        background: var(--bg-secondary);
+        border-color: var(--border);
+    }
+
+    .highlight-card h3,
+    .about-card h3,
+    .value-card h3,
+    .program-content h3,
+    .news-title,
+    .contact-form-box h3,
+    .contact-info-box h3 {
+        color: var(--text-primary);
+    }
+
+    .highlight-card p,
+    .about-card p,
+    .misi-list li,
+    .program-content p,
+    .news-excerpt,
+    .timeline-description {
+        color: var(--text-secondary);
+    }
+
+    /* Footer */
+    .footer {
+        background: var(--bg-secondary);
+        border-top-color: var(--border);
+    }
+
+    .footer-section h4 {
+        color: var(--text-primary);
+    }
+
+    .footer-section p {
+        color: var(--text-secondary);
+    }
+
+    .footer-links a {
+        color: var(--text-secondary);
+    }
+
+    .footer-links a:hover {
+        color: var(--text-primary);
+    }
+
+    .footer-bottom {
+        color: var(--text-tertiary);
+        border-top-color: var(--border);
+    }
+
+    /* Forms */
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+        background: var(--bg-tertiary);
+        color: var(--text-primary);
+        border-color: var(--border);
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+        color: var(--text-tertiary);
+    }
+
+    .form-group label {
+        color: var(--text-primary);
+    }
+
+    .info-item a,
+    .info-item p {
+        color: var(--text-primary);
+    }
+
+    .info-label {
+        color: var(--text-tertiary);
+    }
+
+    /* Organization */
+    .org-box {
+        background: var(--bg-tertiary);
+        border-color: var(--border);
+        color: var(--text-primary);
+    }
+
+    .org-connector {
+        background: var(--border);
+    }
+
+    /* Carousel */
+    .carousel-btn {
+        background: var(--bg-tertiary);
+        color: var(--text-primary);
+    }
+
+    .carousel-btn:hover {
+        background: var(--border);
+    }
+
+    .indicator {
+        background: var(--border);
+    }
+
+    .indicator.active {
+        background: var(--accent);
+    }
+
+    /* Filter Buttons */
+    .filter-btn {
+        border-color: var(--border);
+        color: var(--text-secondary);
+    }
+
+    .filter-btn:hover {
+        border-color: var(--text-primary);
+        color: var(--text-primary);
+    }
+
+    .filter-btn.active {
+        background: var(--text-primary);
+        color: #000000;
+        border-color: var(--text-primary);
+    }
+
+    /* Language Selector */
+    .language-selector-footer select {
+        background: var(--bg-tertiary);
+        color: var(--text-primary);
+        border-color: var(--border);
+    }
+
+    /* Timeline */
+    .timeline-year {
+        color: var(--accent);
+    }
+
+    .timeline-title {
+        color: var(--text-primary);
+    }
+
+    /* News */
+    .news-date {
+        color: var(--text-tertiary);
+    }
+
+    .news-read-more {
+        color: var(--accent);
+    }
+
+    /* Map */
+    .map-container iframe {
+        filter: invert(90%) hue-rotate(180deg);
+    }
+
+    /* WhatsApp Floating Button - Apple Style Draggable */
+    .whatsapp-draggable {
+        bottom: 30px;
+        right: 30px;
+    }
+
+    .whatsapp-bubble-apple {
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, #25D366 0%, #20BD5A 50%, #128C7E 100%);
+        box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+    }
+
+    .whatsapp-bubble-apple:hover {
+        box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+    }
+
+    .whatsapp-bubble-apple::before {
+        display: none;
+    }
+
+    .whatsapp-bubble-glow {
+        display: none;
+    }
+
+    .whatsapp-draggable:hover .whatsapp-bubble-apple {
+        box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+    }
+
+    .whatsapp-tooltip {
+        background: rgba(0, 0, 0, 0.95);
+    }
+
+    /* Apple-Style Separator Lines - Dark Mode */
+    .hero::after {
+        background: linear-gradient(90deg, 
+            transparent 0%, 
+            rgba(255, 255, 255, 0.1) 20%,
+            rgba(255, 255, 255, 0.3) 50%,
+            rgba(255, 255, 255, 0.1) 80%,
+            transparent 100%);
+        box-shadow: 0 -1px 20px rgba(255, 255, 255, 0.1);
+    }
+
+    .hero-separator-apple {
+        background: linear-gradient(90deg, 
+            transparent 0%, 
+            rgba(255, 255, 255, 0.1) 10%,
+            rgba(255, 255, 255, 0.25) 30%,
+            rgba(255, 255, 255, 0.4) 50%,
+            rgba(255, 255, 255, 0.25) 70%,
+            rgba(255, 255, 255, 0.1) 90%,
+            transparent 100%);
+        box-shadow: 0 1px 3px rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-separator-apple {
+        background: linear-gradient(90deg, 
+            transparent 0%, 
+            rgba(255, 255, 255, 0.15) 15%,
+            rgba(255, 255, 255, 0.3) 50%,
+            rgba(255, 255, 255, 0.15) 85%,
+            transparent 100%);
+        box-shadow: 0 -1px 2px rgba(255, 255, 255, 0.1);
+    }
+    body.dark-mode .highlight-apple-card {
+        box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    }
+
+    body.dark-mode .highlight-apple-link:hover .highlight-apple-card {
+        box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+    }
+
+    body.dark-mode .tentang-card .highlight-apple-overlay {
+        background: linear-gradient(135deg, 
+            rgba(102, 126, 234, 0.8) 0%, 
+            rgba(118, 75, 162, 0.9) 100%);
+    }
+
+    body.dark-mode .program-card .highlight-apple-overlay {
+        background: linear-gradient(135deg, 
+            rgba(17, 153, 142, 0.8) 0%, 
+            rgba(56, 239, 125, 0.9) 100%);
+    }
+
+    body.dark-mode .publikasi-card .highlight-apple-overlay {
+        background: linear-gradient(135deg, 
+            rgba(240, 147, 251, 0.8) 0%, 
+            rgba(245, 87, 108, 0.9) 100%);
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: var(--bg-secondary);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: var(--border);
+        border-radius: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: var(--text-tertiary);
+    }
+}

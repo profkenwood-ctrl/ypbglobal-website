@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Google Apps Script Connection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        .test-box {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        .success {
+            background: #d4edda;
+            color: #155724;
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        pre {
+            background: #f5f5f5;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧪 Test Google Apps Script Connection</h1>
+    
+    <div class="test-box">
+        <h2>Test 1: Simple POST Request</h2>
+        <p>Ini akan mengirim data test ke Google Apps Script</p>
+        <button onclick="testSimplePost()">Kirim Test Data</button>
+        <div id="test1-result"></div>
+    </div>
+
+    <div class="test-box">
+        <h2>Test 2: Form dengan File Upload</h2>
+        <form id="test-form" onsubmit="testFormUpload(event)">
+            <input type="text" id="test-name" placeholder="Nama" value="Test User" required>
+            <input type="email" id="test-email" placeholder="Email" value="test@example.com" required>
+            <textarea id="test-message" placeholder="Pesan" rows="3">Ini adalah pesan test dari halaman debugging</textarea>
+            <input type="file" id="test-file" accept=".pdf,.jpg,.jpeg">
+            <button type="submit">Kirim dengan File</button>
+        </form>
+        <div id="test2-result"></div>
+    </div>
+
+    <div class="test-box">
+        <h2>Console Log</h2>
+        <pre id="console-log"></pre>
+    </div>
+
+    <script>
+        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzGib2xLsGWYIOcZAcYEh_J764VfQnDj0EudU_02DVyCev6r6g6keySMqr_4frI4EwX/exec';
+        
+        function log(message) {
+            const logBox = document.getElementById('console-log');
+            const timestamp = new Date().toLocaleTimeString();
+            logBox.textContent += `[${timestamp}] ${message}\n`;
+            logBox.scrollTop = logBox.scrollHeight;
+            console.log('[Test]', message);
+        }
+
+        async function testSimplePost() {
+            const resultDiv = document.getElementById('test1-result');
+            resultDiv.innerHTML = '<p>Mengirim...</p>';
+            log('Test 1: Starting simple POST request');
+
+            try {
+                const data = {
+                    name: 'Test User',
+                    email: 'test@example.com',
+                    message: 'Test message from debug page',
+                    timestamp: new Date().toISOString()
+                };
+
+                log('Data to send: ' + JSON.stringify(data));
+
+                const formData = new FormData();
+                formData.append('name', data.name);
+                formData.append('email', data.email);
+                formData.append('message', data.message);
+                formData.append('timestamp', data.timestamp);
+
+                log('Sending request to: ' + GOOGLE_SCRIPT_URL);
+
+                const response = await fetch(GOOGLE_SCRIPT_URL, {
+                    method: 'POST',
+                    body: formData,
+                    mode: 'no-cors'
+                });
+
+                log('Response status: ' + response.status);
+                log('Response type: ' + response.type);
+
+                // With no-cors, we can't read the response
+                resultDiv.innerHTML = `
+                    <div class="success">
+                        ✓ Request sent successfully!<br>
+                        Status: ${response.status}<br>
+                        Type: ${response.type}<br><br>
+                        <strong>Check your Google Spreadsheet to see if the data arrived.</strong>
+                    </div>
+                `;
+
+                log('Test 1 completed successfully');
+
+            } catch (error) {
+                log('Error: ' + error.message);
+                resultDiv.innerHTML = `
+                    <div class="error">
+                        ✗ Error: ${error.message}<br>
+                        Check browser console for details
+                    </div>
+                `;
+            }
+        }
+
+        async function testFormUpload(e) {
+            e.preventDefault();
+            const resultDiv = document.getElementById('test2-result');
+            resultDiv.innerHTML = '<p>Mengirim dengan file...</p>';
+            log('Test 2: Starting form upload');
+
+            const name = document.getElementById('test-name').value;
+            const email = document.getElementById('test-email').value;
+            const message = document.getElementById('test-message').value;
+            const fileInput = document.getElementById('test-file');
+            const file = fileInput.files[0];
+
+            try {
+                const formData = new FormData();
+                formData.append('name', name);
+                formData.append('email', email);
+                formData.append('message', message);
+                formData.append('timestamp', new Date().toISOString());
+
+                if (file) {
+                    log('File selected: ' + file.name + ' (' + file.size + ' bytes)');
+                    
+                    // Convert file to base64
+                    const base64 = await new Promise((resolve, reject) => {
+                        const reader = new FileReader();
+                        reader.readAsDataURL(file);
+                        reader.onload = () => resolve(reader.result);
+                        reader.onerror = reject;
+                    });
+
+                    log('File converted to base64');
+                    formData.append('fileName', file.name);
+                    formData.append('fileType', file.type);
+                    formData.append('fileData', base64);
+                } else {
+                    log('No file attached');
+                }
+
+                log('Sending form data to Google Script...');
+
+                const response = await fetch(GOOGLE_SCRIPT_URL, {
+                    method: 'POST',
+                    body: formData,
+                    mode: 'no-cors'
+                });
+
+                log('Response received: ' + response.status);
+
+                resultDiv.innerHTML = `
+                    <div class="success">
+                        ✓ Form submitted successfully!<br><br>
+                        <strong>Check:</strong><br>
+                        1. Google Spreadsheet for data<br>
+                        2. Google Drive folder for file upload
+                    </div>
+                `;
+
+                log('Test 2 completed successfully');
+
+            } catch (error) {
+                log('Error: ' + error.message);
+                resultDiv.innerHTML = `
+                    <div class="error">
+                        ✗ Error: ${error.message}
+                    </div>
+                `;
+            }
+        }
+
+        log('Debug page loaded');
+        log('Google Script URL: ' + GOOGLE_SCRIPT_URL);
+    </script>
+</body>
+</html>

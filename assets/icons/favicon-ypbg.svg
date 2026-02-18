@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+      <feOffset dx="0" dy="2" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.3"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background Circle -->
+  <circle cx="32" cy="32" r="30" fill="url(#bgGradient)" filter="url(#shadow)"/>
+  
+  <!-- Inner Circle -->
+  <circle cx="32" cy="32" r="26" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+  
+  <!-- Compass Design -->
+  <circle cx="32" cy="32" r="18" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="2"/>
+  <circle cx="32" cy="32" r="4" fill="rgba(255,255,255,0.9)"/>
+  
+  <!-- Compass Points -->
+  <path d="M32 14 L34 28 L32 32 L30 28 Z" fill="rgba(255,255,255,0.9)"/>
+  <path d="M32 50 L34 36 L32 32 L30 36 Z" fill="rgba(255,255,255,0.6)"/>
+  <path d="M14 32 L28 30 L32 32 L28 34 Z" fill="rgba(255,255,255,0.6)"/>
+  <path d="M50 32 L36 30 L32 32 L36 34 Z" fill="rgba(255,255,255,0.6)"/>
+  
+  <!-- YPBG Text -->
+  <text x="32" y="58" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="rgba(255,255,255,0.9)" text-anchor="middle">YPBG</text>
+</svg>

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea"/>
+      <stop offset="100%" style="stop-color:#764ba2"/>
+    </linearGradient>
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="10"/>
+      <feOffset dx="0" dy="4" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.3"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background Circle -->
+  <circle cx="256" cy="256" r="250" fill="url(#bgGrad)" filter="url(#shadow)"/>
+  
+  <!-- Inner Circle Ring -->
+  <circle cx="256" cy="256" r="220" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="8"/>
+  
+  <!-- Compass Circle -->
+  <circle cx="256" cy="256" r="180" fill="none" stroke="rgba(255,255,255,0.95)" stroke-width="12"/>
+  
+  <!-- Center Dot -->
+  <circle cx="256" cy="256" r="25" fill="rgba(255,255,255,0.95)"/>
+  
+  <!-- Compass Points (Large & Bold) -->
+  <path d="M256 76 L270 220 L256 256 L242 220 Z" fill="rgba(255,255,255,0.95)"/>
+  <path d="M256 436 L270 292 L256 256 L242 292 Z" fill="rgba(255,255,255,0.6)"/>
+  <path d="M76 256 L220 242 L256 256 L220 270 Z" fill="rgba(255,255,255,0.6)"/>
+  <path d="M436 256 L292 242 L256 256 L292 270 Z" fill="rgba(255,255,255,0.6)"/>
+  
+  <!-- YPBG Text (Large & Bold) -->
+  <text x="256" y="420" font-family="Arial, sans-serif" font-size="60" font-weight="900" fill="rgba(255,255,255,0.95)" text-anchor="middle" letter-spacing="8">YPBG</text>
+</svg>

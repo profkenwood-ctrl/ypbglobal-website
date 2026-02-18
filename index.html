@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Yayasan Persada Bakti Global - Melayani dengan kasih, membangun dengan harapan.">
+    <title>Yayasan Persada Bakti Global | YPBG</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/icons/favicon-xl.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="assets/images/Logo_YPBGlobal.jpeg">
+    <link rel="icon" type="image/svg+xml" sizes="512x512" href="assets/icons/favicon-xl.svg">
+    <link rel="icon" type="image/svg+xml" sizes="32x32" href="assets/icons/favicon-xl.svg">
+    <link rel="icon" type="image/svg+xml" sizes="16x16" href="assets/icons/favicon-xl.svg">
+    <link rel="mask-icon" href="assets/icons/favicon-xl.svg" color="#667eea">
+    
+    <!-- Apple-like Font: Inter - Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Critical CSS Inline for Faster First Paint -->
+    <style>
+        /* Critical above-the-fold styles */
+        html{scroll-behavior:smooth}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Inter",sans-serif;background:#fff;color:#1d1d1f;line-height:1.5}
+        .hero{position:relative;height:90vh;min-height:600px;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#000}
+        .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.7}
+        .hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.3) 0%,rgba(0,0,0,.6) 100%)}
+        .hero-text{position:relative;z-index:2;text-align:center;color:#fff;max-width:800px;padding:0 20px}
+        .header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.72);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid #e8e8ed}
+    </style>
+
+    <!-- Styles - Deferred for performance -->
+    <link rel="preload" href="style-mobile.css" as="style">
+    <link rel="preload" href="style-elegan.css" as="style">
+    <link rel="preload" href="style-darkmode-toggle.css" as="style">
+    <link rel="stylesheet" href="style-mobile.css">
+    <link rel="stylesheet" id="theme-css" href="style-elegan.css">
+    <link rel="stylesheet" href="style-darkmode-toggle.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Lompat ke konten utama</a>
+
+    <!-- Header -->
+    <header class="header" role="banner">
+        <nav class="navbar" role="navigation" aria-label="Navigasi utama">
+            <div class="container navbar-container">
+                <div class="navbar-brand">
+                    <a href="#home" class="logo">
+                        <div class="logo-circle-apple">
+                            <img src="assets/images/Logo_YPBGlobal.jpeg" alt="YPBG Logo" class="logo-img-apple">
+                        </div>
+                        <span class="brand-name-apple" data-i18n="brand.name">Yayasan Persada Bakti Global</span>
+                    </a>
+                </div>
+
+                <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-expanded="false" aria-label="Buka menu">
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                </button>
+
+                <ul id="nav-menu" class="nav-menu" role="menubar">
+                    <li role="none"><a role="menuitem" class="nav-link" data-smooth href="#home" data-i18n="nav.home">Beranda</a></li>
+                    <li role="none"><a role="menuitem" class="nav-link" data-smooth href="#about" data-i18n="nav.about">Tentang</a></li>
+                    <li role="none"><a role="menuitem" class="nav-link" data-smooth href="#programs" data-i18n="nav.programs">Program</a></li>
+                    <li role="none" class="nav-dropdown">
+                        <a role="menuitem" class="nav-link nav-dropdown-toggle" href="javascript:void(0)">Pustaka ▾</a>
+                        <ul class="nav-dropdown-menu">
+                            <li><a href="pustaka/akta-notaris.html">Akta Notaris & SK Kemenkumham</a></li>
+                            <li><a href="pustaka/npwp-spt.html">NPWP & SPT Tahunan</a></li>
+                        </ul>
+                    </li>
+                    <li role="none"><a role="menuitem" class="nav-link" data-smooth href="#news" data-i18n="nav.news">Berita</a></li>
+                    <li role="none"><a role="menuitem" class="nav-link" data-smooth href="#contact" data-i18n="nav.contact">Kontak</a></li>
+                </ul>
+
+                <!-- Language Selector -->
+                <div class="language-selector">
+                    <button class="lang-toggle" aria-label="Pilih bahasa" aria-expanded="false">
+                        <span class="lang-current">🌐 ID</span>
+                        <span class="lang-arrow">▼</span>
+                    </button>
+                    <div class="lang-dropdown">
+                        <div class="lang-region">
+                            <div class="lang-region-title">Americas</div>
+                            <a href="#" class="lang-option" data-lang="en-us">English (US)</a>
+                            <a href="#" class="lang-option" data-lang="es-latam">Español (Latinoamérica)</a>
+                            <a href="#" class="lang-option" data-lang="pt-br">Português (Brasil)</a>
+                        </div>
+                        <div class="lang-region">
+                            <div class="lang-region-title">Europe</div>
+                            <a href="#" class="lang-option" data-lang="en-uk">English (UK)</a>
+                            <a href="#" class="lang-option" data-lang="de">Deutsch</a>
+                            <a href="#" class="lang-option" data-lang="fr">Français</a>
+                            <a href="#" class="lang-option" data-lang="it">Italiano</a>
+                            <a href="#" class="lang-option" data-lang="es">Español (España)</a>
+                        </div>
+                        <div class="lang-region">
+                            <div class="lang-region-title">Asia-Pacific</div>
+                            <a href="#" class="lang-option active" data-lang="id">Bahasa Indonesia</a>
+                            <a href="#" class="lang-option" data-lang="zh">中文</a>
+                            <a href="#" class="lang-option" data-lang="ja">日本語</a>
+                            <a href="#" class="lang-option" data-lang="ko">한국어</a>
+                            <a href="#" class="lang-option" data-lang="hi">हिन्दी</a>
+                        </div>
+                        <div class="lang-region">
+                            <div class="lang-region-title">Middle East & Africa</div>
+                            <a href="#" class="lang-option" data-lang="ar">العربية</a>
+                            <a href="#" class="lang-option" data-lang="tr">Türkçe</a>
+                            <a href="#" class="lang-option" data-lang="af">Afrikaans</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Theme Toggle -->
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content" role="main">
+        <!-- Hero Section -->
+        <section id="home" class="hero" aria-label="Beranda">
+            <div class="hero-content">
+                <!-- Optimized Video - Compressed from 27MB to 3.6MB -->
+                <video class="hero-video" autoplay muted loop playsinline poster="assets/images/hero-poster.webp" preload="metadata">
+                    <source src="assets/videos/Hero_Video.mp4" type="video/mp4">
+                    <!-- Fallback image if video fails -->
+                    <img src="assets/images/Hero_Section1.png" alt="Yayasan Persada Bakti Global" loading="eager">
+                </video>
+                <div class="hero-overlay"></div>
+                <div class="hero-text container">
+                    <!-- Greeting DIHAPUS sesuai permintaan -->
+                    <h1 class="hero-title fade-in-ready" data-i18n="hero.title">Melayani dengan kasih,<br>membangun dengan harapan.</h1>
+                    <p class="hero-subtitle fade-in-ready" data-i18n="hero.subtitle">Yayasan Persada Bakti Global berkomitmen untuk bantuan sosial kemanusiaan berkelanjutan.</p>
+                    <div class="hero-cta fade-in-ready">
+                        <a class="btn btn-primary" data-smooth href="#about" data-i18n="hero.btn.about">Kenali Yayasan Kami</a>
+                        <a class="btn btn-secondary" data-smooth href="#contact" data-i18n="hero.btn.contact">Hubungi Kami</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Apple-Style Separator -->
+        <div class="hero-separator-apple"></div>
+
+        <!-- Home Highlights -->
+        <section class="home-highlights-apple">
+            <div class="container">
+                <div class="highlights-apple-grid">
+                    <!-- Tentang Kami Card -->
+                    <a href="#about" class="highlight-apple-link">
+                        <div class="highlight-apple-card tentang-card">
+                            <div class="highlight-apple-background">
+                                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&h=1080&fit=crop" alt="Tentang Kami" loading="lazy" decoding="async">
+                                <div class="highlight-apple-overlay"></div>
+                            </div>
+                            <div class="highlight-apple-content">
+                                <div class="highlight-apple-icon">📖</div>
+                                <h3 class="highlight-apple-title" data-i18n="highlight.about.title">Tentang Kami</h3>
+                                <p class="highlight-apple-description" data-i18n="highlight.about.desc">Sejarah & Visi</p>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <!-- Program Card -->
+                    <a href="#programs" class="highlight-apple-link">
+                        <div class="highlight-apple-card program-card">
+                            <div class="highlight-apple-background">
+                                <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1920&h=1080&fit=crop" alt="Program" loading="lazy" decoding="async">
+                                <div class="highlight-apple-overlay"></div>
+                            </div>
+                            <div class="highlight-apple-content">
+                                <div class="highlight-apple-icon">🌱</div>
+                                <h3 class="highlight-apple-title" data-i18n="highlight.programs.title">Program</h3>
+                                <p class="highlight-apple-description" data-i18n="highlight.programs.desc">Dampak Nyata</p>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <!-- Publikasi Card -->
+                    <a href="#news" class="highlight-apple-link">
+                        <div class="highlight-apple-card publikasi-card">
+                            <div class="highlight-apple-background">
+                                <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=1920&h=1080&fit=crop" alt="Publikasi" loading="lazy" decoding="async">
+                                <div class="highlight-apple-overlay"></div>
+                            </div>
+                            <div class="highlight-apple-content">
+                                <div class="highlight-apple-icon">📰</div>
+                                <h3 class="highlight-apple-title" data-i18n="highlight.news.title">Publikasi</h3>
+                                <p class="highlight-apple-description" data-i18n="highlight.news.desc">Laporan & Berita</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about" aria-label="Tentang kami">
+            <div class="container">
+                <h2 class="section-title" data-i18n="about.title">Tentang Yayasan</h2>
+
+                <!-- Visi & Misi -->
+                <div class="visi-misi-apple">
+                    <!-- Visi Card -->
+                    <div class="apple-hero-card visi-hero">
+                        <div class="apple-hero-background">
+                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&h=1080&fit=crop" alt="Visi Background" loading="lazy" decoding="async">
+                            <div class="apple-hero-overlay"></div>
+                        </div>
+                        <div class="apple-hero-content">
+                            <div class="apple-hero-icon">👁️</div>
+                            <h2 class="apple-hero-title" data-i18n="about.vision">Visi</h2>
+                            <p class="apple-hero-description" data-i18n="about.vision.desc">Menjadi organisasi terdepan dalam pemberdayaan masyarakat dan pembangunan berkelanjutan.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Misi Card -->
+                    <div class="apple-hero-card misi-hero">
+                        <div class="apple-hero-background">
+                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1920&h=1080&fit=crop" alt="Misi Background" loading="lazy" decoding="async">
+                            <div class="apple-hero-overlay"></div>
+                        </div>
+                        <div class="apple-hero-content">
+                            <div class="apple-hero-icon">🎯</div>
+                            <h2 class="apple-hero-title" data-i18n="about.mission">Misi</h2>
+                            <ul class="apple-hero-list">
+                                <li data-i18n="about.mission.li1">Memberdayakan melalui pendidikan dan pelatihan</li>
+                                <li data-i18n="about.mission.li2">Mendorong inovasi sosial</li>
+                                <li data-i18n="about.mission.li3">Membangun kemitraan strategis</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nilai Nilai -->
+                <h3 class="subsection-title" data-i18n="about.values">Nilai-Nilai Inti Yayasan</h3>
+                <div class="values-apple-grid">
+                    <!-- Kasih Card -->
+                    <a href="values/kasih.html" class="value-apple-link">
+                        <div class="value-apple-card kasih-card">
+                            <div class="value-apple-background">
+                                <img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=1920&h=1080&fit=crop" alt="Kasih Background" loading="lazy" decoding="async">
+                                <div class="value-apple-overlay"></div>
+                            </div>
+                            <div class="value-apple-content">
+                                <div class="value-apple-icon">❤️</div>
+                                <h2 class="value-apple-title" data-i18n="about.values.love">Kasih</h2>
+                                <p class="value-apple-description">Melayani dengan kasih, membangun dengan harapan</p>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <!-- Integritas Card -->
+                    <a href="values/integritas.html" class="value-apple-link">
+                        <div class="value-apple-card integritas-card">
+                            <div class="value-apple-background">
+                                <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1920&h=1080&fit=crop" alt="Integritas Background" loading="lazy" decoding="async">
+                                <div class="value-apple-overlay"></div>
+                            </div>
+                            <div class="value-apple-content">
+                                <div class="value-apple-icon">🛡️</div>
+                                <h2 class="value-apple-title" data-i18n="about.values.integrity">Integritas</h2>
+                                <p class="value-apple-description">Jujur dalam kata, konsisten dalam tindakan</p>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <!-- Harapan Card -->
+                    <a href="values/harapan.html" class="value-apple-link">
+                        <div class="value-apple-card harapan-card">
+                            <div class="value-apple-background">
+                                <img src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=1920&h=1080&fit=crop" alt="Harapan Background" loading="lazy" decoding="async">
+                                <div class="value-apple-overlay"></div>
+                            </div>
+                            <div class="value-apple-content">
+                                <div class="value-apple-icon">🌅</div>
+                                <h2 class="value-apple-title" data-i18n="about.values.hope">Harapan</h2>
+                                <p class="value-apple-description">Setiap sunrise membawa harapan baru</p>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <!-- Kolaborasi Card -->
+                    <a href="values/kolaborasi.html" class="value-apple-link">
+                        <div class="value-apple-card kolaborasi-card">
+                            <div class="value-apple-background">
+                                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&h=1080&fit=crop" alt="Kolaborasi Background" loading="lazy" decoding="async">
+                                <div class="value-apple-overlay"></div>
+                            </div>
+                            <div class="value-apple-content">
+                                <div class="value-apple-icon">🤝</div>
+                                <h2 class="value-apple-title" data-i18n="about.values.collaboration">Kolaborasi</h2>
+                                <p class="value-apple-description">Bersama kita lebih kuat</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Struktur Organisasi -->
+                <h3 class="subsection-title" data-i18n="about.org">Struktur Organisasi</h3>
+                <div class="org-chart-apple">
+                    <!-- Level 1: Ketua Pembina -->
+                    <div class="org-level-apple level-1">
+                        <a href="org/ketua-pembina.html" class="org-id-card-link">
+                            <div class="org-id-card">
+                                <div class="org-id-photo">
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face" alt="Ketua Pembina" decoding="async">
+                                </div>
+                                <div class="org-id-info">
+                                    <div class="org-id-jabatan" data-i18n="about.org.chairman">Ketua Pembina</div>
+                                    <div class="org-id-name">Dr. H. Muhammad Yusuf, M.Si</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <!-- Connector -->
+                    <div class="org-connector-apple"></div>
+                    
+                    <!-- Level 2: Ketua Yayasan, Sekretaris, Bendahara -->
+                    <div class="org-level-apple level-2">
+                        <a href="org/ketua-yayasan.html" class="org-id-card-link">
+                            <div class="org-id-card">
+                                <div class="org-id-photo">
+                                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&h=300&fit=crop&crop=face" alt="Ketua Yayasan" decoding="async">
+                                </div>
+                                <div class="org-id-info">
+                                    <div class="org-id-jabatan" data-i18n="about.org.ceo">Ketua Yayasan</div>
+                                    <div class="org-id-name">Dr. Siti Aminah, M.M</div>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="org/sekretaris.html" class="org-id-card-link">
+                            <div class="org-id-card">
+                                <div class="org-id-photo">
+                                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300&h=300&fit=crop&crop=face" alt="Sekretaris" decoding="async">
+                                </div>
+                                <div class="org-id-info">
+                                    <div class="org-id-jabatan" data-i18n="about.org.secretary">Sekretaris</div>
+                                    <div class="org-id-name">Rina Susanti, S.E</div>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="org/bendahara.html" class="org-id-card-link">
+                            <div class="org-id-card">
+                                <div class="org-id-photo">
+                                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face" alt="Bendahara" decoding="async">
+                                </div>
+                                <div class="org-id-info">
+                                    <div class="org-id-jabatan" data-i18n="about.org.treasurer">Bendahara</div>
+                                    <div class="org-id-name">Ahmad Fauzi, S.Kom, Ak</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <!-- Connector -->
+                    <div class="org-connector-apple"></div>
+                    
+                    <!-- Level 3: Program, Keuangan, Humas -->
+                    <div class="org-level-apple level-3">
+                        <a href="org/program.html" class="org-id-card-link">
+                            <div class="org-id-card">
+                                <div class="org-id-photo">
+                                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&h=300&fit=crop&crop=face" alt="Program" decoding="async">
+                                </div>
+                                <div class="org-id-info">
+                                    <div class="org-id-jabatan" data-i18n="about.org.programs">Program</div>
+                                    <div class="org-id-name">Budi Santoso, S.Sos</div>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="org/keuangan.html" class="org-id-card-link">
+                            <div class="org-id-card">
+                                <div class="org-id-photo">
+                                    <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=300&h=300&fit=crop&crop=face" alt="Keuangan" decoding="async">
+                                </div>
+                                <div class="org-id-info">
+                                    <div class="org-id-jabatan" data-i18n="about.org.finance">Keuangan</div>
+                                    <div class="org-id-name">Dewi Lestari, S.E, Ak</div>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="org/humas.html" class="org-id-card-link">
+                            <div class="org-id-card">
+                                <div class="org-id-photo">
+                                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=300&h=300&fit=crop&crop=face" alt="Humas" decoding="async">
+                                </div>
+                                <div class="org-id-info">
+                                    <div class="org-id-jabatan" data-i18n="about.org.pr">Humas</div>
+                                    <div class="org-id-name">Andi Pratama, S.I.Kom</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Galeri -->
+                <h3 class="subsection-title" data-i18n="about.gallery">Galeri Kegiatan</h3>
+                <div class="gallery-apple-container">
+                    <div class="gallery-apple-carousel" id="gallery-apple-carousel">
+                        <div class="gallery-apple-track" id="gallery-apple-track">
+                            <!-- Gallery items will be loaded by JavaScript -->
+                        </div>
+                    </div>
+                    <div class="gallery-apple-controls">
+                        <button id="gallery-apple-prev" class="gallery-apple-btn" aria-label="Previous">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="15 18 9 12 15 6"></polyline>
+                            </svg>
+                        </button>
+                        <div class="gallery-apple-indicators" id="gallery-apple-indicators"></div>
+                        <button id="gallery-apple-next" class="gallery-apple-btn" aria-label="Next">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Programs Section -->
+        <section id="programs" class="programs" aria-label="Program dan kegiatan">
+            <div class="container">
+                <h2 class="section-title" data-i18n="programs.title">Program & Kegiatan</h2>
+                <div class="programs-filter">
+                    <button class="filter-btn active" data-filter="all" data-i18n="programs.filter.all">Semua</button>
+                    <button class="filter-btn" data-filter="beasiswa" data-i18n="programs.filter.scholarship">Beasiswa</button>
+                    <button class="filter-btn" data-filter="infrastruktur" data-i18n="programs.filter.infrastructure">Infrastruktur</button>
+                    <button class="filter-btn" data-filter="mbg" data-i18n="programs.filter.mbg">MBG</button>
+                    <button class="filter-btn" data-filter="kesehatan" data-i18n="programs.filter.health">Kesehatan</button>
+                    <button class="filter-btn" data-filter="sosial" data-i18n="programs.filter.social">Sosial</button>
+                </div>
+                <div class="programs-grid">
+                    <article class="program-card fade-in-ready" data-category="beasiswa">
+                        <a href="programs/program-beasiswa.html" style="text-decoration: none; color: inherit;">
+                        <div class="program-image">
+                            <img src="assets/images/Program_Kegiatan_Beasiswa.webp" alt="Beasiswa" loading="lazy">
+                            <div class="program-icon">🎓</div>
+                        </div>
+                        <div class="program-content">
+                            <h3 data-i18n="programs.scholarship">Program Beasiswa</h3>
+                            <p data-i18n="programs.scholarship.desc">Dukungan pendidikan penuh untuk pelajar berprestasi.</p>
+                            <span class="btn-link" data-i18n="programs.learn">Pelajari lebih lanjut →</span>
+                        </div>
+                        </a>
+                    </article>
+                    <article class="program-card fade-in-ready" data-category="infrastruktur">
+                        <a href="programs/program-infrastruktur.html" style="text-decoration: none; color: inherit;">
+                        <div class="program-image">
+                            <img src="assets/images/Program_Kegiatan_Infrastruktur_Jalan_Desa.webp" alt="Infrastruktur" loading="lazy">
+                            <div class="program-icon">🛣️</div>
+                        </div>
+                        <div class="program-content">
+                            <h3 data-i18n="programs.infrastructure">Pembangunan Infrastruktur</h3>
+                            <p data-i18n="programs.infrastructure.desc">Jalan desa dan fasilitas publik untuk komunitas.</p>
+                            <span class="btn-link" data-i18n="programs.learn">Pelajari lebih lanjut →</span>
+                        </div>
+                        </a>
+                    </article>
+                    <article class="program-card fade-in-ready" data-category="mbg">
+                        <a href="programs/program-mbg.html" style="text-decoration: none; color: inherit;">
+                        <div class="program-image">
+                            <img src="assets/images/Program_Kegiatan_MBG.webp" alt="MBG" loading="lazy">
+                            <div class="program-icon">🌿</div>
+                        </div>
+                        <div class="program-content">
+                            <h3 data-i18n="programs.mbg">Makanan Bergizi Gratis (MBG)</h3>
+                            <p data-i18n="programs.mbg.desc">Pelestarian ekosistem mangrove dan reboisasi pantai.</p>
+                            <span class="btn-link" data-i18n="programs.learn">Pelajari lebih lanjut →</span>
+                        </div>
+                        </a>
+                    </article>
+                    <article class="program-card fade-in-ready" data-category="infrastruktur">
+                        <a href="programs/program-irigasi.html" style="text-decoration: none; color: inherit;">
+                        <div class="program-image">
+                            <img src="assets/images/Program_Kegiatan_Irigasi.webp" alt="Irigasi" loading="lazy">
+                            <div class="program-icon">💧</div>
+                        </div>
+                        <div class="program-content">
+                            <h3 data-i18n="programs.irrigation">Irigasi</h3>
+                            <p data-i18n="programs.irrigation.desc">Pembangunan sistem irigasi untuk pertanian masyarakat.</p>
+                            <span class="btn-link" data-i18n="programs.learn">Pelajari lebih lanjut →</span>
+                        </div>
+                        </a>
+                    </article>
+                    <article class="program-card fade-in-ready" data-category="kesehatan">
+                        <a href="programs/program-makanan-sehat.html" style="text-decoration: none; color: inherit;">
+                        <div class="program-image">
+                            <img src="assets/images/Program_Kegiatan_Makanan_Sehat.webp" alt="Makanan Sehat" loading="lazy">
+                            <div class="program-icon">🥗</div>
+                        </div>
+                        <div class="program-content">
+                            <h3 data-i18n="programs.healthy_food">Makanan Sehat</h3>
+                            <p data-i18n="programs.healthy_food.desc">Penyediaan makanan bergizi untuk masyarakat membutuhkan.</p>
+                            <span class="btn-link" data-i18n="programs.learn">Pelajari lebih lanjut →</span>
+                        </div>
+                        </a>
+                    </article>
+                    <article class="program-card fade-in-ready" data-category="infrastruktur">
+                        <a href="programs/program-mck.html" style="text-decoration: none; color: inherit;">
+                        <div class="program-image">
+                            <img src="assets/images/Program_Kegiatan_MCK.webp" alt="MCK" loading="lazy">
+                            <div class="program-icon">🚿</div>
+                        </div>
+                        <div class="program-content">
+                            <h3 data-i18n="programs.mck">Mandi, Cuci, Kakus (MCK)</h3>
+                            <p data-i18n="programs.mck.desc">Pembangunan fasilitas MCK untuk kesehatan lingkungan.</p>
+                            <span class="btn-link" data-i18n="programs.learn">Pelajari lebih lanjut →</span>
+                        </div>
+                        </a>
+                    </article>
+                    <article class="program-card fade-in-ready" data-category="sosial">
+                        <a href="programs/program-rumah-ibadat.html" style="text-decoration: none; color: inherit;">
+                        <div class="program-image">
+                            <img src="assets/images/Program_Kegiatan_Rumah_Ibadat.webp" alt="Rumah Ibadat" loading="lazy">
+                            <div class="program-icon">🕌</div>
+                        </div>
+                        <div class="program-content">
+                            <h3 data-i18n="programs.worship_house">Rumah Ibadat</h3>
+                            <p data-i18n="programs.worship_house.desc">Pembangunan dan renovasi rumah ibadat.</p>
+                            <span class="btn-link" data-i18n="programs.learn">Pelajari lebih lanjut →</span>
+                        </div>
+                        </a>
+                    </article>
+                    <article class="program-card fade-in-ready" data-category="sosial">
+                        <a href="programs/program-panti-asuhan.html" style="text-decoration: none; color: inherit;">
+                        <div class="program-image">
+                            <img src="assets/images/Program_Kegiatan_Panti_Asuhan.webp" alt="Panti Asuhan" loading="lazy">
+                            <div class="program-icon">🏠</div>
+                        </div>
+                        <div class="program-content">
+                            <h3 data-i18n="programs.orphanage">Panti Asuhan</h3>
+                            <p data-i18n="programs.orphanage.desc">Bantuan dan dukungan untuk panti asuhan.</p>
+                            <span class="btn-link" data-i18n="programs.learn">Pelajari lebih lanjut →</span>
+                        </div>
+                        </a>
+                    </article>
+                    <article class="program-card fade-in-ready" data-category="kesehatan">
+                        <a href="programs/program-pengobatan.html" style="text-decoration: none; color: inherit;">
+                        <div class="program-image">
+                            <img src="assets/images/Program_Kegiatan_Pengobatan.webp" alt="Pengobatan" loading="lazy">
+                            <div class="program-icon">🏥</div>
+                        </div>
+                        <div class="program-content">
+                            <h3 data-i18n="programs.medical">Pengobatan</h3>
+                            <p data-i18n="programs.medical.desc">Layanan pengobatan gratis untuk masyarakat kurang mampu.</p>
+                            <span class="btn-link" data-i18n="programs.learn">Pelajari lebih lanjut →</span>
+                        </div>
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Section -->
+        <section id="news" class="news">
+            <div class="container">
+                <h2 class="section-title" data-i18n="news.title">Berita & Publikasi</h2>
+                <div class="news-grid">
+                    <!-- Berita 1: DENGAN VIDEO -->
+                    <article class="news-item">
+                        <a href="news/berita-01.html" style="text-decoration:none;color:inherit;display:block;">
+                            <div style="position:relative;">
+                                <img src="assets/images/Program_Kegiatan_Beasiswa.webp" alt="Beasiswa" style="width:100%;height:200px;object-fit:cover;border-radius:12px;">
+                                <span style="position:absolute;top:10px;left:10px;background:#ff0000;color:#fff;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:600;" data-i18n="news.video">🎥 VIDEO</span>
+                            </div>
+                            <div style="padding:20px;">
+                                <span style="background:#0071e3;color:#fff;padding:6px 14px;border-radius:20px;font-size:12px;" data-i18n="news.category.education">Pendidikan</span>
+                                <h3 style="margin:15px 0 10px;" data-i18n="news.1.title">Program Beasiswa 2024 Dibuka</h3>
+                                <p style="color:#666;font-size:14px;" data-i18n="news.1.excerpt">YPBG membuka pendaftaran program beasiswa pendidikan...</p>
+                                <span style="color:#0071e3;font-weight:600;" data-i18n="news.readmore">Baca Selengkapnya →</span>
+                            </div>
+                        </a>
+                    </article>
+                    
+                    <!-- Berita 2: DENGAN VIDEO -->
+                    <article class="news-item">
+                        <a href="news/berita-02.html" style="text-decoration:none;color:inherit;display:block;">
+                            <div style="position:relative;">
+                                <img src="assets/images/Program_Kegiatan_MBG.webp" alt="Lingkungan" style="width:100%;height:200px;object-fit:cover;border-radius:12px;">
+                                <span style="position:absolute;top:10px;left:10px;background:#ff0000;color:#fff;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:600;" data-i18n="news.video">🎥 VIDEO</span>
+                            </div>
+                            <div style="padding:20px;">
+                                <span style="background:#28a745;color:#fff;padding:6px 14px;border-radius:20px;font-size:12px;" data-i18n="news.category.environment">Lingkungan</span>
+                                <h3 style="margin:15px 0 10px;" data-i18n="news.2.title">Kegiatan Pembersihan Pantai</h3>
+                                <p style="color:#666;font-size:14px;" data-i18n="news.2.excerpt">Ratusan relawan YPBG berhasil membersihkan 5 km pantai...</p>
+                                <span style="color:#0071e3;font-weight:600;" data-i18n="news.readmore">Baca Selengkapnya →</span>
+                            </div>
+                        </a>
+                    </article>
+                    
+                    <!-- Berita 3: ARTIKEL SAJA (Tanpa Video) -->
+                    <article class="news-item">
+                        <a href="news/berita-03.html" style="text-decoration:none;color:inherit;display:block;">
+                            <div style="position:relative;">
+                                <img src="assets/images/Program_Kegiatan_Pengobatan.webp" alt="Kesehatan" style="width:100%;height:200px;object-fit:cover;border-radius:12px;">
+                                <span style="position:absolute;top:10px;left:10px;background:#0071e3;color:#fff;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:600;" data-i18n="news.article">📰 ARTIKEL</span>
+                            </div>
+                            <div style="padding:20px;">
+                                <span style="background:#f5576c;color:#fff;padding:6px 14px;border-radius:20px;font-size:12px;" data-i18n="news.category.health">Kesehatan</span>
+                                <h3 style="margin:15px 0 10px;" data-i18n="news.3.title">Kampanye Vaksinasi Gratis</h3>
+                                <p style="color:#666;font-size:14px;" data-i18n="news.3.excerpt">YPBG menggelar kampanye vaksinasi gratis di 20 desa...</p>
+                                <span style="color:#0071e3;font-weight:600;" data-i18n="news.readmore">Baca Selengkapnya →</span>
+                            </div>
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact" aria-label="Kontak">
+            <div class="container">
+                <h2 class="section-title" data-i18n="contact.title">Hubungi Kami</h2>
+                <div class="contact-wrapper">
+                    <div class="contact-form-box">
+                        <h3 data-i18n="contact.form.title">Kirim Pesan</h3>
+                        <form id="contact-form" novalidate enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label for="form-name" data-i18n="contact.form.name">Nama</label>
+                                <input id="form-name" name="name" required data-i18n-placeholder="contact.form.name.placeholder" placeholder="Nama Lengkap">
+                                <div id="error-name" class="form-error"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="form-email" data-i18n="contact.form.email">Email</label>
+                                <input id="form-email" name="email" type="email" required data-i18n-placeholder="contact.form.email.placeholder" placeholder="email@contoh.com">
+                                <div id="error-email" class="form-error"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="form-message" data-i18n="contact.form.message">Pesan</label>
+                                <textarea id="form-message" name="message" rows="5" required data-i18n-placeholder="contact.form.message.placeholder" placeholder="Tulis pesan Anda..."></textarea>
+                                <div id="error-message" class="form-error"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="form-file" data-i18n="contact.form.file">Upload Dokumen</label>
+                                <div class="file-upload-wrapper">
+                                    <input id="form-file" name="file" type="file" accept=".pdf,.webp,.jpeg" class="file-input" hidden>
+                                    <button type="button" class="file-upload-btn" onclick="document.getElementById('form-file').click()">
+                                        <span data-i18n="contact.form.file.choose">Choose File</span>
+                                    </button>
+                                    <span class="file-upload-text" id="file-upload-text" data-i18n="contact.form.file.noFile">No file chosen</span>
+                                </div>
+                                <small class="form-hint" data-i18n="contact.form.file.hint">Format: PDF, JPG. Maksimal 25 MB</small>
+                                <div id="error-file" class="form-error"></div>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-submit">
+                                <span>📤</span> <span data-i18n="contact.form.submit">Kirim Pesan</span>
+                            </button>
+                            <div id="form-message-box" class="form-message"></div>
+                        </form>
+                    </div>
+
+                    <div class="contact-info-box">
+                        <h3 data-i18n="contact.info.title">Informasi Kontak</h3>
+                        <div class="contact-info">
+                            <div class="info-item">
+                                <span class="info-label" data-i18n="contact.info.email">Email</span>
+                                <a href="mailto:ypbglobal@gmail.com">ypbglobal@gmail.com</a>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label" data-i18n="contact.info.phone">Telepon/WhatsApp</span>
+                                <a href="tel:+6282144240440">+62 821-4424-0440</a>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label" data-i18n="contact.info.address">Alamat</span>
+                                <p data-i18n="contact.info.address.text">Jl. Persada Bakti No.123, Jakarta</p>
+                            </div>
+                        </div>
+                        <div class="map-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126920.240976!2d106.75!3d-6.22!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e945e34b9d%3A0x5371bf0fdad786a2!2sJakarta!5e0!3m2!1sid!2sid!4v1620000000000!5m2!1sid!2sid" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Apple-Style Footer Separator -->
+    <div class="footer-separator-apple"></div>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h4 data-i18n="footer.about">Tentang YPBG</h4>
+                <p data-i18n="footer.about.text">Yayasan Persada Bakti Global berdedikasi untuk Bantuan Sosial Kemanusiaan.</p>
+                
+                <!-- Social Media Links - Apple Style -->
+                <div class="social-media-apple">
+                    <a href="https://www.youtube.com/@YPBGlobal" target="_blank" rel="noopener noreferrer" class="social-link-apple" aria-label="YouTube">
+                        <svg class="social-icon-apple" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/ypbglobal" target="_blank" rel="noopener noreferrer" class="social-link-apple" aria-label="Instagram">
+                        <svg class="social-icon-apple" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.facebook.com/YPBGlobal" target="_blank" rel="noopener noreferrer" class="social-link-apple" aria-label="Facebook">
+                        <svg class="social-icon-apple" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4 data-i18n="footer.nav">Navigasi</h4>
+                <ul class="footer-links">
+                    <li><a data-smooth href="#home" data-i18n="nav.home">Beranda</a></li>
+                    <li><a data-smooth href="#about" data-i18n="nav.about">Tentang</a></li>
+                    <li><a data-smooth href="#programs" data-i18n="nav.programs">Program</a></li>
+                    <li><a data-smooth href="#news" data-i18n="nav.news">Berita</a></li>
+                    <li><a data-smooth href="#contact" data-i18n="nav.contact">Kontak</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4 data-i18n="footer.legal">Legal</h4>
+                <ul class="footer-links">
+                    <li><a href="#" data-i18n="footer.privacy">Kebijakan Privasi</a></li>
+                    <li><a href="#" data-i18n="footer.terms">Syarat & Ketentuan</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4 data-i18n="footer.language">Bahasa</h4>
+                <div class="language-selector-footer">
+                    <select id="language-select" aria-label="Pilih bahasa">
+                        <option value="id">Bahasa Indonesia</option>
+                        <option value="en-us">English (US)</option>
+                        <option value="en-uk">English (UK)</option>
+                        <option value="es-latam">Español (Latinoamérica)</option>
+                        <option value="es">Español (España)</option>
+                        <option value="pt-br">Português (Brasil)</option>
+                        <option value="de">Deutsch</option>
+                        <option value="fr">Français</option>
+                        <option value="it">Italiano</option>
+                        <option value="zh">中文</option>
+                        <option value="ja">日本語</option>
+                        <option value="ko">한국어</option>
+                        <option value="hi">हिन्दी</option>
+                        <option value="ar">العربية</option>
+                        <option value="tr">Türkçe</option>
+                        <option value="af">Afrikaans</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="year">2026</span> <span data-i18n="footer.copyright">Yayasan Persada Bakti Global (YPBG). Semua hak dilindungi.</span></p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button - Apple Style Draggable -->
+    <div id="whatsapp-draggable" class="whatsapp-draggable" role="button" aria-label="Chat WhatsApp" tabindex="0">
+        <div class="whatsapp-bubble-apple" id="whatsapp-bubble">
+            <div class="whatsapp-bubble-glow"></div>
+            <div class="whatsapp-bubble-content">
+                <svg viewBox="0 0 32 32" class="whatsapp-icon-apple" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="currentColor" d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.467c-2.482 0-4.908-0.646-7.07-1.87l-0.507-0.292-5.247 1.408 1.417-5.273-0.317-0.533c-1.267-2.197-1.943-4.697-1.943-7.24 0-7.402 6.015-13.417 13.417-13.417 7.402 0 13.417 6.015 13.417 13.417s-6.015 13.467-13.417 13.467zM21.907 18.303c-0.238-0.119-1.408-0.694-1.628-0.772-0.22-0.079-0.38-0.119-0.54 0.119-0.159 0.238-0.615 0.772-0.754 0.931-0.139 0.159-0.278 0.179-0.516 0.060-0.238-0.119-1.004-0.371-1.913-1.181-0.708-0.631-1.185-1.41-1.324-1.648-0.139-0.238-0.015-0.367 0.104-0.486 0.107-0.107 0.238-0.278 0.357-0.417 0.119-0.139 0.159-0.238 0.238-0.397 0.079-0.159 0.040-0.298-0.020-0.417-0.060-0.119-0.54-1.303-0.74-1.781-0.194-0.464-0.391-0.4-0.54-0.408-0.139-0.007-0.298-0.009-0.457-0.009s-0.417 0.060-0.635 0.298c-0.218 0.238-0.833 0.813-0.833 1.985s0.853 2.303 0.971 2.462c0.119 0.159 1.656 2.591 4.038 3.591 1.691 0.709 2.223 0.767 3.016 0.648 0.491-0.074 1.408-0.576 1.606-1.132 0.198-0.556 0.198-1.033 0.139-1.132-0.060-0.099-0.218-0.159-0.457-0.278z"/>
+                </svg>
+                <span class="whatsapp-tooltip">Chat dengan kami</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="translations.js" defer></script>
+    <script src="translations-patch.js" defer></script>
+    <script src="translations-org-en.js" defer></script>
+    <script src="translations-hindi.js" defer></script>
+    <script src="translations-arabic.js" defer></script>
+    <script src="translate-all.js" defer></script>
+    <script src="google-drive-integration.js" defer></script>
+    <script src="script.js" defer></script>
+    
+    <!-- Preload critical images -->
+    <link rel="preload" href="assets/images/Logo_YPBGlobal.jpeg" as="image">
+    <link rel="preload" href="assets/images/Hero_Section1.png" as="image">
+</body>
+</html>

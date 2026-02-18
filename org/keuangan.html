@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="org.finance.title">Keuangan - YPBG</title>
+    <link rel="stylesheet" href="../style-elegan.css">
+    <link rel="stylesheet" href="../style-mobile.css">
+    <link rel="stylesheet" href="../style-darkmode.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; padding: 80px 20px 40px; background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); min-height: 100vh; }
+        .container { max-width: 900px; margin: 0 auto; background: #fff; border-radius: 20px; padding: 40px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
+        .back-btn { display: inline-block; padding: 12px 30px; background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); color: #fff; text-decoration: none; border-radius: 25px; margin-bottom: 30px; font-weight: 600; transition: transform 0.3s; }
+        .back-btn:hover { transform: translateX(-5px); }
+        .profile-header { text-align: center; margin-bottom: 40px; }
+        .profile-photo { width: 200px; height: 200px; margin: 0 auto 25px; border-radius: 50%; overflow: hidden; border: 6px solid #fa709a; box-shadow: 0 10px 40px rgba(0,0,0,0.3); }
+        .profile-photo img { width: 100%; height: 100%; object-fit: cover; }
+        .profile-name { font-size: 32px; font-weight: 700; color: #1a1a1a; margin-bottom: 10px; }
+        .profile-position { font-size: 18px; color: #fa709a; font-weight: 600; margin-bottom: 20px; }
+        .section { margin: 35px 0; }
+        .section-title { font-size: 24px; font-weight: 700; color: #1a1a1a; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 3px solid #fa709a; }
+        .section-content { font-size: 16px; color: #333; line-height: 1.8; }
+        .section-content p { margin-bottom: 15px; }
+        .section-content ul { margin-left: 20px; }
+        .section-content li { margin-bottom: 10px; }
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px; }
+        .info-item { background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); padding: 20px; border-radius: 15px; border-left: 5px solid #fa709a; }
+        .info-label { font-size: 14px; color: #666; font-weight: 600; margin-bottom: 8px; }
+        .info-value { font-size: 16px; color: #1a1a1a; font-weight: 500; }
+        .quote-box { background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); padding: 30px; border-radius: 15px; margin: 30px 0; text-align: center; font-style: italic; }
+        .quote-box p { margin: 0; font-size: 18px; color: #1a1a1a; font-weight: 600; }
+        .timeline { position: relative; padding-left: 30px; }
+        .timeline-item { margin-bottom: 25px; position: relative; }
+        .timeline-item::before { content: ''; position: absolute; left: -30px; top: 8px; width: 12px; height: 12px; background: #fa709a; border-radius: 50%; }
+        .timeline-item::after { content: ''; position: absolute; left: -24px; top: 14px; width: 2px; height: calc(100% - 14px); background: #fa709a; }
+        .timeline-item:last-child::after { display: none; }
+        .timeline-year { font-weight: 700; color: #fa709a; margin-bottom: 5px; }
+        .timeline-title { font-weight: 600; color: #1a1a1a; margin-bottom: 5px; }
+        .timeline-desc { color: #666; font-size: 15px; }
+        @media (max-width: 768px) { body { padding: 60px 15px 30px; } .container { padding: 25px; } .profile-name { font-size: 26px; } .profile-photo { width: 150px; height: 150px; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html#about" class="back-btn" data-i18n="back.to.org">← Kembali ke Struktur Organisasi</a>
+        
+        <div class="profile-header">
+            <div class="profile-photo">
+                <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=200&h=200&fit=crop&crop=face" alt="Keuangan" onerror="this.src='https://via.placeholder.com/200x200/fa709a/ffffff?text=Keuangan'">
+            </div>
+            <h1 class="profile-name" data-i18n="org.finance.name">Dewi Lestari, S.E, Ak</h1>
+            <div class="profile-position" data-i18n="about.org.finance">Keuangan</div>
+        </div>
+
+        <!-- Biodata -->
+        <div class="section">
+            <h2 class="section-title" data-i18n="org.biodata">📋 Biodata</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-label" data-i18n="org.fullname">Nama Lengkap</div>
+                    <div class="info-value" data-i18n="org.finance.name">Dewi Lestari, S.E, Ak</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label" data-i18n="org.birthdate">Tanggal Lahir</div>
+                    <div class="info-value" data-i18n="org.finance.birth">12 Februari 1978</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label" data-i18n="org.birthplace">Tempat Lahir</div>
+                    <div class="info-value" data-i18n="org.finance.birthplace">Semarang, Indonesia</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label" data-i18n="org.education">Pendidikan Terakhir</div>
+                    <div class="info-value" data-i18n="org.finance.education">S1 Akuntansi</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Moto -->
+        <div class="section">
+            <h2 class="section-title" data-i18n="org.motto">💡 Moto Hidup</h2>
+            <div class="quote-box">
+                <p data-i18n="org.finance.motto">"Setiap rupiah yang dikelola harus memberikan manfaat sebesar-besarnya untuk masyarakat."</p>
+            </div>
+        </div>
+
+        <!-- Hobi -->
+        <div class="section">
+            <h2 class="section-title" data-i18n="org.hobbies">🎯 Hobi</h2>
+            <div class="section-content">
+                <ul>
+                    <li data-i18n="org.finance.hobby1">💵 Perencanaan keuangan pribadi</li>
+                    <li data-i18n="org.finance.hobby2">📈 Membaca laporan keuangan perusahaan</li>
+                    <li data-i18n="org.finance.hobby3">🎹 Bermain piano</li>
+                    <li data-i18n="org.finance.hobby4">🍰 Membuat kue dan dessert</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Karir Profesional -->
+        <div class="section">
+            <h2 class="section-title" data-i18n="org.career">💼 Karir Profesional</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year" data-i18n="org.finance.career1.year">2019 - Sekarang</div>
+                    <div class="timeline-title" data-i18n="org.finance.career1.title">Kepala Keuangan YPBG</div>
+                    <div class="timeline-desc" data-i18n="org.finance.career1.desc">Mengelola perencanaan dan pelaporan keuangan yayasan</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year" data-i18n="org.finance.career2.year">2014 - 2019</div>
+                    <div class="timeline-title" data-i18n="org.finance.career2.title">Senior Finance Staff</div>
+                    <div class="timeline-desc" data-i18n="org.finance.career2.desc">Menyusun budget dan cash flow</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year" data-i18n="org.finance.career3.year">2010 - 2014</div>
+                    <div class="timeline-title" data-i18n="org.finance.career3.title">Finance Staff</div>
+                    <div class="timeline-desc" data-i18n="org.finance.career3.desc">Mengelola transaksi keuangan</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year" data-i18n="org.finance.career4.year">2007 - 2010</div>
+                    <div class="timeline-title" data-i18n="org.finance.career4.title">Accounting Staff</div>
+                    <div class="timeline-desc" data-i18n="org.finance.career4.desc">Membantu pembukuan dan rekonsiliasi</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../translations.js" defer></script>
+    <script src="../translations-patch.js" defer></script>
+    <script src="../translations-org-en.js" defer></script>
+    <script src="../translations-arabic.js" defer></script>
+    <script src="../translations-hindi.js" defer></script>
+    <script src="../translate-all.js" defer></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const savedLang = localStorage.getItem('selectedLanguage') || 'id';
+        if (typeof translateAllPage === 'function') {
+            translateAllPage(savedLang);
+        }
+        if (savedLang === 'ar') {
+            document.documentElement.setAttribute('dir', 'rtl');
+        }
+    });
+    </script>
+</body>
+</html>
