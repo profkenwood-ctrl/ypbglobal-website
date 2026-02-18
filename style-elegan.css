@@ -2744,3 +2744,98 @@ select:focus {
     outline: 2px solid var(--accent);
     outline-offset: 2px;
 }
+
+/* ===== RTL (RIGHT-TO-LEFT) SUPPORT FOR ARABIC ===== */
+/* دعم من اليمين لليسار للعربية */
+
+[dir="rtl"] {
+    direction: rtl;
+    text-align: right;
+}
+
+[dir="rtl"] .ios-header nav {
+    direction: rtl;
+    justify-content: space-between;
+}
+
+[dir="rtl"] .ios-logo {
+    flex-direction: row;
+    gap: 12px;
+}
+
+[dir="rtl"] .ios-nav {
+    direction: rtl;
+    gap: 24px;
+}
+
+[dir="rtl"] .ios-mobile-toggle {
+    margin-right: auto;
+}
+
+[dir="rtl"] .footer-content {
+    direction: rtl;
+    text-align: right;
+}
+
+[dir="rtl"] .footer-logo-link {
+    flex-direction: row;
+}
+
+[dir="rtl"] .social-media-apple {
+    direction: rtl;
+    gap: 16px;
+}
+
+[dir="rtl"] .footer-links {
+    padding-right: 0;
+}
+
+[dir="rtl"] .hero-text {
+    direction: rtl;
+    text-align: center;
+}
+
+[dir="rtl"] .hero-title {
+    direction: rtl;
+    text-align: center;
+}
+
+[dir="rtl"] .hero-subtitle {
+    direction: rtl;
+    text-align: center;
+}
+
+[dir="rtl"] .ios-hero-badge {
+    direction: rtl;
+}
+
+[dir="rtl"] .nav-dropdown-menu {
+    right: auto;
+    left: 0;
+}
+
+[dir="rtl"] .lang-dropdown {
+    right: auto;
+    left: 0;
+}
+
+/* Mobile RTL */
+@media (max-width: 768px) {
+    [dir="rtl"] .ios-header nav {
+        flex-wrap: wrap;
+    }
+    
+    [dir="rtl"] .ios-nav {
+        width: 100%;
+        flex-direction: column;
+        text-align: right;
+    }
+    
+    [dir="rtl"] .ios-mobile-toggle {
+        order: 1;
+    }
+    
+    [dir="rtl"] .ios-logo {
+        order: 2;
+    }
+}

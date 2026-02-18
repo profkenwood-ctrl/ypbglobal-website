@@ -73,8 +73,8 @@ const arabicTranslations = {
         'programs.medical': 'العلاج الطبي',
         'programs.medical.desc': 'خدمات طبية مجانية للمجتمعات المحرومة.',
         'programs.learn': 'اعرف المزيد →',
-        
-        # NEWS & PUBLICATIONS - BERITA & PUBLIKASI
+
+        // NEWS & PUBLICATIONS - BERITA & PUBLIKASI
         'news.title': 'الأخبار والمنشورات',
         'news.loadmore': 'تحميل المزيد',
         'news.readmore': 'اقرأ المزيد →',
@@ -89,8 +89,8 @@ const arabicTranslations = {
         'news.views': 'مشاهدات',
         'news.gallery': '📸 توثيق الصور',
         'news.about': '📖 عن',
-        
-        # NEWS 1: BEASISWA / SCHOLARSHIP
+
+        // NEWS 1: BEASISWA / SCHOLARSHIP
         'news.1.title': 'برنامج المنح الدراسية 2024 مفتوح',
         'news.1.excerpt': 'YPBG يفتح التسجيل لبرنامج المنح الدراسية التعليمية...',
         'news.1.video': '🎥 فيديو البرنامج',
@@ -101,8 +101,8 @@ const arabicTranslations = {
         'news.1.gallery.1': '🎓 توزيع مساعدة المنح الدراسية على الطلاب المتفوقين',
         'news.1.gallery.2': '👨‍🎓 صورة جماعية مع مستلمي المنح الدراسية وفريق YPBG',
         'news.1.gallery.3': '📚 جلسات تعليمية لمستلمي المنح الدراسية',
-        
-        # NEWS 2: PEMBERISIHAN PANTAI / BEACH CLEANUP
+
+        // NEWS 2: PEMBERISIHAN PANTAI / BEACH CLEANUP
         'news.2.title': 'نشاط تنظيف الشاطئ',
         'news.2.excerpt': 'مئات المتطوعين YPBG نجحوا في تنظيف 5 كم من الشاطئ...',
         'news.2.video': '🎥 فيديو النشاط',
@@ -118,8 +118,8 @@ const arabicTranslations = {
         'news.2.gallery.1': '🧹 متطوعون ينظفون النفايات على الشاطئ',
         'news.2.gallery.2': '🌱 زراعة شتلات المانغروف لمنع التآكل',
         'news.2.gallery.3': '👥 صورة جماعية مع المتطوعين بعد النشاط',
-        
-        # NEWS 3: VAKSINASI / VACCINATION
+
+        // NEWS 3: VAKSINASI / VACCINATION
         'news.3.title': 'حملة التطعيم المجانية',
         'news.3.excerpt': 'YPBG تقيم حملة تطعيم مجانية في 20 قرية...',
         'news.3.about': '📖 عن حملة التطعيم',
@@ -136,8 +136,8 @@ const arabicTranslations = {
         'news.3.gallery.1': '💉 عملية التطعيم من قبل كوادر طبية مهنية',
         'news.3.gallery.2': '👥 المجتمع يصطف للحصول على التطعيم المجاني',
         'news.3.gallery.3': '🩺 التثقيف الصحي لمجتمعات القرى',
-        
-        # CONTACT & FOOTER
+
+        // CONTACT & FOOTER
         'contact.title': 'اتصل بنا',
         'contact.form.title': 'إرسال رسالة',
         'contact.form.name': 'الاسم',
