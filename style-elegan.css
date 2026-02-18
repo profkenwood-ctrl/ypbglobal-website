@@ -872,6 +872,13 @@ section {
     margin-bottom: 25px;
     filter: drop-shadow(0 4px 30px rgba(0,0,0,0.5));
     animation: float 3s ease-in-out infinite;
+    /* Position at center top */
+    align-self: center;
+    justify-self: center;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .highlight-apple-title {
@@ -881,6 +888,7 @@ section {
     margin-bottom: 12px;
     text-shadow: 0 4px 30px rgba(0,0,0,0.5);
     letter-spacing: -0.02em;
+    text-align: center;
 }
 
 .highlight-apple-description {
@@ -889,6 +897,7 @@ section {
     font-weight: 300;
     text-shadow: 0 2px 20px rgba(0,0,0,0.5);
     opacity: 0.95;
+    text-align: center;
 }
 
 /* Old Highlights Grid - Keep for fallback */
@@ -1135,6 +1144,31 @@ section {
     margin-bottom: 80px;
 }
 
+/* Force equal height and width for all value cards */
+.values-apple-grid .liquid-glass-link {
+    width: 100%;
+    height: 100%;
+}
+
+.values-apple-grid .liquid-glass-card {
+    width: 100%;
+    height: 500px; /* Fixed height untuk semua kotak */
+    position: relative;
+}
+
+/* Responsive Values Grid */
+@media (max-width: 1200px) {
+    .values-apple-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .values-apple-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* ===== LIQUID GLASS iOS 26 STYLE ===== */
 /* Glassmorphism dengan efek liquid yang dinamis */
 
@@ -1157,6 +1191,8 @@ section {
     text-decoration: none !important;
     color: inherit !important;
     display: block !important;
+    width: 100%;
+    height: 100%;
 }
 
 .liquid-glass-link:hover .liquid-glass-card {
@@ -1241,11 +1277,19 @@ section {
     color: #ffffff;
 }
 
+/* Icon Positioning - Center Top */
 .liquid-glass-icon {
     font-size: 80px;
     margin-bottom: 25px;
     filter: drop-shadow(0 4px 30px rgba(0,0,0,0.5));
     animation: float 3s ease-in-out infinite;
+    /* Position at center top */
+    align-self: center;
+    justify-self: center;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .liquid-glass-title {
@@ -1259,6 +1303,7 @@ section {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    text-align: center;
 }
 
 .liquid-glass-description {
@@ -1267,6 +1312,7 @@ section {
     font-weight: 300;
     text-shadow: 0 2px 20px rgba(0,0,0,0.5);
     opacity: 0.95;
+    text-align: center;
 }
 
 /* Individual Card Gradients */
