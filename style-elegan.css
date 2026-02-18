@@ -325,6 +325,18 @@ body.dark-mode .theme-toggle {
     color: #ffffff !important;
 }
 
+/* Footer Logo Dark Mode */
+body.dark-mode .footer-logo {
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.2);
+}
+
+body.dark-mode .footer-organization-name {
+    background: linear-gradient(135deg, #f5f5f7 0%, rgba(255, 255, 255, 0.8) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
 body.dark-mode .logo:hover .brand-name-apple {
     background: linear-gradient(135deg, 
         rgba(102, 126, 234, 0.8) 0%, 
@@ -2526,6 +2538,30 @@ body.dark-mode .whatsapp-draggable:hover .whatsapp-bubble-apple {
     margin-bottom: 16px;
     font-weight: 600;
     color: var(--text-primary);
+}
+
+/* Footer Logo Section */
+.footer-logo-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.footer-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.footer-organization-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+    line-height: 1.4;
 }
 
 .footer-section p {
