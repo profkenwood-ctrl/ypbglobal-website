@@ -53,5 +53,28 @@
     <script src="../translations-patch.js" defer></script>
     <script src="../translate-all.js" defer></script>
     <script src="../script.js" defer></script>
+    
+    <!-- Dark Mode Inline Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggle = document.getElementById('theme-toggle');
+            const body = document.body;
+            
+            // Load saved theme
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                body.classList.add('dark-mode');
+            }
+            
+            // Toggle theme
+            if (toggle) {
+                toggle.addEventListener('click', function() {
+                    body.classList.toggle('dark-mode');
+                    const isDark = body.classList.contains('dark-mode');
+                    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+                });
+            }
+        });
+    </script>
 </body>
 </html>
