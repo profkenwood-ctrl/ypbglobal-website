@@ -31,12 +31,12 @@ https://www.youtube.com/watch?v=VIDEO_ID_DISINI
 
 Buka file: `news/berita-01.html`
 
-Cari baris ini (sekitar baris 213):
+Cari bagian video embed (sekitar baris 487-495):
 ```html
-<iframe 
-    src="https://www.youtube.com/embed/VIDEO_ID_PENDIDIKAN" 
+<iframe
+    src="https://www.youtube.com/embed/VIDEO_ID_PENDIDIKAN"
     title="Program Beasiswa 2024"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
     allowfullscreen>
 </iframe>
 ```
@@ -60,12 +60,12 @@ Cari baris ini (sekitar baris 213):
 
 Buka file: `news/berita-02.html`
 
-Cari baris ini (sekitar baris 213):
+Cari bagian video embed (sekitar baris 487-495):
 ```html
-<iframe 
-    src="https://www.youtube.com/embed/VIDEO_ID_LINGKUNGAN" 
+<iframe
+    src="https://www.youtube.com/embed/VIDEO_ID_LINGKUNGAN"
     title="Kegiatan Pembersihan Pantai"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
     allowfullscreen>
 </iframe>
 ```
@@ -237,13 +237,14 @@ border-left-color: #10b981;
 ## 🚀 **Deploy:**
 
 ```bash
-cd /Users/alcohan/Downloads/ypbglobal-website
+# Navigate to your project folder
+cd /path/to/your/ypbglobal-website
 
-# Commit
+# Commit changes
 git add news/
 git commit -m "Add: Apple-style news video pages for Education & Environment"
 
-# Push
+# Push to GitHub
 git push origin main
 ```
 
@@ -255,8 +256,10 @@ git push origin main
 
 Setelah deploy:
 
-- **Berita Pendidikan:** `https://your-site.netlify.app/news/berita-01.html`
-- **Berita Lingkungan:** `https://your-site.netlify.app/news/berita-02.html`
+- **Berita Pendidikan:** `https://your-domain.netlify.app/news/berita-01.html`
+- **Berita Lingkungan:** `https://your-domain.netlify.app/news/berita-02.html`
+
+> **Note:** Ganti `your-domain` dengan subdomain Netlify Anda yang sebenarnya.
 
 ---
 
