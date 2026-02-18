@@ -6,9 +6,9 @@ const config = {
         { title: 'Air Bersih', src: 'assets/images/gallery/Foto_3.webp' }
     ],
     newsData: [
-        { id: 1, title: 'Program Beasiswa 2024 Dibuka', excerpt: 'YPBG membuka pendaftaran program beasiswa pendidikan...', date: '2024-02-15', category: 'Pendidikan', image: 'assets/images/gallery/Foto_1.webp' },
-        { id: 2, title: 'Kegiatan Pembersihan Pantai', excerpt: 'Ratusan relawan YPBG berhasil membersihkan 5 km pantai...', date: '2024-02-10', category: 'Lingkungan', image: 'assets/images/gallery/Foto_2.webp' },
-        { id: 3, title: 'Kampanye Vaksinasi Gratis', excerpt: 'YPBG menggelar kampanye vaksinasi gratis di 20 desa...', date: '2024-02-05', category: 'Kesehatan', image: 'assets/images/gallery/Foto_3.webp' }
+        { id: 1, title: 'Program Beasiswa 2024 Dibuka', excerpt: 'YPBG membuka pendaftaran program beasiswa pendidikan...', date: '2024-02-15', category: 'Pendidikan', image: 'assets/images/Program_Kegiatan_Beasiswa.webp' },
+        { id: 2, title: 'Kegiatan Pembersihan Pantai', excerpt: 'Ratusan relawan YPBG berhasil membersihkan 5 km pantai...', date: '2024-02-10', category: 'Lingkungan', image: 'assets/images/Kegiatan_Pembersihan_Pantai.svg' },
+        { id: 3, title: 'Kampanye Vaksinasi Gratis', excerpt: 'YPBG menggelar kampanye vaksinasi gratis di 20 desa...', date: '2024-02-05', category: 'Kesehatan', image: 'assets/images/Program_Kegiatan_Pengobatan.webp' }
     ]
 };
 

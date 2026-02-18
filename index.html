@@ -24,8 +24,8 @@
         /* Critical above-the-fold styles */
         html{scroll-behavior:smooth}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Inter",sans-serif;background:#fff;color:#1d1d1f;line-height:1.5}
         .hero{position:relative;height:90vh;min-height:600px;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#000}
-        .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.7}
-        .hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.3) 0%,rgba(0,0,0,.6) 100%)}
+        .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.7;z-index:0}
+        .hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.3) 0%,rgba(0,0,0,.6) 100%);z-index:1}
         .hero-text{position:relative;z-index:2;text-align:center;color:#fff;max-width:800px;padding:0 20px}
         .header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.72);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid #e8e8ed}
     </style>
@@ -137,15 +137,12 @@
     <main id="main-content" role="main">
         <!-- Hero Section -->
         <section id="home" class="hero" aria-label="Beranda">
-            <div class="hero-content">
-                <!-- Optimized Video - Compressed from 27MB to 3.6MB -->
-                <video class="hero-video" autoplay muted loop playsinline poster="assets/images/hero-poster.webp" preload="metadata">
-                    <source src="assets/videos/Hero_Video.mp4" type="video/mp4">
-                    <!-- Fallback image if video fails -->
-                    <img src="assets/images/Hero_Section1.png" alt="Yayasan Persada Bakti Global" loading="eager">
-                </video>
-                <div class="hero-overlay"></div>
-                <div class="hero-text container">
+            <!-- Video Background -->
+            <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="assets/images/hero-poster.svg">
+                <source src="assets/videos/Hero_Video.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+            <div class="hero-text container">
                     <!-- Greeting DIHAPUS sesuai permintaan -->
                     <h1 class="hero-title fade-in-ready" data-i18n="hero.title">Melayani dengan kasih,<br>membangun dengan harapan.</h1>
                     <p class="hero-subtitle fade-in-ready" data-i18n="hero.subtitle">Yayasan Persada Bakti Global berkomitmen untuk bantuan sosial kemanusiaan berkelanjutan.</p>
@@ -153,7 +150,6 @@
                         <a class="btn btn-primary" data-smooth href="#about" data-i18n="hero.btn.about">Kenali Yayasan Kami</a>
                         <a class="btn btn-secondary" data-smooth href="#contact" data-i18n="hero.btn.contact">Hubungi Kami</a>
                     </div>
-                </div>
             </div>
         </section>
 
@@ -577,12 +573,20 @@
             <div class="container">
                 <h2 class="section-title" data-i18n="news.title">Berita & Publikasi</h2>
                 <div class="news-grid">
-                    <!-- Berita 1: DENGAN VIDEO -->
+                    <!-- Berita 1: Program Beasiswa 2024 (DENGAN VIDEO) -->
                     <article class="news-item">
                         <a href="news/berita-01.html" style="text-decoration:none;color:inherit;display:block;">
                             <div style="position:relative;">
-                                <img src="assets/images/Program_Kegiatan_Beasiswa.webp" alt="Beasiswa" style="width:100%;height:200px;object-fit:cover;border-radius:12px;">
-                                <span style="position:absolute;top:10px;left:10px;background:#ff0000;color:#fff;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:600;" data-i18n="news.video">🎥 VIDEO</span>
+                                <!-- Video YouTube Embed -->
+                                <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;margin-bottom:15px;background:#000;">
+                                    <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+                                        src="https://www.youtube.com/embed/_-G_OdgnBJk"
+                                        title="Program Beasiswa 2024"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen>
+                                    </iframe>
+                                </div>
+                                <span style="position:absolute;top:10px;left:10px;background:#ff0000;color:#fff;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:600;z-index:10;" data-i18n="news.video">🎥 VIDEO</span>
                             </div>
                             <div style="padding:20px;">
                                 <span style="background:#0071e3;color:#fff;padding:6px 14px;border-radius:20px;font-size:12px;" data-i18n="news.category.education">Pendidikan</span>
@@ -592,13 +596,21 @@
                             </div>
                         </a>
                     </article>
-                    
-                    <!-- Berita 2: DENGAN VIDEO -->
+
+                    <!-- Berita 2: Kegiatan Pembersihan Pantai (DENGAN VIDEO) -->
                     <article class="news-item">
                         <a href="news/berita-02.html" style="text-decoration:none;color:inherit;display:block;">
                             <div style="position:relative;">
-                                <img src="assets/images/Program_Kegiatan_MBG.webp" alt="Lingkungan" style="width:100%;height:200px;object-fit:cover;border-radius:12px;">
-                                <span style="position:absolute;top:10px;left:10px;background:#ff0000;color:#fff;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:600;" data-i18n="news.video">🎥 VIDEO</span>
+                                <!-- Video YouTube Embed -->
+                                <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;margin-bottom:15px;background:#000;">
+                                    <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+                                        src="https://www.youtube.com/embed/1Fc3XezAsss"
+                                        title="Kegiatan Pembersihan Pantai"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen>
+                                    </iframe>
+                                </div>
+                                <span style="position:absolute;top:10px;left:10px;background:#ff0000;color:#fff;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:600;z-index:10;" data-i18n="news.video">🎥 VIDEO</span>
                             </div>
                             <div style="padding:20px;">
                                 <span style="background:#28a745;color:#fff;padding:6px 14px;border-radius:20px;font-size:12px;" data-i18n="news.category.environment">Lingkungan</span>
@@ -608,16 +620,15 @@
                             </div>
                         </a>
                     </article>
-                    
+
                     <!-- Berita 3: ARTIKEL SAJA (Tanpa Video) -->
                     <article class="news-item">
                         <a href="news/berita-03.html" style="text-decoration:none;color:inherit;display:block;">
                             <div style="position:relative;">
                                 <img src="assets/images/Program_Kegiatan_Pengobatan.webp" alt="Kesehatan" style="width:100%;height:200px;object-fit:cover;border-radius:12px;">
-                                <span style="position:absolute;top:10px;left:10px;background:#0071e3;color:#fff;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:600;" data-i18n="news.article">📰 ARTIKEL</span>
+                                <span style="position:absolute;top:10px;left:10px;background:#f5576c;color:#fff;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:600;" data-i18n="news.category.health">Kesehatan</span>
                             </div>
                             <div style="padding:20px;">
-                                <span style="background:#f5576c;color:#fff;padding:6px 14px;border-radius:20px;font-size:12px;" data-i18n="news.category.health">Kesehatan</span>
                                 <h3 style="margin:15px 0 10px;" data-i18n="news.3.title">Kampanye Vaksinasi Gratis</h3>
                                 <p style="color:#666;font-size:14px;" data-i18n="news.3.excerpt">YPBG menggelar kampanye vaksinasi gratis di 20 desa...</p>
                                 <span style="color:#0071e3;font-weight:600;" data-i18n="news.readmore">Baca Selengkapnya →</span>
