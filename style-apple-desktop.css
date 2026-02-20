@@ -734,10 +734,29 @@
         max-width: var(--apple-container);
         margin: 0 auto 60px;
         padding: 0 24px;
+        grid-auto-rows: minmax(340px, 340px);
+        align-items: stretch;
     }
     
-    .values-apple-grid .liquid-glass-card {
-        height: 340px;
+    /* Force equal size for ALL 4 Nilai-Nilai Inti cards */
+    .values-apple-grid .liquid-glass-link {
+        width: 100% !important;
+        height: 100% !important;
+        display: block !important;
+    }
+    
+    .values-apple-grid .liquid-glass-card,
+    .values-apple-grid .kasih-card,
+    .values-apple-grid .integritas-card,
+    .values-apple-grid .harapan-card,
+    .values-apple-grid .kolaborasi-card {
+        width: 100% !important;
+        height: 340px !important;
+        min-height: 340px !important;
+        max-height: 340px !important;
+        min-width: auto !important;
+        max-width: none !important;
+        flex: 1 1 100% !important;
     }
     
     .kasih-card .liquid-glass-overlay {
