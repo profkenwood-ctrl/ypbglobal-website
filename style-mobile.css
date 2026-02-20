@@ -294,7 +294,6 @@
         top: 52px;
         left: 0;
         right: 0;
-        bottom: 0;
         width: 100%;
         background: rgba(255, 255, 255, 0.98);
         backdrop-filter: saturate(180%) blur(20px);
@@ -308,17 +307,18 @@
         scrollbar-width: none;
         -ms-overflow-style: none;
         z-index: 9999;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
     }
-    
+
     #nav-menu.ios-nav::-webkit-scrollbar {
         display: none;
     }
-    
+
     #nav-menu.ios-nav.active {
         display: flex;
         animation: slideDown 0.3s ease;
     }
-    
+
     @keyframes slideDown {
         from {
             opacity: 0;
@@ -329,13 +329,13 @@
             transform: translateY(0);
         }
     }
-    
+
     #nav-menu.ios-nav li {
         width: 100%;
         border-bottom: 1px solid rgba(0, 0, 0, 0.08);
         list-style: none;
     }
-    
+
     #nav-menu.ios-nav li:last-child {
         border-bottom: none;
     }
@@ -344,8 +344,8 @@
     #nav-menu.ios-nav button.nav-dropdown-toggle {
         display: block;
         width: 100%;
-        padding: 16px 16px;
-        font-size: 15px;
+        padding: 18px 20px;
+        font-size: 16px;
         font-weight: 500;
         color: #1d1d1f;
         text-decoration: none;
@@ -358,8 +358,30 @@
 
     #nav-menu.ios-nav a:hover,
     #nav-menu.ios-nav button.nav-dropdown-toggle:hover {
-        background: rgba(0, 113, 227, 0.08);
+        background: rgba(0, 113, 227, 0.1);
         color: #0071e3;
+    }
+
+    /* Dark mode mobile menu */
+    body.dark-mode #nav-menu.ios-nav {
+        background: rgba(0, 0, 0, 0.98) !important;
+        box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+    }
+
+    body.dark-mode #nav-menu.ios-nav li {
+        border-bottom-color: rgba(255, 255, 255, 0.15) !important;
+    }
+
+    body.dark-mode #nav-menu.ios-nav a,
+    body.dark-mode #nav-menu.ios-nav button.nav-dropdown-toggle {
+        color: #fff !important;
+        background: rgba(255, 255, 255, 0.02);
+    }
+
+    body.dark-mode #nav-menu.ios-nav a:hover,
+    body.dark-mode #nav-menu.ios-nav button.nav-dropdown-toggle:hover {
+        background: rgba(255, 255, 255, 0.1) !important;
+        color: #4da3ff !important;
     }
     
     /* Pemilih bahasa di menu mobile */
