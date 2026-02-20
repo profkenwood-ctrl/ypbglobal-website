@@ -31,10 +31,10 @@
         .hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.3) 0%,rgba(0,0,0,.6) 100%);z-index:1}
         .hero-text{position:relative;z-index:2;text-align:center;color:#fff;max-width:800px;padding:0 20px}
         .header{position:fixed;top:0;left:0;right:0;z-index:10000;background:rgba(255,255,255,.95);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(0,0,0,.1);height:52px}
-        <!-- Sembunyikan scrollbar pada navigasi -->
+        /* Sembunyikan scrollbar pada navigasi */
         #nav-menu,.ios-nav,.nav-menu{overflow-x:hidden!important;overflow-y:auto!important;scrollbar-width:none!important;-ms-overflow-style:none!important}
         #nav-menu::-webkit-scrollbar,.ios-nav::-webkit-scrollbar,.nav-menu::-webkit-scrollbar{display:none!important;width:0!important;height:0!important}
-        <!-- Toggle Tema - Semua Layar -->
+        /* Toggle Tema - Semua Layar */
         .theme-toggle{width:36px;height:36px;background:rgba(0,0,0,.05);border:none;border-radius:50%;display:flex!important;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;padding:0}
         .theme-toggle svg{width:18px;height:18px;color:#000;stroke:currentColor!important;display:block!important}
         .theme-toggle .theme-icon-sun{display:block!important}
@@ -43,7 +43,7 @@
         body.dark-mode .theme-toggle svg{color:#fff!important}
         body.dark-mode .theme-toggle .theme-icon-sun{display:none!important}
         body.dark-mode .theme-toggle .theme-icon-moon{display:block!important}
-        <!-- CSS Kritis Mobile -->
+        /* CSS Kritis Mobile */
         @media(max-width:768px){
         *{box-sizing:border-box}
         html{overflow-x:hidden;max-width:100vw}
@@ -91,7 +91,7 @@
         #nav-menu.ios-nav li:last-child{border-bottom:none}
         #nav-menu.ios-nav a{display:block;padding:16px 16px;font-size:15px;font-weight:500;color:#1d1d1f;text-decoration:none;transition:background .2s ease}
         #nav-menu.ios-nav a:hover{background:rgba(0,113,227,.08);color:#0071e3}
-        .nav-dropdown-toggle{cursor:pointer;user-select:none;display:flex;align-items:center;justify-content:space-between}
+        .nav-dropdown-toggle{cursor:pointer;-webkit-user-select:none;user-select:none;display:flex;align-items:center;justify-content:space-between}
         .nav-dropdown-menu{position:static;width:100%;min-width:auto;max-width:100%;box-shadow:none;border:none;padding:0;margin:0;background:rgba(0,0,0,.03);border-radius:0;display:none;list-style:none}
         .nav-dropdown.active .nav-dropdown-menu{display:block;animation:fadeIn .3s ease}
         @keyframes fadeIn{from{opacity:0}to{opacity:1}}
@@ -199,24 +199,23 @@
         .ios-header .language-selector{display:flex!important;visibility:visible!important;opacity:1!important;order:1!important;flex-shrink:0!important;width:auto!important}
         .ios-header .ios-mobile-toggle{order:3!important;display:flex!important}
         }
-        }
         @media(max-width:480px){
         .hero-title{font-size:22px!important}
         .hero-subtitle{font-size:13px!important}
-        .liquid-glass-card{height:260px!important}
-        .liquid-glass-title{font-size:20px!important}
-        .apple-hero-card{height:340px!important}
-        .apple-hero-title{font-size:26px!important}
+        .liquid-glass-card{height:180px!important}
+        .liquid-glass-title{font-size:18px!important}
+        .apple-hero-card{height:200px!important}
+        .apple-hero-title{font-size:24px!important}
         .values-grid{grid-template-columns:1fr!important}
         .ios-logo-text{max-width:120px!important;font-size:12px!important}
         }
         @media(max-width:375px){
         .hero-title{font-size:20px!important}
         .hero-subtitle{font-size:12px!important}
-        .liquid-glass-card{height:240px!important}
-        .liquid-glass-title{font-size:18px!important}
-        .apple-hero-card{height:320px!important}
-        .org-id-card{max-width:260px!important}
+        .liquid-glass-card{height:160px!important}
+        .liquid-glass-title{font-size:16px!important}
+        .apple-hero-card{height:180px!important}
+        .org-id-card{max-width:240px!important}
         }
     </style>
 
@@ -245,9 +244,9 @@
         .ios-header .nav-controls{display:flex!important;visibility:visible!important;opacity:1!important;align-items:center!important;gap:8px!important}
         .ios-header .language-selector{display:flex!important;position:relative!important;flex-shrink:0!important;width:auto!important;visibility:visible!important;opacity:1!important}
         
-        @media(max-width:768px){
+        @media(max-width:768px) {
         /* Mobile - HEADER elements harus terlihat */
-        .ios-header .theme-toggle,.ios-header .theme-toggle *,body .ios-header .theme-toggle{display:flex!important!important;visibility:visible!important;opacity:1!important!important;flex-shrink:0!important;width:36px!important;height:36px!important}
+        .ios-header .theme-toggle,.ios-header .theme-toggle *,body .ios-header .theme-toggle{display:flex!important;visibility:visible!important;opacity:1!important;flex-shrink:0!important;width:36px!important;height:36px!important;}
         .ios-header .nav-controls{display:flex!important;align-items:center!important;gap:8px!important;flex-shrink:0!important}
         .ios-header .language-selector{display:flex!important;flex-shrink:0!important;width:auto!important}
         .theme-toggle{order:2!important}
@@ -271,15 +270,15 @@
             </a>
 
             <!-- Tengah: Navigasi Desktop -->
-            <ul id="nav-menu" class="ios-nav" role="menubar">
+            <ul id="nav-menu" class="ios-nav" role="menu">
                 <li role="none"><a role="menuitem" class="nav-link" data-smooth href="#home" data-i18n="nav.home">Beranda</a></li>
                 <li role="none"><a role="menuitem" class="nav-link" data-smooth href="#about" data-i18n="nav.about">Tentang</a></li>
                 <li role="none"><a role="menuitem" class="nav-link" data-smooth href="#programs" data-i18n="nav.programs">Program</a></li>
                 <li role="none" class="nav-dropdown">
                     <a role="menuitem" class="nav-link nav-dropdown-toggle" href="javascript:void(0)">Pustaka ▾</a>
-                    <ul class="nav-dropdown-menu">
-                        <li><a href="pustaka/akta-notaris.html">Akta Notaris & SK Kemenkumham</a></li>
-                        <li><a href="pustaka/npwp-spt.html">NPWP & SPT Tahunan</a></li>
+                    <ul class="nav-dropdown-menu" role="menu">
+                        <li role="none"><a role="menuitem" href="pustaka/akta-notaris.html">Akta Notaris & SK Kemenkumham</a></li>
+                        <li role="none"><a role="menuitem" href="pustaka/npwp-spt.html">NPWP & SPT Tahunan</a></li>
                     </ul>
                 </li>
                 <li role="none"><a role="menuitem" class="nav-link" data-smooth href="#news" data-i18n="nav.news">Berita</a></li>
