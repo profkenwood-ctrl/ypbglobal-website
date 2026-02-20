@@ -1,6 +1,6 @@
-/* ===== DARK MODE (Manual Toggle) ===== */
+/* ===== MODE GELAP (Toggle Manual) ===== */
 body.dark-mode {
-    /* Dark Mode Colors */
+    /* Warna Mode Gelap */
     --bg-primary: #000000;
     --bg-secondary: #1c1c1e;
     --bg-tertiary: #2c2c2e;
@@ -16,7 +16,7 @@ body.dark-mode {
     --shadow-md: 0 8px 24px rgba(0,0,0,0.4);
     --shadow-lg: 0 16px 48px rgba(0,0,0,0.5);
 
-    /* Base */
+    /* Dasar */
     background: var(--bg-primary);
     color: var(--text-primary);
 }
@@ -46,7 +46,7 @@ body.dark-mode .brand-name {
     color: var(--text-primary);
 }
 
-/* Dark Mode Logo Apple Style */
+/* Logo Mode Gelap Gaya Apple */
 body.dark-mode .brand-name-apple {
     color: var(--text-primary);
 }

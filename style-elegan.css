@@ -1,8 +1,8 @@
-/* ===== RESET & VARIABLES ===== */
+/* ===== RESET & VARIABEL ===== */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-    /* Colors - Light Mode - FIXED CONTRAST */
+    /* Warna - Mode Terang - KONTRAS DIPERBAIKI */
     --bg-primary: #ffffff;
     --bg-secondary: #f5f5f7;
     --bg-tertiary: #ffffff;
@@ -13,26 +13,26 @@
     --accent-hover: #0077ed;
     --border: #d2d2d7;
     --border-light: #e8e8ed;
-    
-    /* Layout */
+
+    /* Tata Letak */
     --container: 1200px;
     --header-height: 54px;
     --radius-sm: 12px;
     --radius-md: 18px;
     --radius-lg: 24px;
     --radius-full: 980px;
-    
-    /* Effects */
+
+    /* Efek */
     --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
     --shadow-md: 0 8px 24px rgba(0,0,0,0.08);
     --shadow-lg: 0 16px 48px rgba(0,0,0,0.12);
     --glass: rgba(255,255,255,0.72);
-    
-    /* Typography - Apple-like */
+
+    /* Tipografi - Mirip Apple */
     --font-main: "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
-/* ===== BASE ===== */
+/* ===== DASAR ===== */
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
@@ -50,7 +50,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Hide scrollbar on navigation - Desktop */
+/* Sembunyikan scrollbar pada navigasi - Desktop */
 #nav-menu,
 .ios-nav,
 .nav-menu {
@@ -67,7 +67,7 @@ body {
     height: 0 !important;
 }
 
-/* Force hide scrollbar on iOS header nav */
+/* Paksa sembunyikan scrollbar pada header nav iOS */
 .ios-header,
 .ios-header nav,
 .ios-header nav ul,
@@ -96,7 +96,7 @@ header nav::-webkit-scrollbar {
     padding: 0 24px;
 }
 
-/* ===== TYPOGRAPHY ===== */
+/* ===== TIPOGRAFI ===== */
 h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
     letter-spacing: -0.02em;
@@ -119,7 +119,7 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: -0.02em;
 }
 
-/* Apple-Style Subsection Title - Dramatic & Dynamic */
+/* Judul Subbagian Gaya Apple - Dramatis & Dinamis */
 .subsection-title[data-i18n="about.gallery"] {
     font-size: 48px;
     font-weight: 700;
@@ -144,7 +144,7 @@ h1, h2, h3, h4, h5, h6 {
     100% { background-position: 200% center; }
 }
 
-/* ===== SKIP LINK ===== */
+/* ===== TAUTAN SKIP ===== */
 .skip-link {
     position: absolute;
     left: -9999px;
@@ -193,7 +193,7 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--text-primary);
 }
 
-/* Apple-Style Logo - Dynamic & Stunning */
+/* Logo Gaya Apple - Dinamis & Menakjubkan */
 .logo {
     display: flex;
     align-items: center;
@@ -228,7 +228,7 @@ h1, h2, h3, h4, h5, h6 {
     transform: scale(1.02);
 }
 
-/* Logo Circle Apple Style */
+/* Logo Circle Gaya Apple */
 .logo-circle-apple {
     width: 48px;
     height: 48px;
@@ -267,7 +267,7 @@ h1, h2, h3, h4, h5, h6 {
     transform: scale(1.1);
 }
 
-/* Brand Name Apple Style - Dynamic Typography */
+/* Nama Merek Gaya Apple - Tipografi Dinamis */
 .brand-name-apple {
     font-size: 15px;
     font-weight: 600;
@@ -303,7 +303,7 @@ h1, h2, h3, h4, h5, h6 {
     animation: shimmerText 3s linear infinite;
 }
 
-/* Dark Mode Logo Styles */
+/* Logo Mode Gelap */
 body.dark-mode .logo-circle-apple {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
     border-color: rgba(102, 126, 234, 0.3);
@@ -330,7 +330,7 @@ body.dark-mode .brand-name-apple {
     background-clip: text;
 }
 
-/* iOS 26 Dark Mode Styles */
+/* Gaya Mode Gelap iOS 26 */
 body.dark-mode .ios-header {
     background: rgba(0, 0, 0, 0.8) !important;
     border-bottom-color: rgba(255, 255, 255, 0.1) !important;
@@ -382,7 +382,7 @@ body.dark-mode .logo:hover .brand-name-apple {
     background-clip: text;
 }
 
-/* Navigation - FIXED Colors */
+/* Navigasi - Warna DIPERBAIKI */
 .nav-menu {
     display: flex;
     gap: 32px;
@@ -410,7 +410,7 @@ body.dark-mode .logo:hover .brand-name-apple {
     color: var(--text-primary);
 }
 
-/* Navigation Dropdown */
+/* Navigasi Dropdown */
 .nav-dropdown {
     position: relative;
 }
@@ -464,7 +464,7 @@ body.dark-mode .logo:hover .brand-name-apple {
     color: var(--text-primary);
 }
 
-/* ===== NAV CONTROLS - Desktop ===== */
+/* ===== KONTROL NAV - Desktop ===== */
 .nav-controls {
     display: flex;
     align-items: center;
@@ -472,7 +472,7 @@ body.dark-mode .logo:hover .brand-name-apple {
     flex-shrink: 0;
 }
 
-/* ===== LANGUAGE SELECTOR ===== */
+/* ===== PEMILIH BAHASA ===== */
 .language-selector {
     position: relative;
     flex-shrink: 0;
@@ -508,7 +508,7 @@ body.dark-mode .logo:hover .brand-name-apple {
     transform: rotate(180deg);
 }
 
-/* ===== THEME TOGGLE ===== */
+/* ===== TOGGLE TEMA ===== */
 .theme-toggle {
     display: flex;
     align-items: center;
@@ -537,7 +537,7 @@ body.dark-mode .logo:hover .brand-name-apple {
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* Light mode: show sun, hide moon */
+/* Mode terang: tampilkan matahari, sembunyikan bulan */
 .theme-toggle .theme-icon-sun {
     display: block;
 }
@@ -546,7 +546,7 @@ body.dark-mode .logo:hover .brand-name-apple {
     display: none;
 }
 
-/* Dark mode: hide sun, show moon */
+/* Mode gelap: sembunyikan matahari, tampilkan bulan */
 body.dark-mode .theme-toggle .theme-icon-sun {
     display: none;
 }
@@ -672,7 +672,7 @@ body.dark-mode .theme-toggle .theme-icon-moon {
     background: #000;
 }
 
-/* Apple-Style Separator Line */
+/* Garis Pemisah Gaya Apple */
 .hero::after {
     content: '';
     position: absolute;
@@ -729,7 +729,7 @@ body.dark-mode .theme-toggle .theme-icon-moon {
     opacity: 0.7;
 }
 
-/* Mobile: Use contain to show full video */
+/* Mobile: Gunakan contain untuk menampilkan video penuh */
 @media (max-width: 768px) {
     .hero-video {
         object-fit: contain;
@@ -778,7 +778,7 @@ body.dark-mode .theme-toggle .theme-icon-moon {
     flex-wrap: wrap;
 }
 
-/* ===== BUTTONS ===== */
+/* ===== TOMBOL ===== */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -844,14 +844,14 @@ body.dark-mode .theme-toggle .theme-icon-moon {
     background: #20bd5a;
 }
 
-/* ===== SECTIONS ===== */
+/* ===== BAGIAN ===== */
 section {
     padding: 100px 0;
 }
 
-/* ===== HIGHLIGHTS ===== */
+/* ===== SOROTAN ===== */
 
-/* Apple-Style Home Highlights - Dramatic & Stunning */
+/* Sorotan Beranda Gaya Apple - Dramatis & Menakjubkan */
 .home-highlights-apple {
     padding: 100px 0;
     background: var(--bg-primary);
@@ -910,7 +910,7 @@ section {
     height: 100%;
 }
 
-/* Light Mode Overlays */
+/* Overlay Mode Terang */
 .tentang-card .highlight-apple-overlay {
     background: linear-gradient(135deg, 
         rgba(102, 126, 234, 0.7) 0%, 
@@ -973,7 +973,7 @@ section {
     text-align: center;
 }
 
-/* Old Highlights Grid - Keep for fallback */
+/* Grid Sorotan Lama - Simpan untuk fallback */
 .home-highlights {
     padding: 80px 0;
     background: var(--bg-primary);
@@ -1016,12 +1016,12 @@ section {
     font-size: 15px;
 }
 
-/* ===== ABOUT ===== */
+/* ===== TENTANG ===== */
 .about {
     background: var(--bg-primary);
 }
 
-/* Apple-Style Visi Misi - Dramatic & Stunning */
+/* Visi Misi Gaya Apple - Dramatis & Menakjubkan */
 .visi-misi-apple {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -1209,7 +1209,7 @@ section {
     line-height: 1.5;
 }
 
-/* Apple-Style Values Grid - Dramatic & Stunning */
+/* Grid Nilai-Nilai Gaya Apple - Dramatis & Menakjubkan */
 .values-apple-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -1217,7 +1217,7 @@ section {
     margin-bottom: 80px;
 }
 
-/* Force equal height and width for all value cards */
+/* Paksa tinggi dan lebar sama untuk semua kartu nilai */
 .values-apple-grid .liquid-glass-link {
     width: 100%;
     height: 100%;
@@ -1229,7 +1229,7 @@ section {
     position: relative;
 }
 
-/* Responsive Values Grid */
+/* Grid Nilai Responsif */
 @media (max-width: 1200px) {
     .values-apple-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -1297,7 +1297,7 @@ section {
     transform: scale(1.15);
 }
 
-/* Liquid Glass Overlay - Dynamic Gradient */
+/* Overlay Liquid Glass - Gradien Dinamis */
 .liquid-glass-overlay {
     position: absolute;
     top: 0;
@@ -1312,7 +1312,7 @@ section {
     -webkit-backdrop-filter: blur(10px);
 }
 
-/* Liquid Animation - Wave Effect */
+/* Animasi Liquid - Efek Gelombang */
 .liquid-glass-card::before {
     content: '';
     position: absolute;
@@ -1350,7 +1350,7 @@ section {
     color: #ffffff;
 }
 
-/* Icon Positioning - Center Top */
+/* Posisi Ikon - Tengah Atas */
 .liquid-glass-icon {
     font-size: 80px;
     margin-bottom: 25px;
@@ -1388,7 +1388,7 @@ section {
     text-align: center;
 }
 
-/* Individual Card Gradients */
+/* Gradien Kartu Individual */
 .kasih-card .liquid-glass-overlay {
     background: linear-gradient(135deg,
         rgba(255, 45, 85, 0.6) 0%,
@@ -1413,7 +1413,7 @@ section {
         rgba(48, 209, 88, 0.7) 100%);
 }
 
-/* Highlights Liquid Glass */
+/* Sorotan Liquid Glass */
 .tentang-card .liquid-glass-overlay {
     background: linear-gradient(135deg,
         rgba(102, 126, 234, 0.6) 0%,
@@ -1432,7 +1432,7 @@ section {
         rgba(245, 87, 108, 0.7) 100%);
 }
 
-/* Dark Mode Liquid Glass */
+/* Liquid Glass Mode Gelap */
 body.dark-mode .liquid-glass-card {
     box-shadow: 
         0 20px 60px rgba(0, 0, 0, 0.4),
@@ -1610,7 +1610,7 @@ body.dark-mode .liquid-glass-link:hover .liquid-glass-card {
     padding: 20px 0;
 }
 
-/* Apple-Style Gallery - Dramatic & Stunning */
+/* Galeri Gaya Apple - Dramatis & Menakjubkan */
 .gallery-apple-container {
     max-width: 1400px;
     margin: 0 auto;
@@ -1651,7 +1651,7 @@ body.dark-mode .liquid-glass-link:hover .liquid-glass-card {
     filter: brightness(1.1) contrast(1.05);
 }
 
-/* Enhanced caption backdrop */
+/* Perkuat backdrop keterangan */
 .gallery-apple-caption {
     position: absolute;
     bottom: 0;
@@ -1679,7 +1679,7 @@ body.dark-mode .liquid-glass-link:hover .liquid-glass-card {
     -webkit-backdrop-filter: blur(40px) saturate(220%);
 }
 
-/* Apple-Style Dynamic Typography - Light Mode */
+/* Tipografi Dinamis Gaya Apple - Mode Terang */
 .gallery-apple-caption h4 {
     font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'SF Pro Display', 'Playfair Display', serif;
     font-size: 56px;
@@ -1744,7 +1744,7 @@ body.dark-mode .liquid-glass-link:hover .liquid-glass-card {
     50% { opacity: 1; transform: scale(1.05); }
 }
 
-/* Elegant paragraph styling */
+/* Gaya paragraf elegan */
 .gallery-apple-caption p {
     font-size: 20px;
     line-height: 1.7;
@@ -1831,7 +1831,7 @@ body.dark-mode .liquid-glass-link:hover .liquid-glass-card {
     border-radius: 6px;
 }
 
-/* Dark Mode Gallery */
+/* Galeri Mode Gelap */
 body.dark-mode .gallery-apple-carousel {
     box-shadow: 0 30px 80px rgba(0,0,0,0.4);
 }
@@ -1854,7 +1854,7 @@ body.dark-mode .gallery-apple-indicator.active {
     background: #667eea;
 }
 
-/* Dark Mode Gallery Caption - Enhanced */
+/* Keterangan Galeri Mode Gelap - Diperkuat */
 body.dark-mode .gallery-apple-caption h4 {
     background: linear-gradient(135deg, 
         #ffffff 0%, 
@@ -1928,7 +1928,7 @@ body.dark-mode .gallery-apple-caption p {
     font-size: 15px;
 }
 
-/* Apple-Style Organization Chart - ID Card Design */
+/* Bagan Organisasi Gaya Apple - Desain Kartu ID */
 .org-chart-apple {
     display: flex;
     flex-direction: column;
@@ -1951,7 +1951,7 @@ body.dark-mode .gallery-apple-caption p {
     display: block !important;
 }
 
-/* Light Mode - Apple Style ID Cards */
+/* Kartu ID Gaya Apple - Mode Terang */
 .org-id-card {
     width: 280px;
     background: #ffffff;
@@ -2049,7 +2049,7 @@ body.dark-mode .gallery-apple-caption p {
     box-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
 }
 
-/* Dark Mode - Clear Glass Effect (Preserved) */
+/* Mode Gelap - Efek Kaca Bening (Dipertahankan) */
 body.dark-mode .org-id-card {
     background: linear-gradient(135deg, 
         rgba(255, 255, 255, 0.1) 0%, 
@@ -2097,7 +2097,7 @@ body.dark-mode .org-connector-apple {
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
 }
 
-/* Old Org Chart - Keep for fallback */
+/* Bagan Organisasi Lama - Simpan untuk fallback */
 .org-chart-container {
     display: flex;
     flex-direction: column;
@@ -2164,7 +2164,7 @@ body.dark-mode .org-connector-apple {
     margin: 0 !important;
 }
 
-/* Gallery Carousel */
+/* Karusel Galeri */
 .gallery-container {
     position: relative;
     max-width: 1000px;
@@ -2252,7 +2252,7 @@ body.dark-mode .org-connector-apple {
     border-radius: 4px;
 }
 
-/* ===== PROGRAMS ===== */
+/* ===== PROGRAM ===== */
 .programs {
     background: var(--bg-secondary);
 }
@@ -2352,7 +2352,7 @@ body.dark-mode .org-connector-apple {
     border-color: var(--text-primary);
 }
 
-/* ===== NEWS ===== */
+/* ===== BERITA ===== */
 .news {
     background: var(--bg-primary);
 }
@@ -2439,7 +2439,7 @@ body.dark-mode .org-connector-apple {
     text-align: center;
 }
 
-/* ===== CONTACT ===== */
+/* ===== KONTAK ===== */
 .contact {
     background: var(--bg-primary);
 }
@@ -2520,7 +2520,7 @@ body.dark-mode .org-connector-apple {
     box-shadow: 0 0 0 3px rgba(0,113,227,0.15);
 }
 
-/* Custom File Upload */
+/* Upload File Kustom */
 .file-upload-wrapper {
     display: flex;
     align-items: center;
@@ -2641,7 +2641,7 @@ body.dark-mode .org-connector-apple {
     box-shadow: var(--shadow-sm);
 }
 
-/* ===== WHATSAPP FLOATING BUTTON - APPLE STYLE DRAGGABLE ===== */
+/* ===== TOMBOL MELAYANG WHATSAPP - DAPAT DIGERAKKAN GAYA APPLE ===== */
 .whatsapp-draggable {
     position: fixed;
     bottom: 30px;
@@ -2760,7 +2760,7 @@ body.dark-mode .org-connector-apple {
     transform: scale(1.15) rotate(5deg);
 }
 
-/* Dark Mode WhatsApp */
+/* WhatsApp Mode Gelap */
 body.dark-mode .whatsapp-bubble-apple {
     background: linear-gradient(135deg, #25D366 0%, #20BD5A 50%, #128C7E 100%);
     box-shadow: 
@@ -2789,7 +2789,7 @@ body.dark-mode .whatsapp-draggable:hover .whatsapp-bubble-apple {
         inset 0 2px 4px rgba(255, 255, 255, 0.3);
 }
 
-/* Mobile Responsive */
+/* Responsif Mobile */
 @media (max-width: 768px) {
     .whatsapp-draggable {
         bottom: 20px;
@@ -2811,7 +2811,7 @@ body.dark-mode .whatsapp-draggable:hover .whatsapp-bubble-apple {
     }
 }
 
-/* Reduced Motion */
+/* Kurangi Gerakan */
 @media (prefers-reduced-motion: reduce) {
     .whatsapp-bubble-apple::before,
     .whatsapp-bubble-glow,
@@ -2842,7 +2842,7 @@ body.dark-mode .whatsapp-draggable:hover .whatsapp-bubble-apple {
     color: var(--text-primary);
 }
 
-/* Footer Logo Section */
+/* Bagian Logo Footer */
 .footer-logo-link {
     display: inline-flex;
     align-items: center;
@@ -2862,7 +2862,7 @@ body.dark-mode .whatsapp-draggable:hover .whatsapp-bubble-apple {
     margin-top: 8px;
 }
 
-/* Footer Logo Dark Mode - Same as Navigation */
+/* Logo Footer Mode Gelap - Sama dengan Navigasi */
 body.dark-mode .footer-logo-link .ios-logo-text {
     background: linear-gradient(135deg, #f5f5f7 0%, rgba(255, 255, 255, 0.7) 100%) !important;
     -webkit-background-clip: text !important;
@@ -2939,7 +2939,7 @@ body.dark-mode .footer-logo-link:hover .ios-logo-circle {
     border-top: 1px solid var(--border);
 }
 
-/* ===== SOCIAL MEDIA - APPLE STYLE ===== */
+/* ===== MEDIA SOSIAL - GAYA APPLE ===== */
 .social-media-apple {
     display: flex;
     gap: 16px;
@@ -3003,7 +3003,7 @@ body.dark-mode .footer-logo-link:hover .ios-logo-circle {
     transform: scale(1.15) rotate(5deg);
 }
 
-/* Platform-specific colors on hover */
+/* Warna spesifik platform saat hover */
 .social-link-apple[href*="youtube"]:hover::before {
     background: linear-gradient(135deg, #FF0000 0%, #cc0000 100%);
 }
@@ -3016,7 +3016,7 @@ body.dark-mode .footer-logo-link:hover .ios-logo-circle {
     background: linear-gradient(135deg, #1877F2 0%, #166fe5 100%);
 }
 
-/* Dark Mode Social Media */
+/* Media Sosial Mode Gelap */
 body.dark-mode .social-link-apple {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
     border-color: rgba(102, 126, 234, 0.2);
@@ -3036,7 +3036,7 @@ body.dark-mode .social-link-apple .social-icon-apple {
     color: #ffffff;
 }
 
-/* ===== ANIMATIONS ===== */
+/* ===== ANIMASI ===== */
 .fade-in-ready {
     opacity: 0;
     transform: translateY(24px);
@@ -3049,7 +3049,7 @@ body.dark-mode .social-link-apple .social-icon-apple {
     transform: translateY(0);
 }
 
-/* ===== FOCUS STATES ===== */
+/* ===== STATUS FOKUS ===== */
 a:focus,
 button:focus,
 input:focus,
@@ -3059,7 +3059,7 @@ select:focus {
     outline-offset: 2px;
 }
 
-/* ===== RTL (RIGHT-TO-LEFT) SUPPORT FOR ARABIC ===== */
+/* ===== DUKUNGAN RTL (KANAN-KE-KIRI) UNTUK ARABIC ===== */
 /* دعم من اليمين لليسار للعربية */
 
 body[dir="rtl"] {
@@ -3140,7 +3140,7 @@ body[dir="rtl"] .lang-dropdown {
     text-align: right;
 }
 
-/* RTL for mobile menu - ensure dropdowns don't overflow */
+/* Dropdown menu RTL untuk mobile - pastikan dropdown tidak meluap */
 @media (max-width: 768px) {
     body[dir="rtl"] .lang-dropdown {
         left: 0;
@@ -3148,7 +3148,7 @@ body[dir="rtl"] .lang-dropdown {
     }
 }
 
-/* Mobile RTL */
+/* RTL Mobile */
 @media (max-width: 768px) {
     body[dir="rtl"] .ios-header nav {
         flex-wrap: wrap;

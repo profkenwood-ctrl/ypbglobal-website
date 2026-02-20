@@ -1,6 +1,6 @@
 @media (prefers-color-scheme: dark) {
     :root {
-        /* Dark Mode Colors - FIXED CONTRAST */
+        /* Warna Mode Gelap - KONTRAS DIPERBAIKI */
         --bg-primary: #000000;
         --bg-secondary: #1c1c1e;
         --bg-tertiary: #2c2c2e;
@@ -17,7 +17,7 @@
         --shadow-lg: 0 16px 48px rgba(0,0,0,0.5);
     }
 
-    /* Base */
+    /* Dasar */
     body {
         background: var(--bg-primary);
         color: var(--text-primary);
@@ -68,7 +68,7 @@
         border-color: rgba(255,255,255,0.3);
     }
 
-    /* Sections */
+    /* Bagian */
     .about, .news, .contact {
         background: var(--bg-primary);
     }
@@ -81,7 +81,7 @@
         background: var(--bg-primary);
     }
 
-    /* Cards */
+    /* Kartu */
     .highlight-card,
     .about-card,
     .value-card,
@@ -139,7 +139,7 @@
         border-top-color: var(--border);
     }
 
-    /* Forms */
+    /* Formulir */
     .form-group input,
     .form-group textarea,
     .form-group select {
@@ -166,7 +166,7 @@
         color: var(--text-tertiary);
     }
 
-    /* Organization */
+    /* Organisasi */
     .org-box {
         background: var(--bg-tertiary);
         border-color: var(--border);
@@ -177,7 +177,7 @@
         background: var(--border);
     }
 
-    /* Carousel */
+    /* Karusel */
     .carousel-btn {
         background: var(--bg-tertiary);
         color: var(--text-primary);
@@ -195,7 +195,7 @@
         background: var(--accent);
     }
 
-    /* Filter Buttons */
+    /* Tombol Filter */
     .filter-btn {
         border-color: var(--border);
         color: var(--text-secondary);
@@ -212,7 +212,7 @@
         border-color: var(--text-primary);
     }
 
-    /* Language Selector */
+    /* Pemilih Bahasa */
     .language-selector-footer select {
         background: var(--bg-tertiary);
         color: var(--text-primary);
@@ -228,7 +228,7 @@
         color: var(--text-primary);
     }
 
-    /* News */
+    /* Berita */
     .news-date {
         color: var(--text-tertiary);
     }
@@ -237,12 +237,12 @@
         color: var(--accent);
     }
 
-    /* Map */
+    /* Peta */
     .map-container iframe {
         filter: invert(90%) hue-rotate(180deg);
     }
 
-    /* WhatsApp Floating Button - Apple Style Draggable */
+    /* Tombol Melayang WhatsApp - Gaya Apple Dapat Digerakkan */
     .whatsapp-draggable {
         bottom: 30px;
         right: 30px;
@@ -275,7 +275,7 @@
         background: rgba(0, 0, 0, 0.95);
     }
 
-    /* Apple-Style Separator Lines - Dark Mode */
+    /* Garis Pemisah Gaya Apple - Mode Gelap */
     .hero::after {
         background: linear-gradient(90deg, 
             transparent 0%, 

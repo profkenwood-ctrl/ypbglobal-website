@@ -1,11 +1,11 @@
 /* ===================================
-   YPBG - iOS 26 (iPhone 17 Pro) Design System
-   Apple-Standard Design Language
+   YPBG - Sistem Desain iOS 26 (iPhone 17 Pro)
+   Bahasa Desain Standar Apple
    =================================== */
 
-/* ===== CSS VARIABLES - iOS 26 Colors ===== */
+/* ===== VARIABEL CSS - Warna iOS 26 ===== */
 :root {
-    /* iOS System Colors - Light Mode */
+    /* Warna Sistem iOS - Mode Terang */
     --ios-bg-primary: #FFFFFF;
     --ios-bg-secondary: #F2F2F7;
     --ios-bg-tertiary: #FFFFFF;
@@ -15,7 +15,7 @@
     --ios-text-tertiary: #8E8E93;
     --ios-separator: rgba(60, 60, 67, 0.12);
     
-    /* iOS Accent Colors */
+    /* Warna Aksen iOS */
     --ios-blue: #007AFF;
     --ios-blue-secondary: #5AC8FA;
     --ios-green: #34C759;
@@ -28,7 +28,7 @@
     --ios-indigo: #5856D6;
     --ios-teal: #5AC8FA;
     
-    /* iOS Gradients - iPhone 17 Pro */
+    /* Gradien iOS - iPhone 17 Pro */
     --ios-gradient-blue: linear-gradient(135deg, #007AFF 0%, #5AC8FA 100%);
     --ios-gradient-green: linear-gradient(135deg, #34C759 0%, #30D158 100%);
     --ios-gradient-red: linear-gradient(135deg, #FF3B30 0%, #FF6B57 100%);
@@ -37,14 +37,14 @@
     --ios-gradient-ocean: linear-gradient(135deg, #007AFF 0%, #5AC8FA 50%, #30D158 100%);
     --ios-gradient-midnight: linear-gradient(135deg, #5856D6 0%, #AF52DE 50%, #FF2D55 100%);
     
-    /* iOS Shadows */
+    /* Bayangan iOS */
     --ios-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04);
     --ios-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
     --ios-shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
     --ios-shadow-xl: 0 12px 40px rgba(0, 0, 0, 0.16);
     --ios-glow: 0 0 20px rgba(0, 122, 255, 0.3);
     
-    /* iOS Border Radius */
+    /* Radius Border iOS */
     --ios-radius-sm: 8px;
     --ios-radius-md: 12px;
     --ios-radius-lg: 16px;
@@ -52,7 +52,7 @@
     --ios-radius-2xl: 24px;
     --ios-radius-full: 9999px;
     
-    /* iOS Spacing */
+    /* Jarak iOS */
     --ios-spacing-xs: 4px;
     --ios-spacing-sm: 8px;
     --ios-spacing-md: 12px;
@@ -61,7 +61,7 @@
     --ios-spacing-2xl: 24px;
     --ios-spacing-3xl: 32px;
     
-    /* iOS Typography - San Francisco Style */
+    /* Tipografi iOS - Gaya San Francisco */
     --ios-font-tiny: 11px;
     --ios-font-caption: 12px;
     --ios-font-footnote: 13px;
@@ -73,27 +73,27 @@
     --ios-font-large-title: 34px;
     --ios-font-display: 40px;
     
-    /* iOS Font Weights */
+    /* Bobot Font iOS */
     --ios-font-regular: 400;
     --ios-font-medium: 500;
     --ios-font-semibold: 600;
     --ios-font-bold: 700;
     
-    /* iOS Animations */
+    /* Animasi iOS */
     --ios-easing: cubic-bezier(0.25, 0.1, 0.25, 1);
     --ios-easing-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
     --ios-transition-fast: 150ms;
     --ios-transition-normal: 300ms;
     --ios-transition-slow: 500ms;
     
-    /* iOS Blur Effects */
+    /* Efek Blur iOS */
     --ios-blur-light: saturate(180%) blur(20px);
     --ios-blur-dark: saturate(180%) blur(30px);
     --ios-material-light: rgba(255, 255, 255, 0.72);
     --ios-material-dark: rgba(0, 0, 0, 0.72);
 }
 
-/* ===== Dark Mode - iOS 26 ===== */
+/* ===== Mode Gelap - iOS 26 ===== */
 body.dark-mode {
     --ios-bg-primary: #000000;
     --ios-bg-secondary: #1C1C1E;
@@ -113,7 +113,7 @@ body.dark-mode {
     --ios-material-dark: rgba(0, 0, 0, 0.8);
 }
 
-/* ===== Base Styles - iOS 26 ===== */
+/* ===== Gaya Dasar - iOS 26 ===== */
 * {
     margin: 0;
     padding: 0;
@@ -139,7 +139,7 @@ body {
                 color var(--ios-transition-normal) var(--ios-easing);
 }
 
-/* ===== iOS Typography Scale ===== */
+/* ===== Skala Tipografi iOS ===== */
 .ios-tiny { font-size: var(--ios-font-tiny); font-weight: var(--ios-font-regular); }
 .ios-caption { font-size: var(--ios-font-caption); font-weight: var(--ios-font-regular); }
 .ios-footnote { font-size: var(--ios-font-footnote); font-weight: var(--ios-font-regular); }
@@ -151,7 +151,7 @@ body {
 .ios-large-title { font-size: var(--ios-font-large-title); font-weight: var(--ios-font-bold); }
 .ios-display { font-size: var(--ios-font-display); font-weight: var(--ios-font-bold); }
 
-/* ===== iOS Header - Glassmorphism ===== */
+/* ===== Header iOS - Glassmorphism ===== */
 .ios-header {
     position: fixed;
     top: 0;
@@ -184,7 +184,7 @@ body {
     overflow-y: visible;
 }
 
-/* ===== iOS Logo - SF Symbols Style ===== */
+/* ===== Logo iOS - Gaya SF Symbols ===== */
 .ios-logo {
     display: flex;
     align-items: center;
@@ -237,7 +237,7 @@ body {
     background-clip: text;
 }
 
-/* Dark Mode Logo */
+/* Logo Mode Gelap */
 body.dark-mode .ios-logo-text {
     background: linear-gradient(135deg, #FFFFFF 0%, rgba(255, 255, 255, 0.8) 100%);
     -webkit-background-clip: text;
@@ -252,7 +252,7 @@ body.dark-mode .ios-logo:hover .ios-logo-text {
     background-clip: text;
 }
 
-/* ===== iOS Navigation - Menu ===== */
+/* ===== Navigasi iOS - Menu ===== */
 .ios-nav {
     display: flex;
     gap: var(--ios-spacing-2xl);
@@ -299,7 +299,7 @@ body.dark-mode .ios-logo:hover .ios-logo-text {
     transform: scaleX(1);
 }
 
-/* ===== iOS Navigation - Mobile ===== */
+/* ===== Navigasi iOS - Mobile ===== */
 .ios-mobile-toggle {
     display: none;
     background: none;
@@ -333,7 +333,7 @@ body.dark-mode .ios-logo:hover .ios-logo-text {
     }
 }
 
-/* ===== iOS Hero Section ===== */
+/* ===== Bagian Hero iOS ===== */
 .ios-hero {
     position: relative;
     min-height: 100vh;
@@ -356,7 +356,7 @@ body.dark-mode .ios-logo:hover .ios-logo-text {
     opacity: 0.6;
 }
 
-/* Mobile: Use contain to show full video */
+/* Mobile: Gunakan contain untuk menampilkan video penuh */
 @media (max-width: 768px) {
     .ios-hero-video {
         object-fit: contain;
@@ -425,7 +425,7 @@ body.dark-mode .ios-logo:hover .ios-logo-text {
     margin-right: auto;
 }
 
-/* ===== iOS Buttons ===== */
+/* ===== Tombol iOS ===== */
 .ios-btn {
     display: inline-flex;
     align-items: center;
@@ -464,7 +464,7 @@ body.dark-mode .ios-logo:hover .ios-logo-text {
     transform: scale(1.05);
 }
 
-/* ===== iOS Cards ===== */
+/* ===== Kartu iOS ===== */
 .ios-card {
     background: var(--ios-card-bg);
     backdrop-filter: var(--ios-blur-light);
@@ -481,7 +481,7 @@ body.dark-mode .ios-logo:hover .ios-logo-text {
     box-shadow: var(--ios-shadow-xl);
 }
 
-/* ===== iOS Grid System ===== */
+/* ===== Sistem Grid iOS ===== */
 .ios-grid {
     display: grid;
     gap: var(--ios-spacing-2xl);
@@ -516,7 +516,7 @@ body.dark-mode .ios-logo:hover .ios-logo-text {
     }
 }
 
-/* ===== iOS Section Spacing ===== */
+/* ===== Jarak Bagian iOS ===== */
 .ios-section {
     padding: var(--ios-spacing-3xl) var(--ios-spacing-lg);
     max-width: 1200px;
@@ -540,14 +540,14 @@ body.dark-mode .ios-logo:hover .ios-logo-text {
     line-height: 1.6;
 }
 
-/* ===== iOS Separator ===== */
+/* ===== Pemisah iOS ===== */
 .ios-separator {
     height: 0.5px;
     background: var(--ios-separator);
     margin: var(--ios-spacing-3xl) 0;
 }
 
-/* ===== iOS Icons - SF Symbols Style ===== */
+/* ===== Ikon iOS - Gaya SF Symbols ===== */
 .ios-icon {
     display: inline-flex;
     align-items: center;
@@ -576,7 +576,7 @@ body.dark-mode .ios-logo:hover .ios-logo-text {
     font-size: 40px;
 }
 
-/* ===== iOS Animations ===== */
+/* ===== Animasi iOS ===== */
 @keyframes ios-fade-in {
     from {
         opacity: 0;
@@ -637,7 +637,7 @@ body.dark-mode .ios-logo:hover .ios-logo-text {
     animation: ios-slide-in-right var(--ios-transition-slow) var(--ios-easing) forwards;
 }
 
-/* ===== iOS Scrollbar ===== */
+/* ===== Scrollbar iOS ===== */
 ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
@@ -657,20 +657,20 @@ body.dark-mode .ios-logo:hover .ios-logo-text {
     background: var(--ios-text-secondary);
 }
 
-/* ===== iOS Selection ===== */
+/* ===== Seleksi iOS ===== */
 ::selection {
     background: var(--ios-blue);
     color: #FFFFFF;
 }
 
-/* ===== iOS Focus States ===== */
+/* ===== Status Fokus iOS ===== */
 *:focus-visible {
     outline: 2px solid var(--ios-blue);
     outline-offset: 2px;
     border-radius: var(--ios-radius-sm);
 }
 
-/* ===== iOS Utilities ===== */
+/* ===== Utilitas iOS ===== */
 .ios-text-center { text-align: center; }
 .ios-text-left { text-align: left; }
 .ios-text-right { text-align: right; }

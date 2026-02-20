@@ -6,35 +6,35 @@
     <meta name="description" content="Yayasan Persada Bakti Global - Melayani dengan kasih, membangun dengan harapan.">
     <title>Yayasan Persada Bakti Global | YPBG</title>
 
-    <!-- Favicon - Using Same Logo as Navigation -->
+    <!-- Favicon - Menggunakan Logo yang Sama dengan Navigasi -->
     <link rel="icon" href="assets/images/Logo_YPBGlobal.jpeg" type="image/jpeg">
     <link rel="apple-touch-icon" href="assets/images/Logo_YPBGlobal.jpeg">
     <link rel="icon" type="image/jpeg" sizes="512x512" href="assets/images/Logo_YPBGlobal.jpeg">
     <link rel="icon" type="image/jpeg" sizes="32x32" href="assets/images/Logo_YPBGlobal.jpeg">
     <link rel="icon" type="image/jpeg" sizes="16x16" href="assets/images/Logo_YPBGlobal.jpeg">
     <link rel="mask-icon" href="assets/images/Logo_YPBGlobal.jpeg" color="#667eea">
-    
-    <!-- Apple-like Font: Inter - Preconnect for performance -->
+
+    <!-- Font Mirip Apple: Inter - Preconnect untuk performa -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- iOS 26 Design System -->
+    <!-- Sistem Desain iOS 26 -->
     <link rel="stylesheet" href="style-ios26.css">
 
-    <!-- Critical CSS Inline for Faster First Paint -->
+    <!-- CSS Kritis Inline untuk First Paint Lebih Cepat -->
     <style>
-        /* Critical above-the-fold styles */
+        /* CSS kritis di atas lipatan -->
         html{scroll-behavior:smooth}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Inter",sans-serif;background:#fff;color:#1d1d1f;line-height:1.5;overflow-x:hidden}
         .hero{position:relative;height:100vh;min-height:600px;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#000}
         .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.7;z-index:0}
         .hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.3) 0%,rgba(0,0,0,.6) 100%);z-index:1}
         .hero-text{position:relative;z-index:2;text-align:center;color:#fff;max-width:800px;padding:0 20px}
         .header{position:fixed;top:0;left:0;right:0;z-index:10000;background:rgba(255,255,255,.95);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(0,0,0,.1);height:52px}
-        /* Hide scrollbar on navigation */
+        <!-- Sembunyikan scrollbar pada navigasi -->
         #nav-menu,.ios-nav,.nav-menu{overflow-x:hidden!important;overflow-y:auto!important;scrollbar-width:none!important;-ms-overflow-style:none!important}
         #nav-menu::-webkit-scrollbar,.ios-nav::-webkit-scrollbar,.nav-menu::-webkit-scrollbar{display:none!important;width:0!important;height:0!important}
-        /* Theme Toggle - All Screens */
+        <!-- Toggle Tema - Semua Layar -->
         .theme-toggle{width:36px;height:36px;background:rgba(0,0,0,.05);border:none;border-radius:50%;display:flex!important;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;padding:0}
         .theme-toggle svg{width:18px;height:18px;color:#000;stroke:currentColor!important;display:block!important}
         .theme-toggle .theme-icon-sun{display:block!important}
@@ -43,7 +43,7 @@
         body.dark-mode .theme-toggle svg{color:#fff!important}
         body.dark-mode .theme-toggle .theme-icon-sun{display:none!important}
         body.dark-mode .theme-toggle .theme-icon-moon{display:block!important}
-        /* Mobile Critical Styles */
+        <!-- CSS Kritis Mobile -->
         @media(max-width:768px){
         *{box-sizing:border-box}
         html{overflow-x:hidden;max-width:100vw}
@@ -200,7 +200,7 @@
         }
     </style>
 
-    <!-- Styles - Deferred for performance -->
+    <!-- Styles - Ditunda untuk performa -->
     <link rel="preload" href="style-elegan.css" as="style">
     <link rel="preload" href="style-mobile.css" as="style">
     <link rel="preload" href="style-darkmode-toggle.css" as="style">
@@ -208,7 +208,7 @@
     <link rel="stylesheet" href="style-mobile.css">
     <link rel="stylesheet" href="style-darkmode-toggle.css">
 
-    <!-- Theme Toggle Fix - Ensure visibility on all screens (MUST be after all CSS) -->
+    <!-- Perbaikan Toggle Tema - Pastikan terlihat di semua layar (HARUS setelah semua CSS) -->
     <style>
         .theme-toggle{display:flex!important;align-items:center!important;justify-content:center!important;width:36px!important;height:36px!important;background:rgba(0,0,0,.05)!important;border-radius:50%!important;cursor:pointer!important;flex-shrink:0!important;padding:0!important;border:none!important;position:relative!important;z-index:10000!important;visibility:visible!important;opacity:1!important}
         .theme-toggle svg{display:block!important;width:18px!important;height:18px!important;stroke:currentColor!important;color:#000!important}
@@ -237,7 +237,7 @@
     <!-- Header -->
     <header class="ios-header" role="banner">
         <nav role="navigation" aria-label="Navigasi utama">
-            <!-- Left: Logo -->
+            <!-- Kiri: Logo -->
             <a href="#home" class="ios-logo">
                 <div class="ios-logo-circle">
                     <img src="assets/images/Logo_YPBGlobal.jpeg" alt="YPBG Logo" class="ios-logo-img">
@@ -245,7 +245,7 @@
                 <span class="ios-logo-text" data-i18n="brand.name">Yayasan Persada Bakti Global</span>
             </a>
 
-            <!-- Center: Desktop Navigation -->
+            <!-- Tengah: Navigasi Desktop -->
             <ul id="nav-menu" class="ios-nav" role="menubar">
                 <li role="none"><a role="menuitem" class="nav-link" data-smooth href="#home" data-i18n="nav.home">Beranda</a></li>
                 <li role="none"><a role="menuitem" class="nav-link" data-smooth href="#about" data-i18n="nav.about">Tentang</a></li>
@@ -261,9 +261,9 @@
                 <li role="none"><a role="menuitem" class="nav-link" data-smooth href="#contact" data-i18n="nav.contact">Kontak</a></li>
             </ul>
 
-            <!-- Right: Language + Theme Toggle + Hamburger -->
+            <!-- Kanan: Bahasa + Toggle Tema + Hamburger -->
             <div class="nav-controls">
-                <!-- Language Selector - No Globe Icon -->
+                <!-- Pemilih Bahasa - Tanpa Ikon Globe -->
                 <div class="language-selector">
                     <button class="lang-toggle" aria-label="Pilih bahasa" aria-expanded="false">
                         <span class="lang-current">Bahasa Indonesia</span>
@@ -301,7 +301,7 @@
                     </div>
                 </div>
 
-                <!-- Theme Toggle - Far Right -->
+                <!-- Toggle Tema - Paling Kanan -->
                 <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
                     <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <circle cx="12" cy="12" r="5"></circle>
@@ -319,7 +319,7 @@
                     </svg>
                 </button>
 
-                <!-- Mobile Menu Toggle -->
+                <!-- Toggle Menu Mobile -->
                 <button id="mobile-menu-toggle" class="ios-mobile-toggle" aria-expanded="false" aria-label="Buka menu">
                     <span></span>
                     <span></span>
@@ -330,9 +330,9 @@
     </header>
 
     <main id="main-content" role="main">
-        <!-- Hero Section -->
+        <!-- Bagian Hero -->
         <section id="home" class="hero" aria-label="Beranda">
-            <!-- Video Background -->
+            <!-- Latar Belakang Video -->
             <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="assets/images/hero-poster.svg">
                 <source src="assets/videos/Hero_Video.mp4" type="video/mp4">
             </video>
@@ -348,10 +348,10 @@
             </div>
         </section>
 
-        <!-- Apple-Style Separator -->
+        <!-- Pemisah Gaya Apple -->
         <div class="hero-separator-apple"></div>
 
-        <!-- Home Highlights -->
+        <!-- Sorotan Beranda -->
         <section class="home-highlights-apple">
             <div class="container">
                 <div class="highlights-apple-grid">
@@ -403,14 +403,14 @@
             </div>
         </section>
 
-        <!-- About Section -->
+        <!-- Bagian Tentang -->
         <section id="about" class="about" aria-label="Tentang kami">
             <div class="container">
                 <h2 class="section-title" data-i18n="about.title">Tentang Yayasan</h2>
 
                 <!-- Visi & Misi -->
                 <div class="visi-misi-apple">
-                    <!-- Visi Card -->
+                    <!-- Kartu Visi -->
                     <div class="apple-hero-card visi-hero">
                         <div class="apple-hero-background">
                             <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&h=1080&fit=crop" alt="Visi Background" loading="lazy" decoding="async">
@@ -423,7 +423,7 @@
                         </div>
                     </div>
                     
-                    <!-- Misi Card -->
+                    <!-- Kartu Misi -->
                     <div class="apple-hero-card misi-hero">
                         <div class="apple-hero-background">
                             <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1920&h=1080&fit=crop" alt="Misi Background" loading="lazy" decoding="async">
@@ -523,9 +523,9 @@
                         </a>
                     </div>
                     
-                    <!-- Connector -->
+                    <!-- Penghubung -->
                     <div class="org-connector-apple"></div>
-                    
+
                     <!-- Level 2: Ketua Yayasan, Sekretaris, Bendahara -->
                     <div class="org-level-apple level-2">
                         <a href="org/ketua-yayasan.html" class="org-id-card-link">
@@ -563,9 +563,9 @@
                         </a>
                     </div>
                     
-                    <!-- Connector -->
+                    <!-- Penghubung -->
                     <div class="org-connector-apple"></div>
-                    
+
                     <!-- Level 3: Program, Keuangan, Humas -->
                     <div class="org-level-apple level-3">
                         <a href="org/program.html" class="org-id-card-link">
@@ -629,7 +629,7 @@
             </div>
         </section>
 
-        <!-- Programs Section -->
+        <!-- Bagian Program -->
         <section id="programs" class="programs" aria-label="Program dan kegiatan">
             <div class="container">
                 <h2 class="section-title" data-i18n="programs.title">Program & Kegiatan</h2>
@@ -763,7 +763,7 @@
             </div>
         </section>
 
-        <!-- News Section -->
+        <!-- Bagian Berita -->
         <section id="news" class="news">
             <div class="container">
                 <h2 class="section-title" data-i18n="news.title">Berita & Publikasi</h2>
@@ -834,7 +834,7 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
+        <!-- Bagian Kontak -->
         <section id="contact" class="contact" aria-label="Kontak">
             <div class="container">
                 <h2 class="section-title" data-i18n="contact.title">Hubungi Kami</h2>
@@ -901,7 +901,7 @@
         </section>
     </main>
 
-    <!-- Apple-Style Footer Separator -->
+    <!-- Pemisah Footer Gaya Apple -->
     <div class="footer-separator-apple"></div>
 
     <!-- Footer -->
@@ -917,7 +917,7 @@
                 </a>
                 <p data-i18n="footer.about.text" class="footer-description">Yayasan Persada Bakti Global berdedikasi untuk Bantuan Sosial Kemanusiaan.</p>
                 
-                <!-- Social Media Links - Apple Style -->
+                <!-- Tautan Media Sosial - Gaya Apple -->
                 <div class="social-media-apple">
                     <a href="https://www.youtube.com/@YPBGlobal" target="_blank" rel="noopener noreferrer" class="social-link-apple" aria-label="YouTube">
                         <svg class="social-icon-apple" viewBox="0 0 24 24" fill="currentColor">
@@ -982,7 +982,7 @@
         </div>
     </footer>
 
-    <!-- WhatsApp Floating Button - Apple Style Draggable -->
+    <!-- Tombol Melayang WhatsApp - Dapat Digerakkan Gaya Apple -->
     <div id="whatsapp-draggable" class="whatsapp-draggable" role="button" aria-label="Chat WhatsApp" tabindex="0">
         <div class="whatsapp-bubble-apple" id="whatsapp-bubble">
             <div class="whatsapp-bubble-glow"></div>

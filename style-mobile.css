@@ -1,9 +1,9 @@
 /* ===================================
-   YPBG - MOBILE RESPONSIVE STYLES
-   Complete & Consistent Mobile Design
+   YPBG - GAYA RESPONSIF MOBILE
+   Desain Mobile Lengkap & Konsisten
    =================================== */
 
-/* ===== MOBILE BASE (Max Width 768px) ===== */
+/* ===== DASAR MOBILE (Lebar Maks 768px) ===== */
 @media (max-width: 768px) {
     
     /* ===== GLOBAL ===== */
@@ -19,7 +19,7 @@
         padding: 0;
     }
     
-    /* ===== IOS HEADER - FIXED & CLEAN ===== */
+    /* ===== HEADER iOS - DIPERBAIKI & BERSIH ===== */
     .ios-header {
         position: fixed;
         top: 0;
@@ -45,7 +45,7 @@
         overflow: visible;
     }
     
-    /* ===== LOGO - CLEAN ALIGNMENT ===== */
+    /* ===== LOGO - PENJAJARAN BERSIH ===== */
     .ios-logo {
         display: flex;
         align-items: center;
@@ -87,12 +87,12 @@
         background-clip: text;
     }
     
-    /* ===== IOS NAV - DESKTOP MENU (HIDDEN ON MOBILE) ===== */
+    /* ===== IOS NAV - MENU DESKTOP (TERSEMBUNYI DI MOBILE) ===== */
     .ios-nav {
         display: none !important;
     }
     
-    /* ===== NAV CONTROLS - LANGUAGE + THEME TOGGLE + HAMBURGER ===== */
+    /* ===== KONTROL NAV - BAHASA + TOGGLE TEMA + HAMBURGER ===== */
     .nav-controls {
         display: flex !important;
         align-items: center !important;
@@ -102,7 +102,7 @@
         z-index: 10001 !important;
     }
 
-    /* ===== LANGUAGE SELECTOR - NO GLOBE ICON ===== */
+    /* ===== PEMILIH BAHASA - TANPA IKON GLOBE ===== */
     .language-selector {
         position: relative;
         flex-shrink: 0;
@@ -168,7 +168,7 @@
         transform: translateY(0);
     }
     
-    /* ===== THEME TOGGLE - VISIBLE ON MOBILE ===== */
+    /* ===== TOGGLE TEMA - TERLIHAT DI MOBILE ===== */
     .theme-toggle {
         width: 36px !important;
         height: 36px !important;
@@ -199,7 +199,7 @@
         display: none !important;
     }
 
-    /* Dark Mode - Theme Toggle */
+    /* Mode Gelap - Toggle Tema */
     body.dark-mode .theme-toggle {
         background: rgba(255, 255, 255, 0.1) !important;
     }
@@ -216,7 +216,7 @@
         display: block !important;
     }
     
-    /* ===== MOBILE MENU BUTTON - VISIBLE ON MOBILE ===== */
+    /* ===== TOMBOL MENU MOBILE - TERLIHAT DI MOBILE ===== */
     .ios-mobile-toggle {
         display: flex !important;
         flex-direction: column;
@@ -242,7 +242,7 @@
         margin: 0;
     }
     
-    /* Hamburger Animation */
+    /* Animasi Hamburger */
     .ios-mobile-toggle[aria-expanded="true"] span:nth-child(1) {
         transform: rotate(45deg) translate(5px, 5px);
     }
@@ -256,7 +256,7 @@
         transform: rotate(-45deg) translate(5px, -5px);
     }
 
-    /* ===== MOBILE NAVIGATION MENU - CLEAN ===== */
+    /* ===== MENU NAVIGASI MOBILE - BERSIH ===== */
     #nav-menu.ios-nav {
         display: none;
         position: fixed;
@@ -324,7 +324,7 @@
         color: #0071e3;
     }
     
-    /* Language selector in mobile menu */
+    /* Pemilih bahasa di menu mobile */
     #nav-menu.ios-nav .language-selector {
         width: 100%;
         margin: 0;
@@ -400,7 +400,7 @@
         background: rgba(0, 113, 227, 0.08);
     }
     
-    /* ===== NAVIGATION DROPDOWN ===== */
+    /* ===== DROPDOWN NAVIGASI ===== */
     .nav-dropdown {
         position: relative;
     }
@@ -444,7 +444,7 @@
         color: #6e6e73;
     }
     
-    /* ===== LANGUAGE SELECTOR ===== */
+    /* ===== PEMILIH BAHASA ===== */
     .language-selector {
         width: 100%;
         margin: 0;
@@ -520,7 +520,7 @@
         background: rgba(0, 113, 227, 0.08);
     }
     
-    /* ===== HERO SECTION - VIDEO FULL WIDTH ===== */
+    /* ===== BAGIAN HERO - VIDEO LEBAR PENUH ===== */
     .hero {
         position: relative;
         width: 100%;
@@ -595,7 +595,7 @@
         font-size: 14px;
     }
     
-    /* ===== HOME HIGHLIGHTS - ALL 3 CARDS ===== */
+    /* ===== SOROTAN BERANDA - SEMUA 3 KARTU ===== */
     .home-highlights-apple {
         padding: 30px 0;
         width: 100%;
@@ -683,7 +683,7 @@
         color: rgba(255,255,255,0.95);
     }
     
-    /* ===== ABOUT SECTION ===== */
+    /* ===== BAGIAN TENTANG ===== */
     .about {
         padding: 30px 0;
         width: 100%;
@@ -703,7 +703,7 @@
         width: 100%;
     }
     
-    /* ===== VISI MISI - BOTH CARDS ===== */
+    /* ===== VISI MISI - KEDUA KARTU ===== */
     .visi-misi-apple {
         display: grid;
         grid-template-columns: 1fr;
@@ -796,7 +796,7 @@
         text-shadow: 0 1px 10px rgba(0,0,0,0.5);
     }
     
-    /* ===== VALUES GRID - ALL 4 CARDS ===== */
+    /* ===== GRID NILAI - SEMUA 4 KARTU ===== */
     .values-apple-grid {
         display: grid;
         grid-template-columns: 1fr;
@@ -847,7 +847,7 @@
         line-height: 1.4;
     }
     
-    /* ===== ORG CHART - ALL LEVELS ===== */
+    /* ===== BAGAN ORG - SEMUA LEVEL ===== */
     .org-chart-apple {
         padding: 20px 16px;
         width: 100%;
@@ -918,7 +918,7 @@
         background: #d2d2d7;
     }
     
-    /* ===== PROGRAMS & NEWS - ALL ITEMS ===== */
+    /* ===== PROGRAM & BERITA - SEMUA ITEM ===== */
     .programs-grid,
     .news-grid {
         display: grid;
@@ -965,7 +965,7 @@
         color: #6e6e73;
     }
     
-    /* ===== CONTACT ===== */
+    /* ===== KONTAK ===== */
     .contact {
         padding: 30px 0;
         width: 100%;
@@ -1077,7 +1077,7 @@
         flex-shrink: 0;
     }
     
-    /* ===== BUTTONS ===== */
+    /* ===== TOMBOL ===== */
     .btn {
         display: inline-flex;
         align-items: center;
@@ -1105,7 +1105,7 @@
     }
 }
 
-/* ===== SMALL MOBILE (Max Width 480px) ===== */
+/* ===== MOBILE KECIL (Lebar Maks 480px) ===== */
 @media (max-width: 480px) {
     .hero-title {
         font-size: 22px;
@@ -1166,7 +1166,7 @@
     }
 }
 
-/* ===== EXTRA SMALL MOBILE (Max Width 375px) ===== */
+/* ===== MOBILE EKSTRA KECIL (Lebar Maks 375px) ===== */
 @media (max-width: 375px) {
     .hero-title {
         font-size: 20px;
@@ -1224,14 +1224,14 @@
     }
 }
 
-/* ===== RTL SUPPORT - ARABIC & OTHER RTL LANGUAGES ===== */
-/* Apply RTL to body element for proper mobile support */
+/* ===== DUKUNGAN RTL - ARABIC & BAHASA RTL LAINNYA ===== */
+/* Terapkan RTL ke elemen body untuk dukungan mobile yang tepat */
 body[dir="rtl"] {
     direction: rtl;
     text-align: right;
 }
 
-/* Ensure nav-controls and theme toggle are always visible for ALL languages */
+/* Pastikan nav-controls dan toggle tema selalu terlihat untuk SEMUA bahasa */
 body[dir="ltr"],
 body:not([dir]) {
     direction: ltr;
@@ -1269,7 +1269,7 @@ body:not([dir]) .language-selector {
     opacity: 1 !important;
 }
 
-/* Header and navigation should always be LTR for consistent layout */
+/* Header dan navigasi harus selalu LTR untuk tata letak yang konsisten */
 body[dir="rtl"] .ios-header,
 body[dir="rtl"] .ios-header nav {
     direction: ltr !important;
@@ -1299,7 +1299,7 @@ body[dir="rtl"] .nav-dropdown-menu {
     direction: rtl;
 }
 
-/* Mobile-specific RTL fixes */
+/* Perbaikan RTL khusus mobile */
 @media (max-width: 768px) {
     body[dir="rtl"] .ios-header nav {
         direction: ltr !important;
@@ -1318,7 +1318,7 @@ body[dir="rtl"] .nav-dropdown-menu {
         direction: rtl;
     }
     
-    /* Ensure body doesn't overflow when RTL is applied */
+    /* Pastikan body tidak overflow ketika RTL diterapkan */
     body[dir="rtl"] {
         overflow-x: hidden;
         max-width: 100vw;
