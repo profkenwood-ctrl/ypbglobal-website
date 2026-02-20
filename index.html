@@ -44,8 +44,22 @@
         .ios-logo-circle{width:32px;height:32px;border-radius:50%;overflow:hidden;flex-shrink:0;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);display:flex;align-items:center;justify-content:center}
         .ios-logo-img{width:100%;height:100%;object-fit:cover}
         .ios-logo-text{font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:140px;color:#667eea}
-        .nav-controls{display:flex;align-items:center;gap:8px;flex-shrink:0}
-        .theme-toggle{width:36px;height:36px;background:rgba(0,0,0,.05);border:none;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0}
+        .nav-controls{display:flex;align-items:center;gap:12px;flex-shrink:0}
+        .language-selector{position:relative;flex-shrink:0}
+        .lang-toggle{display:flex;align-items:center;gap:4px;background:none;border:none;cursor:pointer;padding:8px 12px;border-radius:8px;transition:background .2s ease}
+        .lang-toggle:hover{background:rgba(0,0,0,.05)}
+        .lang-current{font-size:14px;font-weight:500;color:#1d1d1f}
+        .lang-arrow{font-size:10px;color:#666;transition:transform .3s ease}
+        .language-selector.active .lang-arrow{transform:rotate(180deg)}
+        .lang-dropdown{position:absolute;top:100%;right:0;background:#fff;backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border:1px solid rgba(0,0,0,.1);border-radius:12px;min-width:200px;box-shadow:0 10px 40px rgba(0,0,0,.15);z-index:10001;opacity:0;visibility:hidden;transform:translateY(-10px);transition:all .3s ease;max-height:400px;overflow-y:auto}
+        .language-selector.active .lang-dropdown{opacity:1;visibility:visible;transform:translateY(0)}
+        .lang-region{padding:8px 0}
+        .lang-region:not(:last-child){border-bottom:1px solid rgba(0,0,0,.05)}
+        .lang-region-title{font-size:10px;font-weight:600;color:#86868b;padding:0 12px 6px;text-transform:uppercase;letter-spacing:.5px}
+        .lang-option{display:block;padding:8px 12px;font-size:13px;color:#1d1d1f;text-decoration:none;transition:background .2s ease}
+        .lang-option:hover{background:rgba(0,113,227,.08)}
+        .lang-option.active{color:#0071e3;font-weight:600;background:rgba(0,113,227,.08)}
+        .theme-toggle{width:36px;height:36px;background:rgba(0,0,0,.05);border:none;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;order:3}
         .theme-toggle svg{width:18px;height:18px;color:#000}
         .ios-mobile-toggle{display:flex!important;flex-direction:column;justify-content:center;align-items:center;gap:4px;background:none;border:none;cursor:pointer;padding:0;width:40px;height:40px;flex-shrink:0}
         .ios-mobile-toggle span{display:block;width:22px;height:2px;background:#000;transition:all .3s ease;border-radius:2px;margin:0}
@@ -168,7 +182,7 @@
     <!-- Header -->
     <header class="ios-header" role="banner">
         <nav role="navigation" aria-label="Navigasi utama">
-            <!-- Logo - Left Side -->
+            <!-- Left: Logo -->
             <a href="#home" class="ios-logo">
                 <div class="ios-logo-circle">
                     <img src="assets/images/Logo_YPBGlobal.jpeg" alt="YPBG Logo" class="ios-logo-img">
@@ -176,9 +190,47 @@
                 <span class="ios-logo-text" data-i18n="brand.name">Yayasan Persada Bakti Global</span>
             </a>
 
-            <!-- Right Side Controls Container -->
+            <!-- Right: Language + Theme Toggle -->
             <div class="nav-controls">
-                <!-- Theme Toggle - Always Visible -->
+                <!-- Language Selector - No Globe Icon -->
+                <div class="language-selector">
+                    <button class="lang-toggle" aria-label="Pilih bahasa" aria-expanded="false">
+                        <span class="lang-current">ID</span>
+                        <span class="lang-arrow">▼</span>
+                    </button>
+                    <div class="lang-dropdown">
+                        <div class="lang-region">
+                            <div class="lang-region-title">Americas</div>
+                            <a href="#" class="lang-option" data-lang="en-us">English (US)</a>
+                            <a href="#" class="lang-option" data-lang="es-latam">Español (Latinoamérica)</a>
+                            <a href="#" class="lang-option" data-lang="pt-br">Português (Brasil)</a>
+                        </div>
+                        <div class="lang-region">
+                            <div class="lang-region-title">Europe</div>
+                            <a href="#" class="lang-option" data-lang="en-uk">English (UK)</a>
+                            <a href="#" class="lang-option" data-lang="de">Deutsch</a>
+                            <a href="#" class="lang-option" data-lang="fr">Français</a>
+                            <a href="#" class="lang-option" data-lang="it">Italiano</a>
+                            <a href="#" class="lang-option" data-lang="es">Español (España)</a>
+                        </div>
+                        <div class="lang-region">
+                            <div class="lang-region-title">Asia-Pacific</div>
+                            <a href="#" class="lang-option active" data-lang="id">Bahasa Indonesia</a>
+                            <a href="#" class="lang-option" data-lang="zh">中文</a>
+                            <a href="#" class="lang-option" data-lang="ja">日本語</a>
+                            <a href="#" class="lang-option" data-lang="ko">한국어</a>
+                            <a href="#" class="lang-option" data-lang="hi">हिन्दी</a>
+                        </div>
+                        <div class="lang-region">
+                            <div class="lang-region-title">Middle East & Africa</div>
+                            <a href="#" class="lang-option" data-lang="ar">العربية</a>
+                            <a href="#" class="lang-option" data-lang="tr">Türkçe</a>
+                            <a href="#" class="lang-option" data-lang="af">Afrikaans</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Theme Toggle - Far Right -->
                 <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
                     <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <circle cx="12" cy="12" r="5"></circle>
@@ -196,7 +248,7 @@
                     </svg>
                 </button>
 
-                <!-- Mobile Menu Toggle - Only on Mobile -->
+                <!-- Mobile Menu Toggle -->
                 <button id="mobile-menu-toggle" class="ios-mobile-toggle" aria-expanded="false" aria-label="Buka menu">
                     <span></span>
                     <span></span>
@@ -219,44 +271,6 @@
                 <li role="none"><a role="menuitem" class="nav-link" data-smooth href="#news" data-i18n="nav.news">Berita</a></li>
                 <li role="none"><a role="menuitem" class="nav-link" data-smooth href="#contact" data-i18n="nav.contact">Kontak</a></li>
             </ul>
-
-            <!-- Language Selector -->
-            <div class="language-selector">
-                <button class="lang-toggle" aria-label="Pilih bahasa" aria-expanded="false">
-                    <span class="lang-current">🌐 ID</span>
-                    <span class="lang-arrow">▼</span>
-                </button>
-                <div class="lang-dropdown">
-                    <div class="lang-region">
-                        <div class="lang-region-title">Americas</div>
-                        <a href="#" class="lang-option" data-lang="en-us">English (US)</a>
-                        <a href="#" class="lang-option" data-lang="es-latam">Español (Latinoamérica)</a>
-                        <a href="#" class="lang-option" data-lang="pt-br">Português (Brasil)</a>
-                    </div>
-                    <div class="lang-region">
-                        <div class="lang-region-title">Europe</div>
-                        <a href="#" class="lang-option" data-lang="en-uk">English (UK)</a>
-                        <a href="#" class="lang-option" data-lang="de">Deutsch</a>
-                        <a href="#" class="lang-option" data-lang="fr">Français</a>
-                        <a href="#" class="lang-option" data-lang="it">Italiano</a>
-                        <a href="#" class="lang-option" data-lang="es">Español (España)</a>
-                    </div>
-                    <div class="lang-region">
-                        <div class="lang-region-title">Asia-Pacific</div>
-                        <a href="#" class="lang-option active" data-lang="id">Bahasa Indonesia</a>
-                        <a href="#" class="lang-option" data-lang="zh">中文</a>
-                        <a href="#" class="lang-option" data-lang="ja">日本語</a>
-                        <a href="#" class="lang-option" data-lang="ko">한국어</a>
-                        <a href="#" class="lang-option" data-lang="hi">हिन्दी</a>
-                    </div>
-                    <div class="lang-region">
-                        <div class="lang-region-title">Middle East & Africa</div>
-                        <a href="#" class="lang-option" data-lang="ar">العربية</a>
-                        <a href="#" class="lang-option" data-lang="tr">Türkçe</a>
-                        <a href="#" class="lang-option" data-lang="af">Afrikaans</a>
-                    </div>
-                </div>
-            </div>
         </nav>
     </header>
 
