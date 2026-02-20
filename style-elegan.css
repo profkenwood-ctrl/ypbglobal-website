@@ -861,6 +861,8 @@ section {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
+    grid-auto-rows: minmax(480px, 480px); /* SAMA BESAR untuk semua row */
+    align-items: stretch; /* Stretch semua items */
 }
 
 .highlight-apple-link {
@@ -871,11 +873,15 @@ section {
 
 .highlight-apple-card {
     position: relative;
-    height: 450px;
+    height: 480px !important; /* SAMA BESAR untuk semua Sorotan Beranda */
+    min-height: 480px !important;
+    max-height: 480px !important;
     border-radius: 30px;
     overflow: hidden;
     box-shadow: 0 20px 60px rgba(0,0,0,0.15);
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.5s ease;
+    width: 100% !important;
+    flex: 1 1 100% !important;
 }
 
 .highlight-apple-link:hover .highlight-apple-card {
@@ -1027,15 +1033,21 @@ section {
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
     margin-bottom: 80px;
+    grid-auto-rows: minmax(480px, 480px); /* SAMA BESAR untuk semua row */
+    align-items: stretch; /* Stretch semua items */
 }
 
 .apple-hero-card {
     position: relative;
-    height: 600px;
+    height: 480px !important; /* SAMA BESAR untuk semua Visi & Misi */
+    min-height: 480px !important;
+    max-height: 480px !important;
     border-radius: 30px;
     overflow: hidden;
     box-shadow: 0 20px 60px rgba(0,0,0,0.3);
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.5s ease;
+    width: 100% !important;
+    flex: 1 1 100% !important;
 }
 
 .apple-hero-card:hover {
@@ -2308,6 +2320,8 @@ body.dark-mode .org-connector-apple {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 32px;
+    grid-auto-rows: minmax(480px, 480px); /* SAMA BESAR untuk semua row */
+    align-items: stretch; /* Stretch semua items */
 }
 
 .program-card {
@@ -2316,6 +2330,13 @@ body.dark-mode .org-connector-apple {
     overflow: hidden;
     box-shadow: var(--shadow-md);
     transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease;
+    height: 480px !important; /* SAMA BESAR untuk semua Program */
+    min-height: 480px !important;
+    max-height: 480px !important;
+    width: 100% !important;
+    flex: 1 1 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
 }
 
 .program-card:hover {
@@ -2324,9 +2345,12 @@ body.dark-mode .org-connector-apple {
 }
 
 .program-image {
-    height: 260px;
+    height: 240px !important; /* Proporsional: 50% dari tinggi box */
+    min-height: 240px !important;
+    max-height: 240px !important;
     position: relative;
     overflow: hidden;
+    flex-shrink: 0 !important;
 }
 
 .program-image img {
@@ -2353,6 +2377,10 @@ body.dark-mode .org-connector-apple {
 
 .program-content {
     padding: 28px;
+    flex: 1 !important; /* Isi sisa ruang */
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: hidden !important;
 }
 
 .program-content h3 {
@@ -2409,6 +2437,8 @@ body.dark-mode .org-connector-apple {
     grid-template-columns: repeat(3, 1fr);
     gap: 32px;
     margin-bottom: 40px;
+    grid-auto-rows: minmax(480px, 480px); /* SAMA BESAR untuk semua row */
+    align-items: stretch; /* Stretch semua items */
 }
 
 .news-item {
@@ -2417,6 +2447,13 @@ body.dark-mode .org-connector-apple {
     overflow: hidden;
     box-shadow: var(--shadow-md);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 480px !important; /* SAMA BESAR untuk semua Berita */
+    min-height: 480px !important;
+    max-height: 480px !important;
+    width: 100% !important;
+    flex: 1 1 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
 }
 
 .news-item:hover {
@@ -2425,9 +2462,12 @@ body.dark-mode .org-connector-apple {
 }
 
 .news-image {
-    height: 200px;
+    height: 240px !important; /* Proporsional: 50% dari tinggi box */
+    min-height: 240px !important;
+    max-height: 240px !important;
     position: relative;
     overflow: hidden;
+    flex-shrink: 0 !important;
 }
 
 .news-image img {
@@ -2450,6 +2490,10 @@ body.dark-mode .org-connector-apple {
 
 .news-content {
     padding: 24px;
+    flex: 1 !important; /* Isi sisa ruang */
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: hidden !important;
 }
 
 .news-date {
