@@ -253,6 +253,7 @@ body.dark-mode .ios-logo:hover .ios-logo-text {
 }
 
 /* ===== Navigasi iOS - Menu ===== */
+@media (min-width: 769px) {
 .ios-nav {
     display: flex;
     gap: var(--ios-spacing-2xl);
@@ -297,6 +298,7 @@ body.dark-mode .ios-logo:hover .ios-logo-text {
 
 .ios-nav a:hover::after {
     transform: scaleX(1);
+}
 }
 
 /* ===== Navigasi iOS - Mobile ===== */
