@@ -1,13 +1,13 @@
-// ===== TRANSLATION SYSTEM =====
-// This file handles all translations for the website
+// ===== SISTEM TRANSLASI =====
+// File ini menangani semua translasi untuk website
 
 function translateAllPage(lang) {
-    console.log('[Translate] Translating to:', lang);
+    console.log('[Translate] Menerjemahkan ke:', lang);
 
-    // Update HTML lang attribute
+    // Perbarui atribut lang HTML
     document.documentElement.lang = lang;
 
-    // Handle RTL for Arabic - Apply to body, not html, to prevent layout issues
+    // Handle RTL untuk Arab - Terapkan ke body, bukan html, untuk mencegah masalah layout
     if (lang === 'ar') {
         document.body.setAttribute('dir', 'rtl');
         document.body.style.direction = 'rtl';
@@ -17,8 +17,8 @@ function translateAllPage(lang) {
         document.body.style.direction = 'ltr';
         document.body.style.textAlign = 'left';
     }
-    
-    // Translate all elements with data-i18n attribute
+
+    // Terjemahkan semua elemen dengan atribut data-i18n
     document.querySelectorAll('[data-i18n]').forEach(element => {
         const key = element.getAttribute('data-i18n');
         const translation = getTranslation(key, lang);
@@ -30,8 +30,8 @@ function translateAllPage(lang) {
             }
         }
     });
-    
-    // Translate all elements with data-i18n-placeholder attribute
+
+    // Terjemahkan semua elemen dengan atribut data-i18n-placeholder
     document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
         const key = element.getAttribute('data-i18n-placeholder');
         const translation = getTranslation(key, lang);
@@ -39,57 +39,57 @@ function translateAllPage(lang) {
             element.placeholder = translation;
         }
     });
-    
-    // Save language preference
+
+    // Simpan preferensi bahasa
     localStorage.setItem('selectedLanguage', lang);
-    
-    console.log('[Translate] Translation complete for:', lang);
+
+    console.log('[Translate] Translasi selesai untuk:', lang);
 }
 
-// Get translation from translations object
+// Dapatkan translasi dari objek translations
 function getTranslation(key, lang) {
     if (typeof translations === 'undefined') {
         return key;
     }
-    
+
     if (translations[lang] && translations[lang][key]) {
         return translations[lang][key];
     }
-    
-    // Fallback to Indonesian
+
+    // Fallback ke Bahasa Indonesia
     if (translations['id'] && translations['id'][key]) {
         return translations['id'][key];
     }
-    
+
     return key;
 }
 
-// Get current language
+// Dapatkan bahasa saat ini
 function getCurrentLanguage() {
     return localStorage.getItem('selectedLanguage') || 'id';
 }
 
-// Load saved language on page load
+// Muat bahasa yang disimpan saat halaman dimuat
 function loadSavedLanguage() {
     const savedLang = getCurrentLanguage();
     return savedLang;
 }
 
-// Initialize translations on page load
+// Inisialisasi translasi saat halaman dimuat
 document.addEventListener('DOMContentLoaded', function() {
     const savedLang = loadSavedLanguage();
-    console.log('[Translate] Saved language:', savedLang);
-    
-    // Wait a bit for all scripts to load
+    console.log('[Translate] Bahasa tersimpan:', savedLang);
+
+    // Tunggu sebentar untuk semua script dimuat
     setTimeout(function() {
         if (typeof translations !== 'undefined') {
             translateAllPage(savedLang);
-            console.log('[Translate] Initial translation applied');
+            console.log('[Translate] Translasi awal diterapkan');
         }
     }, 500);
 });
 
-// Export functions
+// Ekspor fungsi
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = { translateAllPage, getTranslation, getCurrentLanguage };
 }

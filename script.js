@@ -1,4 +1,4 @@
-// ===== CONFIGURATION =====
+// ===== KONFIGURASI =====
 const config = {
     galleryImages: [
         { title: 'Pendidikan', src: 'assets/images/gallery/Foto_1.webp' },
@@ -12,15 +12,15 @@ const config = {
     ]
 };
 
-// ===== INITIALIZATION =====
+// ===== INISIALISASI =====
 document.addEventListener('DOMContentLoaded', () => {
-    // Load saved language and apply translations
+    // Muat bahasa yang disimpan dan terapkan translasi
     const savedLang = loadSavedLanguage();
     if (typeof translateAllPage === 'function') {
         translateAllPage(savedLang);
     }
 
-    // Initialize theme
+    // Inisialisasi tema
     initThemeToggle();
 
     initMobileMenu();
@@ -36,33 +36,33 @@ document.addEventListener('DOMContentLoaded', () => {
     initWhatsappDraggable();
 });
 
-// ===== THEME TOGGLE =====
+// ===== TOGGLE TEMA =====
 function initThemeToggle() {
     const toggle = document.getElementById('theme-toggle');
     if (!toggle) return;
 
-    // Load saved theme preference
+    // Muat preferensi tema yang disimpan
     const savedTheme = localStorage.getItem('theme') || 'light';
     if (savedTheme === 'dark') {
         document.body.classList.add('dark-mode');
     }
 
-    // Toggle theme on click
+    // Toggle tema saat diklik
     toggle.addEventListener('click', () => {
         document.body.classList.toggle('dark-mode');
         const isDark = document.body.classList.contains('dark-mode');
         localStorage.setItem('theme', isDark ? 'dark' : 'light');
-        
-        console.log('[Theme] Switched to', isDark ? 'dark' : 'light', 'mode');
+
+        console.log('[Tema] Beralih ke mode', isDark ? 'gelap' : 'terang');
     });
 }
 
-// Get current language
+// Dapatkan bahasa saat ini
 function getCurrentLanguage() {
     return localStorage.getItem('selectedLanguage') || 'id';
 }
 
-// ===== FUNCTIONS =====
+// ===== FUNGSI-FUNGSI =====
 
 function initMobileMenu() {
     const toggle = document.getElementById('mobile-menu-toggle');
@@ -75,7 +75,7 @@ function initMobileMenu() {
         document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
-    // Close menu when clicking on nav links
+    // Tutup menu saat mengklik tautan navigasi
     menu.querySelectorAll('a.nav-link').forEach(link => {
         link.addEventListener('click', () => {
             menu.classList.remove('active');
@@ -84,7 +84,7 @@ function initMobileMenu() {
         });
     });
 
-    // Close menu when clicking on language options
+    // Tutup menu saat mengklik opsi bahasa
     menu.querySelectorAll('.lang-option').forEach(option => {
         option.addEventListener('click', () => {
             menu.classList.remove('active');
@@ -93,7 +93,7 @@ function initMobileMenu() {
         });
     });
 
-    // Handle dropdown toggle for "Pustaka" menu on mobile
+    // Handle toggle dropdown untuk menu "Pustaka" di mobile
     const dropdownToggles = menu.querySelectorAll('.nav-dropdown-toggle');
     dropdownToggles.forEach(toggle => {
         toggle.addEventListener('click', (e) => {
@@ -114,7 +114,7 @@ function initLanguageSelector() {
 
     if (!selector || !toggle) return;
 
-    // Load saved language on page load
+    // Muat bahasa yang disimpan saat halaman dimuat
     const savedLang = loadSavedLanguage();
     updateLanguageUI(savedLang, options, toggle);
     if (footerSelect) footerSelect.value = savedLang;
@@ -125,52 +125,52 @@ function initLanguageSelector() {
         selector.classList.toggle('active');
     });
 
-    // Close dropdown when clicking outside
+    // Tutup dropdown saat mengklik di luar
     document.addEventListener('click', (e) => {
         if (!selector.contains(e.target)) {
             selector.classList.remove('active');
         }
     });
 
-    // Handle language selection from menu
+    // Handle pemilihan bahasa dari menu
     options.forEach(option => {
         option.addEventListener('click', (e) => {
             e.preventDefault();
             const lang = option.dataset.lang;
 
-            // Change the page language
+            // Ubah bahasa halaman
             if (typeof translateAllPage === 'function') {
                 translateAllPage(lang);
             }
 
-            // Update active state
+            // Perbarui status aktif
             options.forEach(opt => opt.classList.remove('active'));
             option.classList.add('active');
 
-            // Update toggle display
+            // Perbarui tampilan toggle
             updateLanguageUI(lang, options, toggle);
 
-            // Sync footer selector
+            // Sinkronisasi selector footer
             if (footerSelect) footerSelect.value = lang;
 
-            // Close dropdown
+            // Tutup dropdown
             selector.classList.remove('active');
-            
-            console.log('[Language] Changed to:', lang);
+
+            console.log('[Bahasa] Diubah ke:', lang);
         });
     });
 
-    // Handle language selection from footer select
+    // Handle pemilihan bahasa dari selector footer
     if (footerSelect) {
         footerSelect.addEventListener('change', (e) => {
             const lang = e.target.value;
 
-            // Change the page language
+            // Ubah bahasa halaman
             if (typeof translateAllPage === 'function') {
                 translateAllPage(lang);
             }
 
-            // Update menu selector
+            // Perbarui selector menu
             options.forEach(opt => {
                 opt.classList.remove('active');
                 if (opt.dataset.lang === lang) {
@@ -178,13 +178,13 @@ function initLanguageSelector() {
                 }
             });
 
-            // Update toggle display
+            // Perbarui tampilan toggle
             updateLanguageUI(lang, options, toggle);
 
-            // Close the menu dropdown if it's open
+            // Tutup dropdown menu jika terbuka
             selector.classList.remove('active');
-            
-            console.log('[Language] Changed to:', lang);
+
+            console.log('[Bahasa] Diubah ke:', lang);
         });
     }
 }
@@ -192,18 +192,18 @@ function initLanguageSelector() {
 function updateLanguageUI(lang, options, toggle) {
     const currentLang = document.querySelector('.lang-current');
     if (currentLang) {
-        // Find the selected option text
+        // Temukan teks opsi yang dipilih
         const selectedOption = document.querySelector(`.lang-option[data-lang="${lang}"]`);
         if (selectedOption) {
-            // Show full country name (e.g., "Bahasa Indonesia", "English (United States)")
+            // Tampilkan nama negara lengkap (mis. "Bahasa Indonesia", "English (United States)")
             currentLang.textContent = selectedOption.textContent.trim();
         } else {
-            // Fallback to lang code if no option found
+            // Fallback ke kode bahasa jika opsi tidak ditemukan
             currentLang.textContent = lang.toUpperCase();
         }
     }
 
-    // Update active state
+    // Perbarui status aktif
     options.forEach(opt => {
         opt.classList.remove('active');
         if (opt.dataset.lang === lang) {
@@ -230,16 +230,16 @@ function initSmoothScroll() {
 }
 
 function initCarousel() {
-    // New Apple-Style Gallery
+    // Galeri Gaya Apple Baru
     const appleTrack = document.getElementById('gallery-apple-track');
     const appleIndicators = document.getElementById('gallery-apple-indicators');
     const applePrevBtn = document.getElementById('gallery-apple-prev');
     const appleNextBtn = document.getElementById('gallery-apple-next');
-    
+
     if (appleTrack) {
         let index = 0;
-        
-        // Create slides with captions
+
+        // Buat slide dengan keterangan
         appleTrack.innerHTML = config.galleryImages.map(img => `
             <div class="gallery-apple-slide">
                 <img src="${img.src}" alt="${img.title}" loading="lazy">
@@ -250,7 +250,7 @@ function initCarousel() {
             </div>
         `).join('');
 
-        // Create indicators
+        // Buat indikator
         if (appleIndicators) {
             appleIndicators.innerHTML = config.galleryImages.map((_, i) =>
                 `<button class="gallery-apple-indicator ${i === 0 ? 'active' : ''}" data-index="${i}"></button>`
@@ -264,8 +264,8 @@ function initCarousel() {
             document.querySelectorAll('.gallery-apple-indicator').forEach((ind, i) => {
                 ind.classList.toggle('active', i === index);
             });
-            
-            // Reset animation on captions
+
+            // Reset animasi pada keterangan
             const activeSlide = appleTrack.querySelectorAll('.gallery-apple-slide')[index];
             if (activeSlide) {
                 const caption = activeSlide.querySelector('.gallery-apple-caption h4');
@@ -285,28 +285,28 @@ function initCarousel() {
         }
 
         if (applePrevBtn) {
-            applePrevBtn.addEventListener('click', () => { 
-                index = (index - 1 + config.galleryImages.length) % config.galleryImages.length; 
-                updateAppleGallery(); 
+            applePrevBtn.addEventListener('click', () => {
+                index = (index - 1 + config.galleryImages.length) % config.galleryImages.length;
+                updateAppleGallery();
             });
         }
-        
+
         if (appleNextBtn) {
-            appleNextBtn.addEventListener('click', () => { 
-                index = (index + 1) % config.galleryImages.length; 
-                updateAppleGallery(); 
+            appleNextBtn.addEventListener('click', () => {
+                index = (index + 1) % config.galleryImages.length;
+                updateAppleGallery();
             });
         }
-        
+
         document.querySelectorAll('.gallery-apple-indicator').forEach(ind => {
-            ind.addEventListener('click', (e) => { 
-                index = parseInt(e.target.dataset.index); 
-                updateAppleGallery(); 
+            ind.addEventListener('click', (e) => {
+                index = parseInt(e.target.dataset.index);
+                updateAppleGallery();
             });
         });
     }
 
-    // Old Carousel - Keep for fallback
+    // Carousel Lama - Simpan untuk fallback
     const track = document.getElementById('carousel-track');
     const indicators = document.getElementById('carousel-indicators');
     const prevBtn = document.getElementById('carousel-prev');
@@ -357,53 +357,53 @@ function initProgramFilter() {
 }
 
 function initContactForm() {
-    console.log('[initContactForm] Function called');
-    
+    console.log('[initContactForm] Fungsi dipanggil');
+
     const form = document.getElementById('contact-form');
-    console.log('[initContactForm] Form element:', form);
-    
+    console.log('[initContactForm] Elemen form:', form);
+
     if (!form) {
-        console.error('[initContactForm] Form not found!');
+        console.error('[initContactForm] Form tidak ditemukan!');
         return;
     }
 
-    // Add debug listener first
+    // Tambahkan listener debug terlebih dahulu
     form.addEventListener('submit', (e) => {
-        console.log('=== FORM SUBMIT EVENT DETECTED ===');
-        console.log('Submit button clicked!');
+        console.log('=== EVENT SUBMIT FORM TERDETEKSI ===');
+        console.log('Tombol submit diklik!');
     });
 
-    // Check if Google Drive integration is available
+    // Periksa apakah integrasi Google Drive tersedia
     const googleScriptUrl = typeof GOOGLE_SCRIPT_URL !== 'undefined' ? GOOGLE_SCRIPT_URL : null;
     const hasHandleSubmit = typeof handleContactFormSubmit === 'function';
-    
-    console.log('[initContactForm] Google Script URL:', googleScriptUrl);
-    console.log('[initContactForm] handleContactFormSubmit available:', hasHandleSubmit);
-    
+
+    console.log('[initContactForm] URL Google Script:', googleScriptUrl);
+    console.log('[initContactForm] handleContactFormSubmit tersedia:', hasHandleSubmit);
+
     if (googleScriptUrl && hasHandleSubmit) {
-        // Use Google Drive integration
-        console.log('[initContactForm] Using Google Drive integration');
+        // Gunakan integrasi Google Drive
+        console.log('[initContactForm] Menggunakan integrasi Google Drive');
         form.addEventListener('submit', handleContactFormSubmit);
-        
-        // Add file input change listener for real-time validation
+
+        // Tambahkan listener perubahan input file untuk validasi real-time
         const fileInput = document.getElementById('form-file');
-        console.log('[initContactForm] File input:', fileInput);
-        
+        console.log('[initContactForm] Input file:', fileInput);
+
         if (fileInput) {
             fileInput.addEventListener('change', (e) => {
                 const file = e.target.files[0];
                 const errorFile = document.getElementById('error-file');
                 const fileUploadText = document.getElementById('file-upload-text');
-                
+
                 if (file) {
-                    // Update displayed file name
+                    // Perbarui nama file yang ditampilkan
                     fileUploadText.textContent = file.name;
                     fileUploadText.classList.add('file-selected');
-                    
+
                     const validation = validateFile(file);
                     if (!validation.valid) {
                         errorFile.textContent = validation.message;
-                        fileInput.value = ''; // Clear invalid file
+                        fileInput.value = ''; // Hapus file yang tidak valid
                         fileUploadText.textContent = t('contact.form.file.noFile', getCurrentLanguage());
                         fileUploadText.classList.remove('file-selected');
                     } else {
@@ -414,11 +414,11 @@ function initContactForm() {
                     fileUploadText.classList.remove('file-selected');
                 }
             });
-            console.log('[initContactForm] File input listener added');
+            console.log('[initContactForm] Listener input file ditambahkan');
         }
     } else {
-        // Fallback to old WhatsApp method
-        console.log('[initContactForm] Using WhatsApp fallback method');
+        // Fallback ke metode WhatsApp lama
+        console.log('[initContactForm] Menggunakan metode fallback WhatsApp');
         form.addEventListener('submit', (e) => {
             e.preventDefault();
             const name = form.name.value.trim();
@@ -446,19 +446,19 @@ function initContactForm() {
             }, 1000);
         });
     }
-    
-    console.log('[initContactForm] Initialization complete');
+
+    console.log('[initContactForm] Inisialisasi selesai');
 }
 
 function initNews() {
     const newsGrid = document.getElementById('news-grid');
     if (!newsGrid) return;
 
-    // Get current language
+    // Dapatkan bahasa saat ini
     const currentLang = localStorage.getItem('selectedLanguage') || 'id';
 
     newsGrid.innerHTML = config.newsData.map(item => {
-        // Get translated content
+        // Dapatkan konten yang diterjemahkan
         const titleKey = `news.${item.id}.title`;
         const excerptKey = `news.${item.id}.excerpt`;
         const categoryKey = `news.${item.id}.category`;
@@ -470,7 +470,7 @@ function initNews() {
         const category = (translations[currentLang] && translations[currentLang][categoryKey]) ||
                          (translations['id'] && translations['id'][categoryKey]) || item.category;
 
-        // Get translated "Read More" text
+        // Dapatkan teks "Baca Selengkapnya" yang diterjemahkan
         const readMoreText = t('news.readmore', currentLang) || 'Baca Selengkapnya →';
 
         return `
@@ -519,20 +519,20 @@ function initHeaderShadow() {
     });
 }
 
-// ===== WHATSAPP DRAGGABLE BUTTON =====
+// ===== TOMBOL WHATSAPP YANG BISA DIGESER =====
 function initWhatsappDraggable() {
     const draggable = document.getElementById('whatsapp-draggable');
     const bubble = document.getElementById('whatsapp-bubble');
     if (!draggable || !bubble) return;
 
     const WHATSAPP_URL = 'https://wa.me/6282144240440';
-    
+
     let isDragging = false;
     let hasMoved = false;
     let startX = 0, startY = 0, initialX = 0, initialY = 0;
     let currentX = 0, currentY = 0;
 
-    // Load saved position
+    // Muat posisi yang disimpan
     const savedPosition = localStorage.getItem('whatsappPosition');
     if (savedPosition) {
         const pos = JSON.parse(savedPosition);
@@ -545,43 +545,43 @@ function initWhatsappDraggable() {
         localStorage.setItem('whatsappPosition', JSON.stringify({ x: currentX, y: currentY }));
     }
 
-    // Mouse drag
+    // Drag mouse
     draggable.onmousedown = dragStart;
     function dragStart(e) {
         if (e.button !== 0) return;
-        
+
         isDragging = false;
         hasMoved = false;
         startX = e.clientX;
         startY = e.clientY;
         initialX = currentX;
         initialY = currentY;
-        
+
         document.onmousemove = drag;
         document.onmouseup = dragEnd;
     }
-    
+
     function drag(e) {
         const dx = e.clientX - startX;
         const dy = e.clientY - startY;
-        
+
         if (!isDragging && (Math.abs(dx) > 8 || Math.abs(dy) > 8)) {
             isDragging = true;
             hasMoved = true;
             draggable.classList.add('dragging');
         }
-        
+
         if (isDragging) {
             currentX = initialX + dx;
             currentY = initialY + dy;
             draggable.style.transform = `translate(${currentX}px, ${currentY}px)`;
         }
     }
-    
+
     function dragEnd() {
         document.onmousemove = null;
         document.onmouseup = null;
-        
+
         if (isDragging) {
             draggable.classList.remove('dragging');
             savePosition();
@@ -589,7 +589,7 @@ function initWhatsappDraggable() {
         isDragging = false;
     }
 
-    // Touch drag
+    // Drag touch
     draggable.ontouchstart = dragStartTouch;
     function dragStartTouch(e) {
         isDragging = false;
@@ -598,21 +598,21 @@ function initWhatsappDraggable() {
         startY = e.touches[0].clientY;
         initialX = currentX;
         initialY = currentY;
-        
+
         document.ontouchmove = dragTouch;
         document.ontouchend = dragEndTouch;
     }
-    
+
     function dragTouch(e) {
         const dx = e.touches[0].clientX - startX;
         const dy = e.touches[0].clientY - startY;
-        
+
         if (!isDragging && (Math.abs(dx) > 8 || Math.abs(dy) > 8)) {
             isDragging = true;
             hasMoved = true;
             draggable.classList.add('dragging');
         }
-        
+
         if (isDragging) {
             currentX = initialX + dx;
             currentY = initialY + dy;
@@ -620,11 +620,11 @@ function initWhatsappDraggable() {
         }
         e.preventDefault();
     }
-    
+
     function dragEndTouch() {
         document.ontouchmove = null;
         document.ontouchend = null;
-        
+
         if (isDragging) {
             draggable.classList.remove('dragging');
             savePosition();
@@ -632,7 +632,7 @@ function initWhatsappDraggable() {
         isDragging = false;
     }
 
-    // Click handler - open WhatsApp if not dragged
+    // Handler klik - buka WhatsApp jika tidak digeser
     draggable.onclick = function() {
         if (!hasMoved) {
             window.open(WHATSAPP_URL, '_blank');
@@ -640,11 +640,11 @@ function initWhatsappDraggable() {
         hasMoved = false;
     };
 
-    // Keyboard support
+    // Dukungan keyboard
     draggable.addEventListener('keydown', (e) => {
         const step = 20;
         let moved = false;
-        
+
         switch (e.key) {
             case 'ArrowUp': currentY -= step; moved = true; break;
             case 'ArrowDown': currentY += step; moved = true; break;
@@ -657,7 +657,7 @@ function initWhatsappDraggable() {
                 window.open(WHATSAPP_URL, '_blank');
                 return;
         }
-        
+
         if (moved) {
             e.preventDefault();
             draggable.style.transform = `translate(${currentX}px, ${currentY}px)`;
@@ -665,7 +665,7 @@ function initWhatsappDraggable() {
         }
     });
 
-    // Resize handler
+    // Handler resize
     let resizeTimeout;
     window.addEventListener('resize', () => {
         clearTimeout(resizeTimeout);
