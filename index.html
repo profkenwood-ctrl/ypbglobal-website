@@ -44,13 +44,14 @@
         .ios-logo-circle{width:32px;height:32px;border-radius:50%;overflow:hidden;flex-shrink:0;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);display:flex;align-items:center;justify-content:center}
         .ios-logo-img{width:100%;height:100%;object-fit:cover}
         .ios-logo-text{font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:140px;color:#667eea}
-        .ios-mobile-toggle{display:flex!important;flex-direction:column;justify-content:center;align-items:center;gap:4px;background:none;border:none;cursor:pointer;padding:0;width:40px;height:40px;flex-shrink:0;margin-left:auto}
+        .nav-controls{display:flex;align-items:center;gap:8px;flex-shrink:0}
+        .theme-toggle{width:36px;height:36px;background:rgba(0,0,0,.05);border:none;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0}
+        .theme-toggle svg{width:18px;height:18px;color:#000}
+        .ios-mobile-toggle{display:flex!important;flex-direction:column;justify-content:center;align-items:center;gap:4px;background:none;border:none;cursor:pointer;padding:0;width:40px;height:40px;flex-shrink:0}
         .ios-mobile-toggle span{display:block;width:22px;height:2px;background:#000;transition:all .3s ease;border-radius:2px;margin:0}
         .ios-mobile-toggle[aria-expanded="true"] span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
         .ios-mobile-toggle[aria-expanded="true"] span:nth-child(2){opacity:0;transform:translateX(-10px)}
         .ios-mobile-toggle[aria-expanded="true"] span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
-        .theme-toggle{width:36px;height:36px;background:rgba(0,0,0,.05);border:none;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;order:3}
-        .theme-toggle svg{width:18px;height:18px;color:#000}
         #nav-menu.ios-nav{display:none;position:fixed;top:52px;left:0;right:0;bottom:0;width:100%;background:rgba(255,255,255,.98);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);flex-direction:column;padding:0;gap:0;overflow-y:auto;overflow-x:hidden;z-index:9999;-webkit-overflow-scrolling:touch}
         #nav-menu.ios-nav.active{display:flex;animation:slideDown .3s ease}
         @keyframes slideDown{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
@@ -167,6 +168,7 @@
     <!-- Header -->
     <header class="ios-header" role="banner">
         <nav role="navigation" aria-label="Navigasi utama">
+            <!-- Logo - Left Side -->
             <a href="#home" class="ios-logo">
                 <div class="ios-logo-circle">
                     <img src="assets/images/Logo_YPBGlobal.jpeg" alt="YPBG Logo" class="ios-logo-img">
@@ -174,12 +176,35 @@
                 <span class="ios-logo-text" data-i18n="brand.name">Yayasan Persada Bakti Global</span>
             </a>
 
-            <button id="mobile-menu-toggle" class="ios-mobile-toggle" aria-expanded="false" aria-label="Buka menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <!-- Right Side Controls Container -->
+            <div class="nav-controls">
+                <!-- Theme Toggle - Always Visible -->
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
 
+                <!-- Mobile Menu Toggle - Only on Mobile -->
+                <button id="mobile-menu-toggle" class="ios-mobile-toggle" aria-expanded="false" aria-label="Buka menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+
+            <!-- Desktop Navigation -->
             <ul id="nav-menu" class="ios-nav" role="menubar">
                 <li role="none"><a role="menuitem" class="nav-link" data-smooth href="#home" data-i18n="nav.home">Beranda</a></li>
                 <li role="none"><a role="menuitem" class="nav-link" data-smooth href="#about" data-i18n="nav.about">Tentang</a></li>
@@ -232,24 +257,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Theme Toggle -->
-            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-                <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="12" r="5"></circle>
-                    <line x1="12" y1="1" x2="12" y2="3"></line>
-                    <line x1="12" y1="21" x2="12" y2="23"></line>
-                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                    <line x1="1" y1="12" x2="3" y2="12"></line>
-                    <line x1="21" y1="12" x2="23" y2="12"></line>
-                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                </svg>
-                <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                </svg>
-            </button>
         </nav>
     </header>
 

@@ -87,6 +87,34 @@
         background-clip: text;
     }
     
+    /* ===== NAV CONTROLS - THEME TOGGLE + HAMBURGER ===== */
+    .nav-controls {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-shrink: 0;
+    }
+    
+    /* ===== THEME TOGGLE - ALWAYS VISIBLE ===== */
+    .theme-toggle {
+        width: 36px;
+        height: 36px;
+        background: rgba(0, 0, 0, 0.05);
+        border: none;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        flex-shrink: 0;
+    }
+    
+    .theme-toggle svg {
+        width: 18px;
+        height: 18px;
+        color: #000;
+    }
+    
     /* ===== MOBILE MENU BUTTON - PERFECT ALIGNMENT ===== */
     .ios-mobile-toggle {
         display: flex !important;
@@ -101,7 +129,6 @@
         width: 40px;
         height: 40px;
         flex-shrink: 0;
-        margin-left: auto;
     }
     
     .ios-mobile-toggle span {
