@@ -1,28 +1,33 @@
 /* ===================================
    YPBG - MOBILE RESPONSIVE STYLES
-   Complete Mobile Layout Fix
+   Complete Fix for All Elements
    =================================== */
 
 /* ===== MOBILE BASE (Max Width 768px) ===== */
 @media (max-width: 768px) {
     
-    /* ===== GLOBAL RESET ===== */
-    *, *::before, *::after {
-        box-sizing: border-box;
-    }
-    
+    /* ===== GLOBAL ===== */
     html {
         overflow-x: hidden;
         width: 100%;
+        scroll-behavior: smooth;
     }
     
     body {
         overflow-x: hidden;
         width: 100%;
         max-width: 100vw;
+        margin: 0;
+        padding: 0;
     }
     
-    /* ===== IOS HEADER - MOBILE ===== */
+    .container {
+        width: 100%;
+        padding: 0 16px;
+        max-width: 100%;
+    }
+    
+    /* ===== IOS HEADER - FIXED ===== */
     .ios-header {
         position: fixed;
         top: 0;
@@ -33,10 +38,11 @@
         backdrop-filter: saturate(180%) blur(20px);
         -webkit-backdrop-filter: saturate(180%) blur(20px);
         border-bottom: 0.5px solid rgba(60, 60, 67, 0.12);
-        z-index: 9999;
+        z-index: 10000;
     }
     
     .ios-header nav {
+        width: 100%;
         max-width: 100%;
         margin: 0;
         padding: 0 16px;
@@ -47,7 +53,7 @@
         overflow: visible;
     }
     
-    /* ===== IOS LOGO - MOBILE ===== */
+    /* ===== LOGO ===== */
     .ios-logo {
         display: flex;
         align-items: center;
@@ -55,6 +61,7 @@
         text-decoration: none;
         color: #000;
         flex-shrink: 0;
+        min-width: 0;
     }
     
     .ios-logo-circle {
@@ -63,6 +70,10 @@
         border-radius: 50%;
         overflow: hidden;
         flex-shrink: 0;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     
     .ios-logo-img {
@@ -77,13 +88,18 @@
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        max-width: 180px;
+        max-width: 150px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
     }
     
-    /* ===== MOBILE MENU TOGGLE ===== */
+    /* ===== MOBILE MENU BUTTON ===== */
     .ios-mobile-toggle {
         display: flex !important;
         flex-direction: column;
+        justify-content: center;
         gap: 4px;
         background: none;
         border: none;
@@ -91,15 +107,18 @@
         padding: 6px;
         z-index: 10001;
         flex-shrink: 0;
+        width: 40px;
+        height: 40px;
     }
     
     .ios-mobile-toggle span {
         display: block;
-        width: 22px;
+        width: 24px;
         height: 2px;
         background: #000;
         transition: all 0.3s ease;
         border-radius: 2px;
+        margin: 0;
     }
     
     /* Hamburger Animation */
@@ -109,20 +128,43 @@
     
     .ios-mobile-toggle[aria-expanded="true"] span:nth-child(2) {
         opacity: 0;
+        transform: translateX(-10px);
     }
     
     .ios-mobile-toggle[aria-expanded="true"] span:nth-child(3) {
         transform: rotate(-45deg) translate(6px, -6px);
     }
     
-    /* ===== IOS NAV - MOBILE DROPDOWN ===== */
-    .ios-nav {
+    /* ===== THEME TOGGLE ===== */
+    .theme-toggle {
+        width: 40px;
+        height: 40px;
+        background: rgba(0, 0, 0, 0.05);
+        border: none;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        flex-shrink: 0;
+        margin-left: 8px;
+    }
+    
+    .theme-toggle svg {
+        width: 20px;
+        height: 20px;
+        color: #000;
+    }
+    
+    /* ===== MOBILE NAVIGATION MENU ===== */
+    #nav-menu.ios-nav {
         display: none;
         position: fixed;
         top: 52px;
         left: 0;
         right: 0;
         bottom: 0;
+        width: 100%;
         background: rgba(255, 255, 255, 0.98);
         backdrop-filter: saturate(180%) blur(20px);
         -webkit-backdrop-filter: saturate(180%) blur(20px);
@@ -133,14 +175,14 @@
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
         -ms-overflow-style: none;
-        z-index: 9998;
+        z-index: 9999;
     }
     
-    .ios-nav::-webkit-scrollbar {
+    #nav-menu.ios-nav::-webkit-scrollbar {
         display: none;
     }
     
-    .ios-nav.active {
+    #nav-menu.ios-nav.active {
         display: flex;
         animation: slideDown 0.3s ease;
     }
@@ -156,16 +198,16 @@
         }
     }
     
-    .ios-nav li {
+    #nav-menu.ios-nav li {
         width: 100%;
         border-bottom: 1px solid rgba(60, 60, 67, 0.1);
     }
     
-    .ios-nav li:last-child {
+    #nav-menu.ios-nav li:last-child {
         border-bottom: none;
     }
     
-    .ios-nav a {
+    #nav-menu.ios-nav a {
         display: block;
         padding: 16px 0;
         font-size: 16px;
@@ -175,11 +217,15 @@
         transition: all 0.2s ease;
     }
     
-    .ios-nav a:hover {
+    #nav-menu.ios-nav a:hover {
         color: #0071e3;
     }
     
-    /* ===== NAVIGATION DROPDOWN - MOBILE ===== */
+    /* ===== NAVIGATION DROPDOWN ===== */
+    .nav-dropdown {
+        position: relative;
+    }
+    
     .nav-dropdown-menu {
         position: static;
         width: 100%;
@@ -192,6 +238,7 @@
         background: rgba(0, 0, 0, 0.03);
         border-radius: 12px;
         display: none;
+        list-style: none;
     }
     
     .nav-dropdown.active .nav-dropdown-menu {
@@ -214,12 +261,19 @@
         color: #6e6e73;
     }
     
+    .nav-dropdown-menu a:hover {
+        background: rgba(0, 113, 227, 0.08);
+    }
+    
     .nav-dropdown-toggle {
         cursor: pointer;
         user-select: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
     
-    /* ===== LANGUAGE SELECTOR - MOBILE ===== */
+    /* ===== LANGUAGE SELECTOR ===== */
     .language-selector {
         width: 100%;
         margin-top: 20px;
@@ -250,6 +304,7 @@
         border-radius: 12px;
         display: none;
         overflow: hidden;
+        background: #fff;
     }
     
     .language-selector.active .lang-dropdown {
@@ -266,11 +321,12 @@
     }
     
     .lang-region-title {
-        font-size: 12px;
+        font-size: 11px;
         font-weight: 600;
         color: #86868b;
         padding: 0 16px 8px;
         text-transform: uppercase;
+        letter-spacing: 0.5px;
     }
     
     .lang-option {
@@ -279,6 +335,7 @@
         font-size: 14px;
         color: #1d1d1f;
         text-decoration: none;
+        transition: background 0.2s ease;
     }
     
     .lang-option:hover {
@@ -288,30 +345,13 @@
     .lang-option.active {
         color: #0071e3;
         font-weight: 600;
+        background: rgba(0, 113, 227, 0.08);
     }
     
-    /* ===== THEME TOGGLE - MOBILE ===== */
-    .theme-toggle {
-        width: 40px;
-        height: 40px;
-        background: rgba(0, 0, 0, 0.05);
-        border: none;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        flex-shrink: 0;
-    }
-    
-    .theme-toggle svg {
-        width: 20px;
-        height: 20px;
-    }
-    
-    /* ===== HERO SECTION - MOBILE ===== */
+    /* ===== HERO SECTION - VIDEO FULL WIDTH ===== */
     .hero {
         position: relative;
+        width: 100%;
         height: 100vh;
         min-height: 100vh;
         max-height: 100vh;
@@ -319,8 +359,8 @@
         align-items: center;
         justify-content: center;
         overflow: hidden;
-        margin-top: 0;
-        padding-top: 52px;
+        margin: 0;
+        padding: 0;
     }
     
     .hero-video {
@@ -347,6 +387,7 @@
         z-index: 2;
         text-align: center;
         color: #fff;
+        width: 100%;
         max-width: 100%;
         padding: 0 20px;
     }
@@ -357,6 +398,7 @@
         font-weight: 700;
         margin-bottom: 16px;
         letter-spacing: -0.02em;
+        text-shadow: 0 2px 20px rgba(0,0,0,0.5);
     }
     
     .hero-subtitle {
@@ -364,6 +406,7 @@
         line-height: 1.5;
         margin-bottom: 24px;
         opacity: 0.95;
+        text-shadow: 0 1px 10px rgba(0,0,0,0.5);
     }
     
     .hero-cta {
@@ -371,6 +414,8 @@
         flex-direction: column;
         gap: 12px;
         width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
     }
     
     .hero-cta .btn {
@@ -379,33 +424,40 @@
     
     /* ===== HERO SEPARATOR ===== */
     .hero-separator-apple {
+        width: 100%;
         height: 1px;
         background: linear-gradient(90deg, transparent 0%, rgba(210, 210, 215, 0.3) 50%, transparent 100%);
         margin: 0;
     }
     
-    /* ===== HOME HIGHLIGHTS - MOBILE ===== */
+    /* ===== HOME HIGHLIGHTS - ALL 3 CARDS VISIBLE ===== */
     .home-highlights-apple {
         padding: 40px 0;
+        width: 100%;
     }
     
     .highlights-apple-grid {
         display: grid;
         grid-template-columns: 1fr;
         gap: 16px;
-        padding: 0 16px;
+        width: 100%;
+        padding: 0;
+        margin: 0;
     }
     
     .liquid-glass-link {
         display: block;
         width: 100%;
+        height: 100%;
     }
     
     .liquid-glass-card {
-        height: 280px;
+        width: 100%;
+        height: 300px;
         border-radius: 20px;
         overflow: hidden;
         position: relative;
+        display: block;
     }
     
     .liquid-glass-background {
@@ -420,6 +472,7 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+        display: block;
     }
     
     .liquid-glass-overlay {
@@ -442,17 +495,20 @@
     }
     
     .liquid-glass-icon {
-        font-size: 48px;
+        font-size: 50px;
         margin-bottom: 16px;
         text-align: center;
+        display: block;
+        filter: drop-shadow(0 4px 20px rgba(0,0,0,0.5));
     }
     
     .liquid-glass-title {
-        font-size: 24px;
+        font-size: 26px;
         font-weight: 700;
         margin-bottom: 8px;
         text-align: center;
         text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+        color: #fff;
     }
     
     .liquid-glass-description {
@@ -460,38 +516,74 @@
         text-align: center;
         opacity: 0.95;
         text-shadow: 0 1px 10px rgba(0,0,0,0.5);
+        color: rgba(255,255,255,0.95);
     }
     
-    /* ===== ABOUT SECTION - MOBILE ===== */
+    /* Overlay colors for different cards */
+    .tentang-card .liquid-glass-overlay {
+        background: linear-gradient(135deg, rgba(102, 126, 234, 0.8) 0%, rgba(118, 75, 162, 0.85) 100%);
+    }
+    
+    .program-card .liquid-glass-overlay {
+        background: linear-gradient(135deg, rgba(17, 153, 142, 0.8) 0%, rgba(56, 239, 125, 0.85) 100%);
+    }
+    
+    .publikasi-card .liquid-glass-overlay {
+        background: linear-gradient(135deg, rgba(240, 147, 251, 0.8) 0%, rgba(245, 87, 108, 0.85) 100%);
+    }
+    
+    .kasih-card .liquid-glass-overlay {
+        background: linear-gradient(135deg, rgba(255, 77, 77, 0.8) 0%, rgba(255, 127, 80, 0.85) 100%);
+    }
+    
+    .integritas-card .liquid-glass-overlay {
+        background: linear-gradient(135deg, rgba(77, 127, 255, 0.8) 0%, rgba(77, 207, 255, 0.85) 100%);
+    }
+    
+    .harapan-card .liquid-glass-overlay {
+        background: linear-gradient(135deg, rgba(255, 167, 77, 0.8) 0%, rgba(255, 207, 77, 0.85) 100%);
+    }
+    
+    .kolaborasi-card .liquid-glass-overlay {
+        background: linear-gradient(135deg, rgba(127, 255, 127, 0.8) 0%, rgba(77, 255, 127, 0.85) 100%);
+    }
+    
+    /* ===== ABOUT SECTION ===== */
     .about {
-        padding: 40px 16px;
+        padding: 40px 0;
+        width: 100%;
     }
     
     .section-title {
         font-size: 28px;
         margin-bottom: 30px;
         text-align: center;
+        width: 100%;
     }
     
     .subsection-title {
         font-size: 22px;
         margin: 40px 0 20px;
         text-align: center;
+        width: 100%;
     }
     
-    /* ===== VISI MISI - MOBILE ===== */
+    /* ===== VISI MISI - BOTH CARDS VISIBLE ===== */
     .visi-misi-apple {
         display: grid;
         grid-template-columns: 1fr;
         gap: 16px;
         margin-bottom: 40px;
+        width: 100%;
     }
     
     .apple-hero-card {
-        height: 350px;
+        width: 100%;
+        height: 380px;
         border-radius: 20px;
         overflow: hidden;
         position: relative;
+        display: block;
     }
     
     .apple-hero-background {
@@ -506,6 +598,7 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+        display: block;
     }
     
     .apple-hero-overlay {
@@ -514,6 +607,7 @@
         left: 0;
         width: 100%;
         height: 100%;
+        background: linear-gradient(135deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.7) 100%);
     }
     
     .apple-hero-content {
@@ -530,49 +624,62 @@
     }
     
     .apple-hero-icon {
-        font-size: 50px;
+        font-size: 55px;
         margin-bottom: 16px;
+        filter: drop-shadow(0 4px 20px rgba(0,0,0,0.5));
     }
     
     .apple-hero-title {
-        font-size: 28px;
+        font-size: 32px;
         font-weight: 700;
         margin-bottom: 12px;
         text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+        color: #fff;
     }
     
     .apple-hero-description {
-        font-size: 14px;
+        font-size: 15px;
         line-height: 1.5;
         text-shadow: 0 1px 10px rgba(0,0,0,0.5);
+        color: rgba(255,255,255,0.95);
     }
     
     .apple-hero-list {
         list-style: none;
         padding: 0;
-        margin: 0;
+        margin: 16px 0 0;
         text-align: left;
+        width: 100%;
     }
     
     .apple-hero-list li {
         font-size: 14px;
         line-height: 1.8;
         margin-bottom: 8px;
+        color: rgba(255,255,255,0.95);
+        text-shadow: 0 1px 10px rgba(0,0,0,0.5);
     }
     
-    /* ===== VALUES GRID - MOBILE ===== */
+    /* ===== VALUES GRID - ALL 4 CARDS VISIBLE ===== */
     .values-apple-grid {
         display: grid;
         grid-template-columns: 1fr;
         gap: 16px;
         margin-bottom: 40px;
+        width: 100%;
     }
     
+    .values-apple-grid .liquid-glass-card {
+        height: 320px;
+    }
+    
+    /* ===== VALUES GRID (2 columns on mobile) ===== */
     .values-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 12px;
         margin-bottom: 40px;
+        width: 100%;
     }
     
     .value-card {
@@ -580,6 +687,9 @@
         padding: 20px 16px;
         border-radius: 16px;
         text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     
     .value-card img {
@@ -591,16 +701,19 @@
     .value-card h3 {
         font-size: 15px;
         margin-bottom: 6px;
+        color: #1d1d1f;
     }
     
     .value-card p {
         font-size: 13px;
         color: #6e6e73;
+        line-height: 1.4;
     }
     
-    /* ===== ORG CHART - MOBILE ===== */
+    /* ===== ORG CHART - ALL LEVELS VISIBLE ===== */
     .org-chart-apple {
         padding: 20px 8px;
+        width: 100%;
     }
     
     .org-level-apple {
@@ -608,6 +721,7 @@
         flex-direction: column;
         align-items: center;
         gap: 16px;
+        width: 100%;
     }
     
     .org-id-card-link {
@@ -624,6 +738,7 @@
         background: #fff;
         border-radius: 16px;
         box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        width: 100%;
     }
     
     .org-id-photo {
@@ -632,6 +747,7 @@
         border-radius: 50%;
         overflow: hidden;
         margin-bottom: 16px;
+        flex-shrink: 0;
     }
     
     .org-id-photo img {
@@ -664,13 +780,14 @@
         background: #d2d2d7;
     }
     
-    /* ===== PROGRAMS & NEWS - MOBILE ===== */
+    /* ===== PROGRAMS & NEWS - ALL ITEMS VISIBLE ===== */
     .programs-grid,
     .news-grid {
         display: grid;
         grid-template-columns: 1fr;
         gap: 16px;
-        padding: 0 16px;
+        padding: 0;
+        width: 100%;
     }
     
     .program-card,
@@ -679,6 +796,7 @@
         border-radius: 16px;
         overflow: hidden;
         box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        display: block;
     }
     
     .program-image,
@@ -686,6 +804,7 @@
         width: 100%;
         height: 180px;
         object-fit: cover;
+        display: block;
     }
     
     .program-content,
@@ -698,6 +817,7 @@
         font-size: 17px;
         font-weight: 600;
         margin-bottom: 8px;
+        color: #1d1d1f;
     }
     
     .program-description,
@@ -707,15 +827,17 @@
         color: #6e6e73;
     }
     
-    /* ===== CONTACT - MOBILE ===== */
+    /* ===== CONTACT ===== */
     .contact {
-        padding: 40px 16px;
+        padding: 40px 0;
+        width: 100%;
     }
     
     .contact-wrapper {
         display: grid;
         grid-template-columns: 1fr;
         gap: 24px;
+        width: 100%;
     }
     
     .contact-info,
@@ -723,17 +845,20 @@
         background: #f5f5f7;
         padding: 24px;
         border-radius: 16px;
+        width: 100%;
     }
     
     .contact-info h3 {
         font-size: 20px;
         margin-bottom: 16px;
+        color: #1d1d1f;
     }
     
     .contact-info p {
         font-size: 14px;
         line-height: 1.6;
         margin-bottom: 12px;
+        color: #6e6e73;
     }
     
     .contact-form input,
@@ -752,27 +877,31 @@
         resize: vertical;
     }
     
-    /* ===== FOOTER - MOBILE ===== */
+    /* ===== FOOTER ===== */
     .footer {
         padding: 40px 16px 20px;
         background: #1d1d1f;
         color: #fff;
+        width: 100%;
     }
     
     .footer-content {
         display: grid;
         grid-template-columns: 1fr;
         gap: 24px;
+        width: 100%;
     }
     
     .footer-section {
         margin-bottom: 0;
+        width: 100%;
     }
     
     .footer-section h4 {
         font-size: 16px;
         font-weight: 600;
         margin-bottom: 16px;
+        color: #fff;
     }
     
     .footer-section p,
@@ -792,6 +921,7 @@
     .social-media-apple {
         display: flex;
         gap: 12px;
+        flex-wrap: wrap;
     }
     
     .social-media-apple a {
@@ -803,15 +933,10 @@
         background: rgba(255,255,255,0.1);
         border-radius: 50%;
         color: #fff;
+        flex-shrink: 0;
     }
     
-    /* ===== CONTAINER - MOBILE ===== */
-    .container {
-        padding: 0 16px;
-        max-width: 100%;
-    }
-    
-    /* ===== BUTTONS - MOBILE ===== */
+    /* ===== BUTTONS ===== */
     .btn {
         display: inline-flex;
         align-items: center;
@@ -835,6 +960,19 @@
         background: rgba(255,255,255,0.15);
         color: #fff;
         border: 1px solid rgba(255,255,255,0.3);
+        backdrop-filter: blur(10px);
+    }
+    
+    /* ===== SECTION SPACING ===== */
+    section {
+        padding: 40px 0;
+        width: 100%;
+    }
+    
+    /* ===== FADE IN ANIMATION ===== */
+    .fade-in-ready {
+        opacity: 1;
+        transform: none;
     }
 }
 
@@ -857,19 +995,27 @@
     }
     
     .liquid-glass-card {
-        height: 260px;
+        height: 280px;
     }
     
     .liquid-glass-title {
-        font-size: 22px;
+        font-size: 24px;
+    }
+    
+    .liquid-glass-icon {
+        font-size: 45px;
     }
     
     .apple-hero-card {
-        height: 320px;
+        height: 350px;
     }
     
     .apple-hero-title {
-        font-size: 24px;
+        font-size: 28px;
+    }
+    
+    .apple-hero-icon {
+        font-size: 48px;
     }
     
     .values-grid {
@@ -883,6 +1029,11 @@
     .org-id-photo {
         width: 90px;
         height: 90px;
+    }
+    
+    .ios-logo-text {
+        max-width: 120px;
+        font-size: 13px;
     }
 }
 
@@ -901,23 +1052,23 @@
     }
     
     .liquid-glass-card {
-        height: 240px;
+        height: 260px;
     }
     
     .liquid-glass-title {
-        font-size: 20px;
+        font-size: 22px;
     }
     
     .liquid-glass-icon {
-        font-size: 40px;
+        font-size: 42px;
     }
     
     .apple-hero-card {
-        height: 300px;
+        height: 330px;
     }
     
     .apple-hero-title {
-        font-size: 22px;
+        font-size: 26px;
     }
     
     .org-id-card {
@@ -937,9 +1088,14 @@
     .org-id-name {
         font-size: 13px;
     }
+    
+    .ios-logo-text {
+        max-width: 100px;
+        font-size: 12px;
+    }
 }
 
-/* ===== RTL SUPPORT - MOBILE ===== */
+/* ===== RTL SUPPORT ===== */
 @media (max-width: 768px) {
     [dir="rtl"] .ios-header nav {
         direction: rtl;
@@ -951,5 +1107,9 @@
     
     [dir="rtl"] .apple-hero-list {
         text-align: right;
+    }
+    
+    [dir="rtl"] .nav-dropdown-menu {
+        direction: rtl;
     }
 }
