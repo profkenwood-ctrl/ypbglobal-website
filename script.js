@@ -190,10 +190,17 @@ function initLanguageSelector() {
 }
 
 function updateLanguageUI(lang, options, toggle) {
-    const langCode = lang.split('-')[0].toUpperCase();
     const currentLang = document.querySelector('.lang-current');
     if (currentLang) {
-        currentLang.textContent = '🌐 ' + langCode;
+        // Find the selected option text
+        const selectedOption = document.querySelector(`.lang-option[data-lang="${lang}"]`);
+        if (selectedOption) {
+            // Show full country name (e.g., "Bahasa Indonesia", "English (United States)")
+            currentLang.textContent = selectedOption.textContent.trim();
+        } else {
+            // Fallback to lang code if no option found
+            currentLang.textContent = lang.toUpperCase();
+        }
     }
 
     // Update active state

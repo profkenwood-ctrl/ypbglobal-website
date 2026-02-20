@@ -87,13 +87,17 @@
         background-clip: text;
     }
     
+    /* ===== IOS NAV - DESKTOP MENU (HIDDEN ON MOBILE) ===== */
+    .ios-nav {
+        display: none !important;
+    }
+    
     /* ===== NAV CONTROLS - LANGUAGE + THEME TOGGLE + HAMBURGER ===== */
     .nav-controls {
         display: flex;
         align-items: center;
         gap: 12px;
         flex-shrink: 0;
-        margin-left: auto;
     }
     
     /* ===== LANGUAGE SELECTOR - NO GLOBE ICON ===== */
@@ -119,9 +123,10 @@
     }
     
     .lang-current {
-        font-size: 14px;
+        font-size: 13px;
         font-weight: 500;
         color: #1d1d1f;
+        white-space: nowrap;
     }
     
     .lang-arrow {
@@ -143,7 +148,7 @@
         -webkit-backdrop-filter: saturate(180%) blur(20px);
         border: 1px solid rgba(0, 0, 0, 0.1);
         border-radius: 12px;
-        min-width: 200px;
+        min-width: 220px;
         box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
         z-index: 10001;
         opacity: 0;
@@ -160,7 +165,7 @@
         transform: translateY(0);
     }
     
-    /* ===== THEME TOGGLE - FAR RIGHT POSITION ===== */
+    /* ===== THEME TOGGLE - VISIBLE ON MOBILE ===== */
     .theme-toggle {
         width: 36px;
         height: 36px;
@@ -172,7 +177,6 @@
         justify-content: center;
         cursor: pointer;
         flex-shrink: 0;
-        order: 3;
     }
     
     .theme-toggle svg {
@@ -181,7 +185,7 @@
         color: #000;
     }
     
-    /* ===== MOBILE MENU BUTTON - PERFECT ALIGNMENT ===== */
+    /* ===== MOBILE MENU BUTTON - VISIBLE ON MOBILE ===== */
     .ios-mobile-toggle {
         display: flex !important;
         flex-direction: column;

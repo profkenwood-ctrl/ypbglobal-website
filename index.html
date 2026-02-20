@@ -44,14 +44,17 @@
         .ios-logo-circle{width:32px;height:32px;border-radius:50%;overflow:hidden;flex-shrink:0;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);display:flex;align-items:center;justify-content:center}
         .ios-logo-img{width:100%;height:100%;object-fit:cover}
         .ios-logo-text{font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:140px;color:#667eea}
-        .nav-controls{display:flex;align-items:center;gap:12px;flex-shrink:0;margin-left:auto}
+        .ios-nav{display:flex;gap:32px;list-style:none;align-items:center;margin:0;padding:0;flex:1;justify-content:center}
+        .nav-link{text-decoration:none;color:var(--text-secondary);font-size:14px;font-weight:400;padding:8px 0;transition:color .2s ease}
+        .nav-link:hover{color:var(--text-primary)}
+        .nav-controls{display:flex;align-items:center;gap:12px;flex-shrink:0}
         .language-selector{position:relative;flex-shrink:0}
         .lang-toggle{display:flex;align-items:center;gap:4px;background:none;border:none;cursor:pointer;padding:8px 12px;border-radius:8px;transition:background .2s ease}
         .lang-toggle:hover{background:rgba(0,0,0,.05)}
-        .lang-current{font-size:14px;font-weight:500;color:#1d1d1f}
+        .lang-current{font-size:13px;font-weight:500;color:#1d1d1f;white-space:nowrap}
         .lang-arrow{font-size:10px;color:#666;transition:transform .3s ease}
         .language-selector.active .lang-arrow{transform:rotate(180deg)}
-        .lang-dropdown{position:absolute;top:100%;right:0;background:#fff;backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border:1px solid rgba(0,0,0,.1);border-radius:12px;min-width:200px;box-shadow:0 10px 40px rgba(0,0,0,.15);z-index:10001;opacity:0;visibility:hidden;transform:translateY(-10px);transition:all .3s ease;max-height:400px;overflow-y:auto}
+        .lang-dropdown{position:absolute;top:100%;right:0;background:#fff;backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border:1px solid rgba(0,0,0,.1);border-radius:12px;min-width:220px;box-shadow:0 10px 40px rgba(0,0,0,.15);z-index:10001;opacity:0;visibility:hidden;transform:translateY(-10px);transition:all .3s ease;max-height:400px;overflow-y:auto}
         .language-selector.active .lang-dropdown{opacity:1;visibility:visible;transform:translateY(0)}
         .lang-region{padding:8px 0}
         .lang-region:not(:last-child){border-bottom:1px solid rgba(0,0,0,.05)}
@@ -61,7 +64,7 @@
         .lang-option.active{color:#0071e3;font-weight:600;background:rgba(0,113,227,.08)}
         .theme-toggle{width:36px;height:36px;background:rgba(0,0,0,.05);border:none;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0}
         .theme-toggle svg{width:18px;height:18px;color:#000}
-        .ios-mobile-toggle{display:flex!important;flex-direction:column;justify-content:center;align-items:center;gap:4px;background:none;border:none;cursor:pointer;padding:0;width:40px;height:40px;flex-shrink:0}
+        .ios-mobile-toggle{display:none}
         .ios-mobile-toggle span{display:block;width:22px;height:2px;background:#000;transition:all .3s ease;border-radius:2px;margin:0}
         .ios-mobile-toggle[aria-expanded="true"] span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
         .ios-mobile-toggle[aria-expanded="true"] span:nth-child(2){opacity:0;transform:translateX(-10px)}
@@ -196,28 +199,44 @@
                 <span class="ios-logo-text" data-i18n="brand.name">Yayasan Persada Bakti Global</span>
             </a>
 
-            <!-- Right: Language + Theme Toggle -->
+            <!-- Center: Desktop Navigation -->
+            <ul id="nav-menu" class="ios-nav" role="menubar">
+                <li role="none"><a role="menuitem" class="nav-link" data-smooth href="#home" data-i18n="nav.home">Beranda</a></li>
+                <li role="none"><a role="menuitem" class="nav-link" data-smooth href="#about" data-i18n="nav.about">Tentang</a></li>
+                <li role="none"><a role="menuitem" class="nav-link" data-smooth href="#programs" data-i18n="nav.programs">Program</a></li>
+                <li role="none" class="nav-dropdown">
+                    <a role="menuitem" class="nav-link nav-dropdown-toggle" href="javascript:void(0)">Pustaka ▾</a>
+                    <ul class="nav-dropdown-menu">
+                        <li><a href="pustaka/akta-notaris.html">Akta Notaris & SK Kemenkumham</a></li>
+                        <li><a href="pustaka/npwp-spt.html">NPWP & SPT Tahunan</a></li>
+                    </ul>
+                </li>
+                <li role="none"><a role="menuitem" class="nav-link" data-smooth href="#news" data-i18n="nav.news">Berita</a></li>
+                <li role="none"><a role="menuitem" class="nav-link" data-smooth href="#contact" data-i18n="nav.contact">Kontak</a></li>
+            </ul>
+
+            <!-- Right: Language + Theme Toggle + Hamburger -->
             <div class="nav-controls">
                 <!-- Language Selector - No Globe Icon -->
                 <div class="language-selector">
                     <button class="lang-toggle" aria-label="Pilih bahasa" aria-expanded="false">
-                        <span class="lang-current">ID</span>
+                        <span class="lang-current">Bahasa Indonesia</span>
                         <span class="lang-arrow">▼</span>
                     </button>
                     <div class="lang-dropdown">
                         <div class="lang-region">
                             <div class="lang-region-title">Americas</div>
-                            <a href="#" class="lang-option" data-lang="en-us">English (US)</a>
-                            <a href="#" class="lang-option" data-lang="es-latam">Español (Latinoamérica)</a>
+                            <a href="#" class="lang-option" data-lang="en-us">English (United States)</a>
+                            <a href="#" class="lang-option" data-lang="es-latam">Español (Latin Amerika)</a>
                             <a href="#" class="lang-option" data-lang="pt-br">Português (Brasil)</a>
                         </div>
                         <div class="lang-region">
                             <div class="lang-region-title">Europe</div>
-                            <a href="#" class="lang-option" data-lang="en-uk">English (UK)</a>
+                            <a href="#" class="lang-option" data-lang="en-uk">English (United Kingdom)</a>
                             <a href="#" class="lang-option" data-lang="de">Deutsch</a>
                             <a href="#" class="lang-option" data-lang="fr">Français</a>
                             <a href="#" class="lang-option" data-lang="it">Italiano</a>
-                            <a href="#" class="lang-option" data-lang="es">Español (España)</a>
+                            <a href="#" class="lang-option" data-lang="es">Español (Spanyol)</a>
                         </div>
                         <div class="lang-region">
                             <div class="lang-region-title">Asia-Pacific</div>
@@ -261,22 +280,6 @@
                     <span></span>
                 </button>
             </div>
-
-            <!-- Desktop Navigation -->
-            <ul id="nav-menu" class="ios-nav" role="menubar">
-                <li role="none"><a role="menuitem" class="nav-link" data-smooth href="#home" data-i18n="nav.home">Beranda</a></li>
-                <li role="none"><a role="menuitem" class="nav-link" data-smooth href="#about" data-i18n="nav.about">Tentang</a></li>
-                <li role="none"><a role="menuitem" class="nav-link" data-smooth href="#programs" data-i18n="nav.programs">Program</a></li>
-                <li role="none" class="nav-dropdown">
-                    <a role="menuitem" class="nav-link nav-dropdown-toggle" href="javascript:void(0)">Pustaka ▾</a>
-                    <ul class="nav-dropdown-menu">
-                        <li><a href="pustaka/akta-notaris.html">Akta Notaris & SK Kemenkumham</a></li>
-                        <li><a href="pustaka/npwp-spt.html">NPWP & SPT Tahunan</a></li>
-                    </ul>
-                </li>
-                <li role="none"><a role="menuitem" class="nav-link" data-smooth href="#news" data-i18n="nav.news">Berita</a></li>
-                <li role="none"><a role="menuitem" class="nav-link" data-smooth href="#contact" data-i18n="nav.contact">Kontak</a></li>
-            </ul>
         </nav>
     </header>
 
