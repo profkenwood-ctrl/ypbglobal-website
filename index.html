@@ -97,20 +97,20 @@
         .ios-mobile-toggle[aria-expanded="true"] span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
         .ios-mobile-toggle[aria-expanded="true"] span:nth-child(2){opacity:0;transform:translateX(-10px)}
         .ios-mobile-toggle[aria-expanded="true"] span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
-        /* iOS 26 Liquid Glass Mobile Menu - Premium */
-        #nav-menu.ios-nav{display:none!important;position:fixed;top:52px;left:0;right:0;width:100%;height:calc(100vh - 52px);background:linear-gradient(180deg,rgba(255,255,255,0.85) 0%,rgba(255,255,255,0.65) 100%);-webkit-backdrop-filter:saturate(180%) blur(30px);backdrop-filter:saturate(180%) blur(30px);flex-direction:column;padding:0;gap:0;overflow-y:auto;overflow-x:hidden;z-index:9999;scroll-behavior:smooth;box-shadow:0 12px 48px rgba(0,0,0,0.15),inset 0 1px 0 rgba(255,255,255,0.6);border-top:1px solid rgba(0,0,0,0.15)}
-        #nav-menu.ios-nav.active{display:flex!important;animation:slideIn .4s cubic-bezier(0.16,1,0.3,1)}
-        @keyframes slideIn{from{opacity:0;transform:translateY(-20px) scale(0.95)}to{opacity:1;transform:translateY(0) scale(1)}}
+        /* iOS 26 Liquid Glass Mobile Menu - Premium - COMPACT & RIGHT-ALIGNED */
+        #nav-menu.ios-nav{display:none!important;position:absolute;top:52px;right:0;left:auto;width:280px;max-width:85vw;height:auto;max-height:calc(100vh - 52px);background:linear-gradient(180deg,rgba(255,255,255,0.95) 0%,rgba(255,255,255,0.85) 100%);-webkit-backdrop-filter:saturate(180%) blur(30px);backdrop-filter:saturate(180%) blur(30px);flex-direction:column;padding:0;gap:0;overflow-y:auto;overflow-x:hidden;z-index:9999;scroll-behavior:smooth;box-shadow:0 12px 48px rgba(0,0,0,0.2),inset 0 1px 0 rgba(255,255,255,0.6);border-top:none;border-left:1px solid rgba(0,0,0,0.15);border-bottom:1px solid rgba(0,0,0,0.15);border-right:1px solid rgba(0,0,0,0.15);border-radius:0 0 0 16px}
+        #nav-menu.ios-nav.active{display:flex!important;animation:slideInRight .4s cubic-bezier(0.16,1,0.3,1)}
+        @keyframes slideInRight{from{opacity:0;transform:translateX(20px) scale(0.95)}to{opacity:1;transform:translateX(0) scale(1)}}
         #nav-menu.ios-nav li{width:100%;border-bottom:1px solid rgba(0,0,0,0.06);list-style:none;position:relative}
         #nav-menu.ios-nav li::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,#667eea 0%,#764ba2 100%);opacity:0;transition:opacity .3s ease}
         #nav-menu.ios-nav li:hover::before{opacity:1}
         #nav-menu.ios-nav li:last-child{border-bottom:none}
-        #nav-menu.ios-nav a,#nav-menu.ios-nav button.nav-dropdown-toggle{display:block;width:100%;padding:20px 24px;font-size:17px;font-weight:500;color:#1d1d1f;text-decoration:none;transition:all .3s cubic-bezier(0.4,0,0.2,1);background:transparent;border:none;text-align:left;cursor:pointer;position:relative;overflow:hidden}
+        #nav-menu.ios-nav a,#nav-menu.ios-nav button.nav-dropdown-toggle{display:block;width:100%;padding:16px 20px;font-size:15px;font-weight:500;color:#1d1d1f;text-decoration:none;transition:all .3s cubic-bezier(0.4,0,0.2,1);background:transparent;border:none;text-align:left;cursor:pointer;position:relative;overflow:hidden}
         #nav-menu.ios-nav a::after,#nav-menu.ios-nav button.nav-dropdown-toggle::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:0;height:2px;background:linear-gradient(90deg,transparent,#667eea,#764ba2,transparent);transition:width .3s ease}
         #nav-menu.ios-nav a:hover::after,#nav-menu.ios-nav button.nav-dropdown-toggle:hover::after{width:80%}
         #nav-menu.ios-nav a:hover,#nav-menu.ios-nav button.nav-dropdown-toggle:hover{background:rgba(102,126,234,0.08);color:#667eea;transform:translateX(4px)}
-        /* Dark Mode iOS 26 Liquid Glass - Premium */
-        body.dark-mode #nav-menu.ios-nav{background:linear-gradient(180deg,rgba(0,0,0,0.85) 0%,rgba(0,0,0,0.65) 100%)!important;box-shadow:0 12px 48px rgba(0,0,0,0.6),inset 0 1px 0 rgba(255,255,255,0.15);border-top:1px solid rgba(255,255,255,0.15)}
+        /* Dark Mode iOS 26 Liquid Glass - Premium - COMPACT */
+        body.dark-mode #nav-menu.ios-nav{background:linear-gradient(180deg,rgba(0,0,0,0.95) 0%,rgba(0,0,0,0.85) 100%)!important;box-shadow:0 12px 48px rgba(0,0,0,0.6),inset 0 1px 0 rgba(255,255,255,0.15);border-top:none;border-left:1px solid rgba(255,255,255,0.15);border-bottom:1px solid rgba(255,255,255,0.15);border-right:1px solid rgba(255,255,255,0.15)}
         body.dark-mode #nav-menu.ios-nav li{border-bottom-color:rgba(255,255,255,0.08)!important}
         body.dark-mode #nav-menu.ios-nav li::before{background:linear-gradient(180deg,#2997ff 0%,#bf5af2 100%)}
         body.dark-mode #nav-menu.ios-nav a,body.dark-mode #nav-menu.ios-nav button.nav-dropdown-toggle{color:#fff!important}

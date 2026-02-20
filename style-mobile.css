@@ -5,18 +5,63 @@
 
 /* ===== DASAR MOBILE (Lebar Maks 768px) ===== */
 @media (max-width: 768px) {
-    
+
     /* ===== GLOBAL ===== */
     * {
         box-sizing: border-box;
     }
-    
+
     html, body {
         overflow-x: hidden;
         width: 100%;
         max-width: 100vw;
         margin: 0;
         padding: 0;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    }
+
+    /* ===== HAPUS GARIS BAWAH & FONT INTER UNTUK SEMUA TEKS DI KOTAK/BOX ===== */
+    .liquid-glass-card,
+    .apple-hero-card,
+    .value-card,
+    .org-id-card,
+    .program-card,
+    .news-card,
+    .contact-info,
+    .contact-form,
+    .footer-section,
+    .value-card *,
+    .org-id-card *,
+    .program-card *,
+    .news-card *,
+    .contact-info *,
+    .contact-form *,
+    .footer-section *,
+    .liquid-glass-content *,
+    .apple-hero-content * {
+        text-decoration: none !important;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    }
+
+    .liquid-glass-title,
+    .liquid-glass-description,
+    .apple-hero-title,
+    .apple-hero-description,
+    .value-card h3,
+    .value-card p,
+    .org-id-name,
+    .org-id-jabatan,
+    .program-title,
+    .program-description,
+    .news-title,
+    .news-excerpt,
+    .contact-info h3,
+    .contact-info p,
+    .footer-section h4,
+    .footer-section p,
+    .footer-section a {
+        text-decoration: none !important;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
     }
     
     /* ===== HEADER iOS - DIPERBAIKI & BERSIH ===== */

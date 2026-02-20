@@ -38,6 +38,31 @@ body.dark-mode .nav-link:hover {
     color: var(--text-primary);
 }
 
+/* Navigation Dropdown - Dark Mode Apple Style */
+body.dark-mode .nav-dropdown-toggle {
+    color: var(--text-secondary);
+}
+
+body.dark-mode .nav-dropdown-menu {
+    background: rgba(44, 44, 46, 0.95);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .nav-dropdown-menu a {
+    color: var(--text-secondary);
+}
+
+body.dark-mode .nav-dropdown-menu a::before {
+    background: linear-gradient(135deg, rgba(41, 151, 255, 0.12) 0%, rgba(191, 90, 242, 0.12) 100%);
+}
+
+body.dark-mode .nav-dropdown-menu a:hover {
+    color: var(--text-primary);
+}
+
 body.dark-mode .hamburger {
     background: var(--text-primary);
 }
@@ -95,6 +120,86 @@ body.dark-mode .contact {
 
 body.dark-mode .programs {
     background: var(--bg-secondary);
+}
+
+/* Program Cards - Apple Style Dark Mode */
+body.dark-mode .program-card {
+    background: var(--bg-tertiary);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .program-card::before {
+    background: linear-gradient(135deg, 
+        rgba(41, 151, 255, 0.05) 0%, 
+        rgba(191, 90, 242, 0.05) 50%,
+        rgba(41, 151, 255, 0.05) 100%);
+}
+
+body.dark-mode .program-card:hover {
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(41, 151, 255, 0.2);
+}
+
+body.dark-mode .program-image::after {
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 100%);
+}
+
+body.dark-mode .program-image img {
+    filter: saturate(1.15) contrast(1.08) brightness(0.95);
+}
+
+body.dark-mode .program-card:hover .program-image img {
+    filter: saturate(1.25) contrast(1.12) brightness(1);
+}
+
+body.dark-mode .program-icon {
+    background: rgba(44, 44, 46, 0.95);
+    backdrop-filter: saturate(180%) blur(10px);
+    -webkit-backdrop-filter: saturate(180%) blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .program-content {
+    background: linear-gradient(0deg, var(--bg-tertiary) 0%, rgba(44,44,46,0.95) 100%);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+
+body.dark-mode .program-content h3 {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    background: linear-gradient(135deg, 
+        #f5f5f7 0%, 
+        #a1a1a6 60%,
+        #2997ff 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.dark-mode .program-content p {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    color: var(--text-secondary);
+}
+
+body.dark-mode .filter-btn {
+    border-color: var(--border);
+    color: var(--text-secondary);
+}
+
+body.dark-mode .filter-btn::before {
+    background: linear-gradient(135deg, rgba(41, 151, 255, 0.15) 0%, rgba(191, 90, 242, 0.15) 100%);
+}
+
+body.dark-mode .filter-btn:hover {
+    border-color: var(--text-primary);
+    color: var(--text-primary);
+}
+
+body.dark-mode .filter-btn.active {
+    background: var(--accent);
+    color: #ffffff;
+    border-color: var(--accent);
+    box-shadow: 0 4px 20px rgba(41, 151, 255, 0.4);
 }
 
 body.dark-mode .home-highlights {
