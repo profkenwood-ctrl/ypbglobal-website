@@ -97,33 +97,42 @@
         .ios-mobile-toggle[aria-expanded="true"] span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
         .ios-mobile-toggle[aria-expanded="true"] span:nth-child(2){opacity:0;transform:translateX(-10px)}
         .ios-mobile-toggle[aria-expanded="true"] span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
-        /* iOS 26 Liquid Glass Mobile Menu */
-        #nav-menu.ios-nav{display:none!important;position:fixed;top:52px;left:0;right:0;width:100%;background:rgba(255,255,255,0.72);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);flex-direction:column;padding:0;gap:0;overflow-y:auto;overflow-x:hidden;z-index:9999;scroll-behavior:smooth;box-shadow:0 8px 32px rgba(0,0,0,0.12),inset 0 1px 0 rgba(255,255,255,0.4);border-top:1px solid rgba(0,0,0,0.1)}
-        #nav-menu.ios-nav.active{display:flex!important;animation:slideDown .3s ease}
-        @keyframes slideDown{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
-        #nav-menu.ios-nav li{width:100%;border-bottom:1px solid rgba(0,0,0,0.08);list-style:none}
+        /* iOS 26 Liquid Glass Mobile Menu - Premium */
+        #nav-menu.ios-nav{display:none!important;position:fixed;top:52px;left:0;right:0;width:100%;height:calc(100vh - 52px);background:linear-gradient(180deg,rgba(255,255,255,0.85) 0%,rgba(255,255,255,0.65) 100%);-webkit-backdrop-filter:saturate(180%) blur(30px);backdrop-filter:saturate(180%) blur(30px);flex-direction:column;padding:0;gap:0;overflow-y:auto;overflow-x:hidden;z-index:9999;scroll-behavior:smooth;box-shadow:0 12px 48px rgba(0,0,0,0.15),inset 0 1px 0 rgba(255,255,255,0.6);border-top:1px solid rgba(0,0,0,0.15)}
+        #nav-menu.ios-nav.active{display:flex!important;animation:slideIn .4s cubic-bezier(0.16,1,0.3,1)}
+        @keyframes slideIn{from{opacity:0;transform:translateY(-20px) scale(0.95)}to{opacity:1;transform:translateY(0) scale(1)}}
+        #nav-menu.ios-nav li{width:100%;border-bottom:1px solid rgba(0,0,0,0.06);list-style:none;position:relative}
+        #nav-menu.ios-nav li::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,#667eea 0%,#764ba2 100%);opacity:0;transition:opacity .3s ease}
+        #nav-menu.ios-nav li:hover::before{opacity:1}
         #nav-menu.ios-nav li:last-child{border-bottom:none}
-        #nav-menu.ios-nav a,#nav-menu.ios-nav button.nav-dropdown-toggle{display:block;width:100%;padding:18px 20px;font-size:16px;font-weight:500;color:#1d1d1f;text-decoration:none;transition:all .3s ease;background:transparent;border:none;text-align:left;cursor:pointer;position:relative;overflow:hidden}
-        #nav-menu.ios-nav a::before,#nav-menu.ios-nav button.nav-dropdown-toggle::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(135deg,rgba(102,126,234,0.08) 0%,rgba(118,75,162,0.08) 100%);opacity:0;transition:opacity .3s ease}
-        #nav-menu.ios-nav a:hover::before,#nav-menu.ios-nav button.nav-dropdown-toggle:hover::before{opacity:1}
-        #nav-menu.ios-nav a:hover,#nav-menu.ios-nav button.nav-dropdown-toggle:hover{color:#0071e3;background:rgba(0,113,227,0.05)}
-        /* Dark Mode iOS 26 Liquid Glass */
-        body.dark-mode #nav-menu.ios-nav{background:rgba(0,0,0,0.72)!important;box-shadow:0 8px 32px rgba(0,0,0,0.4),inset 0 1px 0 rgba(255,255,255,0.1);border-top:1px solid rgba(255,255,255,0.1)}
+        #nav-menu.ios-nav a,#nav-menu.ios-nav button.nav-dropdown-toggle{display:block;width:100%;padding:20px 24px;font-size:17px;font-weight:500;color:#1d1d1f;text-decoration:none;transition:all .3s cubic-bezier(0.4,0,0.2,1);background:transparent;border:none;text-align:left;cursor:pointer;position:relative;overflow:hidden}
+        #nav-menu.ios-nav a::after,#nav-menu.ios-nav button.nav-dropdown-toggle::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:0;height:2px;background:linear-gradient(90deg,transparent,#667eea,#764ba2,transparent);transition:width .3s ease}
+        #nav-menu.ios-nav a:hover::after,#nav-menu.ios-nav button.nav-dropdown-toggle:hover::after{width:80%}
+        #nav-menu.ios-nav a:hover,#nav-menu.ios-nav button.nav-dropdown-toggle:hover{background:rgba(102,126,234,0.08);color:#667eea;transform:translateX(4px)}
+        /* Dark Mode iOS 26 Liquid Glass - Premium */
+        body.dark-mode #nav-menu.ios-nav{background:linear-gradient(180deg,rgba(0,0,0,0.85) 0%,rgba(0,0,0,0.65) 100%)!important;box-shadow:0 12px 48px rgba(0,0,0,0.6),inset 0 1px 0 rgba(255,255,255,0.15);border-top:1px solid rgba(255,255,255,0.15)}
         body.dark-mode #nav-menu.ios-nav li{border-bottom-color:rgba(255,255,255,0.08)!important}
-        body.dark-mode #nav-menu.ios-nav a,body.dark-mode #nav-menu.ios-nav button.nav-dropdown-toggle{color:#fff!important;background:transparent}
-        body.dark-mode #nav-menu.ios-nav a::before,body.dark-mode #nav-menu.ios-nav button.nav-dropdown-toggle::before{background:linear-gradient(135deg,rgba(41,151,255,0.12) 0%,rgba(159,90,255,0.12) 100%)}
-        body.dark-mode #nav-menu.ios-nav a:hover,body.dark-mode #nav-menu.ios-nav button.nav-dropdown-toggle:hover{background:rgba(41,151,255,0.15);color:#5ac8fa!important}
+        body.dark-mode #nav-menu.ios-nav li::before{background:linear-gradient(180deg,#2997ff 0%,#bf5af2 100%)}
+        body.dark-mode #nav-menu.ios-nav a,body.dark-mode #nav-menu.ios-nav button.nav-dropdown-toggle{color:#fff!important}
+        body.dark-mode #nav-menu.ios-nav a::after,body.dark-mode #nav-menu.ios-nav button.nav-dropdown-toggle::after{background:linear-gradient(90deg,transparent,#2997ff,#bf5af2,transparent)}
+        body.dark-mode #nav-menu.ios-nav a:hover,body.dark-mode #nav-menu.ios-nav button.nav-dropdown-toggle:hover{background:rgba(41,151,255,0.2);color:#5ac8fa!important;transform:translateX(4px)}
+        /* Dropdown Menu */
         .nav-dropdown-toggle{cursor:pointer;-webkit-user-select:none;user-select:none;display:flex;align-items:center;justify-content:space-between}
-        .nav-dropdown-menu{position:static;width:100%;min-width:auto;max-width:100%;box-shadow:none;border:none;padding:0;margin:0;background:rgba(0,0,0,.05);border-radius:0;display:none;list-style:none}
-        .nav-dropdown.active .nav-dropdown-menu{display:block;animation:fadeIn .3s ease}
-        @keyframes fadeIn{from{opacity:0}to{opacity:1}}
-        .nav-dropdown-menu li{border-bottom:1px solid rgba(0,0,0,.05)}
-        .nav-dropdown-menu li:last-child{border-bottom:none}
-        .nav-dropdown-menu a{padding:14px 16px 14px 30px;font-size:14px;color:#6e6e73}
-        body.dark-mode .nav-dropdown-menu{background:rgba(255,255,255,.05)!important}
-        body.dark-mode .nav-dropdown-menu a{color:#fff!important}
-        body.dark-mode .nav-dropdown-menu li{border-bottom-color:rgba(255,255,255,.1)!important}
-        .language-selector{width:100%;margin:0;padding:0;border-top:1px solid rgba(0,0,0,.08);margin-top:16px}
+        .nav-dropdown-toggle::after{content:'▼';font-size:10px;margin-left:8px;transition:transform .3s ease}
+        .nav-dropdown.active .nav-dropdown-toggle::after{transform:rotate(180deg)}
+        .nav-dropdown-menu{position:static;width:100%;min-width:auto;max-width:100%;box-shadow:none;border:none;padding:0;margin:0;background:rgba(0,0,0,0.03);border-radius:0;display:none;list-style:none}
+        .nav-dropdown.active .nav-dropdown-menu{display:block;animation:expandMenu .3s ease}
+        @keyframes expandMenu{from{opacity:0;max-height:0}to{opacity:1;max-height:500px}}
+        .nav-dropdown-menu li{border-bottom:1px solid rgba(0,0,0,0.05)!important;padding-left:20px!important}
+        .nav-dropdown-menu li::before{display:none!important}
+        .nav-dropdown-menu li:last-child{border-bottom:none!important}
+        .nav-dropdown-menu a{padding:16px 16px 16px 44px!important;font-size:15px;color:#6e6e73}
+        .nav-dropdown-menu a:hover{background:rgba(102,126,234,0.1)!important;color:#667eea!important}
+        body.dark-mode .nav-dropdown-menu{background:rgba(255,255,255,0.05)!important}
+        body.dark-mode .nav-dropdown-menu a{color:#aaa!important}
+        body.dark-mode .nav-dropdown-menu a:hover{background:rgba(41,151,255,0.2)!important;color:#5ac8fa!important}
+        /* Language Selector in Mobile Menu */
+        .language-selector{width:100%;margin:0;padding:0;border-top:1px solid rgba(0,0,0,0.08);margin-top:16px}
         .lang-toggle{width:100%;display:flex;justify-content:space-between;align-items:center;padding:16px;background:rgba(0,0,0,.05);border:none;border-radius:0;font-size:15px;cursor:pointer;color:#1d1d1f}
         .lang-dropdown{position:static;width:100%;max-width:100%;margin:0;box-shadow:none;border:1px solid rgba(0,0,0,.08);border-radius:0;display:none;background:#fff}
         .language-selector.active .lang-dropdown{display:block}
