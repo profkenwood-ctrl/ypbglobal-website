@@ -1399,98 +1399,175 @@
         padding: var(--apple-section) 0;
         background: var(--apple-bg);
     }
-    
+
+    /* ===== APPLE NEWS SECTION - Enhanced ===== */
     .news-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 24px;
+        gap: 28px;
         max-width: var(--apple-container);
         margin: 0 auto;
         padding: 0 24px;
     }
-    
+
     .news-item {
         background: var(--apple-bg);
-        border-radius: var(--apple-r-lg);
+        border-radius: var(--apple-r-xl);
         overflow: hidden;
-        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         border: 1px solid var(--apple-border-light);
+        box-shadow: 0 4px 20px rgba(0,0,0,0.06);
     }
-    
+
     .news-item:hover {
-        transform: translateY(-8px);
-        box-shadow: var(--apple-sh-lg);
+        transform: translateY(-12px) scale(1.02);
+        box-shadow: 0 30px 80px rgba(0,0,0,0.14),
+                    0 0 0 1px rgba(0,113,227,0.08);
     }
-    
+
+    body.dark-mode .news-item {
+        background: var(--apple-bg);
+        border: 1px solid rgba(255,255,255,0.08);
+        box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+
+    body.dark-mode .news-item:hover {
+        box-shadow: 0 30px 80px rgba(0,0,0,0.5),
+                    0 0 0 1px rgba(41,151,255,0.15);
+    }
+
     .news-image {
         position: relative;
-        height: 200px;
+        height: 220px;
         overflow: hidden;
     }
-    
+
     .news-image img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: transform 0.9s cubic-bezier(0.4, 0, 0.2, 1),
+                    filter 0.5s ease;
+        filter: saturate(1.05) contrast(1.02);
     }
-    
+
     .news-item:hover .news-image img {
-        transform: scale(1.1);
+        transform: scale(1.12);
+        filter: saturate(1.15) contrast(1.08);
     }
-    
+
     .news-category {
         position: absolute;
         top: 16px;
         left: 16px;
         background: var(--apple-blue);
         color: #ffffff;
-        padding: 6px 12px;
+        padding: 8px 16px;
+        border-radius: var(--apple-r-full);
+        font-size: 12px;
+        font-weight: 600;
+        box-shadow: 0 4px 12px rgba(0,113,227,0.3);
+        z-index: 2;
+    }
+
+    .news-content {
+        padding: 28px;
+    }
+
+    .news-meta {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 14px;
+        flex-wrap: wrap;
+    }
+
+    .news-category-badge {
+        background: var(--apple-blue);
+        color: #ffffff;
+        padding: 6px 14px;
         border-radius: var(--apple-r-full);
         font-size: 12px;
         font-weight: 600;
     }
-    
-    .news-content {
-        padding: 28px;
-    }
-    
+
     .news-date {
         font-size: 13px;
         color: var(--apple-text-tertiary);
-        margin-bottom: 12px;
+        font-weight: 400;
     }
-    
+
     .news-title {
         font-size: 20px;
-        font-weight: 600;
-        margin-bottom: 12px;
-        letter-spacing: -0.01em;
+        font-weight: 700;
+        margin-bottom: 14px;
+        letter-spacing: -0.015em;
         color: var(--apple-text);
+        line-height: 1.4;
+        transition: color 0.3s ease;
     }
-    
+
+    .news-item:hover .news-title {
+        color: var(--apple-blue);
+    }
+
+    body.dark-mode .news-item:hover .news-title {
+        color: #2997ff;
+    }
+
     .news-excerpt {
         font-size: 15px;
-        line-height: 1.6;
+        line-height: 1.7;
+        font-weight: 400;
         color: var(--apple-text-secondary);
         margin-bottom: 20px;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
     }
-    
+
     .news-read-more {
         color: var(--apple-blue);
         text-decoration: none;
-        font-weight: 500;
+        font-weight: 600;
         font-size: 15px;
         display: inline-flex;
         align-items: center;
-        gap: 6px;
-        transition: all 0.2s ease;
+        gap: 8px;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        padding-bottom: 4px;
     }
-    
+
+    .news-read-more::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--apple-blue);
+        transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
     .news-read-more:hover {
-        text-decoration: underline;
+        text-decoration: none;
+        gap: 12px;
     }
-    
+
+    .news-read-more:hover::after {
+        width: 100%;
+    }
+
+    body.dark-mode .news-read-more {
+        color: #2997ff;
+    }
+
+    body.dark-mode .news-read-more::after {
+        background: #2997ff;
+    }
+
     /* ===== APPLE CONTACT SECTION ===== */
     .contact {
         padding: var(--apple-section) 0;
