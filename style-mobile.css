@@ -1231,6 +1231,44 @@ body[dir="rtl"] {
     text-align: right;
 }
 
+/* Ensure nav-controls and theme toggle are always visible for ALL languages */
+body[dir="ltr"],
+body:not([dir]) {
+    direction: ltr;
+    text-align: left;
+}
+
+body[dir="ltr"] .nav-controls,
+body:not([dir]) .nav-controls {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    flex-shrink: 0 !important;
+    position: relative !important;
+    z-index: 10001 !important;
+}
+
+body[dir="ltr"] .theme-toggle,
+body:not([dir]) .theme-toggle {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 36px !important;
+    height: 36px !important;
+    flex-shrink: 0 !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+body[dir="ltr"] .language-selector,
+body:not([dir]) .language-selector {
+    display: block !important;
+    position: relative !important;
+    flex-shrink: 0 !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
 /* Header and navigation should always be LTR for consistent layout */
 body[dir="rtl"] .ios-header,
 body[dir="rtl"] .ios-header nav {
