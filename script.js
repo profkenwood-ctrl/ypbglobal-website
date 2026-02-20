@@ -97,10 +97,12 @@ function initMobileMenu() {
     const dropdownToggles = menu.querySelectorAll('.nav-dropdown-toggle');
     dropdownToggles.forEach(toggle => {
         toggle.addEventListener('click', (e) => {
-            e.preventDefault();
             const parent = toggle.closest('.nav-dropdown');
             if (parent) {
                 parent.classList.toggle('active');
+                // Update aria-expanded
+                const isExpanded = parent.classList.contains('active');
+                toggle.setAttribute('aria-expanded', isExpanded);
             }
         });
     });
@@ -415,6 +417,15 @@ function initContactForm() {
                 }
             });
             console.log('[initContactForm] Listener input file ditambahkan');
+
+            // Handle klik tombol upload file
+            const fileUploadBtn = document.getElementById('file-upload-btn');
+            if (fileUploadBtn) {
+                fileUploadBtn.addEventListener('click', () => {
+                    fileInput.click();
+                });
+                console.log('[initContactForm] Listener tombol upload ditambahkan');
+            }
         }
     } else {
         // Fallback ke metode WhatsApp lama
