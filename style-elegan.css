@@ -3062,78 +3062,78 @@ select:focus {
 /* ===== RTL (RIGHT-TO-LEFT) SUPPORT FOR ARABIC ===== */
 /* دعم من اليمين لليسار للعربية */
 
-[dir="rtl"] {
+body[dir="rtl"] {
     direction: rtl;
     text-align: right;
 }
 
-[dir="rtl"] .ios-header nav {
+body[dir="rtl"] .ios-header nav {
     direction: ltr;
     justify-content: space-between;
 }
 
-[dir="rtl"] .ios-logo {
+body[dir="rtl"] .ios-logo {
     flex-direction: row;
     gap: 12px;
     direction: rtl;
 }
 
-[dir="rtl"] .ios-nav {
+body[dir="rtl"] .ios-nav {
     direction: rtl;
     gap: 24px;
 }
 
-[dir="rtl"] .ios-mobile-toggle {
+body[dir="rtl"] .ios-mobile-toggle {
     margin-right: auto;
 }
 
-[dir="rtl"] .nav-controls {
+body[dir="rtl"] .nav-controls {
     direction: ltr;
 }
 
-[dir="rtl"] .footer-content {
+body[dir="rtl"] .footer-content {
     direction: rtl;
     text-align: right;
 }
 
-[dir="rtl"] .footer-logo-link {
+body[dir="rtl"] .footer-logo-link {
     flex-direction: row;
 }
 
-[dir="rtl"] .social-media-apple {
+body[dir="rtl"] .social-media-apple {
     direction: rtl;
     gap: 16px;
 }
 
-[dir="rtl"] .footer-links {
+body[dir="rtl"] .footer-links {
     padding-right: 0;
 }
 
-[dir="rtl"] .hero-text {
+body[dir="rtl"] .hero-text {
     direction: rtl;
     text-align: center;
 }
 
-[dir="rtl"] .hero-title {
+body[dir="rtl"] .hero-title {
     direction: rtl;
     text-align: center;
 }
 
-[dir="rtl"] .hero-subtitle {
+body[dir="rtl"] .hero-subtitle {
     direction: rtl;
     text-align: center;
 }
 
-[dir="rtl"] .ios-hero-badge {
+body[dir="rtl"] .ios-hero-badge {
     direction: rtl;
 }
 
-[dir="rtl"] .nav-dropdown-menu {
+body[dir="rtl"] .nav-dropdown-menu {
     right: auto;
     left: 0;
 }
 
-[dir="rtl"] .lang-dropdown {
+body[dir="rtl"] .lang-dropdown {
     right: auto;
     left: 0;
     direction: rtl;
@@ -3142,7 +3142,7 @@ select:focus {
 
 /* RTL for mobile menu - ensure dropdowns don't overflow */
 @media (max-width: 768px) {
-    [dir="rtl"] .lang-dropdown {
+    body[dir="rtl"] .lang-dropdown {
         left: 0;
         right: 0;
     }
@@ -3150,21 +3150,21 @@ select:focus {
 
 /* Mobile RTL */
 @media (max-width: 768px) {
-    [dir="rtl"] .ios-header nav {
+    body[dir="rtl"] .ios-header nav {
         flex-wrap: wrap;
     }
-    
-    [dir="rtl"] .ios-nav {
+
+    body[dir="rtl"] .ios-nav {
         width: 100%;
         flex-direction: column;
         text-align: right;
     }
-    
-    [dir="rtl"] .ios-mobile-toggle {
+
+    body[dir="rtl"] .ios-mobile-toggle {
         order: 1;
     }
-    
-    [dir="rtl"] .ios-logo {
+
+    body[dir="rtl"] .ios-logo {
         order: 2;
     }
 }

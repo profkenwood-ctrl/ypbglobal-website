@@ -3,15 +3,19 @@
 
 function translateAllPage(lang) {
     console.log('[Translate] Translating to:', lang);
-    
+
     // Update HTML lang attribute
     document.documentElement.lang = lang;
-    
-    // Handle RTL for Arabic
+
+    // Handle RTL for Arabic - Apply to body, not html, to prevent layout issues
     if (lang === 'ar') {
-        document.documentElement.setAttribute('dir', 'rtl');
+        document.body.setAttribute('dir', 'rtl');
+        document.body.style.direction = 'rtl';
+        document.body.style.textAlign = 'right';
     } else {
-        document.documentElement.setAttribute('dir', 'ltr');
+        document.body.setAttribute('dir', 'ltr');
+        document.body.style.direction = 'ltr';
+        document.body.style.textAlign = 'left';
     }
     
     // Translate all elements with data-i18n attribute

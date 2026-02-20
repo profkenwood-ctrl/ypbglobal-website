@@ -94,16 +94,19 @@
     
     /* ===== NAV CONTROLS - LANGUAGE + THEME TOGGLE + HAMBURGER ===== */
     .nav-controls {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        flex-shrink: 0;
+        display: flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+        flex-shrink: 0 !important;
+        position: relative !important;
+        z-index: 10001 !important;
     }
-    
+
     /* ===== LANGUAGE SELECTOR - NO GLOBE ICON ===== */
     .language-selector {
         position: relative;
         flex-shrink: 0;
+        display: block !important;
     }
 
     .lang-toggle {
@@ -1222,55 +1225,65 @@
 }
 
 /* ===== RTL SUPPORT - ARABIC & OTHER RTL LANGUAGES ===== */
-[dir="rtl"] {
+/* Apply RTL to body element for proper mobile support */
+body[dir="rtl"] {
     direction: rtl;
     text-align: right;
 }
 
-[dir="rtl"] .ios-header,
-[dir="rtl"] .ios-header nav {
+/* Header and navigation should always be LTR for consistent layout */
+body[dir="rtl"] .ios-header,
+body[dir="rtl"] .ios-header nav {
     direction: ltr !important;
 }
 
-[dir="rtl"] .ios-logo {
+body[dir="rtl"] .ios-logo {
     direction: rtl;
 }
 
-[dir="rtl"] .nav-controls {
+body[dir="rtl"] .nav-controls {
     direction: ltr !important;
     display: flex !important;
     align-items: center !important;
     gap: 8px !important;
 }
 
-[dir="rtl"] .lang-dropdown {
+body[dir="rtl"] .lang-dropdown {
     direction: rtl;
     text-align: right;
 }
 
-[dir="rtl"] .apple-hero-list {
+body[dir="rtl"] .apple-hero-list {
     text-align: right;
 }
 
-[dir="rtl"] .nav-dropdown-menu {
+body[dir="rtl"] .nav-dropdown-menu {
     direction: rtl;
 }
 
+/* Mobile-specific RTL fixes */
 @media (max-width: 768px) {
-    [dir="rtl"] .ios-header nav {
+    body[dir="rtl"] .ios-header nav {
         direction: ltr !important;
     }
 
-    [dir="rtl"] .lang-dropdown {
+    body[dir="rtl"] .lang-dropdown {
         direction: rtl;
         text-align: right;
     }
 
-    [dir="rtl"] .apple-hero-list {
+    body[dir="rtl"] .apple-hero-list {
         text-align: right;
     }
 
-    [dir="rtl"] .nav-dropdown-menu {
+    body[dir="rtl"] .nav-dropdown-menu {
         direction: rtl;
+    }
+    
+    /* Ensure body doesn't overflow when RTL is applied */
+    body[dir="rtl"] {
+        overflow-x: hidden;
+        max-width: 100vw;
+        position: relative;
     }
 }

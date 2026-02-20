@@ -178,11 +178,4 @@ if (typeof translations !== 'undefined') {
     Object.assign(translations, arabicTranslations);
 }
 
-// Also update translate-all.js to handle RTL for Arabic
-document.addEventListener('DOMContentLoaded', function() {
-    const savedLang = localStorage.getItem('selectedLanguage') || 'id';
-    if (savedLang === 'ar') {
-        document.documentElement.setAttribute('dir', 'rtl');
-        document.documentElement.setAttribute('lang', 'ar');
-    }
-});
+// RTL handling moved to translate-all.js - avoid conflicts
