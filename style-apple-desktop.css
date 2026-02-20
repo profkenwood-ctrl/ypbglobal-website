@@ -507,7 +507,7 @@
             transparent 100%);
     }
     
-    /* ===== APPLE HIGHLIGHTS SECTION ===== */
+    /* ===== APPLE HIGHLIGHTS SECTION - Enhanced ===== */
     .home-highlights-apple {
         padding: var(--apple-section) 0;
         background: var(--apple-bg);
@@ -520,6 +520,7 @@
         max-width: var(--apple-container);
         margin: 0 auto;
         padding: 0 24px;
+        grid-auto-rows: minmax(360px, 360px);
     }
     
     .liquid-glass-link {
@@ -527,12 +528,17 @@
         display: block;
     }
     
-    .liquid-glass-card {
-        position: relative;
-        height: 420px;
-        border-radius: var(--apple-r-xl);
-        overflow: hidden;
-        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    /*统一 all liquid glass cards to 360px - Tentang, Program, Publikasi */
+    .liquid-glass-card,
+    .tentang-card,
+    .program-card,
+    .publikasi-card {
+        height: 360px !important;
+        min-height: 360px !important;
+        max-height: 360px !important;
+        border-radius: var(--apple-r-xl) !important;
+        overflow: hidden !important;
+        position: relative !important;
     }
     
     .liquid-glass-link:hover .liquid-glass-card {
@@ -573,21 +579,23 @@
         background: linear-gradient(135deg, rgba(240,147,251,0.75) 0%, rgba(245,87,108,0.85) 100%);
     }
     
+    /* Enhanced Content Styling for Highlights */
     .liquid-glass-content {
         position: relative;
         z-index: 2;
         height: 100%;
-        padding: 48px 40px;
+        padding: 40px 32px;
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
         color: #ffffff;
     }
     
+    /* Icon sizing for Highlights - visible & proportional */
     .liquid-glass-icon {
-        font-size: 72px;
-        margin-bottom: 24px;
-        filter: drop-shadow(0 4px 20px rgba(0,0,0,0.3));
+        font-size: 68px;
+        margin-bottom: 22px;
+        filter: drop-shadow(0 6px 24px rgba(0,0,0,0.4));
         animation: float 3s ease-in-out infinite;
     }
     
@@ -597,19 +605,19 @@
     }
     
     .liquid-glass-title {
-        font-size: 42px;
+        font-size: 36px;
         font-weight: 700;
         margin-bottom: 12px;
         letter-spacing: -0.02em;
-        text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+        text-shadow: 0 3px 24px rgba(0,0,0,0.4);
     }
     
     .liquid-glass-description {
-        font-size: 19px;
+        font-size: 16px;
         line-height: 1.5;
         font-weight: 400;
         opacity: 0.95;
-        text-shadow: 0 2px 15px rgba(0,0,0,0.3);
+        text-shadow: 0 2px 16px rgba(0,0,0,0.4);
     }
     
     /* ===== APPLE ABOUT SECTION ===== */
@@ -732,9 +740,9 @@
         grid-template-columns: repeat(4, 1fr) !important;
         gap: 24px !important;
         max-width: var(--apple-container);
-        margin: 0 auto 100px !important;
+        margin: 0 auto 160px !important;
         padding: 0 24px !important;
-        grid-auto-rows: minmax(320px, 320px) !important;
+        grid-auto-rows: minmax(360px, 360px) !important;
         align-items: stretch !important;
     }
     
@@ -754,9 +762,9 @@
     .values-apple-grid .kolaborasi-card,
     .values-apple-grid a .liquid-glass-card {
         width: 100% !important;
-        height: 320px !important;
-        min-height: 320px !important;
-        max-height: 320px !important;
+        height: 360px !important;
+        min-height: 360px !important;
+        max-height: 360px !important;
         min-width: auto !important;
         max-width: none !important;
         flex: 1 1 100% !important;
@@ -832,12 +840,12 @@
             rgba(40,199,111,0.9) 100%);
     }
     
-    /* Enhanced Content Styling */
+    /* Enhanced Content Styling - Scaled for 360px cards */
     .liquid-glass-content {
         position: relative;
         z-index: 2;
         height: 100%;
-        padding: 36px 28px;
+        padding: 40px 30px;
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
@@ -845,33 +853,33 @@
         text-align: center;
     }
     
-    /* Enhanced Icon Animation - Scaled for 320px cards */
+    /* Enhanced Icon Animation - Scaled for 360px cards - More Visible */
     .liquid-glass-icon {
-        font-size: 64px;
-        margin-bottom: 20px;
-        filter: drop-shadow(0 6px 24px rgba(0,0,0,0.4));
+        font-size: 72px;
+        margin-bottom: 24px;
+        filter: drop-shadow(0 8px 28px rgba(0,0,0,0.4));
         animation: float 4s ease-in-out infinite;
         align-self: center;
         transition: transform 0.5s ease;
     }
     
     .liquid-glass-link:hover .liquid-glass-icon {
-        transform: scale(1.12) translateY(-6px);
-        filter: drop-shadow(0 10px 32px rgba(0,0,0,0.5));
+        transform: scale(1.15) translateY(-8px);
+        filter: drop-shadow(0 12px 36px rgba(0,0,0,0.5));
     }
     
     @keyframes float {
         0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-10px); }
+        50% { transform: translateY(-12px); }
     }
     
-    /* Enhanced Title Typography - Scaled for 320px cards */
+    /* Enhanced Title Typography - Scaled for 360px cards */
     .liquid-glass-title {
-        font-size: 32px;
+        font-size: 34px;
         font-weight: 700;
         margin-bottom: 12px;
         letter-spacing: -0.02em;
-        text-shadow: 0 3px 24px rgba(0,0,0,0.5);
+        text-shadow: 0 4px 28px rgba(0,0,0,0.5);
         background: linear-gradient(135deg,
             #ffffff 0%,
             rgba(255,255,255,0.9) 50%,
@@ -883,8 +891,8 @@
     }
     
     .liquid-glass-link:hover .liquid-glass-title {
-        background: linear-gradient(135deg, 
-            #ffffff 0%, 
+        background: linear-gradient(135deg,
+            #ffffff 0%,
             rgba(255,255,255,0.95) 50%,
             rgba(255,255,255,0.9) 100%);
         -webkit-background-clip: text;
@@ -892,15 +900,15 @@
         background-clip: text;
     }
     
-    /* Enhanced Description Typography - Scaled for 320px cards */
+    /* Enhanced Description Typography - Scaled for 360px cards */
     .liquid-glass-description {
-        font-size: 15px;
+        font-size: 16px;
         line-height: 1.5;
         font-weight: 400;
         opacity: 0.95;
-        text-shadow: 0 2px 16px rgba(0,0,0,0.4);
+        text-shadow: 0 2px 18px rgba(0,0,0,0.4);
         color: rgba(255,255,255,0.95);
-        max-width: 260px;
+        max-width: 280px;
         margin: 0 auto;
     }
     
