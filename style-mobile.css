@@ -287,7 +287,7 @@
         transform: rotate(-45deg) translate(5px, -5px);
     }
 
-    /* ===== MENU NAVIGASI MOBILE - BERSIH ===== */
+    /* ===== MENU NAVIGASI MOBILE - iOS 26 LIQUID GLASS ===== */
     #nav-menu.ios-nav {
         display: none;
         position: fixed;
@@ -295,7 +295,7 @@
         left: 0;
         right: 0;
         width: 100%;
-        background: rgba(255, 255, 255, 0.98);
+        background: rgba(255, 255, 255, 0.72);
         backdrop-filter: saturate(180%) blur(20px);
         -webkit-backdrop-filter: saturate(180%) blur(20px);
         flex-direction: column;
@@ -307,7 +307,10 @@
         scrollbar-width: none;
         -ms-overflow-style: none;
         z-index: 9999;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        box-shadow: 
+            0 8px 32px rgba(0, 0, 0, 0.12),
+            inset 0 1px 0 rgba(255, 255, 255, 0.4);
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
     }
 
     #nav-menu.ios-nav::-webkit-scrollbar {
@@ -349,39 +352,73 @@
         font-weight: 500;
         color: #1d1d1f;
         text-decoration: none;
-        transition: background 0.2s ease;
-        background: none;
+        transition: all 0.3s ease;
+        background: transparent;
         border: none;
         text-align: left;
         cursor: pointer;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Liquid glass hover effect */
+    #nav-menu.ios-nav a::before,
+    #nav-menu.ios-nav button.nav-dropdown-toggle::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, 
+            rgba(102, 126, 234, 0.08) 0%, 
+            rgba(118, 75, 162, 0.08) 100%);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+    }
+
+    #nav-menu.ios-nav a:hover::before,
+    #nav-menu.ios-nav button.nav-dropdown-toggle:hover::before {
+        opacity: 1;
     }
 
     #nav-menu.ios-nav a:hover,
     #nav-menu.ios-nav button.nav-dropdown-toggle:hover {
-        background: rgba(0, 113, 227, 0.1);
+        background: rgba(0, 113, 227, 0.05);
         color: #0071e3;
     }
 
-    /* Dark mode mobile menu */
+    /* Dark Mode iOS 26 Liquid Glass */
     body.dark-mode #nav-menu.ios-nav {
-        background: rgba(0, 0, 0, 0.98) !important;
-        box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+        background: rgba(0, 0, 0, 0.72) !important;
+        box-shadow: 
+            0 8px 32px rgba(0, 0, 0, 0.4),
+            inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     body.dark-mode #nav-menu.ios-nav li {
-        border-bottom-color: rgba(255, 255, 255, 0.15) !important;
+        border-bottom-color: rgba(255, 255, 255, 0.08) !important;
     }
 
     body.dark-mode #nav-menu.ios-nav a,
     body.dark-mode #nav-menu.ios-nav button.nav-dropdown-toggle {
         color: #fff !important;
-        background: rgba(255, 255, 255, 0.02);
+        background: transparent;
+    }
+
+    body.dark-mode #nav-menu.ios-nav a::before,
+    body.dark-mode #nav-menu.ios-nav button.nav-dropdown-toggle::before {
+        background: linear-gradient(135deg, 
+            rgba(41, 151, 255, 0.12) 0%, 
+            rgba(159, 90, 255, 0.12) 100%);
     }
 
     body.dark-mode #nav-menu.ios-nav a:hover,
     body.dark-mode #nav-menu.ios-nav button.nav-dropdown-toggle:hover {
-        background: rgba(255, 255, 255, 0.1) !important;
-        color: #4da3ff !important;
+        background: rgba(41, 151, 255, 0.15);
+        color: #5ac8fa !important;
     }
     
     /* Pemilih bahasa di menu mobile */
