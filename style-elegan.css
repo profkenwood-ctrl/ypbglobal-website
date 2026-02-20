@@ -861,14 +861,14 @@ section {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
-    grid-auto-rows: minmax(500px, 500px); /* SAMA BESAR untuk semua row - Desktop */
+    grid-auto-rows: minmax(380px, 380px); /* SAMA BESAR untuk semua row - Desktop */
     align-items: stretch; /* Stretch semua items */
 }
 
 .highlights-apple-grid .liquid-glass-card {
-    height: 500px !important; /* SAMA BESAR untuk Sorotan Beranda - Desktop */
-    min-height: 500px !important;
-    max-height: 500px !important;
+    height: 380px !important; /* SAMA BESAR untuk Sorotan Beranda - Desktop */
+    min-height: 380px !important;
+    max-height: 380px !important;
 }
 
 .highlight-apple-link {
@@ -881,9 +881,9 @@ section {
 
 .highlight-apple-card {
     position: relative;
-    height: 500px !important; /* SAMA BESAR untuk semua Sorotan Beranda - Desktop */
-    min-height: 500px !important;
-    max-height: 500px !important;
+    height: 380px !important; /* SAMA BESAR untuk semua Sorotan Beranda - Desktop */
+    min-height: 380px !important;
+    max-height: 380px !important;
     border-radius: 30px;
     overflow: hidden;
     box-shadow: 0 20px 60px rgba(0,0,0,0.15);
@@ -1041,15 +1041,15 @@ section {
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
     margin-bottom: 80px;
-    grid-auto-rows: minmax(500px, 500px); /* SAMA BESAR untuk semua row - Desktop */
+    grid-auto-rows: minmax(380px, 380px); /* SAMA BESAR untuk semua row - Desktop */
     align-items: stretch; /* Stretch semua items */
 }
 
 .apple-hero-card {
     position: relative;
-    height: 500px !important; /* SAMA BESAR untuk semua Visi & Misi - Desktop */
-    min-height: 500px !important;
-    max-height: 500px !important;
+    height: 380px !important; /* SAMA BESAR untuk semua Visi & Misi - Desktop */
+    min-height: 380px !important;
+    max-height: 380px !important;
     border-radius: 30px;
     overflow: hidden;
     box-shadow: 0 20px 60px rgba(0,0,0,0.3);
@@ -1235,7 +1235,7 @@ section {
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
     margin-bottom: 80px;
-    grid-auto-rows: minmax(500px, 500px); /* SAMA BESAR untuk semua row - Desktop */
+    grid-auto-rows: minmax(380px, 380px); /* SAMA BESAR untuk semua row - Desktop */
     align-items: stretch;
 }
 
@@ -1248,9 +1248,9 @@ section {
 
 .values-apple-grid .liquid-glass-card {
     width: 100% !important;
-    height: 500px !important; /* Fixed height untuk semua kotak - Desktop - SAMA BESAR */
-    min-height: 500px !important;
-    max-height: 500px !important;
+    height: 380px !important; /* Fixed height untuk semua kotak - Desktop - SAMA BESAR */
+    min-height: 380px !important;
+    max-height: 380px !important;
     min-width: auto !important;
     max-width: none !important;
     position: relative;
@@ -1262,14 +1262,14 @@ section {
     .values-apple-grid {
         grid-template-columns: repeat(4, 1fr) !important;
         gap: 30px !important;
-        grid-auto-rows: minmax(500px, 500px) !important;
+        grid-auto-rows: minmax(380px, 380px) !important;
         align-items: stretch !important;
     }
 
     .values-apple-grid .liquid-glass-card {
-        height: 500px !important; /* Desktop - SEMUA BOX SAMA BESAR */
-        min-height: 500px !important;
-        max-height: 500px !important;
+        height: 380px !important; /* Desktop - SEMUA BOX SAMA BESAR */
+        min-height: 380px !important;
+        max-height: 380px !important;
         width: 100% !important;
         flex: 1 1 100% !important;
     }
@@ -1279,14 +1279,14 @@ section {
     .values-apple-grid {
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 20px !important;
-        grid-auto-rows: minmax(450px, 450px) !important;
+        grid-auto-rows: minmax(350px, 350px) !important;
         align-items: stretch !important;
     }
 
     .values-apple-grid .liquid-glass-card {
-        height: 450px !important; /* Tablet - SEMUA BOX SAMA BESAR */
-        min-height: 450px !important;
-        max-height: 450px !important;
+        height: 350px !important; /* Tablet - SEMUA BOX SAMA BESAR */
+        min-height: 350px !important;
+        max-height: 350px !important;
         width: 100% !important;
         flex: 1 1 100% !important;
     }
@@ -1296,14 +1296,14 @@ section {
     .values-apple-grid {
         grid-template-columns: 1fr !important;
         gap: 14px !important;
-        grid-auto-rows: minmax(400px, 400px) !important;
+        grid-auto-rows: minmax(320px, 320px) !important;
         align-items: stretch !important;
     }
 
     .values-apple-grid .liquid-glass-card {
-        height: 400px !important; /* Mobile - SEMUA BOX SAMA BESAR */
-        min-height: 400px !important;
-        max-height: 400px !important;
+        height: 320px !important; /* Mobile - SEMUA BOX SAMA BESAR */
+        min-height: 320px !important;
+        max-height: 320px !important;
         width: 100% !important;
         flex: 1 1 100% !important;
     }
@@ -1314,9 +1314,9 @@ section {
 
 .liquid-glass-card {
     position: relative;
-    height: 500px !important; /* SAMA BESAR untuk semua card - Desktop - Sorotan, Nilai, dll */
-    min-height: 500px !important;
-    max-height: 500px !important;
+    height: 380px !important; /* SAMA BESAR untuk semua card - Desktop - Sorotan, Nilai, dll */
+    min-height: 380px !important;
+    max-height: 380px !important;
     border-radius: 30px;
     overflow: hidden;
     backdrop-filter: saturate(180%) blur(20px);
@@ -2332,7 +2332,7 @@ body.dark-mode .org-connector-apple {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 32px;
-    grid-auto-rows: minmax(500px, 500px); /* SAMA BESAR untuk semua row - Desktop */
+    grid-auto-rows: minmax(380px, 380px); /* SAMA BESAR untuk semua row - Desktop */
     align-items: stretch; /* Stretch semua items */
 }
 
@@ -2342,9 +2342,9 @@ body.dark-mode .org-connector-apple {
     overflow: hidden;
     box-shadow: var(--shadow-md);
     transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease;
-    height: 500px !important; /* SAMA BESAR untuk semua Program - Desktop */
-    min-height: 500px !important;
-    max-height: 500px !important;
+    height: 380px !important; /* SAMA BESAR untuk semua Program - Desktop */
+    min-height: 380px !important;
+    max-height: 380px !important;
     width: 100% !important;
     flex: 1 1 100% !important;
     display: flex !important;
@@ -2357,9 +2357,9 @@ body.dark-mode .org-connector-apple {
 }
 
 .program-image {
-    height: 250px !important; /* Proporsional: 50% dari tinggi box - Desktop */
-    min-height: 250px !important;
-    max-height: 250px !important;
+    height: 190px !important; /* Proporsional: 50% dari tinggi box - Desktop */
+    min-height: 190px !important;
+    max-height: 190px !important;
     position: relative;
     overflow: hidden;
     flex-shrink: 0 !important;
@@ -2449,7 +2449,7 @@ body.dark-mode .org-connector-apple {
     grid-template-columns: repeat(3, 1fr);
     gap: 32px;
     margin-bottom: 40px;
-    grid-auto-rows: minmax(500px, 500px); /* SAMA BESAR untuk semua row - Desktop */
+    grid-auto-rows: minmax(380px, 380px); /* SAMA BESAR untuk semua row - Desktop */
     align-items: stretch; /* Stretch semua items */
 }
 
@@ -2459,9 +2459,9 @@ body.dark-mode .org-connector-apple {
     overflow: hidden;
     box-shadow: var(--shadow-md);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: 500px !important; /* SAMA BESAR untuk semua Berita - Desktop */
-    min-height: 500px !important;
-    max-height: 500px !important;
+    height: 380px !important; /* SAMA BESAR untuk semua Berita - Desktop */
+    min-height: 380px !important;
+    max-height: 380px !important;
     width: 100% !important;
     flex: 1 1 100% !important;
     display: flex !important;
@@ -2474,9 +2474,9 @@ body.dark-mode .org-connector-apple {
 }
 
 .news-image {
-    height: 250px !important; /* Proporsional: 50% dari tinggi box - Desktop */
-    min-height: 250px !important;
-    max-height: 250px !important;
+    height: 190px !important; /* Proporsional: 50% dari tinggi box - Desktop */
+    min-height: 190px !important;
+    max-height: 190px !important;
     position: relative;
     overflow: hidden;
     flex-shrink: 0 !important;
