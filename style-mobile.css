@@ -96,7 +96,7 @@
     .nav-controls {
         display: flex;
         align-items: center;
-        gap: 12px;
+        gap: 8px;
         flex-shrink: 0;
     }
     
@@ -105,7 +105,7 @@
         position: relative;
         flex-shrink: 0;
     }
-    
+
     .lang-toggle {
         display: flex;
         align-items: center;
@@ -113,28 +113,28 @@
         background: none;
         border: none;
         cursor: pointer;
-        padding: 8px 12px;
+        padding: 6px 10px;
         border-radius: 8px;
         transition: background 0.2s ease;
     }
-    
+
     .lang-toggle:hover {
         background: rgba(0, 0, 0, 0.05);
     }
-    
+
     .lang-current {
         font-size: 13px;
         font-weight: 500;
         color: #1d1d1f;
         white-space: nowrap;
     }
-    
+
     .lang-arrow {
         font-size: 10px;
         color: #666;
         transition: transform 0.3s ease;
     }
-    
+
     .language-selector.active .lang-arrow {
         transform: rotate(180deg);
     }
@@ -167,22 +167,50 @@
     
     /* ===== THEME TOGGLE - VISIBLE ON MOBILE ===== */
     .theme-toggle {
-        width: 36px;
-        height: 36px;
-        background: rgba(0, 0, 0, 0.05);
-        border: none;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        flex-shrink: 0;
+        width: 36px !important;
+        height: 36px !important;
+        background: rgba(0, 0, 0, 0.05) !important;
+        border: none !important;
+        border-radius: 50% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        cursor: pointer !important;
+        flex-shrink: 0 !important;
+        padding: 0 !important;
     }
-    
+
     .theme-toggle svg {
-        width: 18px;
-        height: 18px;
-        color: #000;
+        width: 18px !important;
+        height: 18px !important;
+        color: #000 !important;
+        stroke: currentColor !important;
+        display: block !important;
+    }
+
+    .theme-toggle .theme-icon-sun {
+        display: block !important;
+    }
+
+    .theme-toggle .theme-icon-moon {
+        display: none !important;
+    }
+
+    /* Dark Mode - Theme Toggle */
+    body.dark-mode .theme-toggle {
+        background: rgba(255, 255, 255, 0.1) !important;
+    }
+
+    body.dark-mode .theme-toggle svg {
+        color: #fff !important;
+    }
+
+    body.dark-mode .theme-toggle .theme-icon-sun {
+        display: none !important;
+    }
+
+    body.dark-mode .theme-toggle .theme-icon-moon {
+        display: block !important;
     }
     
     /* ===== MOBILE MENU BUTTON - VISIBLE ON MOBILE ===== */
@@ -215,37 +243,16 @@
     .ios-mobile-toggle[aria-expanded="true"] span:nth-child(1) {
         transform: rotate(45deg) translate(5px, 5px);
     }
-    
+
     .ios-mobile-toggle[aria-expanded="true"] span:nth-child(2) {
         opacity: 0;
         transform: translateX(-10px);
     }
-    
+
     .ios-mobile-toggle[aria-expanded="true"] span:nth-child(3) {
         transform: rotate(-45deg) translate(5px, -5px);
     }
-    
-    /* ===== THEME TOGGLE - PROPER POSITION ===== */
-    .theme-toggle {
-        width: 36px;
-        height: 36px;
-        background: rgba(0, 0, 0, 0.05);
-        border: none;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        flex-shrink: 0;
-        order: 3;
-    }
-    
-    .theme-toggle svg {
-        width: 18px;
-        height: 18px;
-        color: #000;
-    }
-    
+
     /* ===== MOBILE NAVIGATION MENU - CLEAN ===== */
     #nav-menu.ios-nav {
         display: none;
@@ -1231,6 +1238,9 @@
 
 [dir="rtl"] .nav-controls {
     direction: ltr !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
 }
 
 [dir="rtl"] .lang-dropdown {

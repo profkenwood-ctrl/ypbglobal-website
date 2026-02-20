@@ -34,6 +34,15 @@
         /* Hide scrollbar on navigation */
         #nav-menu,.ios-nav,.nav-menu{overflow-x:hidden!important;overflow-y:auto!important;scrollbar-width:none!important;-ms-overflow-style:none!important}
         #nav-menu::-webkit-scrollbar,.ios-nav::-webkit-scrollbar,.nav-menu::-webkit-scrollbar{display:none!important;width:0!important;height:0!important}
+        /* Theme Toggle - All Screens */
+        .theme-toggle{width:36px;height:36px;background:rgba(0,0,0,.05);border:none;border-radius:50%;display:flex!important;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;padding:0}
+        .theme-toggle svg{width:18px;height:18px;color:#000;stroke:currentColor!important;display:block!important}
+        .theme-toggle .theme-icon-sun{display:block!important}
+        .theme-toggle .theme-icon-moon{display:none!important}
+        body.dark-mode .theme-toggle{background:rgba(255,255,255,.1)}
+        body.dark-mode .theme-toggle svg{color:#fff!important}
+        body.dark-mode .theme-toggle .theme-icon-sun{display:none!important}
+        body.dark-mode .theme-toggle .theme-icon-moon{display:block!important}
         /* Mobile Critical Styles */
         @media(max-width:768px){
         *{box-sizing:border-box}
@@ -47,9 +56,9 @@
         .ios-nav{display:flex;gap:32px;list-style:none;align-items:center;margin:0;padding:0;flex:1;justify-content:center}
         .nav-link{text-decoration:none;color:var(--text-secondary);font-size:14px;font-weight:400;padding:8px 0;transition:color .2s ease}
         .nav-link:hover{color:var(--text-primary)}
-        .nav-controls{display:flex;align-items:center;gap:12px;flex-shrink:0}
+        .nav-controls{display:flex;align-items:center;gap:8px;flex-shrink:0}
         .language-selector{position:relative;flex-shrink:0}
-        .lang-toggle{display:flex;align-items:center;gap:4px;background:none;border:none;cursor:pointer;padding:8px 12px;border-radius:8px;transition:background .2s ease}
+        .lang-toggle{display:flex;align-items:center;gap:4px;background:none;border:none;cursor:pointer;padding:6px 10px;border-radius:8px;transition:background .2s ease}
         .lang-toggle:hover{background:rgba(0,0,0,.05)}
         .lang-current{font-size:13px;font-weight:500;color:#1d1d1f;white-space:nowrap}
         .lang-arrow{font-size:10px;color:#666;transition:transform .3s ease}
@@ -62,8 +71,6 @@
         .lang-option{display:block;padding:8px 12px;font-size:13px;color:#1d1d1f;text-decoration:none;transition:background .2s ease}
         .lang-option:hover{background:rgba(0,113,227,.08)}
         .lang-option.active{color:#0071e3;font-weight:600;background:rgba(0,113,227,.08)}
-        .theme-toggle{width:36px;height:36px;background:rgba(0,0,0,.05);border:none;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0}
-        .theme-toggle svg{width:18px;height:18px;color:#000}
         .ios-mobile-toggle{display:none}
         .ios-mobile-toggle span{display:block;width:22px;height:2px;background:#000;transition:all .3s ease;border-radius:2px;margin:0}
         .ios-mobile-toggle[aria-expanded="true"] span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
@@ -184,6 +191,21 @@
     <link rel="stylesheet" id="theme-css" href="style-elegan.css">
     <link rel="stylesheet" href="style-mobile.css">
     <link rel="stylesheet" href="style-darkmode-toggle.css">
+    
+    <!-- Theme Toggle Fix - Ensure visibility on all screens -->
+    <style>
+        .theme-toggle{display:flex!important;align-items:center!important;justify-content:center!important;width:36px!important;height:36px!important;background:rgba(0,0,0,.05)!important;border-radius:50%!important;cursor:pointer!important;flex-shrink:0!important;padding:0!important}
+        .theme-toggle svg{display:block!important;width:18px!important;height:18px!important;stroke:currentColor!important}
+        .theme-toggle .theme-icon-sun{display:block!important}
+        .theme-toggle .theme-icon-moon{display:none!important}
+        body.dark-mode .theme-toggle{background:rgba(255,255,255,.1)!important}
+        body.dark-mode .theme-toggle svg{color:#fff!important}
+        body.dark-mode .theme-toggle .theme-icon-sun{display:none!important}
+        body.dark-mode .theme-toggle .theme-icon-moon{display:block!important}
+        @media(max-width:768px){
+        .theme-toggle{display:flex!important}
+        }
+    </style>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Lompat ke konten utama</a>

@@ -464,6 +464,14 @@ body.dark-mode .logo:hover .brand-name-apple {
     color: var(--text-primary);
 }
 
+/* ===== NAV CONTROLS - Desktop ===== */
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
 /* ===== LANGUAGE SELECTOR ===== */
 .language-selector {
     position: relative;
@@ -514,7 +522,7 @@ body.dark-mode .logo:hover .brand-name-apple {
     padding: 8px;
     border-radius: 8px;
     transition: color 0.2s ease, background 0.2s ease;
-    margin-left: 8px;
+    margin-left: 0;
 }
 
 .theme-toggle:hover {
@@ -3060,13 +3068,14 @@ select:focus {
 }
 
 [dir="rtl"] .ios-header nav {
-    direction: rtl;
+    direction: ltr;
     justify-content: space-between;
 }
 
 [dir="rtl"] .ios-logo {
     flex-direction: row;
     gap: 12px;
+    direction: rtl;
 }
 
 [dir="rtl"] .ios-nav {
@@ -3076,6 +3085,10 @@ select:focus {
 
 [dir="rtl"] .ios-mobile-toggle {
     margin-right: auto;
+}
+
+[dir="rtl"] .nav-controls {
+    direction: ltr;
 }
 
 [dir="rtl"] .footer-content {
@@ -3123,6 +3136,8 @@ select:focus {
 [dir="rtl"] .lang-dropdown {
     right: auto;
     left: 0;
+    direction: rtl;
+    text-align: right;
 }
 
 /* RTL for mobile menu - ensure dropdowns don't overflow */
