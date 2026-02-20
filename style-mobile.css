@@ -1,5 +1,11 @@
 /* ===== MOBILE OVERRIDES (Max Width 768px) ===== */
 @media (max-width: 768px) {
+    /* Prevent horizontal overflow */
+    html, body {
+        overflow-x: hidden;
+        max-width: 100vw;
+    }
+
     .container {
         padding: 0 20px;
     }
@@ -40,6 +46,12 @@
         pointer-events: none;
         max-height: calc(100vh - var(--header-height));
         overflow-y: auto;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE/Edge */
+    }
+
+    .nav-menu::-webkit-scrollbar {
+        display: none; /* Chrome/Safari/Opera */
     }
 
     .nav-menu.active {
@@ -84,6 +96,9 @@
         margin-top: 8px;
         box-shadow: none;
         border: 1px solid var(--border-light);
+        min-width: auto;
+        width: 100%;
+        max-width: 100%;
     }
 
     .language-selector.active .lang-dropdown {
@@ -100,10 +115,18 @@
         height: 36px;
     }
 
-    /* Hero */
+    /* Hero - Fix video to be proportional and fully visible */
     .hero {
-        height: 75vh;
-        min-height: 500px;
+        height: 100vh;
+        min-height: 100vh;
+        max-height: 100vh;
+    }
+
+    .hero-video {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
     }
 
     .hero-title {
@@ -304,5 +327,18 @@
 
     .about-card {
         padding: 24px;
+    }
+
+    /* RTL fixes for mobile */
+    [dir="rtl"] .lang-dropdown {
+        left: 0;
+        right: 0;
+    }
+
+    /* Ensure all dropdowns stay within viewport */
+    .lang-dropdown,
+    .nav-dropdown-menu {
+        max-width: 100%;
+        overflow-x: hidden;
     }
 }
