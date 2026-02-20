@@ -1229,14 +1229,28 @@ section {
     position: relative;
 }
 
-/* Grid Nilai Responsif */
+/* Grid Nilai Responsif - UKURAN SAMA BESAR */
+@media (min-width: 1201px) {
+    .values-apple-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .values-apple-grid .liquid-glass-card {
+        height: 500px !important; /* Desktop - SEMUA BOX SAMA BESAR */
+        min-height: 500px !important;
+        max-height: 500px !important;
+    }
+}
+
 @media (max-width: 1200px) {
     .values-apple-grid {
         grid-template-columns: repeat(2, 1fr);
     }
     
     .values-apple-grid .liquid-glass-card {
-        height: 450px !important;
+        height: 450px !important; /* Tablet - SEMUA BOX SAMA BESAR */
+        min-height: 450px !important;
+        max-height: 450px !important;
     }
 }
 
@@ -1246,7 +1260,9 @@ section {
     }
     
     .values-apple-grid .liquid-glass-card {
-        height: 400px !important;
+        height: 400px !important; /* Mobile - SEMUA BOX SAMA BESAR */
+        min-height: 400px !important;
+        max-height: 400px !important;
     }
 }
 

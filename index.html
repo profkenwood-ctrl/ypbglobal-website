@@ -175,9 +175,13 @@
         body[dir="rtl"] .lang-dropdown{direction:rtl;text-align:right}
         body[dir="rtl"] .apple-hero-list{text-align:right}
         body[dir="rtl"] .nav-dropdown-menu{direction:rtl}
-        /* Toggle tema untuk bahasa LTR (Indonesia, Inggris, dll) */
+        /* Toggle tema untuk SEMUA bahasa - Indonesia, Inggris, Arab, dll */
         body[dir="ltr"] .theme-toggle,body:not([dir]) .theme-toggle{display:flex!important}
         body[dir="ltr"] .language-selector,body:not([dir]) .language-selector{display:block!important}
+        /* WAJIB: body element .theme-toggle harus terlihat */
+        body .theme-toggle{display:flex!important;visibility:visible!important;opacity:1!important}
+        body .nav-controls{display:flex!important;visibility:visible!important;opacity:1!important}
+        body .language-selector{display:block!important;visibility:visible!important;opacity:1!important}
         }
         @media(max-width:480px){
         .hero-title{font-size:22px!important}
@@ -209,8 +213,8 @@
 
     <!-- Perbaikan Toggle Tema - Pastikan terlihat di semua layar (HARUS setelah semua CSS) -->
     <style>
-        /* Desktop - Toggle Tema */
-        .theme-toggle{display:flex!important;align-items:center!important;justify-content:center!important;width:36px!important;height:36px!important;background:rgba(0,0,0,.05)!important;border-radius:50%!important;cursor:pointer!important;flex-shrink:0!important;padding:0!important;border:none!important;position:relative!important;z-index:10000!important}
+        /* Desktop dan Mobile - Toggle Tema WAJIB terlihat untuk SEMUA bahasa */
+        .theme-toggle{display:flex!important;align-items:center!important;justify-content:center!important;width:36px!important;height:36px!important;background:rgba(0,0,0,.05)!important;border-radius:50%!important;cursor:pointer!important;flex-shrink:0!important;padding:0!important;border:none!important;position:relative!important;z-index:10000!important;visibility:visible!important;opacity:1!important}
         .theme-toggle svg{display:block!important;width:18px!important;height:18px!important;stroke:currentColor!important;color:#000!important}
         .theme-toggle .theme-icon-sun{display:block!important}
         .theme-toggle .theme-icon-moon{display:none!important}
@@ -220,11 +224,16 @@
         body.dark-mode .theme-toggle .theme-icon-moon{display:block!important}
         .nav-controls{display:flex!important;align-items:center!important;gap:8px!important;flex-shrink:0!important;position:relative!important;z-index:10001!important}
         .language-selector{display:block!important;position:relative!important;flex-shrink:0!important}
-        /* Mobile - Toggle Tema WAJIB terlihat */
+        /* Mobile - Toggle Tema WAJIB terlihat untuk SEMUA bahasa tanpa terkecuali */
         @media(max-width:768px){
-        .theme-toggle{display:flex!important;order:2!important}
-        .language-selector{order:1!important}
-        .ios-mobile-toggle{order:3!important}
+        .theme-toggle{display:flex!important!important;order:2!important;visibility:visible!important;opacity:1!important}
+        .language-selector{order:1!important;visibility:visible!important;opacity:1!important}
+        .ios-mobile-toggle{order:3!important;visibility:visible!important;opacity:1!important}
+        .nav-controls{display:flex!important!important;align-items:center!important;gap:8px!important}
+        /* Untuk SEMUA bahasa - Indonesia, Inggris, Arab, dll */
+        body .theme-toggle{display:flex!important!important;visibility:visible!important;opacity:1!important}
+        body .nav-controls{display:flex!important!important;visibility:visible!important;opacity:1!important}
+        body .language-selector{display:block!important!important;visibility:visible!important;opacity:1!important}
         }
     </style>
 </head>
