@@ -34,14 +34,52 @@
         /* Hide scrollbar on navigation */
         #nav-menu,.ios-nav,.nav-menu{overflow:visible!important;scrollbar-width:none!important;-ms-overflow-style:none!important}
         #nav-menu::-webkit-scrollbar,.ios-nav::-webkit-scrollbar,.nav-menu::-webkit-scrollbar{display:none!important;width:0!important;height:0!important}
+        /* Mobile Critical Styles */
+        @media(max-width:768px){
+        .ios-header{position:fixed;top:0;left:0;right:0;height:52px;background:rgba(255,255,255,.95);backdrop-filter:saturate(180%) blur(20px);z-index:10000}
+        .ios-header nav{display:flex;align-items:center;justify-content:space-between;padding:0 16px;height:100%}
+        .ios-logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:#000}
+        .ios-logo-circle{width:32px;height:32px;border-radius:50%;overflow:hidden;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%)}
+        .ios-logo-img{width:100%;height:100%;object-fit:cover}
+        .ios-logo-text{font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:150px}
+        .ios-mobile-toggle{display:flex!important;flex-direction:column;gap:4px;background:none;border:none;cursor:pointer;padding:6px;width:40px;height:40px}
+        .ios-mobile-toggle span{display:block;width:24px;height:2px;background:#000;transition:all .3s ease}
+        .ios-mobile-toggle[aria-expanded="true"] span:nth-child(1){transform:rotate(45deg) translate(6px,6px)}
+        .ios-mobile-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+        .ios-mobile-toggle[aria-expanded="true"] span:nth-child(3){transform:rotate(-45deg) translate(6px,-6px)}
+        #nav-menu.ios-nav{display:none;position:fixed;top:52px;left:0;right:0;bottom:0;background:rgba(255,255,255,.98);backdrop-filter:blur(20px);flex-direction:column;padding:20px 16px 80px;overflow-y:auto;z-index:9999}
+        #nav-menu.ios-nav.active{display:flex}
+        #nav-menu.ios-nav li{width:100%;border-bottom:1px solid rgba(60,60,67,.1)}
+        #nav-menu.ios-nav a{display:block;padding:16px 0;font-size:16px;color:#1d1d1f;text-decoration:none}
+        .theme-toggle{width:40px;height:40px;background:rgba(0,0,0,.05);border:none;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer}
+        .theme-toggle svg{width:20px;height:20px}
+        .hero{height:100vh;min-height:100vh;padding-top:52px}
+        .hero-video{width:100%;height:100%;object-fit:cover}
+        .hero-title{font-size:28px;line-height:1.2;margin-bottom:16px}
+        .hero-subtitle{font-size:15px;line-height:1.5;margin-bottom:24px}
+        .hero-cta{display:flex;flex-direction:column;gap:12px;width:100%}
+        .hero-cta .btn{width:100%}
+        .highlights-apple-grid{grid-template-columns:1fr!important;gap:16px!important}
+        .liquid-glass-card{height:300px!important;border-radius:20px!important}
+        .visi-misi-apple{grid-template-columns:1fr!important;gap:16px!important}
+        .apple-hero-card{height:380px!important}
+        .values-apple-grid{grid-template-columns:1fr!important;gap:16px!important}
+        .values-apple-grid .liquid-glass-card{height:320px!important}
+        .org-level-apple{flex-direction:column!important;align-items:center!important;gap:16px!important}
+        .org-id-card{width:100%;max-width:280px!important}
+        .org-id-photo{width:100px!important;height:100px!important}
+        .programs-grid,.news-grid{grid-template-columns:1fr!important;gap:16px!important}
+        .contact-wrapper{grid-template-columns:1fr!important;gap:24px!important}
+        .footer-content{grid-template-columns:1fr!important;gap:24px!important}
+        }
     </style>
 
     <!-- Styles - Deferred for performance -->
-    <link rel="preload" href="style-mobile.css" as="style">
     <link rel="preload" href="style-elegan.css" as="style">
+    <link rel="preload" href="style-mobile.css" as="style">
     <link rel="preload" href="style-darkmode-toggle.css" as="style">
-    <link rel="stylesheet" href="style-mobile.css">
     <link rel="stylesheet" id="theme-css" href="style-elegan.css">
+    <link rel="stylesheet" href="style-mobile.css">
     <link rel="stylesheet" href="style-darkmode-toggle.css">
 </head>
 <body>
