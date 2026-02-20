@@ -92,13 +92,13 @@
         body.dark-mode .lang-option{color:#fff!important}
         body.dark-mode .lang-option:hover{background:rgba(255,255,255,.1)!important}
         body.dark-mode .lang-region-title{color:#888!important}
-        .ios-mobile-toggle{display:none}
+        .ios-mobile-toggle{display:none!important}
         .ios-mobile-toggle span{display:block;width:22px;height:2px;background:#000;transition:all .3s ease;border-radius:2px;margin:0}
         .ios-mobile-toggle[aria-expanded="true"] span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
         .ios-mobile-toggle[aria-expanded="true"] span:nth-child(2){opacity:0;transform:translateX(-10px)}
         .ios-mobile-toggle[aria-expanded="true"] span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
-        #nav-menu.ios-nav{display:none;position:fixed;top:52px;left:0;right:0;bottom:0;width:100%;background:rgba(255,255,255,.98);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);flex-direction:column;padding:0;gap:0;overflow-y:auto;overflow-x:hidden;z-index:9999;scroll-behavior:smooth}
-        #nav-menu.ios-nav.active{display:flex;animation:slideDown .3s ease}
+        #nav-menu.ios-nav{display:none!important;position:fixed;top:52px;left:0;right:0;bottom:0;width:100%;background:rgba(255,255,255,.98);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);flex-direction:column;padding:0;gap:0;overflow-y:auto;overflow-x:hidden;z-index:9999;scroll-behavior:smooth}
+        #nav-menu.ios-nav.active{display:flex!important;animation:slideDown .3s ease}
         @keyframes slideDown{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
         #nav-menu.ios-nav li{width:100%;border-bottom:1px solid rgba(0,0,0,.08);list-style:none}
         #nav-menu.ios-nav li:last-child{border-bottom:none}
