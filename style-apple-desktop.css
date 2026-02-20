@@ -726,15 +726,15 @@
         color: #ffffff;
     }
     
-    /* ===== APPLE VALUES SECTION ===== */
+    /* ===== APPLE VALUES SECTION - Enhanced ===== */
     .values-apple-grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: 20px;
+        gap: 24px;
         max-width: var(--apple-container);
-        margin: 0 auto 60px;
+        margin: 0 auto 80px;
         padding: 0 24px;
-        grid-auto-rows: minmax(340px, 340px);
+        grid-auto-rows: minmax(400px, 400px);
         align-items: stretch;
     }
     
@@ -743,6 +743,7 @@
         width: 100% !important;
         height: 100% !important;
         display: block !important;
+        text-decoration: none !important;
     }
     
     .values-apple-grid .liquid-glass-card,
@@ -751,30 +752,175 @@
     .values-apple-grid .harapan-card,
     .values-apple-grid .kolaborasi-card {
         width: 100% !important;
-        height: 340px !important;
-        min-height: 340px !important;
-        max-height: 340px !important;
+        height: 400px !important;
+        min-height: 400px !important;
+        max-height: 400px !important;
         min-width: auto !important;
         max-width: none !important;
         flex: 1 1 100% !important;
+        border-radius: var(--apple-r-xl) !important;
+        overflow: hidden !important;
+        position: relative !important;
     }
     
+    /* Enhanced Card Hover Effects */
+    .liquid-glass-link:hover {
+        text-decoration: none !important;
+    }
+    
+    .liquid-glass-link:hover .liquid-glass-card {
+        transform: translateY(-12px) scale(1.03);
+        box-shadow: 0 30px 80px rgba(0,0,0,0.25),
+                    0 0 0 1px rgba(255,255,255,0.1);
+    }
+    
+    body.dark-mode .liquid-glass-link:hover .liquid-glass-card {
+        box-shadow: 0 30px 80px rgba(0,0,0,0.5),
+                    0 0 0 1px rgba(255,255,255,0.15);
+    }
+    
+    /* Enhanced Background Image Effects */
+    .liquid-glass-background {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+    }
+    
+    .liquid-glass-background img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.9s cubic-bezier(0.4, 0, 0.2, 1),
+                    filter 0.5s ease;
+        filter: saturate(1.1) contrast(1.05);
+    }
+    
+    .liquid-glass-link:hover .liquid-glass-background img {
+        transform: scale(1.15);
+        filter: saturate(1.2) contrast(1.1) brightness(1.05);
+    }
+    
+    /* Enhanced Overlay Gradients */
     .kasih-card .liquid-glass-overlay {
-        background: linear-gradient(135deg, rgba(255,45,85,0.7) 0%, rgba(255,149,0,0.8) 100%);
+        background: linear-gradient(135deg, 
+            rgba(255,45,85,0.75) 0%, 
+            rgba(255,149,0,0.85) 50%,
+            rgba(255,107,107,0.9) 100%);
     }
     
     .integritas-card .liquid-glass-overlay {
-        background: linear-gradient(135deg, rgba(88,86,214,0.7) 0%, rgba(175,82,222,0.8) 100%);
+        background: linear-gradient(135deg, 
+            rgba(88,86,214,0.75) 0%, 
+            rgba(175,82,222,0.85) 50%,
+            rgba(108,92,231,0.9) 100%);
     }
     
     .harapan-card .liquid-glass-overlay {
-        background: linear-gradient(135deg, rgba(255,204,0,0.7) 0%, rgba(255,149,0,0.8) 100%);
+        background: linear-gradient(135deg, 
+            rgba(255,204,0,0.75) 0%, 
+            rgba(255,149,0,0.85) 50%,
+            rgba(255,171,0,0.9) 100%);
     }
     
     .kolaborasi-card .liquid-glass-overlay {
-        background: linear-gradient(135deg, rgba(52,199,89,0.7) 0%, rgba(48,209,88,0.8) 100%);
+        background: linear-gradient(135deg, 
+            rgba(52,199,89,0.75) 0%, 
+            rgba(48,209,88,0.85) 50%,
+            rgba(40,199,111,0.9) 100%);
     }
     
+    /* Enhanced Content Styling */
+    .liquid-glass-content {
+        position: relative;
+        z-index: 2;
+        height: 100%;
+        padding: 48px 36px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        color: #ffffff;
+        text-align: center;
+    }
+    
+    /* Enhanced Icon Animation */
+    .liquid-glass-icon {
+        font-size: 80px;
+        margin-bottom: 28px;
+        filter: drop-shadow(0 8px 30px rgba(0,0,0,0.4));
+        animation: float 4s ease-in-out infinite;
+        align-self: center;
+        transition: transform 0.5s ease;
+    }
+    
+    .liquid-glass-link:hover .liquid-glass-icon {
+        transform: scale(1.15) translateY(-8px);
+        filter: drop-shadow(0 12px 40px rgba(0,0,0,0.5));
+    }
+    
+    @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-12px); }
+    }
+    
+    /* Enhanced Title Typography */
+    .liquid-glass-title {
+        font-size: 44px;
+        font-weight: 700;
+        margin-bottom: 14px;
+        letter-spacing: -0.025em;
+        text-shadow: 0 4px 30px rgba(0,0,0,0.5);
+        background: linear-gradient(135deg, 
+            #ffffff 0%, 
+            rgba(255,255,255,0.9) 50%,
+            rgba(255,255,255,0.85) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        transition: all 0.4s ease;
+    }
+    
+    .liquid-glass-link:hover .liquid-glass-title {
+        background: linear-gradient(135deg, 
+            #ffffff 0%, 
+            rgba(255,255,255,0.95) 50%,
+            rgba(255,255,255,0.9) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    
+    /* Enhanced Description Typography */
+    .liquid-glass-description {
+        font-size: 18px;
+        line-height: 1.6;
+        font-weight: 400;
+        opacity: 0.95;
+        text-shadow: 0 2px 20px rgba(0,0,0,0.4);
+        color: rgba(255,255,255,0.95);
+        max-width: 280px;
+        margin: 0 auto;
+    }
+    
+    /* Dark Mode Enhancements */
+    body.dark-mode .liquid-glass-card {
+        box-shadow: 0 20px 60px rgba(0,0,0,0.4),
+                    inset 0 1px 2px rgba(255,255,255,0.15),
+                    inset 0 -1px 2px rgba(0,0,0,0.3);
+        border: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    body.dark-mode .liquid-glass-link:hover .liquid-glass-card {
+        border-color: rgba(255,255,255,0.2);
+    }
+    
+    body.dark-mode .liquid-glass-background img {
+        filter: saturate(1.2) contrast(1.1) brightness(0.95);
+    }
+    
+    body.dark-mode .liquid-glass-link:hover .liquid-glass-background img {
+        filter: saturate(1.3) contrast(1.15) brightness(1);
+    }
+
     /* ===== APPLE GALLERY SECTION ===== */
     .gallery-apple-container {
         max-width: var(--apple-container);
@@ -983,7 +1129,7 @@
         color: var(--apple-text);
     }
     
-    /* ===== APPLE PROGRAMS SECTION ===== */
+    /* ===== APPLE PROGRAMS SECTION - Enhanced ===== */
     .programs {
         padding: var(--apple-section) 0;
         background: var(--apple-bg-secondary);
@@ -993,7 +1139,7 @@
     .programs-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 24px;
+        gap: 28px;
         max-width: var(--apple-container);
         margin: 0 auto;
         padding: 0 24px;
@@ -1002,99 +1148,250 @@
     .program-item,
     .program-card {
         background: var(--apple-bg);
-        border-radius: var(--apple-r-lg);
+        border-radius: var(--apple-r-xl);
         overflow: hidden;
-        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        box-shadow: var(--apple-sh-sm);
+        transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        border: 1px solid rgba(0,0,0,0.05);
+    }
+    
+    .program-card-link {
+        text-decoration: none !important;
+        color: inherit !important;
+        display: block !important;
     }
     
     .program-item:hover,
     .program-card:hover {
-        transform: translateY(-8px);
-        box-shadow: var(--apple-sh-xl);
+        transform: translateY(-16px) scale(1.02);
+        box-shadow: 0 30px 80px rgba(0,0,0,0.16),
+                    0 0 0 1px rgba(0,113,227,0.1);
+        border-color: rgba(0,113,227,0.2);
     }
     
+    body.dark-mode .program-item,
+    body.dark-mode .program-card {
+        background: var(--apple-bg);
+        box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        border: 1px solid rgba(255,255,255,0.08);
+    }
+    
+    body.dark-mode .program-item:hover,
+    body.dark-mode .program-card:hover {
+        box-shadow: 0 30px 80px rgba(0,0,0,0.5),
+                    0 0 0 1px rgba(41,151,255,0.2);
+        border-color: rgba(41,151,255,0.3);
+    }
+    
+    /* Enhanced Program Image */
     .program-image {
         position: relative;
-        height: 220px;
+        height: 240px;
         overflow: hidden;
+        background: var(--apple-bg-secondary);
     }
     
     .program-image img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: transform 0.9s cubic-bezier(0.4, 0, 0.2, 1),
+                    filter 0.5s ease;
+        filter: saturate(1.05) contrast(1.02);
     }
     
     .program-item:hover .program-image img,
     .program-card:hover .program-image img {
-        transform: scale(1.1);
+        transform: scale(1.15);
+        filter: saturate(1.15) contrast(1.08) brightness(1.02);
     }
     
+    /* Program Icon with Glassmorphism */
+    .program-icon {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.95);
+        backdrop-filter: saturate(180%) blur(20px);
+        -webkit-backdrop-filter: saturate(180%) blur(20px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 28px;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 2;
+    }
+    
+    .program-item:hover .program-icon,
+    .program-card:hover .program-icon {
+        transform: scale(1.15) rotate(8deg);
+        box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+        background: rgba(255,255,255,1);
+    }
+    
+    body.dark-mode .program-icon {
+        background: rgba(30,30,30,0.95);
+        box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    }
+    
+    body.dark-mode .program-item:hover .program-icon {
+        background: rgba(40,40,40,1);
+        box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+    }
+    
+    /* Enhanced Program Content */
     .program-content {
-        padding: 32px;
+        padding: 36px 32px;
     }
     
     .program-title {
-        font-size: 22px;
-        font-weight: 600;
-        margin-bottom: 12px;
-        letter-spacing: -0.01em;
+        font-size: 23px;
+        font-weight: 700;
+        margin-bottom: 14px;
+        letter-spacing: -0.02em;
         color: var(--apple-text);
+        transition: color 0.3s ease;
+        line-height: 1.3;
+    }
+    
+    .program-item:hover .program-title,
+    .program-card:hover .program-title {
+        color: var(--apple-blue);
+    }
+    
+    body.dark-mode .program-item:hover .program-title,
+    body.dark-mode .program-card:hover .program-title {
+        color: #2997ff;
     }
     
     .program-description {
         font-size: 15px;
-        line-height: 1.6;
+        line-height: 1.7;
+        font-weight: 400;
         color: var(--apple-text-secondary);
-        margin-bottom: 20px;
+        margin-bottom: 24px;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
     }
     
+    /* Enhanced Learn More Button */
     .btn-link {
         color: var(--apple-blue);
         text-decoration: none;
-        font-weight: 500;
+        font-weight: 600;
         font-size: 15px;
         display: inline-flex;
         align-items: center;
-        gap: 6px;
-        transition: all 0.2s ease;
+        gap: 8px;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        padding-bottom: 4px;
+    }
+    
+    .btn-link::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--apple-blue);
+        transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
     
     .btn-link:hover {
-        text-decoration: underline;
+        text-decoration: none;
+        gap: 12px;
     }
     
-    /* Apple Programs Filter */
+    .btn-link:hover::after {
+        width: 100%;
+    }
+    
+    body.dark-mode .btn-link {
+        color: #2997ff;
+    }
+    
+    body.dark-mode .btn-link::after {
+        background: #2997ff;
+    }
+    
+    /* Enhanced Programs Filter */
     .programs-filter {
         display: flex;
         justify-content: center;
         gap: 12px;
-        margin-bottom: 48px;
+        margin-bottom: 60px;
         flex-wrap: wrap;
     }
     
     .filter-btn {
-        padding: 10px 20px;
-        background: var(--apple-bg-secondary);
+        padding: 12px 24px;
+        background: var(--apple-bg);
         border: 1px solid var(--apple-border);
         border-radius: var(--apple-r-full);
         font-size: 14px;
         font-weight: 500;
         color: var(--apple-text-secondary);
         cursor: pointer;
-        transition: all 0.2s ease;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .filter-btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(0,113,227,0.08) 0%, rgba(118,75,162,0.08) 100%);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        border-radius: var(--apple-r-full);
+    }
+    
+    .filter-btn:hover::before {
+        opacity: 1;
     }
     
     .filter-btn:hover {
-        background: var(--apple-border-light);
+        background: var(--apple-bg);
+        border-color: var(--apple-border);
+        transform: scale(1.05);
     }
     
     .filter-btn.active {
         background: var(--apple-blue);
         color: #ffffff;
         border-color: var(--apple-blue);
+        box-shadow: 0 8px 24px rgba(0,113,227,0.35);
+    }
+    
+    .filter-btn.active::before {
+        opacity: 0;
+    }
+    
+    body.dark-mode .filter-btn {
+        background: var(--apple-bg);
+        border-color: var(--apple-border);
+        color: var(--apple-text-secondary);
+    }
+    
+    body.dark-mode .filter-btn:hover {
+        border-color: var(--apple-border-light);
+    }
+    
+    body.dark-mode .filter-btn.active {
+        background: #2997ff;
+        box-shadow: 0 8px 24px rgba(41,151,255,0.4);
     }
     
     /* ===== APPLE NEWS SECTION ===== */
