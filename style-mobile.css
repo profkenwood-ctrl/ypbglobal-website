@@ -339,18 +339,25 @@
     #nav-menu.ios-nav li:last-child {
         border-bottom: none;
     }
-    
-    #nav-menu.ios-nav a {
+
+    #nav-menu.ios-nav a,
+    #nav-menu.ios-nav button.nav-dropdown-toggle {
         display: block;
+        width: 100%;
         padding: 16px 16px;
         font-size: 15px;
         font-weight: 500;
         color: #1d1d1f;
         text-decoration: none;
         transition: background 0.2s ease;
+        background: none;
+        border: none;
+        text-align: left;
+        cursor: pointer;
     }
-    
-    #nav-menu.ios-nav a:hover {
+
+    #nav-menu.ios-nav a:hover,
+    #nav-menu.ios-nav button.nav-dropdown-toggle:hover {
         background: rgba(0, 113, 227, 0.08);
         color: #0071e3;
     }
