@@ -92,6 +92,18 @@ function initMobileMenu() {
             document.body.style.overflow = '';
         });
     });
+
+    // Handle dropdown toggle for "Pustaka" menu on mobile
+    const dropdownToggles = menu.querySelectorAll('.nav-dropdown-toggle');
+    dropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            const parent = toggle.closest('.nav-dropdown');
+            if (parent) {
+                parent.classList.toggle('active');
+            }
+        });
+    });
 }
 
 function initLanguageSelector() {

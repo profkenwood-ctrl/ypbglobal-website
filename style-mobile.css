@@ -1,636 +1,955 @@
-/* ===== MOBILE OVERRIDES (Max Width 768px) ===== */
+/* ===================================
+   YPBG - MOBILE RESPONSIVE STYLES
+   Complete Mobile Layout Fix
+   =================================== */
+
+/* ===== MOBILE BASE (Max Width 768px) ===== */
 @media (max-width: 768px) {
-    /* ===== GLOBAL PREVENT OVERFLOW ===== */
-    html, body {
+    
+    /* ===== GLOBAL RESET ===== */
+    *, *::before, *::after {
+        box-sizing: border-box;
+    }
+    
+    html {
         overflow-x: hidden;
+        width: 100%;
+    }
+    
+    body {
+        overflow-x: hidden;
+        width: 100%;
         max-width: 100vw;
     }
-
-    * {
-        max-width: 100%;
-    }
-
-    .container {
-        padding: 0 16px;
-    }
-
-    /* ===== TYPOGRAPHY ===== */
-    .section-title {
-        font-size: 28px;
-        margin-bottom: 30px;
-        line-height: 1.2;
-    }
-
-    .subsection-title {
-        font-size: 22px;
-        margin: 40px 0 20px;
-        line-height: 1.3;
-    }
-
-    /* ===== HEADER & NAVIGATION ===== */
-    .navbar-container {
-        padding: 0 16px;
-    }
-
-    .mobile-menu-toggle {
-        display: block;
-        padding: 8px;
-    }
-
-    .nav-menu {
+    
+    /* ===== IOS HEADER - MOBILE ===== */
+    .ios-header {
         position: fixed;
-        top: var(--header-height);
+        top: 0;
         left: 0;
         right: 0;
-        background: rgba(255,255,255,0.98);
-        backdrop-filter: blur(20px);
+        height: 52px;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: saturate(180%) blur(20px);
+        -webkit-backdrop-filter: saturate(180%) blur(20px);
+        border-bottom: 0.5px solid rgba(60, 60, 67, 0.12);
+        z-index: 9999;
+    }
+    
+    .ios-header nav {
+        max-width: 100%;
+        margin: 0;
+        padding: 0 16px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        overflow: visible;
+    }
+    
+    /* ===== IOS LOGO - MOBILE ===== */
+    .ios-logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        color: #000;
+        flex-shrink: 0;
+    }
+    
+    .ios-logo-circle {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        overflow: hidden;
+        flex-shrink: 0;
+    }
+    
+    .ios-logo-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .ios-logo-text {
+        font-size: 14px;
+        font-weight: 600;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 180px;
+    }
+    
+    /* ===== MOBILE MENU TOGGLE ===== */
+    .ios-mobile-toggle {
+        display: flex !important;
         flex-direction: column;
-        padding: 16px;
-        gap: 0;
-        border-bottom: 1px solid var(--border);
-        transform: translateY(-100%);
+        gap: 4px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 6px;
+        z-index: 10001;
+        flex-shrink: 0;
+    }
+    
+    .ios-mobile-toggle span {
+        display: block;
+        width: 22px;
+        height: 2px;
+        background: #000;
+        transition: all 0.3s ease;
+        border-radius: 2px;
+    }
+    
+    /* Hamburger Animation */
+    .ios-mobile-toggle[aria-expanded="true"] span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+    
+    .ios-mobile-toggle[aria-expanded="true"] span:nth-child(2) {
         opacity: 0;
-        transition: transform 0.3s ease, opacity 0.3s ease;
-        pointer-events: none;
-        max-height: calc(100vh - var(--header-height));
+    }
+    
+    .ios-mobile-toggle[aria-expanded="true"] span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
+    
+    /* ===== IOS NAV - MOBILE DROPDOWN ===== */
+    .ios-nav {
+        display: none;
+        position: fixed;
+        top: 52px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: saturate(180%) blur(20px);
+        -webkit-backdrop-filter: saturate(180%) blur(20px);
+        flex-direction: column;
+        padding: 20px 16px 80px;
+        gap: 0;
         overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
         -ms-overflow-style: none;
+        z-index: 9998;
     }
-
-    .nav-menu::-webkit-scrollbar {
+    
+    .ios-nav::-webkit-scrollbar {
         display: none;
     }
-
-    .nav-menu.active {
-        transform: translateY(0);
-        opacity: 1;
-        pointer-events: auto;
+    
+    .ios-nav.active {
+        display: flex;
+        animation: slideDown 0.3s ease;
     }
-
-    .nav-menu li {
-        border-bottom: 1px solid var(--border-light);
+    
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    .ios-nav li {
         width: 100%;
+        border-bottom: 1px solid rgba(60, 60, 67, 0.1);
     }
-
-    .nav-menu li:last-child {
+    
+    .ios-nav li:last-child {
         border-bottom: none;
     }
-
-    .nav-link {
+    
+    .ios-nav a {
         display: block;
-        padding: 14px 0;
+        padding: 16px 0;
+        font-size: 16px;
+        font-weight: 500;
+        color: #1d1d1f;
+        text-decoration: none;
+        transition: all 0.2s ease;
+    }
+    
+    .ios-nav a:hover {
+        color: #0071e3;
+    }
+    
+    /* ===== NAVIGATION DROPDOWN - MOBILE ===== */
+    .nav-dropdown-menu {
+        position: static;
+        width: 100%;
+        min-width: auto;
+        max-width: 100%;
+        box-shadow: none;
+        border: none;
+        padding: 0;
+        margin-top: 10px;
+        background: rgba(0, 0, 0, 0.03);
+        border-radius: 12px;
+        display: none;
+    }
+    
+    .nav-dropdown.active .nav-dropdown-menu {
+        display: block;
+        animation: fadeIn 0.3s ease;
+    }
+    
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    
+    .nav-dropdown-menu li {
+        border-bottom: none;
+    }
+    
+    .nav-dropdown-menu a {
+        padding: 12px 16px;
         font-size: 15px;
+        color: #6e6e73;
     }
-
-    /* Language Selector */
+    
+    .nav-dropdown-toggle {
+        cursor: pointer;
+        user-select: none;
+    }
+    
+    /* ===== LANGUAGE SELECTOR - MOBILE ===== */
     .language-selector {
-        display: block;
-        margin-top: 12px;
-        padding-top: 12px;
-        border-top: 1px solid var(--border-light);
+        width: 100%;
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(60, 60, 67, 0.1);
     }
-
+    
     .lang-toggle {
         width: 100%;
+        display: flex;
         justify-content: space-between;
-        padding: 10px 14px;
-        background: var(--bg-secondary);
-        border-radius: 8px;
-        font-size: 14px;
+        align-items: center;
+        padding: 14px 16px;
+        background: rgba(0, 0, 0, 0.05);
+        border: none;
+        border-radius: 12px;
+        font-size: 15px;
+        cursor: pointer;
     }
-
+    
     .lang-dropdown {
         position: static;
-        margin-top: 8px;
-        box-shadow: none;
-        border: 1px solid var(--border-light);
-        min-width: auto;
         width: 100%;
         max-width: 100%;
+        margin-top: 12px;
+        box-shadow: none;
+        border: 1px solid rgba(60, 60, 67, 0.1);
+        border-radius: 12px;
+        display: none;
+        overflow: hidden;
     }
-
+    
     .language-selector.active .lang-dropdown {
-        transform: none;
+        display: block;
     }
-
-    /* Theme Toggle */
+    
+    .lang-region {
+        padding: 12px 0;
+        border-bottom: 1px solid rgba(60, 60, 67, 0.05);
+    }
+    
+    .lang-region:last-child {
+        border-bottom: none;
+    }
+    
+    .lang-region-title {
+        font-size: 12px;
+        font-weight: 600;
+        color: #86868b;
+        padding: 0 16px 8px;
+        text-transform: uppercase;
+    }
+    
+    .lang-option {
+        display: block;
+        padding: 12px 16px;
+        font-size: 14px;
+        color: #1d1d1f;
+        text-decoration: none;
+    }
+    
+    .lang-option:hover {
+        background: rgba(0, 113, 227, 0.08);
+    }
+    
+    .lang-option.active {
+        color: #0071e3;
+        font-weight: 600;
+    }
+    
+    /* ===== THEME TOGGLE - MOBILE ===== */
     .theme-toggle {
-        position: absolute;
-        top: 12px;
-        right: 55px;
-        margin-left: 0;
-        width: 34px;
-        height: 34px;
+        width: 40px;
+        height: 40px;
+        background: rgba(0, 0, 0, 0.05);
+        border: none;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        flex-shrink: 0;
     }
-
-    /* ===== HERO SECTION ===== */
+    
+    .theme-toggle svg {
+        width: 20px;
+        height: 20px;
+    }
+    
+    /* ===== HERO SECTION - MOBILE ===== */
     .hero {
-        height: auto;
+        position: relative;
+        height: 100vh;
         min-height: 100vh;
-        padding: 80px 0 40px;
+        max-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        margin-top: 0;
+        padding-top: 52px;
     }
-
+    
     .hero-video {
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
         object-fit: cover;
         object-position: center;
     }
-
+    
+    .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.6) 100%);
+    }
+    
+    .hero-text {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        color: #fff;
+        max-width: 100%;
+        padding: 0 20px;
+    }
+    
     .hero-title {
         font-size: 28px;
         line-height: 1.2;
+        font-weight: 700;
         margin-bottom: 16px;
+        letter-spacing: -0.02em;
     }
-
+    
     .hero-subtitle {
         font-size: 15px;
         line-height: 1.5;
         margin-bottom: 24px;
-        max-width: 100%;
+        opacity: 0.95;
     }
-
+    
     .hero-cta {
+        display: flex;
         flex-direction: column;
-        width: 100%;
         gap: 12px;
-    }
-
-    .btn {
         width: 100%;
-        padding: 12px 20px;
-        font-size: 14px;
     }
-
-    /* ===== HIGHLIGHTS CARDS ===== */
+    
+    .hero-cta .btn {
+        width: 100%;
+    }
+    
+    /* ===== HERO SEPARATOR ===== */
+    .hero-separator-apple {
+        height: 1px;
+        background: linear-gradient(90deg, transparent 0%, rgba(210, 210, 215, 0.3) 50%, transparent 100%);
+        margin: 0;
+    }
+    
+    /* ===== HOME HIGHLIGHTS - MOBILE ===== */
     .home-highlights-apple {
         padding: 40px 0;
     }
-
+    
     .highlights-apple-grid {
+        display: grid;
         grid-template-columns: 1fr;
         gap: 16px;
+        padding: 0 16px;
     }
-
-    .highlight-apple-card {
+    
+    .liquid-glass-link {
+        display: block;
+        width: 100%;
+    }
+    
+    .liquid-glass-card {
         height: 280px;
         border-radius: 20px;
+        overflow: hidden;
+        position: relative;
     }
-
-    .highlight-apple-icon {
+    
+    .liquid-glass-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .liquid-glass-background img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .liquid-glass-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .liquid-glass-content {
+        position: relative;
+        z-index: 2;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 24px;
+        color: #fff;
+    }
+    
+    .liquid-glass-icon {
         font-size: 48px;
         margin-bottom: 16px;
+        text-align: center;
     }
-
-    .highlight-apple-title {
-        font-size: 26px;
+    
+    .liquid-glass-title {
+        font-size: 24px;
+        font-weight: 700;
         margin-bottom: 8px;
+        text-align: center;
+        text-shadow: 0 2px 20px rgba(0,0,0,0.5);
     }
-
-    .highlight-apple-description {
+    
+    .liquid-glass-description {
         font-size: 14px;
-        line-height: 1.4;
+        text-align: center;
+        opacity: 0.95;
+        text-shadow: 0 1px 10px rgba(0,0,0,0.5);
     }
-
-    .highlight-apple-content {
-        padding: 30px 20px;
+    
+    /* ===== ABOUT SECTION - MOBILE ===== */
+    .about {
+        padding: 40px 16px;
     }
-
-    /* ===== VISI MISI CARDS ===== */
+    
+    .section-title {
+        font-size: 28px;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+    
+    .subsection-title {
+        font-size: 22px;
+        margin: 40px 0 20px;
+        text-align: center;
+    }
+    
+    /* ===== VISI MISI - MOBILE ===== */
     .visi-misi-apple {
+        display: grid;
         grid-template-columns: 1fr;
         gap: 16px;
         margin-bottom: 40px;
     }
-
+    
     .apple-hero-card {
         height: 350px;
         border-radius: 20px;
+        overflow: hidden;
+        position: relative;
     }
-
+    
+    .apple-hero-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .apple-hero-background img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .apple-hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .apple-hero-content {
+        position: relative;
+        z-index: 2;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 30px 24px;
+        color: #fff;
+    }
+    
     .apple-hero-icon {
-        font-size: 48px;
+        font-size: 50px;
         margin-bottom: 16px;
     }
-
+    
     .apple-hero-title {
         font-size: 28px;
+        font-weight: 700;
         margin-bottom: 12px;
+        text-shadow: 0 2px 20px rgba(0,0,0,0.5);
     }
-
+    
     .apple-hero-description {
         font-size: 14px;
         line-height: 1.5;
+        text-shadow: 0 1px 10px rgba(0,0,0,0.5);
     }
-
+    
+    .apple-hero-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        text-align: left;
+    }
+    
     .apple-hero-list li {
         font-size: 14px;
         line-height: 1.8;
         margin-bottom: 8px;
     }
-
-    .apple-hero-content {
-        padding: 30px 24px;
-    }
-
-    /* ===== VALUES CARDS ===== */
+    
+    /* ===== VALUES GRID - MOBILE ===== */
     .values-apple-grid {
+        display: grid;
         grid-template-columns: 1fr;
         gap: 16px;
         margin-bottom: 40px;
     }
-
-    .values-apple-grid .liquid-glass-card {
-        height: 320px;
-        border-radius: 20px;
-    }
-
-    .liquid-glass-card {
-        height: 320px;
-        border-radius: 20px;
-    }
-
-    .liquid-glass-icon {
-        font-size: 48px;
-        margin-bottom: 16px;
-    }
-
-    .liquid-glass-title {
-        font-size: 24px;
-        margin-bottom: 8px;
-    }
-
-    .liquid-glass-description {
-        font-size: 14px;
-        line-height: 1.4;
-    }
-
-    .liquid-glass-content {
-        padding: 24px 20px;
-    }
-
-    /* ===== VALUES GRID (2 columns on mobile) ===== */
+    
     .values-grid {
+        display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 12px;
+        margin-bottom: 40px;
     }
-
+    
     .value-card {
-        padding: 16px 12px;
+        background: #f5f5f7;
+        padding: 20px 16px;
         border-radius: 16px;
+        text-align: center;
     }
-
+    
     .value-card img {
-        width: 36px;
-        height: 36px;
+        width: 40px;
+        height: 40px;
         margin-bottom: 12px;
     }
-
+    
     .value-card h3 {
-        font-size: 14px;
+        font-size: 15px;
         margin-bottom: 6px;
     }
-
+    
     .value-card p {
-        font-size: 12px;
-        line-height: 1.4;
+        font-size: 13px;
+        color: #6e6e73;
     }
-
-    /* ===== ORG CHART ===== */
+    
+    /* ===== ORG CHART - MOBILE ===== */
     .org-chart-apple {
-        padding: 16px 8px;
+        padding: 20px 8px;
     }
-
+    
     .org-level-apple {
+        display: flex;
         flex-direction: column;
         align-items: center;
         gap: 16px;
     }
-
-    .org-id-card {
+    
+    .org-id-card-link {
+        display: block;
         width: 100%;
         max-width: 280px;
-        padding: 16px;
-        border-radius: 16px;
     }
-
+    
+    .org-id-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+    
     .org-id-photo {
         width: 100px;
         height: 100px;
-        margin-bottom: 12px;
         border-radius: 50%;
+        overflow: hidden;
+        margin-bottom: 16px;
     }
-
+    
     .org-id-photo img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        border-radius: 50%;
     }
-
+    
     .org-id-jabatan {
         font-size: 11px;
+        font-weight: 600;
+        color: #86868b;
         text-transform: uppercase;
         letter-spacing: 0.5px;
-        margin-bottom: 4px;
+        text-align: center;
+        margin-bottom: 6px;
     }
-
+    
     .org-id-name {
         font-size: 14px;
         font-weight: 600;
+        color: #1d1d1f;
+        text-align: center;
         line-height: 1.3;
     }
-
+    
     .org-connector-apple {
-        height: 20px;
+        height: 24px;
         width: 2px;
+        background: #d2d2d7;
     }
-
-    /* ===== PROGRAMS & NEWS ===== */
+    
+    /* ===== PROGRAMS & NEWS - MOBILE ===== */
     .programs-grid,
     .news-grid {
+        display: grid;
         grid-template-columns: 1fr;
         gap: 16px;
+        padding: 0 16px;
     }
-
+    
     .program-card,
     .news-card {
+        background: #fff;
         border-radius: 16px;
         overflow: hidden;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
     }
-
-    .program-image {
+    
+    .program-image,
+    .news-image {
+        width: 100%;
         height: 180px;
         object-fit: cover;
     }
-
-    .program-content {
+    
+    .program-content,
+    .news-content {
         padding: 16px;
     }
-
+    
     .program-title,
     .news-title {
-        font-size: 18px;
+        font-size: 17px;
+        font-weight: 600;
         margin-bottom: 8px;
     }
-
+    
     .program-description,
     .news-excerpt {
         font-size: 14px;
         line-height: 1.5;
+        color: #6e6e73;
     }
-
-    /* ===== CONTACT ===== */
+    
+    /* ===== CONTACT - MOBILE ===== */
+    .contact {
+        padding: 40px 16px;
+    }
+    
     .contact-wrapper {
+        display: grid;
         grid-template-columns: 1fr;
         gap: 24px;
     }
-
+    
     .contact-info,
     .contact-form {
-        padding: 20px;
+        background: #f5f5f7;
+        padding: 24px;
+        border-radius: 16px;
     }
-
+    
     .contact-info h3 {
         font-size: 20px;
         margin-bottom: 16px;
     }
-
+    
     .contact-info p {
         font-size: 14px;
         line-height: 1.6;
         margin-bottom: 12px;
     }
-
+    
     .contact-form input,
     .contact-form textarea {
-        padding: 12px 16px;
-        font-size: 14px;
-        border-radius: 10px;
-        margin-bottom: 12px;
+        width: 100%;
+        padding: 14px 16px;
+        font-size: 15px;
+        border: 1px solid #d2d2d7;
+        border-radius: 12px;
+        margin-bottom: 16px;
+        background: #fff;
     }
-
-    /* ===== FOOTER ===== */
+    
+    .contact-form textarea {
+        min-height: 120px;
+        resize: vertical;
+    }
+    
+    /* ===== FOOTER - MOBILE ===== */
+    .footer {
+        padding: 40px 16px 20px;
+        background: #1d1d1f;
+        color: #fff;
+    }
+    
     .footer-content {
+        display: grid;
         grid-template-columns: 1fr;
         gap: 24px;
-        padding: 20px 16px;
     }
-
+    
     .footer-section {
         margin-bottom: 0;
     }
-
+    
     .footer-section h4 {
         font-size: 16px;
-        margin-bottom: 12px;
+        font-weight: 600;
+        margin-bottom: 16px;
     }
-
+    
     .footer-section p,
     .footer-section a {
-        font-size: 13px;
+        font-size: 14px;
         line-height: 1.6;
+        color: rgba(255,255,255,0.7);
     }
-
+    
     .footer-logo {
         width: 40px;
         height: 40px;
+        border-radius: 50%;
         margin-bottom: 12px;
     }
-
+    
     .social-media-apple {
+        display: flex;
         gap: 12px;
     }
-
+    
     .social-media-apple a {
         width: 36px;
         height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255,255,255,0.1);
+        border-radius: 50%;
+        color: #fff;
+    }
+    
+    /* ===== CONTAINER - MOBILE ===== */
+    .container {
+        padding: 0 16px;
+        max-width: 100%;
+    }
+    
+    /* ===== BUTTONS - MOBILE ===== */
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 14px 24px;
+        font-size: 15px;
+        font-weight: 600;
+        border-radius: 9999px;
+        text-decoration: none;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .btn-primary {
+        background: #0071e3;
+        color: #fff;
+    }
+    
+    .btn-secondary {
+        background: rgba(255,255,255,0.15);
+        color: #fff;
+        border: 1px solid rgba(255,255,255,0.3);
     }
 }
 
 /* ===== SMALL MOBILE (Max Width 480px) ===== */
 @media (max-width: 480px) {
-    .container {
-        padding: 0 12px;
-    }
-
     .hero-title {
         font-size: 24px;
     }
-
+    
     .hero-subtitle {
         font-size: 14px;
     }
-
+    
     .section-title {
         font-size: 24px;
     }
-
+    
     .subsection-title {
         font-size: 20px;
     }
-
-    .highlight-apple-card {
+    
+    .liquid-glass-card {
         height: 260px;
     }
-
-    .highlight-apple-title {
-        font-size: 22px;
-    }
-
-    .apple-hero-card {
-        height: 320px;
-    }
-
-    .apple-hero-title {
-        font-size: 24px;
-    }
-
-    .values-apple-grid .liquid-glass-card {
-        height: 300px;
-    }
-
+    
     .liquid-glass-title {
         font-size: 22px;
     }
-
+    
+    .apple-hero-card {
+        height: 320px;
+    }
+    
+    .apple-hero-title {
+        font-size: 24px;
+    }
+    
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+    
     .org-id-card {
         max-width: 260px;
-        padding: 14px;
     }
-
+    
     .org-id-photo {
         width: 90px;
         height: 90px;
-    }
-
-    .org-id-name {
-        font-size: 13px;
-    }
-
-    .values-grid {
-        grid-template-columns: 1fr;
-        gap: 10px;
-    }
-
-    .program-image {
-        height: 160px;
     }
 }
 
 /* ===== EXTRA SMALL MOBILE (Max Width 375px) ===== */
 @media (max-width: 375px) {
-    .hero {
-        padding: 70px 0 30px;
-    }
-
     .hero-title {
         font-size: 22px;
     }
-
+    
     .hero-subtitle {
         font-size: 13px;
     }
-
+    
     .section-title {
         font-size: 22px;
     }
-
-    .subsection-title {
-        font-size: 18px;
-    }
-
-    .highlight-apple-card {
+    
+    .liquid-glass-card {
         height: 240px;
     }
-
-    .highlight-apple-title {
-        font-size: 20px;
-    }
-
-    .highlight-apple-icon {
-        font-size: 40px;
-    }
-
-    .apple-hero-card {
-        height: 300px;
-    }
-
-    .apple-hero-title {
-        font-size: 22px;
-    }
-
-    .apple-hero-icon {
-        font-size: 40px;
-    }
-
-    .values-apple-grid .liquid-glass-card {
-        height: 280px;
-    }
-
-    .liquid-glass-icon {
-        font-size: 40px;
-    }
-
+    
     .liquid-glass-title {
         font-size: 20px;
     }
-
-    .liquid-glass-description {
-        font-size: 13px;
+    
+    .liquid-glass-icon {
+        font-size: 40px;
     }
-
+    
+    .apple-hero-card {
+        height: 300px;
+    }
+    
+    .apple-hero-title {
+        font-size: 22px;
+    }
+    
     .org-id-card {
         max-width: 240px;
+        padding: 16px;
     }
-
+    
     .org-id-photo {
         width: 80px;
         height: 80px;
     }
-
+    
     .org-id-jabatan {
         font-size: 10px;
     }
-
+    
     .org-id-name {
-        font-size: 12px;
-    }
-
-    .btn {
-        padding: 10px 16px;
         font-size: 13px;
     }
 }
 
-/* ===== RTL FIXES FOR MOBILE ===== */
+/* ===== RTL SUPPORT - MOBILE ===== */
 @media (max-width: 768px) {
+    [dir="rtl"] .ios-header nav {
+        direction: rtl;
+    }
+    
     [dir="rtl"] .lang-dropdown {
-        left: 0;
-        right: 0;
+        direction: rtl;
     }
-
-    [dir="rtl"] .nav-dropdown-menu {
-        left: 0;
-        right: 0;
-    }
-
-    [dir="rtl"] .theme-toggle {
-        right: auto;
-        left: 55px;
-    }
-}
-
-/* ===== ENSURE DROPDOWNS STAY WITHIN VIEWPORT ===== */
-@media (max-width: 768px) {
-    .lang-dropdown,
-    .nav-dropdown-menu {
-        max-width: 100%;
-        overflow-x: hidden;
-        position: static;
-        box-shadow: none;
-        border: 1px solid var(--border-light);
-        margin-top: 8px;
+    
+    [dir="rtl"] .apple-hero-list {
+        text-align: right;
     }
 }
