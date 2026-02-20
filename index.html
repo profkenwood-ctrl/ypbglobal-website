@@ -32,7 +32,7 @@
         .hero-text{position:relative;z-index:2;text-align:center;color:#fff;max-width:800px;padding:0 20px}
         .header{position:fixed;top:0;left:0;right:0;z-index:10000;background:rgba(255,255,255,.95);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(0,0,0,.1);height:52px}
         /* Sembunyikan scrollbar pada navigasi */
-        #nav-menu,.ios-nav,.nav-menu{overflow-x:hidden!important;overflow-y:auto!important;scrollbar-width:none!important;-ms-overflow-style:none!important}
+        #nav-menu,.ios-nav,.nav-menu{overflow-x:hidden!important;overflow-y:auto!important;-ms-overflow-style:none!important}
         #nav-menu::-webkit-scrollbar,.ios-nav::-webkit-scrollbar,.nav-menu::-webkit-scrollbar{display:none!important;width:0!important;height:0!important}
         /* Toggle Tema - Semua Layar */
         .theme-toggle{width:36px;height:36px;background:rgba(0,0,0,.05);border:none;border-radius:50%;display:flex!important;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;padding:0}
@@ -48,7 +48,7 @@
         *{box-sizing:border-box}
         html{overflow-x:hidden;max-width:100vw}
         body{overflow-x:hidden;max-width:100vw;margin:0;padding:0}
-        .ios-header{position:fixed;top:0;left:0;right:0;height:52px;background:rgba(255,255,255,.98);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);z-index:10000;border-bottom:1px solid rgba(0,0,0,.1)}
+        .ios-header{position:fixed;top:0;left:0;right:0;height:52px;background:rgba(255,255,255,.98);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);z-index:10000;border-bottom:1px solid rgba(0,0,0,.1)}
         .ios-header nav{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:100%;margin:0;padding:0 12px;height:52px;overflow:visible}
         .ios-logo{display:flex;align-items:center;gap:8px;text-decoration:none;color:#000;flex-shrink:0;min-width:0}
         .ios-logo-circle{width:32px;height:32px;border-radius:50%;overflow:hidden;flex-shrink:0;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);display:flex;align-items:center;justify-content:center}
@@ -63,7 +63,7 @@
         .lang-current{font-size:13px;font-weight:500;color:#1d1d1f;white-space:nowrap}
         .lang-arrow{font-size:10px;color:#666;transition:transform .3s ease}
         .language-selector.active .lang-arrow{transform:rotate(180deg)}
-        .lang-dropdown{position:absolute;top:100%;right:0;background:#fff;backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border:1px solid rgba(0,0,0,.1);border-radius:12px;min-width:220px;box-shadow:0 10px 40px rgba(0,0,0,.15);z-index:10001;opacity:0;visibility:hidden;transform:translateY(-10px);transition:all .3s ease;max-height:400px;overflow-y:auto}
+        .lang-dropdown{position:absolute;top:100%;right:0;background:#fff;-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);border:1px solid rgba(0,0,0,.1);border-radius:12px;min-width:220px;box-shadow:0 10px 40px rgba(0,0,0,.15);z-index:10001;opacity:0;visibility:hidden;transform:translateY(-10px);transition:all .3s ease;max-height:400px;overflow-y:auto}
         .language-selector.active .lang-dropdown{opacity:1;visibility:visible;transform:translateY(0)}
         .lang-region{padding:8px 0}
         .lang-region:not(:last-child){border-bottom:1px solid rgba(0,0,0,.05)}
@@ -84,7 +84,7 @@
         .ios-mobile-toggle[aria-expanded="true"] span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
         .ios-mobile-toggle[aria-expanded="true"] span:nth-child(2){opacity:0;transform:translateX(-10px)}
         .ios-mobile-toggle[aria-expanded="true"] span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
-        #nav-menu.ios-nav{display:none;position:fixed;top:52px;left:0;right:0;bottom:0;width:100%;background:rgba(255,255,255,.98);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);flex-direction:column;padding:0;gap:0;overflow-y:auto;overflow-x:hidden;z-index:9999;-webkit-overflow-scrolling:touch}
+        #nav-menu.ios-nav{display:none;position:fixed;top:52px;left:0;right:0;bottom:0;width:100%;background:rgba(255,255,255,.98);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);flex-direction:column;padding:0;gap:0;overflow-y:auto;overflow-x:hidden;z-index:9999;scroll-behavior:smooth}
         #nav-menu.ios-nav.active{display:flex;animation:slideDown .3s ease}
         @keyframes slideDown{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
         #nav-menu.ios-nav li{width:100%;border-bottom:1px solid rgba(0,0,0,.08);list-style:none}
@@ -253,6 +253,7 @@
         .ios-header .language-selector{order:1!important}
         .ios-mobile-toggle{order:3!important}
         }
+        }
     </style>
 </head>
 <body>
@@ -357,7 +358,7 @@
         <!-- Bagian Hero -->
         <section id="home" class="hero" aria-label="Beranda">
             <!-- Latar Belakang Video -->
-            <video class="hero-video" autoplay muted loop playsinline preload="metadata">
+            <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="">
                 <source src="assets/videos/Hero_Video.mp4" type="video/mp4">
             </video>
             <div class="hero-overlay"></div>
@@ -667,7 +668,7 @@
                 </div>
                 <div class="programs-grid">
                     <article class="program-card fade-in-ready" data-category="beasiswa">
-                        <a href="programs/program-beasiswa.html" style="text-decoration: none; color: inherit;">
+                        <a href="programs/program-beasiswa.html" class="program-card-link">
                         <div class="program-image">
                             <img src="assets/images/Program_Kegiatan_Beasiswa.webp" alt="Beasiswa" loading="lazy">
                             <div class="program-icon">🎓</div>
@@ -680,7 +681,7 @@
                         </a>
                     </article>
                     <article class="program-card fade-in-ready" data-category="infrastruktur">
-                        <a href="programs/program-infrastruktur.html" style="text-decoration: none; color: inherit;">
+                        <a href="programs/program-infrastruktur.html" class="program-card-link">
                         <div class="program-image">
                             <img src="assets/images/Program_Kegiatan_Infrastruktur_Jalan_Desa.webp" alt="Infrastruktur" loading="lazy">
                             <div class="program-icon">🛣️</div>
@@ -693,7 +694,7 @@
                         </a>
                     </article>
                     <article class="program-card fade-in-ready" data-category="mbg">
-                        <a href="programs/program-mbg.html" style="text-decoration: none; color: inherit;">
+                        <a href="programs/program-mbg.html" class="program-card-link">
                         <div class="program-image">
                             <img src="assets/images/Program_Kegiatan_MBG.webp" alt="MBG" loading="lazy">
                             <div class="program-icon">🌿</div>
@@ -706,7 +707,7 @@
                         </a>
                     </article>
                     <article class="program-card fade-in-ready" data-category="infrastruktur">
-                        <a href="programs/program-irigasi.html" style="text-decoration: none; color: inherit;">
+                        <a href="programs/program-irigasi.html" class="program-card-link">
                         <div class="program-image">
                             <img src="assets/images/Program_Kegiatan_Irigasi.webp" alt="Irigasi" loading="lazy">
                             <div class="program-icon">💧</div>
@@ -719,7 +720,7 @@
                         </a>
                     </article>
                     <article class="program-card fade-in-ready" data-category="kesehatan">
-                        <a href="programs/program-makanan-sehat.html" style="text-decoration: none; color: inherit;">
+                        <a href="programs/program-makanan-sehat.html" class="program-card-link">
                         <div class="program-image">
                             <img src="assets/images/Program_Kegiatan_Makanan_Sehat.webp" alt="Makanan Sehat" loading="lazy">
                             <div class="program-icon">🥗</div>
@@ -732,7 +733,7 @@
                         </a>
                     </article>
                     <article class="program-card fade-in-ready" data-category="infrastruktur">
-                        <a href="programs/program-mck.html" style="text-decoration: none; color: inherit;">
+                        <a href="programs/program-mck.html" class="program-card-link">
                         <div class="program-image">
                             <img src="assets/images/Program_Kegiatan_MCK.webp" alt="MCK" loading="lazy">
                             <div class="program-icon">🚿</div>
@@ -745,7 +746,7 @@
                         </a>
                     </article>
                     <article class="program-card fade-in-ready" data-category="sosial">
-                        <a href="programs/program-rumah-ibadat.html" style="text-decoration: none; color: inherit;">
+                        <a href="programs/program-rumah-ibadat.html" class="program-card-link">
                         <div class="program-image">
                             <img src="assets/images/Program_Kegiatan_Rumah_Ibadat.webp" alt="Rumah Ibadat" loading="lazy">
                             <div class="program-icon">🕌</div>
@@ -758,7 +759,7 @@
                         </a>
                     </article>
                     <article class="program-card fade-in-ready" data-category="sosial">
-                        <a href="programs/program-panti-asuhan.html" style="text-decoration: none; color: inherit;">
+                        <a href="programs/program-panti-asuhan.html" class="program-card-link">
                         <div class="program-image">
                             <img src="assets/images/Program_Kegiatan_Panti_Asuhan.webp" alt="Panti Asuhan" loading="lazy">
                             <div class="program-icon">🏠</div>
@@ -771,7 +772,7 @@
                         </a>
                     </article>
                     <article class="program-card fade-in-ready" data-category="kesehatan">
-                        <a href="programs/program-pengobatan.html" style="text-decoration: none; color: inherit;">
+                        <a href="programs/program-pengobatan.html" class="program-card-link">
                         <div class="program-image">
                             <img src="assets/images/Program_Kegiatan_Pengobatan.webp" alt="Pengobatan" loading="lazy">
                             <div class="program-icon">🏥</div>
@@ -801,6 +802,7 @@
                                     <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
                                         src="https://www.youtube.com/embed/_-G_OdgnBJk"
                                         title="Program Beasiswa 2024"
+                                        loading="lazy"
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                         allowfullscreen>
                                     </iframe>
@@ -825,6 +827,7 @@
                                     <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
                                         src="https://www.youtube.com/embed/1Fc3XezAsss"
                                         title="Kegiatan Pembersihan Pantai"
+                                        loading="lazy"
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                         allowfullscreen>
                                     </iframe>
