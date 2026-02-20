@@ -1215,56 +1215,77 @@ section {
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
     margin-bottom: 80px;
+    grid-auto-rows: minmax(500px, 500px);
+    align-items: stretch;
 }
 
 /* Paksa tinggi dan lebar sama untuk semua kartu nilai */
 .values-apple-grid .liquid-glass-link {
     width: 100%;
     height: 100%;
+    display: block;
 }
 
 .values-apple-grid .liquid-glass-card {
-    width: 100%;
+    width: 100% !important;
     height: 500px !important; /* Fixed height untuk semua kotak - SAMA BESAR */
     min-height: 500px !important;
     max-height: 500px !important;
+    min-width: auto !important;
+    max-width: none !important;
     position: relative;
+    flex: 1 1 100% !important;
 }
 
 /* Grid Nilai Responsif - UKURAN SAMA BESAR */
 @media (min-width: 1201px) {
     .values-apple-grid {
         grid-template-columns: repeat(4, 1fr) !important;
+        gap: 30px !important;
+        grid-auto-rows: minmax(500px, 500px) !important;
+        align-items: stretch !important;
     }
-    
+
     .values-apple-grid .liquid-glass-card {
         height: 500px !important; /* Desktop - SEMUA BOX SAMA BESAR */
         min-height: 500px !important;
         max-height: 500px !important;
+        width: 100% !important;
+        flex: 1 1 100% !important;
     }
 }
 
 @media (max-width: 1200px) {
     .values-apple-grid {
         grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px !important;
+        grid-auto-rows: minmax(450px, 450px) !important;
+        align-items: stretch !important;
     }
-    
+
     .values-apple-grid .liquid-glass-card {
         height: 450px !important; /* Tablet - SEMUA BOX SAMA BESAR */
         min-height: 450px !important;
         max-height: 450px !important;
+        width: 100% !important;
+        flex: 1 1 100% !important;
     }
 }
 
 @media (max-width: 768px) {
     .values-apple-grid {
         grid-template-columns: 1fr !important;
+        gap: 14px !important;
+        grid-auto-rows: minmax(400px, 400px) !important;
+        align-items: stretch !important;
     }
-    
+
     .values-apple-grid .liquid-glass-card {
         height: 400px !important; /* Mobile - SEMUA BOX SAMA BESAR */
         min-height: 400px !important;
         max-height: 400px !important;
+        width: 100% !important;
+        flex: 1 1 100% !important;
     }
 }
 

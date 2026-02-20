@@ -92,8 +92,8 @@
         display: none !important;
     }
     
-    /* ===== KONTROL NAV - BAHASA + TOGGLE TEMA + HAMBURGER ===== */
-    .nav-controls {
+    /* ===== KONTROL NAV - BAHASA + TOGGLE TEMA + HAMBURGER - FIX LAYOUT ===== */
+    .ios-header .nav-controls {
         display: flex !important;
         align-items: center !important;
         gap: 8px !important;
@@ -102,11 +102,39 @@
         z-index: 10001 !important;
     }
 
+    /* Urutan elemen: Bahasa (1), Toggle Tema (2), Hamburger (3) */
+    .ios-header .language-selector {
+        order: 1 !important;
+        display: flex !important;
+        flex-shrink: 0 !important;
+        width: auto !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    .ios-header .theme-toggle {
+        order: 2 !important;
+        display: flex !important;
+        flex-shrink: 0 !important;
+        width: 36px !important;
+        height: 36px !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    .ios-header .ios-mobile-toggle {
+        order: 3 !important;
+        display: flex !important;
+    }
+
     /* ===== PEMILIH BAHASA - TANPA IKON GLOBE ===== */
-    .language-selector {
+    .ios-header .language-selector {
         position: relative;
         flex-shrink: 0;
-        display: block !important;
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        width: auto !important;
     }
 
     .lang-toggle {
@@ -168,8 +196,8 @@
         transform: translateY(0);
     }
     
-    /* ===== TOGGLE TEMA - TERLIHAT DI MOBILE ===== */
-    .theme-toggle {
+    /* ===== TOGGLE TEMA - TERLIHAT DI MOBILE - FIX UNTUK SEMUA BAHASA ===== */
+    .ios-header .theme-toggle {
         width: 36px !important;
         height: 36px !important;
         background: rgba(0, 0, 0, 0.05) !important;
@@ -181,9 +209,12 @@
         cursor: pointer !important;
         flex-shrink: 0 !important;
         padding: 0 !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        order: 2 !important;
     }
 
-    .theme-toggle svg {
+    .ios-header .theme-toggle svg {
         width: 18px !important;
         height: 18px !important;
         color: #000 !important;
@@ -191,11 +222,11 @@
         display: block !important;
     }
 
-    .theme-toggle .theme-icon-sun {
+    .ios-header .theme-toggle .theme-icon-sun {
         display: block !important;
     }
 
-    .theme-toggle .theme-icon-moon {
+    .ios-header .theme-toggle .theme-icon-moon {
         display: none !important;
     }
 
