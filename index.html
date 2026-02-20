@@ -170,9 +170,14 @@
         body[dir="rtl"] .ios-header,body[dir="rtl"] .ios-header nav{direction:ltr!important}
         body[dir="rtl"] .ios-logo{direction:rtl}
         body[dir="rtl"] .nav-controls{direction:ltr!important;display:flex!important;align-items:center!important;gap:8px!important;flex-shrink:0!important}
+        body[dir="rtl"] .theme-toggle{display:flex!important}
+        body[dir="rtl"] .language-selector{display:block!important}
         body[dir="rtl"] .lang-dropdown{direction:rtl;text-align:right}
         body[dir="rtl"] .apple-hero-list{text-align:right}
         body[dir="rtl"] .nav-dropdown-menu{direction:rtl}
+        /* Toggle tema untuk bahasa LTR (Indonesia, Inggris, dll) */
+        body[dir="ltr"] .theme-toggle,body:not([dir]) .theme-toggle{display:flex!important}
+        body[dir="ltr"] .language-selector,body:not([dir]) .language-selector{display:block!important}
         }
         @media(max-width:480px){
         .hero-title{font-size:22px!important}
@@ -215,6 +220,12 @@
         body.dark-mode .theme-toggle .theme-icon-moon{display:block!important}
         .nav-controls{display:flex!important;align-items:center!important;gap:8px!important;flex-shrink:0!important;position:relative!important;z-index:10001!important}
         .language-selector{display:block!important;position:relative!important;flex-shrink:0!important}
+        /* Mobile - Toggle Tema WAJIB terlihat */
+        @media(max-width:768px){
+        .theme-toggle{display:flex!important;order:2!important}
+        .language-selector{order:1!important}
+        .ios-mobile-toggle{order:3!important}
+        }
     </style>
 </head>
 <body>
