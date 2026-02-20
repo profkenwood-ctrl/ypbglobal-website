@@ -93,6 +93,7 @@
         align-items: center;
         gap: 12px;
         flex-shrink: 0;
+        margin-left: auto;
     }
     
     /* ===== LANGUAGE SELECTOR - NO GLOBE ICON ===== */
@@ -1209,26 +1210,53 @@
     }
 }
 
-/* ===== RTL SUPPORT ===== */
+/* ===== RTL SUPPORT - ARABIC & OTHER RTL LANGUAGES ===== */
+[dir="rtl"] {
+    direction: rtl;
+    text-align: right;
+}
+
+[dir="rtl"] .ios-header,
+[dir="rtl"] .ios-header nav {
+    direction: ltr !important;
+}
+
+[dir="rtl"] .ios-logo {
+    direction: rtl;
+}
+
+[dir="rtl"] .nav-controls {
+    direction: ltr !important;
+}
+
+[dir="rtl"] .lang-dropdown {
+    direction: rtl;
+    text-align: right;
+}
+
+[dir="rtl"] .apple-hero-list {
+    text-align: right;
+}
+
+[dir="rtl"] .nav-dropdown-menu {
+    direction: rtl;
+}
+
 @media (max-width: 768px) {
     [dir="rtl"] .ios-header nav {
-        direction: rtl;
+        direction: ltr !important;
     }
-    
+
     [dir="rtl"] .lang-dropdown {
         direction: rtl;
+        text-align: right;
     }
-    
+
     [dir="rtl"] .apple-hero-list {
         text-align: right;
     }
-    
+
     [dir="rtl"] .nav-dropdown-menu {
         direction: rtl;
-    }
-    
-    [dir="rtl"] .ios-mobile-toggle {
-        margin-left: 0;
-        margin-right: auto;
     }
 }
