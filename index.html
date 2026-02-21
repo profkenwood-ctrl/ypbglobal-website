@@ -111,6 +111,84 @@
         .ios-header .nav-controls{display:flex!important;align-items:center!important;gap:8px!important}
         .ios-header .language-selector{display:flex!important;position:relative!important;flex-shrink:0!important;width:auto!important}
     </style>
+    
+    <!-- Dropdown Menus JavaScript Fix -->
+    <script>
+        // Pustaka Dropdown - Click Handler
+        document.addEventListener('DOMContentLoaded', function() {
+            const pustakaToggle = document.querySelector('.nav-dropdown-toggle');
+            const pustakaDropdown = document.querySelector('.nav-dropdown');
+            
+            if (pustakaToggle && pustakaDropdown) {
+                pustakaToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    pustakaDropdown.classList.toggle('active');
+                    const isExpanded = pustakaDropdown.classList.contains('active');
+                    pustakaToggle.setAttribute('aria-expanded', isExpanded);
+                });
+                
+                // Close when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!pustakaDropdown.contains(e.target)) {
+                        pustakaDropdown.classList.remove('active');
+                        pustakaToggle.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            }
+            
+            // Language Selector - Click Handler
+            const langSelector = document.querySelector('.language-selector');
+            const langToggle = document.querySelector('.lang-toggle');
+            const langOptions = document.querySelectorAll('.lang-option');
+            
+            if (langToggle && langSelector) {
+                langToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    langSelector.classList.toggle('active');
+                    const isExpanded = langSelector.classList.contains('active');
+                    langToggle.setAttribute('aria-expanded', isExpanded);
+                });
+                
+                // Close when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!langSelector.contains(e.target)) {
+                        langSelector.classList.remove('active');
+                        langToggle.setAttribute('aria-expanded', 'false');
+                    }
+                });
+                
+                // Handle language selection
+                langOptions.forEach(function(option) {
+                    option.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const lang = option.getAttribute('data-lang');
+                        console.log('Language selected:', lang);
+                        
+                        // Remove active from all options
+                        langOptions.forEach(function(opt) {
+                            opt.classList.remove('active');
+                        });
+                        
+                        // Set active on selected
+                        option.classList.add('active');
+                        
+                        // Update toggle text
+                        const currentText = option.textContent.trim();
+                        const langCurrent = langToggle.querySelector('.lang-current');
+                        if (langCurrent) {
+                            langCurrent.textContent = currentText;
+                        }
+                        
+                        // Close dropdown
+                        langSelector.classList.remove('active');
+                        langToggle.setAttribute('aria-expanded', 'false');
+                    });
+                });
+            }
+        });
+    </script>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Lompat ke konten utama</a>
