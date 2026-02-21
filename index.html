@@ -43,6 +43,18 @@
         body.dark-mode .theme-toggle svg{color:#fff}
         body.dark-mode .theme-toggle .theme-icon-sun{display:none}
         body.dark-mode .theme-toggle .theme-icon-moon{display:block}
+        
+        /* Pustaka Dropdown - CRITICAL FIX */
+        .nav-dropdown{position:relative!important;display:block!important}
+        .nav-dropdown-toggle{cursor:pointer!important;user-select:none!important;-webkit-user-select:none!important}
+        .nav-dropdown-menu{position:absolute!important;top:100%!important;left:50%!important;transform:translateX(-50%)!important;background:rgba(255,255,255,.98)!important;backdrop-filter:saturate(180%) blur(20px)!important;-webkit-backdrop-filter:saturate(180%) blur(20px)!important;min-width:300px!important;border-radius:12px!important;box-shadow:0 8px 32px rgba(0,0,0,.12)!important;padding:8px!important;list-style:none!important;border:1px solid rgba(0,0,0,.08)!important;z-index:10000!important;opacity:0!important;visibility:hidden!important;transform-origin:top center!important;transition:all .3s ease!important}
+        .nav-dropdown-menu li{margin:0!important;padding:0!important}
+        .nav-dropdown-menu a{display:block!important;padding:12px 16px!important;color:#6e6e73!important;text-decoration:none!important;font-size:14px!important;font-weight:400!important;border-radius:8px!important;transition:all .2s ease!important;cursor:pointer!important}
+        .nav-dropdown-menu a:hover{background:rgba(0,113,227,.08)!important;color:#0071e3!important}
+        .nav-dropdown:hover .nav-dropdown-menu,.nav-dropdown.active .nav-dropdown-menu{opacity:1!important;visibility:visible!important;transform:translateX(-50%) translateY(0)!important;pointer-events:auto!important}
+        body.dark-mode .nav-dropdown-menu{background:rgba(30,30,30,.98)!important;border-color:rgba(255,255,255,.1)!important}
+        body.dark-mode .nav-dropdown-menu a{color:#a1a1a6!important}
+        body.dark-mode .nav-dropdown-menu a:hover{background:rgba(41,151,255,.2)!important;color:#5ac8fa!important}
     </style>
 
     <!-- Styles - Clean & Optimized -->
