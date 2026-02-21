@@ -31,9 +31,9 @@
         .hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.3) 0%,rgba(0,0,0,.6) 100%);z-index:1}
         .hero-text{position:relative;z-index:2;text-align:center;color:#fff;max-width:800px;padding:0 20px}
         .ios-header{position:fixed;top:0;left:0;right:0;height:52px;background:rgba(255,255,255,.72);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(0,0,0,.1);z-index:9999}
-        /* Hide scrollbar on navigation */
-        #nav-menu,.ios-nav{overflow-x:hidden!important}
-        #nav-menu::-webkit-scrollbar,.ios-nav::-webkit-scrollbar{display:none!important;width:0!important;height:0!important}
+        /* Hide scrollbar on navigation - Complete fix */
+        #nav-menu,.ios-nav,.nav-menu{overflow-x:hidden!important;overflow-y:auto!important;scrollbar-width:none!important;-ms-overflow-style:none!important}
+        #nav-menu::-webkit-scrollbar,.ios-nav::-webkit-scrollbar,.nav-menu::-webkit-scrollbar{display:none!important;width:0!important;height:0!important}
         /* Theme Toggle */
         .theme-toggle{width:36px;height:36px;background:rgba(0,0,0,.05);border:none;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;padding:0}
         .theme-toggle svg{width:18px;height:18px;color:#000;stroke:currentColor;display:block}

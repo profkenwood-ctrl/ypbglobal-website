@@ -93,6 +93,41 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+/* Hide scrollbar on navigation - All browsers */
+#nav-menu,
+.ios-nav,
+.nav-menu {
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    scrollbar-width: none !important; /* Firefox */
+    -ms-overflow-style: none !important; /* IE/Edge */
+}
+
+#nav-menu::-webkit-scrollbar,
+.ios-nav::-webkit-scrollbar,
+.nav-menu::-webkit-scrollbar {
+    display: none !important; /* Chrome/Safari/Opera */
+    width: 0 !important;
+    height: 0 !important;
+}
+
+/* Hide scrollbar on header nav */
+.ios-header,
+.ios-header nav,
+.ios-header nav ul {
+    overflow-x: hidden !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+}
+
+.ios-header::-webkit-scrollbar,
+.ios-header nav::-webkit-scrollbar,
+.ios-header nav ul::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+}
+
 .container {
     max-width: var(--container-width);
     margin: 0 auto;
