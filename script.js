@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateYear();
     initHeaderShadow();
     initWhatsappDraggable();
+    initYouTubeLite();
 });
 
 // ===== TOGGLE TEMA =====
@@ -502,15 +503,46 @@ function initNews() {
 }
 
 function initFadeIn() {
-    const observer = new IntersectionObserver((entries) => {
+    // Observer untuk hero section fade-in
+    const heroObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in');
+                entry.target.classList.add('visible');
             }
         });
     }, { threshold: 0.1 });
 
-    document.querySelectorAll('.fade-in-ready').forEach(el => observer.observe(el));
+    document.querySelectorAll('.fade-in-ready').forEach(el => heroObserver.observe(el));
+
+    // Observer untuk scroll animations desktop - Enhanced
+    const scrollObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                // Stop observing once visible (animate only once)
+                scrollObserver.unobserve(entry.target);
+            }
+        });
+    }, { 
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
+    });
+
+    // Observe all cards and sections for desktop scroll animations
+    const scrollElements = document.querySelectorAll(
+        '.program-card, .news-item, .liquid-glass-card, .apple-hero-card, .org-id-card, .gallery-apple-container'
+    );
+    
+    scrollElements.forEach((el, index) => {
+        // Add staggered animation delay for grid items
+        if (el.parentElement.classList.contains('programs-grid') || 
+            el.parentElement.classList.contains('news-grid') ||
+            el.parentElement.classList.contains('values-apple-grid') ||
+            el.parentElement.classList.contains('highlights-apple-grid')) {
+            el.style.transitionDelay = `${(index % 3) * 0.1}s`;
+        }
+        scrollObserver.observe(el);
+    });
 }
 
 function updateYear() {
@@ -688,5 +720,30 @@ function initWhatsappDraggable() {
             draggable.style.transform = `translate(${currentX}px, ${currentY}px)`;
             savePosition();
         }, 250);
+    });
+}
+
+// ===== YOUTUBE LITE - CLICK TO LOAD UNTUK PERFORMA =====
+// Hanya load iframe YouTube saat user klik (menghemat bandwidth & performa mobile)
+function initYouTubeLite() {
+    const youtubeLites = document.querySelectorAll('.youtube-lite');
+    if (!youtubeLites.length) return;
+
+    youtubeLites.forEach(container => {
+        container.addEventListener('click', function() {
+            const videoId = this.dataset.videoId;
+            if (!videoId) return;
+
+            // Ganti dengan iframe YouTube yang sebenarnya
+            this.innerHTML = `
+                <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+                    src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0"
+                    title="YouTube video"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            `;
+            this.style.cursor = 'default';
+        });
     });
 }
