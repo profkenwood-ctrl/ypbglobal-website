@@ -454,6 +454,8 @@ body.dark-mode .lang-dropdown {
     justify-content: center;
     cursor: pointer;
     transition: all var(--transition-fast);
+    padding: 0;
+    flex-shrink: 0;
 }
 
 .theme-toggle:hover {
@@ -465,6 +467,33 @@ body.dark-mode .lang-dropdown {
     width: 18px;
     height: 18px;
     color: var(--text-primary);
+    display: block;
+}
+
+/* Theme Toggle Icons - Show/Hide based on mode */
+.theme-toggle .theme-icon-sun {
+    display: block !important;
+}
+
+.theme-toggle .theme-icon-moon {
+    display: none !important;
+}
+
+/* Dark Mode - Show Moon, Hide Sun */
+body.dark-mode .theme-toggle {
+    background: var(--border-light);
+}
+
+body.dark-mode .theme-toggle svg {
+    color: var(--text-primary);
+}
+
+body.dark-mode .theme-toggle .theme-icon-sun {
+    display: none !important;
+}
+
+body.dark-mode .theme-toggle .theme-icon-moon {
+    display: block !important;
 }
 
 /* Mobile Menu Toggle */
