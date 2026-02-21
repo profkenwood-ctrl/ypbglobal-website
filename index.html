@@ -22,235 +22,27 @@
     <!-- Sistem Desain iOS 26 -->
     <link rel="stylesheet" href="style-ios26.css">
 
-    <!-- CSS Kritis Inline untuk First Paint Lebih Cepat -->
+    <!-- Critical CSS Inline for Faster First Paint -->
     <style>
-        /* CSS kritis di atas lipatan -->
+        /* Critical above-the-fold styles */
         html{scroll-behavior:smooth}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Inter",sans-serif;background:#fff;color:#1d1d1f;line-height:1.5;overflow-x:hidden}
-        .hero{position:relative;height:100vh;min-height:600px;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#000}
+        .hero{position:relative;height:90vh;min-height:600px;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#000}
         .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.7;z-index:0}
         .hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.3) 0%,rgba(0,0,0,.6) 100%);z-index:1}
         .hero-text{position:relative;z-index:2;text-align:center;color:#fff;max-width:800px;padding:0 20px}
-        .header{position:fixed;top:0;left:0;right:0;z-index:10000;background:rgba(255,255,255,.95);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(0,0,0,.1);height:52px}
-        /* Sembunyikan scrollbar pada navigasi */
-        #nav-menu,.ios-nav,.nav-menu{overflow-x:hidden!important;overflow-y:auto!important;-ms-overflow-style:none!important}
-        #nav-menu::-webkit-scrollbar,.ios-nav::-webkit-scrollbar,.nav-menu::-webkit-scrollbar{display:none!important;width:0!important;height:0!important}
-        /* Toggle Tema - Semua Layar */
-        .theme-toggle{width:36px;height:36px;background:rgba(0,0,0,.05);border:none;border-radius:50%;display:flex!important;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;padding:0}
-        .theme-toggle svg{width:18px;height:18px;color:#000;stroke:currentColor!important;display:block!important}
-        .theme-toggle .theme-icon-sun{display:block!important}
-        .theme-toggle .theme-icon-moon{display:none!important}
+        .ios-header{position:fixed;top:0;left:0;right:0;height:52px;background:rgba(255,255,255,.72);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(0,0,0,.1);z-index:9999}
+        /* Hide scrollbar on navigation */
+        #nav-menu,.ios-nav{overflow-x:hidden!important}
+        #nav-menu::-webkit-scrollbar,.ios-nav::-webkit-scrollbar{display:none!important;width:0!important;height:0!important}
+        /* Theme Toggle */
+        .theme-toggle{width:36px;height:36px;background:rgba(0,0,0,.05);border:none;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;padding:0}
+        .theme-toggle svg{width:18px;height:18px;color:#000;stroke:currentColor;display:block}
+        .theme-toggle .theme-icon-sun{display:block}
+        .theme-toggle .theme-icon-moon{display:none}
         body.dark-mode .theme-toggle{background:rgba(255,255,255,.1)}
-        body.dark-mode .theme-toggle svg{color:#fff!important}
-        body.dark-mode .theme-toggle .theme-icon-sun{display:none!important}
-        body.dark-mode .theme-toggle .theme-icon-moon{display:block!important}
-        /* CSS Kritis Mobile */
-        @media(max-width:768px){
-        *{box-sizing:border-box}
-        html{overflow-x:hidden;max-width:100vw}
-        body{overflow-x:hidden;max-width:100vw;margin:0;padding:0}
-        .ios-header{position:fixed;top:0;left:0;right:0;height:52px;background:rgba(255,255,255,.98);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);z-index:10000;border-bottom:1px solid rgba(0,0,0,.1)}
-        .ios-header nav{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:100%;margin:0;padding:0 12px;height:52px;overflow:visible}
-        .ios-logo{display:flex;align-items:center;gap:8px;text-decoration:none;color:#000;flex-shrink:0;min-width:0}
-        .ios-logo-circle{width:32px;height:32px;border-radius:50%;overflow:hidden;flex-shrink:0;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);display:flex;align-items:center;justify-content:center}
-        .ios-logo-img{width:100%;height:100%;object-fit:cover}
-        .ios-logo-text{font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:140px;color:#667eea}
-        .nav-link{text-decoration:none;color:var(--text-secondary);font-size:14px;font-weight:400;padding:8px 0;transition:color .2s ease}
-        .nav-link:hover{color:var(--text-primary)}
-        .nav-controls{display:flex!important;align-items:center!important;gap:8px!important;flex-shrink:0!important;z-index:10001!important;position:relative!important}
-        .language-selector{position:relative;flex-shrink:0;display:block!important}
-        .lang-toggle{display:flex;align-items:center;gap:4px;background:none;border:none;cursor:pointer;padding:6px 10px;border-radius:8px;transition:background .2s ease}
-        .lang-toggle:hover{background:rgba(0,0,0,.05)}
-        .lang-current{font-size:13px;font-weight:500;color:#1d1d1f;white-space:nowrap}
-        .lang-arrow{font-size:10px;color:#666;transition:transform .3s ease}
-        .language-selector.active .lang-arrow{transform:rotate(180deg)}
-        .lang-dropdown{position:absolute;top:100%;right:0;background:#fff;-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);border:1px solid rgba(0,0,0,.1);border-radius:12px;min-width:220px;box-shadow:0 10px 40px rgba(0,0,0,.15);z-index:10001;opacity:0;visibility:hidden;transform:translateY(-10px);transition:all .3s ease;max-height:400px;overflow-y:auto}
-        .language-selector.active .lang-dropdown{opacity:1;visibility:visible;transform:translateY(0)}
-        .lang-region{padding:8px 0}
-        .lang-region:not(:last-child){border-bottom:1px solid rgba(0,0,0,.05)}
-        .lang-region-title{font-size:10px;font-weight:600;color:#86868b;padding:0 12px 6px;text-transform:uppercase;letter-spacing:.5px}
-        .lang-option{display:block;padding:8px 12px;font-size:13px;color:#1d1d1f;text-decoration:none;transition:background .2s ease}
-        .lang-option:hover{background:rgba(0,113,227,.08)}
-        .lang-option.active{color:#0071e3;font-weight:600;background:rgba(0,113,227,.08)}
-        .theme-toggle{display:flex!important;align-items:center!important;justify-content:center!important;width:36px!important;height:36px!important;background:rgba(0,0,0,.05)!important;border-radius:50%!important;cursor:pointer!important;flex-shrink:0!important;padding:0!important;border:none!important}
-        .theme-toggle svg{display:block!important;width:18px!important;height:18px!important;stroke:currentColor!important;color:#000!important}
-        .theme-toggle .theme-icon-sun{display:block!important}
-        .theme-toggle .theme-icon-moon{display:none!important}
-        body.dark-mode .theme-toggle{background:rgba(255,255,255,.1)!important}
-        body.dark-mode .theme-toggle svg{color:#fff!important}
-        body.dark-mode .theme-toggle .theme-icon-sun{display:none!important}
-        body.dark-mode .theme-toggle .theme-icon-moon{display:block!important}
-        /* Dark mode mobile - language selector & hamburger */
-        body.dark-mode .ios-header{background:rgba(0,0,0,.98)!important;border-bottom-color:rgba(255,255,255,.1)!important}
-        body.dark-mode .lang-toggle{color:#fff!important}
-        body.dark-mode .lang-current{color:#fff!important}
-        body.dark-mode .lang-arrow{color:#fff!important}
-        body.dark-mode .ios-mobile-toggle span{background:#fff!important}
-        body.dark-mode #nav-menu.ios-nav{background:rgba(0,0,0,.98)!important}
-        body.dark-mode #nav-menu.ios-nav a,body.dark-mode #nav-menu.ios-nav button{color:#fff!important}
-        body.dark-mode #nav-menu.ios-nav a:hover,body.dark-mode #nav-menu.ios-nav button:hover{background:rgba(255,255,255,.1)!important}
-        body.dark-mode .lang-dropdown{background:#1a1a1a!important;border-color:rgba(255,255,255,.1)!important}
-        body.dark-mode .lang-option{color:#fff!important}
-        body.dark-mode .lang-option:hover{background:rgba(255,255,255,.1)!important}
-        body.dark-mode .lang-region-title{color:#888!important}
-        .ios-mobile-toggle{display:none!important}
-        .ios-mobile-toggle span{display:block;width:22px;height:2px;background:#000;transition:all .3s ease;border-radius:2px;margin:0}
-        .ios-mobile-toggle[aria-expanded="true"] span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
-        .ios-mobile-toggle[aria-expanded="true"] span:nth-child(2){opacity:0;transform:translateX(-10px)}
-        .ios-mobile-toggle[aria-expanded="true"] span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
-        /* iOS 26 Liquid Glass Mobile Menu - Premium - COMPACT & RIGHT-ALIGNED */
-        #nav-menu.ios-nav{display:none!important;position:absolute;top:52px;right:0;left:auto;width:280px;max-width:85vw;height:auto;max-height:calc(100vh - 52px);background:linear-gradient(180deg,rgba(255,255,255,0.95) 0%,rgba(255,255,255,0.85) 100%);-webkit-backdrop-filter:saturate(180%) blur(30px);backdrop-filter:saturate(180%) blur(30px);flex-direction:column;padding:0;gap:0;overflow-y:auto;overflow-x:hidden;z-index:9999;scroll-behavior:smooth;box-shadow:0 12px 48px rgba(0,0,0,0.2),inset 0 1px 0 rgba(255,255,255,0.6);border-top:none;border-left:1px solid rgba(0,0,0,0.15);border-bottom:1px solid rgba(0,0,0,0.15);border-right:1px solid rgba(0,0,0,0.15);border-radius:0 0 0 16px}
-        #nav-menu.ios-nav.active{display:flex!important;animation:slideInRight .4s cubic-bezier(0.16,1,0.3,1)}
-        @keyframes slideInRight{from{opacity:0;transform:translateX(20px) scale(0.95)}to{opacity:1;transform:translateX(0) scale(1)}}
-        #nav-menu.ios-nav li{width:100%;border-bottom:1px solid rgba(0,0,0,0.06);list-style:none;position:relative}
-        #nav-menu.ios-nav li::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,#667eea 0%,#764ba2 100%);opacity:0;transition:opacity .3s ease}
-        #nav-menu.ios-nav li:hover::before{opacity:1}
-        #nav-menu.ios-nav li:last-child{border-bottom:none}
-        #nav-menu.ios-nav a,#nav-menu.ios-nav button.nav-dropdown-toggle{display:block;width:100%;padding:16px 20px;font-size:15px;font-weight:500;color:#1d1d1f;text-decoration:none;transition:all .3s cubic-bezier(0.4,0,0.2,1);background:transparent;border:none;text-align:left;cursor:pointer;position:relative;overflow:hidden}
-        #nav-menu.ios-nav a::after,#nav-menu.ios-nav button.nav-dropdown-toggle::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:0;height:2px;background:linear-gradient(90deg,transparent,#667eea,#764ba2,transparent);transition:width .3s ease}
-        #nav-menu.ios-nav a:hover::after,#nav-menu.ios-nav button.nav-dropdown-toggle:hover::after{width:80%}
-        #nav-menu.ios-nav a:hover,#nav-menu.ios-nav button.nav-dropdown-toggle:hover{background:rgba(102,126,234,0.08);color:#667eea;transform:translateX(4px)}
-        /* Dark Mode iOS 26 Liquid Glass - Premium - COMPACT */
-        body.dark-mode #nav-menu.ios-nav{background:linear-gradient(180deg,rgba(0,0,0,0.95) 0%,rgba(0,0,0,0.85) 100%)!important;box-shadow:0 12px 48px rgba(0,0,0,0.6),inset 0 1px 0 rgba(255,255,255,0.15);border-top:none;border-left:1px solid rgba(255,255,255,0.15);border-bottom:1px solid rgba(255,255,255,0.15);border-right:1px solid rgba(255,255,255,0.15)}
-        body.dark-mode #nav-menu.ios-nav li{border-bottom-color:rgba(255,255,255,0.08)!important}
-        body.dark-mode #nav-menu.ios-nav li::before{background:linear-gradient(180deg,#2997ff 0%,#bf5af2 100%)}
-        body.dark-mode #nav-menu.ios-nav a,body.dark-mode #nav-menu.ios-nav button.nav-dropdown-toggle{color:#fff!important}
-        body.dark-mode #nav-menu.ios-nav a::after,body.dark-mode #nav-menu.ios-nav button.nav-dropdown-toggle::after{background:linear-gradient(90deg,transparent,#2997ff,#bf5af2,transparent)}
-        body.dark-mode #nav-menu.ios-nav a:hover,body.dark-mode #nav-menu.ios-nav button.nav-dropdown-toggle:hover{background:rgba(41,151,255,0.2);color:#5ac8fa!important;transform:translateX(4px)}
-        /* Dropdown Menu */
-        .nav-dropdown-toggle{cursor:pointer;-webkit-user-select:none;user-select:none;display:flex;align-items:center;justify-content:space-between}
-        .nav-dropdown-toggle::after{content:'▼';font-size:10px;margin-left:8px;transition:transform .3s ease}
-        .nav-dropdown.active .nav-dropdown-toggle::after{transform:rotate(180deg)}
-        .nav-dropdown-menu{position:static;width:100%;min-width:auto;max-width:100%;box-shadow:none;border:none;padding:0;margin:0;background:rgba(0,0,0,0.03);border-radius:0;display:none;list-style:none}
-        .nav-dropdown.active .nav-dropdown-menu{display:block;animation:expandMenu .3s ease}
-        @keyframes expandMenu{from{opacity:0;max-height:0}to{opacity:1;max-height:500px}}
-        .nav-dropdown-menu li{border-bottom:1px solid rgba(0,0,0,0.05)!important;padding-left:20px!important}
-        .nav-dropdown-menu li::before{display:none!important}
-        .nav-dropdown-menu li:last-child{border-bottom:none!important}
-        .nav-dropdown-menu a{padding:16px 16px 16px 44px!important;font-size:15px;color:#6e6e73}
-        .nav-dropdown-menu a:hover{background:rgba(102,126,234,0.1)!important;color:#667eea!important}
-        body.dark-mode .nav-dropdown-menu{background:rgba(255,255,255,0.05)!important}
-        body.dark-mode .nav-dropdown-menu a{color:#aaa!important}
-        body.dark-mode .nav-dropdown-menu a:hover{background:rgba(41,151,255,0.2)!important;color:#5ac8fa!important}
-        /* Language Selector in Mobile Menu */
-        .language-selector{width:100%;margin:0;padding:0;border-top:1px solid rgba(0,0,0,0.08);margin-top:16px}
-        .lang-toggle{width:100%;display:flex;justify-content:space-between;align-items:center;padding:16px;background:rgba(0,0,0,.05);border:none;border-radius:0;font-size:15px;cursor:pointer;color:#1d1d1f}
-        .lang-dropdown{position:static;width:100%;max-width:100%;margin:0;box-shadow:none;border:1px solid rgba(0,0,0,.08);border-radius:0;display:none;background:#fff}
-        .language-selector.active .lang-dropdown{display:block}
-        .lang-region{padding:8px 0;border-bottom:1px solid rgba(0,0,0,.05)}
-        .lang-region:last-child{border-bottom:none}
-        .lang-region-title{font-size:11px;font-weight:600;color:#86868b;padding:0 16px 8px;text-transform:uppercase;letter-spacing:.5px}
-        .lang-option{display:block;padding:10px 16px;font-size:14px;color:#1d1d1f;text-decoration:none;transition:background .2s ease}
-        .lang-option:hover{background:rgba(0,113,227,.08)}
-        .lang-option.active{color:#0071e3;font-weight:600;background:rgba(0,113,227,.08)}
-        /* FIX: Language selector di mobile menu HANYA untuk #nav-menu.ios-nav */
-        #nav-menu.ios-nav .language-selector{width:100%;margin:0;padding:0;border-top:1px solid rgba(0,0,0,.08);margin-top:16px;order:999!important}
-        #nav-menu.ios-nav .lang-toggle{width:100%;display:flex;justify-content:space-between;align-items:center;padding:16px;background:rgba(0,0,0,.05);border:none;border-radius:0;font-size:15px;cursor:pointer;color:#1d1d1f}
-        #nav-menu.ios-nav .lang-dropdown{position:static;width:100%;max-width:100%;margin:0;box-shadow:none;border:1px solid rgba(0,0,0,.08);border-radius:0;display:none;background:#fff}
-        #nav-menu.ios-nav .language-selector.active .lang-dropdown{display:block}
-        #nav-menu.ios-nav .lang-region{padding:8px 0;border-bottom:1px solid rgba(0,0,0,.05)}
-        #nav-menu.ios-nav .lang-region:last-child{border-bottom:none}
-        #nav-menu.ios-nav .lang-region-title{font-size:11px;font-weight:600;color:#86868b;padding:0 16px 8px;text-transform:uppercase;letter-spacing:.5px}
-        #nav-menu.ios-nav .lang-option{display:block;padding:10px 16px;font-size:14px;color:#1d1d1f;text-decoration:none;transition:background .2s ease}
-        #nav-menu.ios-nav .lang-option:hover{background:rgba(0,113,227,.08)}
-        #nav-menu.ios-nav .lang-option.active{color:#0071e3;font-weight:600;background:rgba(0,113,227,.08)}
-        .hero{height:100vh;min-height:100vh;width:100%;padding-top:52px;margin:0}
-        .hero-video{width:100%;height:100%;object-fit:cover;object-position:center}
-        .hero-overlay{width:100%;height:100%}
-        .hero-text{width:100%;max-width:100%;padding:0 20px}
-        .hero-title{font-size:26px;line-height:1.3;margin-bottom:14px;font-weight:700;text-shadow:0 2px 20px rgba(0,0,0,.5)}
-        .hero-subtitle{font-size:14px;line-height:1.5;margin-bottom:20px;opacity:.95;text-shadow:0 1px 10px rgba(0,0,0,.5)}
-        .hero-cta{display:flex;flex-direction:column;gap:10px;width:100%;max-width:280px;margin:0 auto}
-        .hero-cta .btn{width:100%;padding:12px 20px;font-size:14px}
-        .highlights-apple-grid{grid-template-columns:1fr!important;gap:14px!important;padding:0 16px;margin:0;width:100%}
-        .liquid-glass-link{display:block;width:100%}
-        .liquid-glass-card{height:160px!important;border-radius:16px!important;width:100%!important;display:block!important}
-        .liquid-glass-background{width:100%;height:100%}
-        .liquid-glass-background img{width:100%;height:100%;object-fit:cover;display:block}
-        .liquid-glass-content{padding:16px!important}
-        .liquid-glass-icon{font-size:36px!important;margin-bottom:10px!important;display:block;text-align:center}
-        .liquid-glass-title{font-size:18px!important;text-align:center;color:#fff!important}
-        .liquid-glass-description{font-size:12px!important;text-align:center;color:rgba(255,255,255,.95)!important}
-        .visi-misi-apple{grid-template-columns:1fr!important;gap:10px!important;padding:0 16px;margin:0;width:100%}
-        .apple-hero-card{height:180px!important;border-radius:16px!important;width:100%!important;display:block!important}
-        .apple-hero-background{width:100%;height:100%}
-        .apple-hero-background img{width:100%;height:100%;object-fit:cover;display:block}
-        .apple-hero-content{padding:16px!important}
-        .apple-hero-icon{font-size:36px!important;margin-bottom:10px!important}
-        .apple-hero-title{font-size:22px!important;color:#fff!important}
-        .apple-hero-description{font-size:12px!important;color:rgba(255,255,255,.95)!important}
-        .apple-hero-list{margin:8px 0 0!important}
-        .apple-hero-list li{font-size:11px!important;line-height:1.6!important;color:rgba(255,255,255,.95)!important}
-        .values-apple-grid{grid-template-columns:1fr!important;gap:10px!important;padding:0 16px;margin:0;width:100%}
-        .values-apple-grid .liquid-glass-card{height:160px!important}
-        .values-grid{grid-template-columns:repeat(2,1fr)!important;gap:10px!important;padding:0 16px;margin:0;width:100%}
-        .value-card{padding:16px 12px!important}
-        .value-card img{width:36px!important;height:36px!important}
-        .value-card h3{font-size:14px!important}
-        .value-card p{font-size:12px!important}
-        .org-chart-apple{padding:20px 16px!important;width:100%}
-        .org-level-apple{width:100%}
-        .org-id-card-link{display:block;width:100%;max-width:280px;margin:0 auto}
-        .org-id-card{width:100%;max-width:280px!important;padding:18px!important}
-        .org-id-photo{width:90px!important;height:90px!important;margin-bottom:12px!important}
-        .org-id-jabatan{font-size:10px!important}
-        .org-id-name{font-size:13px!important}
-        .org-connector-apple{height:20px!important}
-        .programs-grid,.news-grid{grid-template-columns:1fr!important;gap:10px!important;padding:0 16px;margin:0;width:100%}
-        .program-image,.news-image{height:80px!important}
-        .program-content,.news-content{padding:12px!important}
-        .program-title,.news-title{font-size:16px!important}
-        .program-description,.news-excerpt{font-size:13px!important}
-        .contact-wrapper{grid-template-columns:1fr!important;gap:20px!important;padding:0 16px;margin:0;width:100%}
-        .contact-info,.contact-form{padding:20px!important}
-        .footer-content{grid-template-columns:1fr!important;gap:20px!important;padding:0;margin:0;width:100%}
-        .footer-section{margin:0!important;width:100%}
-        .section-title{font-size:24px!important;margin-bottom:24px!important;text-align:center;width:100%}
-        .subsection-title{font-size:19px!important;margin:30px 0 16px!important;text-align:center;width:100%}
-        .home-highlights-apple{padding:30px 0!important;width:100%}
-        .about{padding:30px 0!important;width:100%}
-        .contact{padding:30px 0!important;width:100%}
-        .footer{padding:30px 16px 20px!important;width:100%}
-        body[dir="rtl"]{direction:rtl;text-align:right;overflow-x:hidden;max-width:100vw}
-        body[dir="rtl"] .ios-header,body[dir="rtl"] .ios-header nav{direction:ltr!important}
-        body[dir="rtl"] .ios-logo{direction:rtl}
-        body[dir="rtl"] .nav-controls{direction:ltr!important;display:flex!important;align-items:center!important;gap:8px!important;flex-shrink:0!important}
-        body[dir="rtl"] .theme-toggle{display:flex!important}
-        body[dir="rtl"] .ios-header .language-selector{display:flex!important;flex-shrink:0!important;width:auto!important}
-        body[dir="rtl"] .lang-dropdown{direction:rtl;text-align:right}
-        body[dir="rtl"] .apple-hero-list{text-align:right}
-        body[dir="rtl"] .nav-dropdown-menu{direction:rtl}
-        /* Toggle tema untuk SEMUA bahasa - Indonesia, Inggris, Arab, dll */
-        body[dir="ltr"] .theme-toggle,body:not([dir]) .theme-toggle{display:flex!important}
-        body[dir="ltr"] .ios-header .language-selector,body:not([dir]) .ios-header .language-selector{display:flex!important;flex-shrink:0!important;width:auto!important}
-        /* WAJIB: Theme toggle dan language selector di HEADER harus terlihat */
-        .ios-header .theme-toggle{display:flex!important;visibility:visible!important;opacity:1!important;flex-shrink:0!important}
-        .ios-header .language-selector{display:flex!important;visibility:visible!important;opacity:1!important;flex-shrink:0!important;width:auto!important}
-        .ios-header .nav-controls{display:flex!important;visibility:visible!important;opacity:1!important;align-items:center!important;gap:8px!important}
-        /* FIX: Mobile nav-controls harus selalu menampilkan theme-toggle */
-        @media(max-width:768px){
-        .ios-header .nav-controls{display:flex!important;align-items:center!important;gap:8px!important;flex-shrink:0!important;position:relative!important;z-index:10001!important}
-        .ios-header .theme-toggle{display:flex!important;visibility:visible!important;opacity:1!important;order:2!important;flex-shrink:0!important;width:36px!important;height:36px!important}
-        .ios-header .language-selector{display:flex!important;visibility:visible!important;opacity:1!important;order:1!important;flex-shrink:0!important;width:auto!important}
-        .ios-header .ios-mobile-toggle{order:3!important;display:flex!important}
-        }
-        @media(max-width:480px){
-        .hero-title{font-size:22px!important}
-        .hero-subtitle{font-size:13px!important}
-        .liquid-glass-card{height:180px!important}
-        .liquid-glass-title{font-size:18px!important}
-        .apple-hero-card{height:200px!important}
-        .apple-hero-title{font-size:24px!important}
-        .values-grid{grid-template-columns:1fr!important}
-        .ios-logo-text{max-width:120px!important;font-size:12px!important}
-        }
-        @media(max-width:375px){
-        .hero-title{font-size:20px!important}
-        .hero-subtitle{font-size:12px!important}
-        .liquid-glass-card{height:160px!important}
-        .liquid-glass-title{font-size:16px!important}
-        .apple-hero-card{height:180px!important}
-        .org-id-card{max-width:240px!important}
-        }
+        body.dark-mode .theme-toggle svg{color:#fff}
+        body.dark-mode .theme-toggle .theme-icon-sun{display:none}
+        body.dark-mode .theme-toggle .theme-icon-moon{display:block}
     </style>
 
     <!-- Styles - Clean & Optimized -->
@@ -269,33 +61,12 @@
         <link rel="stylesheet" href="style-darkmode-toggle.css">
     </noscript>
 
-    <!-- PERBAIKAN TOGGLE TEMA - WAJIB TERLIHAT SEMUA BAHASA (PALING AKHIR) -->
+    <!-- Theme Toggle Visibility Fix -->
     <style>
-        /* Toggle tema - global */
         .theme-toggle,.theme-toggle *{display:flex!important;visibility:visible!important;opacity:1!important}
         .theme-toggle{align-items:center!important;justify-content:center!important;width:36px!important;height:36px!important;background:rgba(0,0,0,.05)!important;border-radius:50%!important;cursor:pointer!important;flex-shrink:0!important;padding:0!important;border:none!important;position:relative!important;z-index:10000!important}
-        .theme-toggle svg{width:18px!important;height:18px!important;stroke:currentColor!important;color:#000!important}
-        .theme-toggle .theme-icon-sun{display:block!important}
-        .theme-toggle .theme-icon-moon{display:none!important}
-        body.dark-mode .theme-toggle{background:rgba(255,255,255,.1)!important}
-        body.dark-mode .theme-toggle svg{color:#fff!important}
-        body.dark-mode .theme-toggle .theme-icon-sun{display:none!important}
-        body.dark-mode .theme-toggle .theme-icon-moon{display:block!important}
-        
-        /* Language selector di HEADER - harus flex, tidak boleh block dengan width 100% */
-        .ios-header .nav-controls{display:flex!important;visibility:visible!important;opacity:1!important;align-items:center!important;gap:8px!important}
-        .ios-header .language-selector{display:flex!important;position:relative!important;flex-shrink:0!important;width:auto!important;visibility:visible!important;opacity:1!important}
-        
-        @media(max-width:768px) {
-        /* Mobile - HEADER elements harus terlihat */
-        .ios-header .theme-toggle,.ios-header .theme-toggle *,body .ios-header .theme-toggle{display:flex!important;visibility:visible!important;opacity:1!important;flex-shrink:0!important;width:36px!important;height:36px!important;}
-        .ios-header .nav-controls{display:flex!important;align-items:center!important;gap:8px!important;flex-shrink:0!important}
-        .ios-header .language-selector{display:flex!important;flex-shrink:0!important;width:auto!important}
-        .theme-toggle{order:2!important}
-        .ios-header .language-selector{order:1!important}
-        .ios-mobile-toggle{order:3!important}
-        }
-        }
+        .ios-header .nav-controls{display:flex!important;align-items:center!important;gap:8px!important}
+        .ios-header .language-selector{display:flex!important;position:relative!important;flex-shrink:0!important;width:auto!important}
     </style>
 </head>
 <body>
