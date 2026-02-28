@@ -106,8 +106,8 @@
     <a href="#main-content" class="skip-link">Lompat ke konten utama</a>
 
     <!-- Header -->
-    <header class="ios-header" role="banner">
-        <nav role="navigation" aria-label="Navigasi utama">
+    <header class="ios-header">
+        <nav aria-label="Navigasi utama">
             <!-- Kiri: Logo -->
             <a href="#home" class="ios-logo">
                 <div class="ios-logo-circle">
@@ -117,19 +117,19 @@
             </a>
 
             <!-- Tengah: Navigasi Desktop -->
-            <ul id="nav-menu" class="ios-nav" role="menu">
-                <li role="none"><a role="menuitem" class="nav-link" data-smooth href="#home" data-i18n="nav.home">Beranda</a></li>
-                <li role="none"><a role="menuitem" class="nav-link" data-smooth href="#about" data-i18n="nav.about">Tentang</a></li>
-                <li role="none"><a role="menuitem" class="nav-link" data-smooth href="#programs" data-i18n="nav.programs">Program</a></li>
-                <li role="none" class="nav-dropdown">
+            <ul id="nav-menu" class="ios-nav">
+                <li><a class="nav-link" data-smooth href="#home" data-i18n="nav.home">Beranda</a></li>
+                <li><a class="nav-link" data-smooth href="#about" data-i18n="nav.about">Tentang</a></li>
+                <li><a class="nav-link" data-smooth href="#programs" data-i18n="nav.programs">Program</a></li>
+                <li class="nav-dropdown">
                     <button class="nav-link nav-dropdown-toggle" type="button" aria-expanded="false">Pustaka ▾</button>
-                    <ul class="nav-dropdown-menu" role="menu" style="display:none!important;position:fixed!important;top:52px!important;left:50%!important;transform:translateX(-50%)!important;background:#fff!important;min-width:280px!important;border-radius:12px!important;box-shadow:0 8px 24px rgba(0,0,0,.15)!important;padding:12px!important;list-style:none!important;border:1px solid rgba(0,0,0,.08)!important;z-index:999999!important">
-                        <li role="none"><a role="menuitem" href="pustaka/akta-notaris.html">Akta Notaris & SK Kemenkumham</a></li>
-                        <li role="none"><a role="menuitem" href="pustaka/npwp-spt.html">NPWP & SPT Tahunan</a></li>
+                    <ul class="nav-dropdown-menu" style="display:none!important;position:fixed!important;top:52px!important;left:50%!important;transform:translateX(-50%)!important;background:#fff!important;min-width:280px!important;border-radius:12px!important;box-shadow:0 8px 24px rgba(0,0,0,.15)!important;padding:12px!important;list-style:none!important;border:1px solid rgba(0,0,0,.08)!important;z-index:999999!important">
+                        <li><a href="pustaka/akta-notaris.html">Akta Notaris & SK Kemenkumham</a></li>
+                        <li><a href="pustaka/npwp-spt.html">NPWP & SPT Tahunan</a></li>
                     </ul>
                 </li>
-                <li role="none"><a role="menuitem" class="nav-link" data-smooth href="#news" data-i18n="nav.news">Berita</a></li>
-                <li role="none"><a role="menuitem" class="nav-link" data-smooth href="#contact" data-i18n="nav.contact">Kontak</a></li>
+                <li><a class="nav-link" data-smooth href="#news" data-i18n="nav.news">Berita</a></li>
+                <li><a class="nav-link" data-smooth href="#contact" data-i18n="nav.contact">Kontak</a></li>
             </ul>
 
             <!-- Kanan: Bahasa + Toggle Tema + Hamburger -->
@@ -200,11 +200,11 @@
         </nav>
     </header>
 
-    <main id="main-content" role="main">
+    <main id="main-content">
         <!-- Bagian Hero -->
         <section id="home" class="hero" aria-label="Beranda">
             <!-- Latar Belakang Video -->
-            <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="">
+            <video class="hero-video" autoplay muted loop playsinline preload="metadata">
                 <source src="assets/videos/Hero_Video.mp4" type="video/mp4">
             </video>
             <div class="hero-overlay"></div>
@@ -770,7 +770,7 @@
                             </div>
                         </div>
                         <div class="map-container">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126920.240976!2d106.75!3d-6.22!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e945e34b9d%3A0x5371bf0fdad786a2!2sJakarta!5e0!3m2!1sid!2sid!4v1620000000000!5m2!1sid!2sid" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126920.240976!2d106.75!3d-6.22!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e945e34b9d%3A0x5371bf0fdad786a2!2sJakarta!5e0!3m2!1sid!2sid!4v1620000000000!5m2!1sid!2sid" style="width:100%;height:300px;border:0;" allowfullscreen="" loading="lazy"></iframe>
                         </div>
                     </div>
                 </div>
@@ -782,7 +782,7 @@
     <div class="footer-separator-apple"></div>
 
     <!-- Footer -->
-    <footer class="footer" role="contentinfo">
+    <footer class="footer">
         <div class="container footer-content">
             <div class="footer-section">
                 <!-- Logo dan Nama Yayasan - iOS 26 Style -->
@@ -877,8 +877,7 @@
 
     <!-- Preload critical images -->
     <link rel="preload" href="assets/images/Logo_YPBGlobal.jpeg" as="image">
-</body>
-</html>
+
     <!-- Consolidated News Sections -->
     <section id="news-berita-01" class="consolidated-page" style="display:none;padding:120px 20px 60px;max-width:900px;margin:0 auto;">
         <div class="back-to-news" style="margin-bottom:30px;"><a href="#news" class="back-btn" style="display:inline-flex;align-items:center;gap:8px;padding:12px 24px;background:rgba(0,113,227,0.1);color:#0071e3;text-decoration:none;border-radius:8px;font-weight:500;"><span>←</span> Kembali ke Berita</a></div>
@@ -1097,3 +1096,5 @@
         });
     })();
     </script>
+</body>
+</html>
