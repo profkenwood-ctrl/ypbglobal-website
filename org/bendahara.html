@@ -3,142 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="org.treasurer.title">Bendahara - YPBG</title>
-    <link rel="stylesheet" href="../style-elegan.css">
-    <link rel="stylesheet" href="../style-ios26.css">
-    <link rel="stylesheet" href="../style-mobile.css">
-    <link rel="stylesheet" href="../style-darkmode.css">
-    <style>
-        body { font-family: 'Inter', sans-serif; padding: 80px 20px 40px; background: linear-gradient(135deg, #f6d365 0%, #fda085 100%); min-height: 100vh; }
-        .container { max-width: 900px; margin: 0 auto; background: #fff; border-radius: 20px; padding: 40px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
-        .back-btn { display: inline-block; padding: 12px 30px; background: linear-gradient(135deg, #f6d365 0%, #fda085 100%); color: #fff; text-decoration: none; border-radius: 25px; margin-bottom: 30px; font-weight: 600; transition: transform 0.3s; }
-        .back-btn:hover { transform: translateX(-5px); }
-        .profile-header { text-align: center; margin-bottom: 40px; }
-        .profile-photo { width: 200px; height: 200px; margin: 0 auto 25px; border-radius: 50%; overflow: hidden; border: 6px solid #fda085; box-shadow: 0 10px 40px rgba(0,0,0,0.3); }
-        .profile-photo img { width: 100%; height: 100%; object-fit: cover; }
-        .profile-name { font-size: 32px; font-weight: 700; color: #1a1a1a; margin-bottom: 10px; }
-        .profile-position { font-size: 18px; color: #fda085; font-weight: 600; margin-bottom: 20px; }
-        .section { margin: 35px 0; }
-        .section-title { font-size: 24px; font-weight: 700; color: #1a1a1a; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 3px solid #fda085; }
-        .section-content { font-size: 16px; color: #333; line-height: 1.8; }
-        .section-content p { margin-bottom: 15px; }
-        .section-content ul { margin-left: 20px; }
-        .section-content li { margin-bottom: 10px; }
-        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px; }
-        .info-item { background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); padding: 20px; border-radius: 15px; border-left: 5px solid #fda085; }
-        .info-label { font-size: 14px; color: #666; font-weight: 600; margin-bottom: 8px; }
-        .info-value { font-size: 16px; color: #1a1a1a; font-weight: 500; }
-        .quote-box { background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); padding: 30px; border-radius: 15px; margin: 30px 0; text-align: center; font-style: italic; }
-        .quote-box p { margin: 0; font-size: 18px; color: #1a1a1a; font-weight: 600; }
-        .timeline { position: relative; padding-left: 30px; }
-        .timeline-item { margin-bottom: 25px; position: relative; }
-        .timeline-item::before { content: ''; position: absolute; left: -30px; top: 8px; width: 12px; height: 12px; background: #fda085; border-radius: 50%; }
-        .timeline-item::after { content: ''; position: absolute; left: -24px; top: 14px; width: 2px; height: calc(100% - 14px); background: #fda085; }
-        .timeline-item:last-child::after { display: none; }
-        .timeline-year { font-weight: 700; color: #fda085; margin-bottom: 5px; }
-        .timeline-title { font-weight: 600; color: #1a1a1a; margin-bottom: 5px; }
-        .timeline-desc { color: #666; font-size: 15px; }
-        @media (max-width: 768px) { body { padding: 60px 15px 30px; } .container { padding: 25px; } .profile-name { font-size: 26px; } .profile-photo { width: 150px; height: 150px; } }
-    </style>
+    <title>Bendahara - YPBG</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" href="../assets/images/Logo_YPBGlobal.jpeg">
 </head>
 <body>
-    <div class="container">
-        <a href="../index.html#about" class="back-btn" data-i18n="back.to.org">← Kembali ke Struktur Organisasi</a>
-        
-        <div class="profile-header">
-            <div class="profile-photo">
-                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=face" alt="Bendahara" onerror="this.src='https://via.placeholder.com/200x200/fda085/ffffff?text=Bendahara'">
+    <header class="ios-header">
+        <nav role="navigation">
+            <a href="../index.html" class="ios-logo">
+                <div class="ios-logo-circle">
+                    <img src="../assets/images/Logo_YPBGlobal.jpeg" class="ios-logo-img" alt="Logo YPBG">
+                </div>
+                <span class="ios-logo-text">Yayasan Persada Bakti Global</span>
+            </a>
+            <ul id="nav-menu" class="ios-nav">
+                <li><a class="nav-link" href="../index.html#home">Beranda</a></li>
+                <li><a class="nav-link" href="../index.html#about">Tentang</a></li>
+                <li><a class="nav-link" href="../index.html#programs">Program</a></li>
+                <li><a class="nav-link" href="../index.html#news">Berita</a></li>
+                <li><a class="nav-link" href="../index.html#contact">Kontak</a></li>
+            </ul>
+            <div class="nav-controls">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"/>
+                        <line x1="12" y1="1" x2="12" y2="3"/>
+                        <line x1="12" y1="21" x2="12" y2="23"/>
+                        <line x1="1" y1="12" x2="3" y2="12"/>
+                        <line x1="21" y1="12" x2="23" y2="12"/>
+                    </svg>
+                    <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3"/>
+                    </svg>
+                </button>
+                <div class="language-selector">
+                    <button class="lang-toggle" aria-label="Pilih bahasa">
+                        <span class="lang-current">Bahasa Indonesia</span>
+                        <span class="lang-arrow">▼</span>
+                    </button>
+                    <div class="lang-dropdown">
+                        <div class="lang-region"><div class="lang-region-title">Americas</div><a href="#" class="lang-option" data-lang="en-us">English (United States)</a><a href="#" class="lang-option" data-lang="es-latam">Español (Latin Amerika)</a><a href="#" class="lang-option" data-lang="pt-br">Português (Brasil)</a></div>
+                        <div class="lang-region"><div class="lang-region-title">Europe</div><a href="#" class="lang-option" data-lang="en-uk">English (United Kingdom)</a><a href="#" class="lang-option" data-lang="de">Deutsch</a><a href="#" class="lang-option" data-lang="fr">Français</a><a href="#" class="lang-option" data-lang="it">Italiano</a><a href="#" class="lang-option" data-lang="es">Español</a></div>
+                        <div class="lang-region"><div class="lang-region-title">Asia-Pacific</div><a href="#" class="lang-option active" data-lang="id">Bahasa Indonesia</a><a href="#" class="lang-option" data-lang="zh">中文</a><a href="#" class="lang-option" data-lang="ja">日本語</a><a href="#" class="lang-option" data-lang="ko">한국어</a><a href="#" class="lang-option" data-lang="hi">हिन्दी</a></div>
+                        <div class="lang-region"><div class="lang-region-title">Middle East & Africa</div><a href="#" class="lang-option" data-lang="ar">العربية</a><a href="#" class="lang-option" data-lang="tr">Türkçe</a><a href="#" class="lang-option" data-lang="af">Afrikaans</a></div>
+                    </div>
+                </div>
             </div>
-            <h1 class="profile-name" data-i18n="org.treasurer.name">Ahmad Fauzi, S.Kom, Ak</h1>
-            <div class="profile-position" data-i18n="about.org.treasurer">Bendahara</div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section class="org-hero">
+            <div class="org-hero-portrait">
+                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face" alt="Bendahara" loading="lazy">
+            </div>
+            <h1 class="org-hero-title" data-i18n="org.treasurer.name">Ahmad Fauzi, S.Kom, Ak</h1>
+            <p class="org-hero-subtitle" data-i18n="about.org.treasurer">Bendahara</p>
+        </section>
+
+        <div class="back-button-wrapper">
+            <a href="../index.html#about" class="back-btn-apple">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+                <span>Kembali ke Struktur Organisasi</span>
+            </a>
         </div>
 
-        <!-- Biodata -->
-        <div class="section">
-            <h2 class="section-title" data-i18n="org.biodata">📋 Biodata</h2>
-            <div class="info-grid">
-                <div class="info-item">
-                    <div class="info-label" data-i18n="org.fullname">Nama Lengkap</div>
-                    <div class="info-value" data-i18n="org.treasurer.name">Ahmad Fauzi, S.Kom, Ak</div>
-                </div>
-                <div class="info-item">
-                    <div class="info-label" data-i18n="org.birthdate">Tanggal Lahir</div>
-                    <div class="info-value" data-i18n="org.treasurer.birth">5 Desember 1972</div>
-                </div>
-                <div class="info-item">
-                    <div class="info-label" data-i18n="org.birthplace">Tempat Lahir</div>
-                    <div class="info-value" data-i18n="org.treasurer.birthplace">Medan, Indonesia</div>
-                </div>
-                <div class="info-item">
-                    <div class="info-label" data-i18n="org.education">Pendidikan Terakhir</div>
-                    <div class="info-value" data-i18n="org.treasurer.education">S1 Akuntansi & Komputer</div>
+        <section class="org-section">
+            <h2 class="org-section-title">📋 Biodata</h2>
+            <div class="org-biodata">
+                <div class="biodata-grid">
+                    <div class="biodata-item"><div class="biodata-label">Nama Lengkap</div><div class="biodata-value" data-i18n="org.treasurer.name">Ahmad Fauzi, S.Kom, Ak</div></div>
+                    <div class="biodata-item"><div class="biodata-label">Tanggal Lahir</div><div class="biodata-value" data-i18n="org.treasurer.birth">5 Desember 1972</div></div>
+                    <div class="biodata-item"><div class="biodata-label">Tempat Lahir</div><div class="biodata-value" data-i18n="org.treasurer.birthplace">Medan, Indonesia</div></div>
+                    <div class="biodata-item"><div class="biodata-label">Pendidikan Terakhir</div><div class="biodata-value" data-i18n="org.treasurer.education">S1 Akuntansi & Komputer</div></div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Moto -->
-        <div class="section">
-            <h2 class="section-title" data-i18n="org.motto">💡 Moto Hidup</h2>
-            <div class="quote-box">
-                <p data-i18n="org.treasurer.motto">"Kejujuran dalam mengelola keuangan adalah amanah yang harus dijaga dengan penuh tanggung jawab."</p>
+        <section class="org-section">
+            <h2 class="org-section-title">💡 Moto Hidup</h2>
+            <div class="org-motto">
+                <p class="motto-text" data-i18n="org.treasurer.motto">"Kejujuran dalam mengelola keuangan adalah amanah yang harus dijaga dengan penuh tanggung jawab."</p>
             </div>
-        </div>
+        </section>
 
-        <!-- Hobi -->
-        <div class="section">
-            <h2 class="section-title" data-i18n="org.hobbies">🎯 Hobi</h2>
-            <div class="section-content">
-                <ul>
-                    <li data-i18n="org.treasurer.hobby1">💰 Investasi dan trading saham</li>
-                    <li data-i18n="org.treasurer.hobby2">📊 Analisis keuangan dan ekonomi</li>
-                    <li data-i18n="org.treasurer.hobby3">⚽ Menonton pertandingan sepak bola</li>
-                    <li data-i18n="org.treasurer.hobby4">🎸 Bermain gitar akustik</li>
+        <section class="org-section">
+            <h2 class="org-section-title">🎯 Hobi</h2>
+            <div class="org-hobbies">
+                <ul class="hobbies-list">
+                    <li class="hobby-item"><span class="hobby-icon">💰</span><span class="hobby-text" data-i18n="org.treasurer.hobby1">Investasi dan trading saham</span></li>
+                    <li class="hobby-item"><span class="hobby-icon">📊</span><span class="hobby-text" data-i18n="org.treasurer.hobby2">Analisis keuangan dan ekonomi</span></li>
+                    <li class="hobby-item"><span class="hobby-icon">⚽</span><span class="hobby-text" data-i18n="org.treasurer.hobby3">Menonton pertandingan sepak bola</span></li>
+                    <li class="hobby-item"><span class="hobby-icon">🎸</span><span class="hobby-text" data-i18n="org.treasurer.hobby4">Bermain gitar akustik</span></li>
                 </ul>
             </div>
-        </div>
+        </section>
 
-        <!-- Karir Profesional -->
-        <div class="section">
-            <h2 class="section-title" data-i18n="org.career">💼 Karir Profesional</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-year" data-i18n="org.treasurer.career1.year">2018 - Sekarang</div>
-                    <div class="timeline-title" data-i18n="org.treasurer.career1.title">Bendahara Yayasan YPBG</div>
-                    <div class="timeline-desc" data-i18n="org.treasurer.career1.desc">Mengelola keuangan dan aset yayasan</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-year" data-i18n="org.treasurer.career2.year">2013 - 2018</div>
-                    <div class="timeline-title" data-i18n="org.treasurer.career2.title">Finance Manager</div>
-                    <div class="timeline-desc" data-i18n="org.treasurer.career2.desc">Memimpin departemen keuangan perusahaan</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-year" data-i18n="org.treasurer.career3.year">2008 - 2013</div>
-                    <div class="timeline-title" data-i18n="org.treasurer.career3.title">Senior Accountant</div>
-                    <div class="timeline-desc" data-i18n="org.treasurer.career3.desc">Menyusun laporan keuangan</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-year" data-i18n="org.treasurer.career4.year">2005 - 2008</div>
-                    <div class="timeline-title" data-i18n="org.treasurer.career4.title">Junior Accountant</div>
-                    <div class="timeline-desc" data-i18n="org.treasurer.career4.desc">Membantu pembukuan dan audit</div>
+        <section class="org-section">
+            <h2 class="org-section-title">💼 Karir Profesional</h2>
+            <div class="org-career">
+                <div class="career-timeline">
+                    <div class="career-item">
+                        <div class="career-year" data-i18n="org.treasurer.career1.year">2018 - Sekarang</div>
+                        <h3 class="career-title" data-i18n="org.treasurer.career1.title">Bendahara Yayasan YPBG</h3>
+                        <p class="career-desc" data-i18n="org.treasurer.career1.desc">Mengelola keuangan dan aset yayasan</p>
+                    </div>
+                    <div class="career-item">
+                        <div class="career-year" data-i18n="org.treasurer.career2.year">2013 - 2018</div>
+                        <h3 class="career-title" data-i18n="org.treasurer.career2.title">Finance Manager</h3>
+                        <p class="career-desc" data-i18n="org.treasurer.career2.desc">Memimpin departemen keuangan perusahaan</p>
+                    </div>
+                    <div class="career-item">
+                        <div class="career-year" data-i18n="org.treasurer.career3.year">2008 - 2013</div>
+                        <h3 class="career-title" data-i18n="org.treasurer.career3.title">Senior Accountant</h3>
+                        <p class="career-desc" data-i18n="org.treasurer.career3.desc">Menyusun laporan keuangan</p>
+                    </div>
+                    <div class="career-item">
+                        <div class="career-year" data-i18n="org.treasurer.career4.year">2005 - 2008</div>
+                        <h3 class="career-title" data-i18n="org.treasurer.career4.title">Junior Accountant</h3>
+                        <p class="career-desc" data-i18n="org.treasurer.career4.desc">Membantu pembukuan dan audit</p>
+                    </div>
                 </div>
             </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container" style="max-width:1200px;margin:0 auto;">
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px;margin-bottom:30px;">
+                <div><h4 style="font-size:16px;font-weight:600;margin-bottom:16px;color:#1d1d1f;">YPBG</h4><p style="font-size:14px;color:#6e6e73;line-height:1.6;">Yayasan Persada Bakti Global berdedikasi untuk Bantuan Sosial Kemanusiaan.</p></div>
+                <div><h4 style="font-size:16px;font-weight:600;margin-bottom:16px;color:#1d1d1f;">Tautan</h4><ul style="list-style:none;padding:0;margin:0;"><li><a href="../index.html#about" style="color:#6e6e73;text-decoration:none;font-size:14px;">Tentang</a></li><li><a href="../index.html#programs" style="color:#6e6e73;text-decoration:none;font-size:14px;">Program</a></li><li><a href="../index.html#news" style="color:#6e6e73;text-decoration:none;font-size:14px;">Berita</a></li><li><a href="../index.html#contact" style="color:#6e6e73;text-decoration:none;font-size:14px;">Kontak</a></li></ul></div>
+                <div><h4 style="font-size:16px;font-weight:600;margin-bottom:16px;color:#1d1d1f;">Bahasa</h4><select id="language-select" aria-label="Pilih bahasa" style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(0,0,0,0.1);font-size:14px;background:#fff;"><option value="id">Bahasa Indonesia</option><option value="en-us">English (US)</option><option value="en-uk">English (UK)</option><option value="es">Español</option><option value="pt-br">Português</option><option value="de">Deutsch</option><option value="fr">Français</option><option value="it">Italiano</option><option value="zh">中文</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="hi">हिन्दी</option><option value="ar">العربية</option><option value="tr">Türkçe</option><option value="af">Afrikaans</option></select></div>
+            </div>
+            <div style="border-top:1px solid rgba(0,0,0,0.1);padding-top:20px;text-align:center;"><p style="font-size:14px;color:#6e6e73;">&copy; 2026 Yayasan Persada Bakti Global. All rights reserved.</p></div>
         </div>
-    </div>
-    <script src="../translations.js" defer></script>
-    <script src="../translations-patch.js" defer></script>
-    <script src="../translations-arabic.js" defer></script>
-    <script src="../translations-hindi.js" defer></script>
-    <script src="../translate-all.js" defer></script>
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const savedLang = localStorage.getItem('selectedLanguage') || 'id';
-        if (typeof translateAllPage === 'function') {
-            translateAllPage(savedLang);
-        }
-        if (savedLang === 'ar') {
-            document.documentElement.setAttribute('dir', 'rtl');
-        }
-    });
-    </script>
+    </footer>
+    <script src="../script.js" defer></script>
 </body>
 </html>
