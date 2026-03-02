@@ -786,7 +786,7 @@
     }
     
     .whatsapp-tooltip {
-        display: none;
+        display: none !important;
     }
 }
 
@@ -885,11 +885,10 @@
 @supports (-webkit-touch-callout: none) {
     @media (max-width: 768px) {
         .hero {
-            min-height: -webkit-fill-available;
-            min-height: 100vh;
+            /* 100dvh for modern iOS 15.4+, 100vh fallback for older browsers */
             min-height: 100dvh;
         }
-        
+
         .ios-header {
             padding-top: env(safe-area-inset-top);
         }
