@@ -251,7 +251,7 @@ body {
     background: var(--ios-card-bg);
     -webkit-backdrop-filter: var(--ios-blur-light);
     backdrop-filter: var(--ios-blur-light);
-    z-index: 10000;
+    z-index: 9999999999;
     border-bottom: 0.5px solid var(--ios-separator);
     transition: all var(--ios-transition-normal) var(--ios-easing);
 }
@@ -318,6 +318,16 @@ body {
     background-clip: text;
     letter-spacing: -0.03em;
     transition: all var(--ios-transition-normal) var(--ios-easing);
+    color: var(--ios-blue) !important;
+}
+
+/* Fallback for browsers that don't support background-clip: text */
+@supports not (background-clip: text) {
+    .ios-logo-text {
+        background: none;
+        -webkit-text-fill-color: var(--ios-blue);
+        color: var(--ios-blue) !important;
+    }
 }
 
 .ios-logo:hover .ios-logo-text {
@@ -327,19 +337,19 @@ body {
     background-clip: text;
 }
 
-/* Logo Mode Gelap */
+/* Logo Mode Gelap - Use solid colors for better visibility */
 body.dark-mode .ios-logo-text {
-    background: linear-gradient(135deg, #FFFFFF 0%, rgba(255, 255, 255, 0.8) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    -webkit-text-fill-color: #ffffff !important;
+    background-clip: unset !important;
+    color: #ffffff !important;
 }
 
 body.dark-mode .ios-logo:hover .ios-logo-text {
-    background: var(--ios-gradient-ocean);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    background: none !important;
+    -webkit-text-fill-color: #5ac8fa !important;
+    color: #5ac8fa !important;
 }
 
 /* ===== Navigasi iOS - Menu ===== */
@@ -399,6 +409,8 @@ body.dark-mode .ios-logo:hover .ios-logo-text {
     cursor: pointer;
     padding: var(--ios-spacing-sm);
     color: var(--ios-text-primary);
+    z-index: 9999999999 !important;
+    position: relative !important;
 }
 
 .ios-mobile-toggle span {
@@ -409,15 +421,19 @@ body.dark-mode .ios-logo:hover .ios-logo-text {
     margin: 5px 0;
     transition: all var(--ios-transition-fast) var(--ios-easing);
     border-radius: var(--ios-radius-full);
+    z-index: 9999999999 !important;
+    position: relative !important;
 }
 
 @media (max-width: 768px) {
     .ios-nav {
         display: none;
+        z-index: 9999999998 !important;
     }
     
     .ios-mobile-toggle {
         display: block;
+        z-index: 9999999999 !important;
     }
     
     .ios-header nav {
@@ -1256,6 +1272,8 @@ body.dark-mode .lang-dropdown {
     transition: all var(--transition-fast);
     padding: 0;
     flex-shrink: 0;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 .theme-toggle:hover {
@@ -1268,6 +1286,8 @@ body.dark-mode .lang-dropdown {
     height: 18px;
     color: var(--text-primary);
     display: block;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 /* Theme Toggle Icons - Show/Hide based on mode */
@@ -2721,6 +2741,205 @@ body.dark-mode {
     /* Dasar */
     background: var(--bg-primary);
     color: var(--text-primary);
+}
+
+/* ===== DARK MODE FIXES FOR VISIBILITY ===== */
+
+/* Logo Text - Use solid color in dark mode for visibility */
+body.dark-mode .ios-logo-text {
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    -webkit-text-fill-color: #ffffff !important;
+    background-clip: unset !important;
+    color: #ffffff !important;
+}
+
+body.dark-mode .ios-logo:hover .ios-logo-text {
+    background: none !important;
+    -webkit-text-fill-color: #5ac8fa !important;
+    color: #5ac8fa !important;
+}
+
+/* Footer Logo - Use solid color in dark mode */
+body.dark-mode .footer .footer-logo-link .ios-logo-text {
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    -webkit-text-fill-color: #ffffff !important;
+    background-clip: unset !important;
+    color: #ffffff !important;
+}
+
+/* Section Titles - Visible in dark mode */
+body.dark-mode .section-title {
+    color: #ffffff !important;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+body.dark-mode .subsection-title {
+    color: #ffffff !important;
+}
+
+/* Theme Toggle - Visible in dark mode */
+body.dark-mode .theme-toggle {
+    background: rgba(255,255,255,0.1) !important;
+    border: 1px solid rgba(255,255,255,0.2) !important;
+}
+
+body.dark-mode .theme-toggle svg {
+    color: #ffffff !important;
+    fill: #ffffff !important;
+}
+
+body.dark-mode .theme-toggle .theme-icon-sun {
+    display: none !important;
+}
+
+body.dark-mode .theme-toggle .theme-icon-moon {
+    display: block !important;
+    fill: #ffffff !important;
+}
+
+/* Hero Section - Visible in dark mode */
+body.dark-mode .hero-title {
+    color: #ffffff !important;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.8);
+}
+
+body.dark-mode .hero-subtitle {
+    color: rgba(255,255,255,0.9) !important;
+}
+
+/* About Section - Visible in dark mode */
+body.dark-mode .about {
+    background: var(--bg-primary);
+}
+
+body.dark-mode .apple-hero-title {
+    color: #ffffff !important;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+body.dark-mode .apple-hero-description {
+    color: rgba(255,255,255,0.9) !important;
+}
+
+/* Values Section - Visible in dark mode */
+body.dark-mode .liquid-glass-title {
+    color: #ffffff !important;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+body.dark-mode .liquid-glass-description {
+    color: rgba(255,255,255,0.9) !important;
+}
+
+/* Liquid Glass Icons - Better visibility */
+body.dark-mode .liquid-glass-icon {
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5));
+}
+
+body.dark-mode .apple-hero-icon {
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5));
+}
+
+/* Programs Section - Visible in dark mode */
+body.dark-mode .programs {
+    background: var(--bg-secondary);
+}
+
+body.dark-mode .program-content h3 {
+    color: #ffffff !important;
+}
+
+body.dark-mode .program-content p {
+    color: rgba(255,255,255,0.85) !important;
+}
+
+/* News Section - Visible in dark mode */
+body.dark-mode .news {
+    background: var(--bg-primary);
+}
+
+body.dark-mode .news-title {
+    color: #ffffff !important;
+}
+
+body.dark-mode .news-excerpt {
+    color: rgba(255,255,255,0.8) !important;
+}
+
+/* Contact Section - Visible in dark mode */
+body.dark-mode .contact {
+    background: var(--bg-secondary);
+}
+
+/* Gallery Section - Visible in dark mode */
+body.dark-mode .gallery-apple-caption h4 {
+    color: #ffffff !important;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+body.dark-mode .gallery-apple-caption p {
+    color: rgba(255,255,255,0.9) !important;
+}
+
+/* Nav Links - Visible in dark mode */
+body.dark-mode .ios-nav .nav-link {
+    color: rgba(255,255,255,0.8) !important;
+}
+
+body.dark-mode .ios-nav .nav-link:hover {
+    color: #ffffff !important;
+}
+
+/* Org Chart - Visible in dark mode */
+body.dark-mode .org-id-jabatan {
+    color: rgba(255,255,255,0.7) !important;
+}
+
+body.dark-mode .org-id-name {
+    color: #ffffff !important;
+}
+
+/* Filter Buttons - Visible in dark mode */
+body.dark-mode .filter-btn {
+    background: var(--bg-tertiary) !important;
+    color: rgba(255,255,255,0.8) !important;
+    border-color: var(--border) !important;
+}
+
+body.dark-mode .filter-btn.active {
+    background: var(--accent) !important;
+    color: #ffffff !important;
+}
+
+/* Footer - Visible in dark mode */
+body.dark-mode .footer {
+    background: var(--bg-primary);
+    border-top-color: var(--border);
+}
+
+body.dark-mode .footer-description {
+    color: rgba(255,255,255,0.7) !important;
+}
+
+body.dark-mode .footer-section h4 {
+    color: #ffffff !important;
+}
+
+body.dark-mode .footer-section a {
+    color: rgba(255,255,255,0.7) !important;
+}
+
+body.dark-mode .footer-section a:hover {
+    color: #5ac8fa !important;
+}
+
+/* Language selector in footer - Visible in dark mode */
+body.dark-mode .language-selector-footer select {
+    background: var(--bg-tertiary) !important;
+    color: #ffffff !important;
+    border-color: var(--border) !important;
 }
 
 body.dark-mode .header {

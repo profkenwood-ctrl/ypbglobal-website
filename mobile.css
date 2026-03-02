@@ -1,1012 +1,730 @@
 /* ========================================
    Mobile Styles - YPB Global Website
-   Enhanced & Perfected Version
+   Force Override Version - v6.0
    ======================================== */
 
-/* ===== Mobile Base Styles ===== */
-@media (max-width: 768px) {
-    /* Reset dan base untuk mobile */
-    * {
-        -webkit-tap-highlight-color: transparent;
+/* Force mobile styles for screens under 768px */
+@media only screen and (max-width: 768px) {
+
+/* BASE - Fix all visibility issues */
+* {
+    max-width: 100% !important;
+}
+
+html, body {
+    font-size: 16px !important;
+    padding-top: 60px !important;
+    margin: 0 !important;
+}
+
+.container {
+    padding: 0 12px !important;
+    max-width: 100% !important;
+}
+
+/* FIX SECTION TITLES - Critical */
+#about .section-title,
+.about .section-title,
+.section-title {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    color: #1d1d1f !important;
+    font-size: 22px !important;
+    text-align: center !important;
+    margin: 20px 0 !important;
+    padding: 0 12px !important;
+    line-height: 1.3 !important;
+    font-weight: 700 !important;
+    width: 100% !important;
+    float: none !important;
+    position: relative !important;
+    height: auto !important;
+    overflow: visible !important;
+}
+
+#programs .section-title,
+.programs .section-title {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    color: #1d1d1f !important;
+}
+
+#news .section-title,
+.news .section-title {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    color: #1d1d1f !important;
+}
+
+#contact .section-title,
+.contact .section-title {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    color: #1d1d1f !important;
+}
+
+.subsection-title {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    color: #1d1d1f !important;
+    font-size: 18px !important;
+    margin: 16px 0 !important;
+}
+
+/* HEADER */
+header.ios-header {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 60px !important;
+    width: 100% !important;
+    background: #ffffff !important;
+    z-index: 999999 !important;
+    display: flex !important;
+    align-items: center !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1) !important;
+}
+
+header.ios-header nav {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 0 12px !important;
+    width: 100% !important;
+}
+
+header.ios-header .ios-logo {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+
+header.ios-header .ios-logo-text {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    color: #1d1d1f !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    max-width: 80px !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    background: none !important;
+    -webkit-text-fill-color: #1d1d1f !important;
+}
+
+header.ios-header .nav-controls {
+    display: flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+}
+
+header.ios-header .theme-toggle {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 36px !important;
+    height: 36px !important;
+    color: #1d1d1f !important;
+    background: transparent !important;
+    border: none !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+header.ios-header .theme-toggle svg {
+    display: block !important;
+    width: 18px !important;
+    height: 18px !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+header.ios-header .ios-mobile-toggle {
+    display: flex !important;
+    width: 36px !important;
+    height: 36px !important;
+    background: transparent !important;
+    border: none !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 4px !important;
+    z-index: 99999999 !important;
+    position: relative !important;
+}
+
+header.ios-header .ios-mobile-toggle span {
+    display: block !important;
+    width: 18px !important;
+    height: 2px !important;
+    background: #1d1d1f !important;
+    z-index: 99999999 !important;
+    position: relative !important;
+}
+
+/* Mobile Menu */
+#nav-menu.ios-nav,
+ul#nav-menu,
+.ios-nav {
+    display: none !important;
+    position: fixed !important;
+    top: 60px !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    background: #ffffff !important;
+    z-index: 9999999999 !important;
+    overflow-y: auto !important;
+    padding: 12px 0 !important;
+}
+
+#nav-menu.ios-nav.active,
+.ios-nav.active {
+    display: flex !important;
+    flex-direction: column !important;
+    z-index: 9999999999 !important;
+}
+
+#nav-menu.ios-nav li,
+.ios-nav li {
+    list-style: none !important;
+    border-bottom: 1px solid #f0f0f0 !important;
+}
+
+#nav-menu.ios-nav .nav-link,
+.ios-nav .nav-link {
+    display: block !important;
+    padding: 14px 16px !important;
+    font-size: 16px !important;
+    color: #1d1d1f !important;
+    text-decoration: none !important;
+}
+
+/* HERO */
+.hero {
+    height: auto !important;
+    min-height: 50vh !important;
+    padding: 60px 12px 30px !important;
+}
+
+.hero-title {
+    font-size: 22px !important;
+    color: #ffffff !important;
+    margin-bottom: 10px !important;
+}
+
+.hero-subtitle {
+    font-size: 13px !important;
+    color: rgba(255,255,255,0.9) !important;
+    margin-bottom: 16px !important;
+}
+
+.hero-cta {
+    flex-direction: column !important;
+    gap: 8px !important;
+}
+
+.hero-cta .btn {
+    padding: 10px 20px !important;
+    font-size: 13px !important;
+    width: 100% !important;
+    max-width: 180px !important;
+}
+
+/* HIGHLIGHTS */
+.home-highlights-apple {
+    padding: 16px 0 !important;
+}
+
+.home-highlights-apple .highlights-apple-grid {
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+    padding: 0 12px !important;
+}
+
+.home-highlights-apple .liquid-glass-card {
+    height: 90px !important;
+    border-radius: 10px !important;
+}
+
+.home-highlights-apple .liquid-glass-content {
+    padding: 10px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-end !important;
+    height: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.home-highlights-apple .liquid-glass-icon {
+    font-size: 22px !important;
+    margin-bottom: 2px !important;
+    display: block !important;
+    visibility: visible !important;
+}
+
+.home-highlights-apple .liquid-glass-title {
+    font-size: 14px !important;
+    display: block !important;
+    visibility: visible !important;
+}
+
+.home-highlights-apple .liquid-glass-description {
+    font-size: 11px !important;
+    display: block !important;
+    visibility: visible !important;
+}
+
+/* ABOUT */
+.about {
+    padding: 16px 0 !important;
+}
+
+.about .visi-misi-apple {
+    flex-direction: column !important;
+    gap: 8px !important;
+    padding: 0 12px !important;
+    margin-bottom: 16px !important;
+}
+
+.about .apple-hero-card {
+    height: 100px !important;
+    border-radius: 10px !important;
+}
+
+.about .apple-hero-content {
+    padding: 10px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-end !important;
+    height: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.about .apple-hero-icon {
+    font-size: 22px !important;
+    margin-bottom: 2px !important;
+    display: block !important;
+    visibility: visible !important;
+}
+
+.about .apple-hero-title {
+    font-size: 16px !important;
+    display: block !important;
+    visibility: visible !important;
+}
+
+.about .apple-hero-description {
+    font-size: 11px !important;
+    display: block !important;
+    visibility: visible !important;
+}
+
+/* VALUES */
+.about .values-apple-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 6px !important;
+    padding: 0 12px !important;
+}
+
+.about .values-apple-grid .liquid-glass-card {
+    height: 80px !important;
+}
+
+.about .values-apple-grid .liquid-glass-content {
+    padding: 6px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-end !important;
+    height: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.about .values-apple-grid .liquid-glass-icon {
+    font-size: 18px !important;
+    margin-bottom: 1px !important;
+    display: block !important;
+    visibility: visible !important;
+}
+
+.about .values-apple-grid .liquid-glass-title {
+    font-size: 11px !important;
+    display: block !important;
+    visibility: visible !important;
+}
+
+.about .values-apple-grid .liquid-glass-description {
+    display: none !important;
+}
+
+/* PROGRAMS */
+.programs {
+    padding: 16px 0 !important;
+    background: #f5f5f7 !important;
+}
+
+.programs .section-title {
+    display: block !important;
+    visibility: visible !important;
+    color: #1d1d1f !important;
+    font-size: 20px !important;
+    margin-bottom: 12px !important;
+}
+
+.programs .programs-filter {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 4px !important;
+    margin-bottom: 10px !important;
+    padding: 0 12px !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+}
+
+.programs .filter-btn {
+    padding: 5px 8px !important;
+    font-size: 10px !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+    background: #ffffff !important;
+    border: 1px solid #d2d2d7 !important;
+    border-radius: 10px !important;
+}
+
+.programs .programs-grid {
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+    padding: 0 12px !important;
+}
+
+.programs .program-card {
+    background: #ffffff !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+}
+
+.programs .program-image {
+    height: 80px !important;
+}
+
+.programs .program-content {
+    padding: 8px !important;
+}
+
+.programs .program-content h3 {
+    font-size: 13px !important;
+    color: #1d1d1f !important;
+    margin-bottom: 4px !important;
+    visibility: visible !important;
+}
+
+.programs .program-content p {
+    font-size: 10px !important;
+    color: #6e6e73 !important;
+    visibility: visible !important;
+}
+
+/* NEWS */
+.news {
+    padding: 16px 0 !important;
+}
+
+.news .section-title {
+    display: block !important;
+    visibility: visible !important;
+    color: #1d1d1f !important;
+    font-size: 20px !important;
+    margin-bottom: 12px !important;
+}
+
+.news .news-grid {
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+    padding: 0 12px !important;
+}
+
+.news .news-item {
+    background: #ffffff !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+}
+
+.news .news-content {
+    padding: 8px !important;
+}
+
+.news .news-title {
+    font-size: 13px !important;
+    color: #1d1d1f !important;
+    margin-bottom: 4px !important;
+    visibility: visible !important;
+}
+
+.news .news-excerpt {
+    font-size: 10px !important;
+    color: #6e6e73 !important;
+    visibility: visible !important;
+}
+
+/* CONTACT */
+.contact {
+    padding: 16px 0 !important;
+    background: #f5f5f7 !important;
+}
+
+.contact .section-title {
+    display: block !important;
+    visibility: visible !important;
+    color: #1d1d1f !important;
+    font-size: 20px !important;
+    margin-bottom: 12px !important;
+}
+
+.contact .contact-wrapper {
+    flex-direction: column !important;
+    gap: 10px !important;
+    padding: 0 12px !important;
+}
+
+.contact .contact-form-box,
+.contact .contact-info-box {
+    padding: 10px !important;
+    border-radius: 8px !important;
+    background: #ffffff !important;
+}
+
+.contact .contact-form-box h3,
+.contact .contact-info-box h3 {
+    font-size: 14px !important;
+    color: #1d1d1f !important;
+    margin-bottom: 8px !important;
+    visibility: visible !important;
+}
+
+.contact .form-group {
+    margin-bottom: 8px !important;
+}
+
+.contact .form-group label {
+    font-size: 11px !important;
+    color: #6e6e73 !important;
+}
+
+.contact .form-group input,
+.contact .form-group textarea {
+    padding: 8px !important;
+    font-size: 13px !important;
+    border-radius: 6px !important;
+}
+
+.contact .map-container iframe {
+    height: 100px !important;
+    border-radius: 6px !important;
+}
+
+/* FOOTER */
+.footer {
+    padding: 16px 0 !important;
+}
+
+.footer .footer-content {
+    gap: 12px !important;
+    padding: 0 12px !important;
+}
+
+.footer .footer-section h4 {
+    font-size: 11px !important;
+    color: #1d1d1f !important;
+}
+
+/* WHATSAPP */
+#whatsapp-draggable {
+    bottom: 12px !important;
+    right: 12px !important;
+}
+
+.whatsapp-bubble-apple {
+    width: 44px !important;
+    height: 44px !important;
+}
+
+}
+
+/* Very small screens */
+@media only screen and (max-width: 374px) {
+    header.ios-header .ios-logo-text {
+        max-width: 60px !important;
+        font-size: 10px !important;
     }
     
-    html {
-        font-size: 14px;
-    }
-    
-    body {
-        padding-top: 60px;
-        overflow-x: hidden;
-    }
-    
-    .container {
-        padding: 0 16px;
-        max-width: 100%;
-    }
-    
-    /* Skip link for accessibility */
-    .skip-link {
-        top: 0;
-        left: 0;
-        right: 0;
-        padding: 10px 16px;
-        font-size: 14px;
-        z-index: 10001;
+    .about .values-apple-grid {
+        grid-template-columns: 1fr !important;
     }
 }
 
-/* ===== Header & Navigation ===== */
-@media (max-width: 768px) {
-    .ios-header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 9999;
-        background: rgba(255, 255, 255, 0.95);
-        -webkit-backdrop-filter: blur(20px);
-        backdrop-filter: blur(20px);
-        box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
-        height: 60px;
-    }
-    
-    .ios-header nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 8px 16px;
-        max-width: 100%;
-    }
-    
-    /* Logo - Fixed for mobile */
-    .ios-logo {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        flex-shrink: 0;
-    }
-    
-    .ios-logo-circle {
-        width: 36px;
-        height: 36px;
-        flex-shrink: 0;
-    }
-    
-    .ios-logo-img {
-        width: 36px;
-        height: 36px;
-        border-radius: 50%;
-        object-fit: cover;
-    }
-    
-    .ios-logo-text {
-        font-size: 13px;
-        font-weight: 600;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        max-width: 140px;
-        line-height: 1.2;
-    }
-    
-    /* Navigation Menu - Slide from right */
-    .ios-nav {
-        display: none;
-        position: fixed;
-        top: 60px;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(255, 255, 255, 0.98);
-        -webkit-backdrop-filter: blur(20px);
-        backdrop-filter: blur(20px);
-        flex-direction: column;
-        padding: 20px;
-        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
-        overflow-y: auto;
-        z-index: 9998;
-    }
-    
-    .ios-nav.active {
-        display: flex;
-        animation: slideIn 0.3s ease;
-    }
-    
-    @keyframes slideIn {
-        from {
-            opacity: 0;
-            transform: translateX(100%);
-        }
-        to {
-            opacity: 1;
-            transform: translateX(0);
-        }
-    }
-    
-    .ios-nav li {
-        padding: 16px 0;
-        border-bottom: 1px solid #f0f0f0;
-        list-style: none;
-    }
-    
-    .ios-nav li:last-child {
-        border-bottom: none;
-    }
-    
-    .ios-nav .nav-link {
-        font-size: 16px;
-        font-weight: 500;
-        color: var(--text-primary, #1d1d1f);
-        text-decoration: none;
-        display: block;
-        padding: 8px 0;
-    }
-    
-    /* Nav Controls */
-    .nav-controls {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        flex-shrink: 0;
-    }
-    
-    .theme-toggle {
-        width: 36px;
-        height: 36px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .theme-toggle svg {
-        width: 20px;
-        height: 20px;
-    }
-    
-    .language-selector {
-        display: none;
-    }
-    
-    /* Mobile Menu Toggle */
-    .ios-mobile-toggle {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 5px;
-        width: 36px;
-        height: 36px;
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: 6px;
-        border-radius: 8px;
-    }
-    
-    .ios-mobile-toggle:hover {
-        background: rgba(0, 0, 0, 0.05);
-    }
-    
-    .ios-mobile-toggle span {
-        display: block;
-        width: 22px;
-        height: 2px;
-        background: #333;
-        border-radius: 2px;
-        transition: all 0.3s ease;
-    }
-    
-    .ios-mobile-toggle.active span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
-    
-    .ios-mobile-toggle.active span:nth-child(2) {
-        opacity: 0;
-    }
-    
-    .ios-mobile-toggle.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(5px, -5px);
-    }
-    
-    /* Nav dropdown in mobile */
-    .nav-dropdown-menu {
-        position: static !important;
-        transform: none !important;
-        box-shadow: none !important;
-        padding-left: 16px !important;
-        background: transparent !important;
-        display: none;
-        margin-top: 8px;
-    }
-    
-    .nav-dropdown.active .nav-dropdown-menu {
-        display: block;
-    }
-    
-    .nav-dropdown-menu a {
-        padding: 12px 16px !important;
-        font-size: 15px;
-    }
-}
-
-/* ===== Hero Section ===== */
-@media (max-width: 768px) {
-    .hero {
-        height: auto;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding-top: 60px;
-    }
-    
-    .hero-video {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
-    }
-    
-    .hero-overlay {
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(180deg, 
-            rgba(0, 0, 0, 0.4) 0%, 
-            rgba(0, 0, 0, 0.6) 50%,
-            rgba(0, 0, 0, 0.7) 100%);
-    }
-    
-    .hero-text {
-        padding: 40px 20px 60px;
-        text-align: center;
-        position: relative;
-        z-index: 2;
-    }
-    
-    .hero-title {
-        font-size: 26px;
-        line-height: 1.25;
-        margin-bottom: 16px;
-        text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
-    }
-    
-    .hero-subtitle {
-        font-size: 15px;
-        margin-bottom: 28px;
-        max-width: 320px;
-        margin-left: auto;
-        margin-right: auto;
-        text-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
-    }
-    
-    .hero-cta {
-        flex-direction: column;
-        gap: 12px;
-        align-items: center;
-    }
-    
-    .btn {
-        padding: 14px 28px;
-        font-size: 15px;
-        width: 100%;
-        max-width: 260px;
-        text-align: center;
-    }
-    
-    .hero-separator-apple {
-        display: none;
-    }
-}
-
-/* ===== Highlights Section ===== */
-@media (max-width: 768px) {
-    .home-highlights-apple {
-        padding: 40px 0;
-    }
-    
-    .highlights-apple-grid {
-        grid-template-columns: 1fr;
-        gap: 16px;
-        padding: 0 16px;
-    }
-    
-    .liquid-glass-card {
-        height: 160px;
-        border-radius: 16px;
-    }
-    
-    .liquid-glass-content {
-        padding: 20px;
-    }
-    
-    .liquid-glass-icon {
-        font-size: 28px;
-        margin-bottom: 8px;
-    }
-    
-    .liquid-glass-title {
-        font-size: 20px;
-        margin-bottom: 4px;
-    }
-    
-    .liquid-glass-description {
-        font-size: 13px;
-    }
-}
-
-/* ===== About Section ===== */
-@media (max-width: 768px) {
-    .about {
-        padding: 50px 0;
-    }
-    
-    .section-title {
-        font-size: 26px;
-        padding: 0 16px;
-        margin-bottom: 28px;
-    }
-    
-    .subsection-title {
-        font-size: 20px;
-        margin-bottom: 20px;
-        padding: 0 16px;
-    }
-    
-    .visi-misi-apple {
-        flex-direction: column;
-        gap: 16px;
-        padding: 0 16px;
-    }
-    
-    .apple-hero-card {
-        height: 220px;
-        border-radius: 16px;
-    }
-    
-    .apple-hero-content {
-        padding: 24px;
-    }
-    
-    .apple-hero-icon {
-        font-size: 36px;
-        margin-bottom: 8px;
-    }
-    
-    .apple-hero-title {
-        font-size: 24px;
-        margin-bottom: 8px;
-    }
-    
-    .apple-hero-description {
-        font-size: 14px;
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        line-clamp: 3;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-    }
-    
-    .apple-hero-list {
-        padding-left: 20px;
-        margin-top: 8px;
-    }
-    
-    .apple-hero-list li {
-        font-size: 13px;
-        margin-bottom: 6px;
-    }
-    
-    /* Values Grid - Full width on mobile */
-    .values-apple-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 12px;
-        padding: 0 16px;
-    }
-    
-    .liquid-glass-card.kasih-card,
-    .liquid-glass-card.integritas-card,
-    .liquid-glass-card.harapan-card,
-    .liquid-glass-card.kolaborasi-card {
-        height: 140px;
-    }
-    
-    .liquid-glass-card.kasih-card .liquid-glass-content,
-    .liquid-glass-card.integritas-card .liquid-glass-content,
-    .liquid-glass-card.harapan-card .liquid-glass-content,
-    .liquid-glass-card.kolaborasi-card .liquid-glass-content {
-        padding: 14px;
-    }
-    
-    .liquid-glass-card.kasih-card .liquid-glass-icon,
-    .liquid-glass-card.integritas-card .liquid-glass-icon,
-    .liquid-glass-card.harapan-card .liquid-glass-icon,
-    .liquid-glass-card.kolaborasi-card .liquid-glass-icon {
-        font-size: 22px;
-        margin-bottom: 4px;
-    }
-    
-    .liquid-glass-card.kasih-card .liquid-glass-title,
-    .liquid-glass-card.integritas-card .liquid-glass-title,
-    .liquid-glass-card.harapan-card .liquid-glass-title,
-    .liquid-glass-card.kolaborasi-card .liquid-glass-title {
-        font-size: 15px;
-    }
-    
-    .liquid-glass-card.kasih-card .liquid-glass-description,
-    .liquid-glass-card.integritas-card .liquid-glass-description,
-    .liquid-glass-card.harapan-card .liquid-glass-description,
-    .liquid-glass-card.kolaborasi-card .liquid-glass-description {
-        font-size: 11px;
-    }
-}
-
-/* ===== Organization Chart ===== */
-@media (max-width: 768px) {
-    .org-chart-apple {
-        flex-direction: column;
-        align-items: center;
-        gap: 24px;
-        padding: 0 16px;
-    }
-    
-    .org-level-apple {
-        flex-direction: column;
-        align-items: center;
-        gap: 16px;
-        width: 100%;
-    }
-    
-    .org-level-apple.level-2,
-    .org-level-apple.level-3 {
-        flex-direction: column;
-    }
-    
-    .org-id-card {
-        width: 100%;
-        max-width: 280px;
-        padding: 20px;
-        display: flex;
-        align-items: center;
-        gap: 16px;
-        text-align: left;
-    }
-    
-    .org-id-photo {
-        width: 60px;
-        height: 60px;
-        flex-shrink: 0;
-        margin: 0;
-    }
-    
-    .org-id-photo img {
-        width: 60px;
-        height: 60px;
-    }
-    
-    .org-id-info {
-        flex: 1;
-    }
-    
-    .org-id-jabatan {
-        font-size: 12px;
-        margin-bottom: 2px;
-    }
-    
-    .org-id-name {
-        font-size: 15px;
-    }
-    
-    .org-connector-apple {
-        width: 2px;
-        height: 24px;
-        background: var(--border-primary, #d2d2d7);
-    }
-}
-
-/* ===== Gallery ===== */
-@media (max-width: 768px) {
-    .gallery-apple-container {
-        padding: 0 16px;
-    }
-    
-    .gallery-apple-carousel {
-        border-radius: 12px;
-        aspect-ratio: 16/9;
-    }
-    
-    .gallery-apple-caption {
-        padding: 60px 20px 20px;
-    }
-    
-    .gallery-apple-caption h4 {
-        font-size: 20px;
-    }
-    
-    .gallery-apple-caption p {
-        font-size: 13px;
-    }
-    
-    .gallery-apple-controls {
-        padding: 16px 0;
-        gap: 16px;
-    }
-    
-    .gallery-apple-btn {
-        width: 44px;
-        height: 44px;
-    }
-}
-
-/* ===== Programs Section ===== */
-@media (max-width: 768px) {
-    .programs {
-        padding: 50px 0;
-    }
-    
-    .programs-filter {
-        display: flex;
-        flex-wrap: nowrap;
-        gap: 8px;
-        justify-content: flex-start;
-        margin-bottom: 24px;
-        padding: 0 16px;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-    }
-    
-    .programs-filter::-webkit-scrollbar {
-        display: none;
-    }
-    
-    .filter-btn {
-        padding: 10px 16px;
-        font-size: 13px;
-        white-space: nowrap;
-        flex-shrink: 0;
-    }
-    
-    .programs-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-        padding: 0 16px;
-    }
-    
-    .program-card {
-        margin: 0;
-    }
-    
-    .program-image {
-        height: 180px;
-    }
-    
-    .program-content {
-        padding: 20px;
-    }
-    
-    .program-content h3 {
-        font-size: 18px;
-        margin-bottom: 8px;
-    }
-    
-    .program-content p {
-        font-size: 14px;
-        margin-bottom: 12px;
-    }
-    
-    .program-icon {
-        width: 48px;
-        height: 48px;
-        font-size: 24px;
-        top: 16px;
-        right: 16px;
-    }
-}
-
-/* ===== News Section ===== */
-@media (max-width: 768px) {
-    .news {
-        padding: 50px 0;
-    }
-    
-    .news-grid {
-        grid-template-columns: 1fr;
-        gap: 24px;
-        padding: 0 16px;
-    }
-    
-    .news-item {
-        margin: 0;
-    }
-    
-    .news-content {
-        padding: 20px;
-    }
-    
-    .news-title {
-        font-size: 18px;
-    }
-    
-    .news-excerpt {
-        font-size: 14px;
-    }
-    
-    .youtube-lite {
-        border-radius: 8px;
-    }
-    
-    .news-category-badge {
-        font-size: 11px;
-        padding: 6px 12px;
-    }
-    
-    .news-date {
-        font-size: 12px;
-    }
-}
-
-/* ===== Contact Section ===== */
-@media (max-width: 768px) {
-    .contact {
-        padding: 50px 0;
-    }
-    
-    .contact-wrapper {
-        flex-direction: column;
-        gap: 24px;
-        padding: 0 16px;
-    }
-    
-    .contact-form-box,
-    .contact-info-box {
-        padding: 24px 20px;
-        border-radius: 16px;
-    }
-    
-    .form-group {
-        margin-bottom: 16px;
-    }
-    
-    .form-group label {
-        font-size: 14px;
-    }
-    
-    .form-group input,
-    .form-group textarea {
-        padding: 14px;
-        font-size: 15px;
-    }
-    
-    .file-upload-wrapper {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 8px;
-    }
-    
-    .file-upload-btn {
-        width: 100%;
-        text-align: center;
-    }
-    
-    .map-container iframe {
-        height: 220px;
-    }
-    
-    .info-item {
-        padding: 14px 0;
-    }
-    
-    .btn-submit {
-        width: 100%;
-    }
-}
-
-/* ===== Footer ===== */
-@media (max-width: 768px) {
-    .footer {
-        padding: 40px 0 24px;
-    }
-    
-    .footer-content {
-        flex-direction: column;
-        gap: 28px;
-        padding: 0 16px;
-        text-align: center;
-    }
-    
-    .footer-section {
-        width: 100%;
-    }
-    
-    .footer-logo-link {
-        justify-content: center;
-    }
-    
-    .footer-description {
-        font-size: 14px;
-        margin-bottom: 20px;
-    }
-    
-    .social-media-apple {
-        justify-content: center;
-    }
-    
-    .social-link-apple {
-        width: 44px !important;
-        height: 44px !important;
-    }
-    
-    .footer-links {
-        list-style: none;
-        padding: 0;
-    }
-    
-    .footer-links li {
-        margin-bottom: 12px;
-    }
-    
-    .footer-links a {
-        font-size: 14px;
-    }
-    
-    .footer-bottom {
-        padding: 20px 16px 0;
-        margin-top: 24px;
-        font-size: 12px;
-    }
-    
-    .language-selector-footer {
-        margin-top: 8px;
-    }
-    
-    .language-selector-footer select {
-        width: 100%;
-        max-width: 280px;
-    }
-}
-
-/* ===== WhatsApp Floating Button ===== */
-@media (max-width: 768px) {
-    #whatsapp-draggable {
-        bottom: 20px;
-        right: 20px;
-    }
-    
-    .whatsapp-bubble-apple {
-        width: 56px !important;
-        height: 56px !important;
-    }
-    
-    .whatsapp-icon-apple {
-        width: 26px !important;
-        height: 26px !important;
-    }
-    
-    .whatsapp-tooltip {
-        display: none !important;
-    }
-}
-
-/* ===== Utility Classes ===== */
-@media (max-width: 768px) {
-    .ios-hidden-mobile {
-        display: none !important;
-    }
-    
-    .ios-show-mobile {
-        display: block !important;
-    }
-}
-
-/* ===== Dark Mode Support ===== */
-@media (max-width: 768px) {
-    [data-theme="dark"] .ios-header,
-    body.dark-mode .ios-header {
-        background: rgba(30, 30, 30, 0.95);
-    }
-    
-    [data-theme="dark"] .ios-nav,
-    body.dark-mode .ios-nav {
-        background: rgba(30, 30, 30, 0.98);
-    }
-    
-    [data-theme="dark"] .ios-nav li,
-    body.dark-mode .ios-nav li {
-        border-bottom-color: #38383a;
-    }
-    
-    [data-theme="dark"] .ios-mobile-toggle span,
-    body.dark-mode .ios-mobile-toggle span {
-        background: #fff;
-    }
-    
-    [data-theme="dark"] .liquid-glass-overlay,
-    body.dark-mode .liquid-glass-overlay {
-        background: linear-gradient(135deg, 
-            rgba(0, 0, 0, 0.6) 0%, 
-            rgba(0, 0, 0, 0.7) 100%);
-    }
-}
-
-/* ===== Animation Performance ===== */
-@media (max-width: 768px) {
-    * {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-    }
-    
-    .fade-in-ready {
-        opacity: 1;
-        transform: none;
-    }
-    
-    /* Disable heavy animations on mobile for performance */
-    .hero-video {
-        animation: none !important;
-    }
-    
-    .liquid-glass-link:hover .liquid-glass-card,
-    .apple-hero-card:hover,
-    .program-card:hover,
-    .news-item:hover {
-        transform: none;
-    }
-}
-
-/* ===== Touch Optimizations ===== */
-@media (max-width: 768px) and (hover: none) {
-    .btn:active {
-        transform: scale(0.97);
-    }
-    
-    .nav-link:active {
-        opacity: 0.7;
-    }
-    
-    .filter-btn:active {
-        transform: scale(0.95);
-    }
-    
-    .social-link-apple:active {
-        transform: scale(0.95);
-    }
-    
-    .whatsapp-bubble-apple:active {
-        transform: scale(0.95);
-    }
-}
-
-/* ===== iPhone Specific Fixes (Safe Area) ===== */
+/* iPhone safe area */
 @supports (-webkit-touch-callout: none) {
-    @media (max-width: 768px) {
-        .hero {
-            /* 100dvh for modern iOS 15.4+, 100vh fallback for older browsers */
-            min-height: 100dvh;
-        }
-
+    @media only screen and (max-width: 768px) {
         .ios-header {
-            padding-top: env(safe-area-inset-top);
+            padding-top: env(safe-area-inset-top) !important;
         }
         
         body {
-            padding-top: calc(60px + env(safe-area-inset-top));
-        }
-        
-        .hero-text {
-            padding-top: calc(40px + env(safe-area-inset-top));
-        }
-        
-        .whatsapp-draggable {
-            bottom: calc(20px + env(safe-area-inset-bottom));
-        }
-        
-        .ios-nav {
-            bottom: 0;
-            padding-bottom: calc(20px + env(safe-area-inset-bottom));
-        }
-        
-        .footer {
-            padding-bottom: calc(24px + env(safe-area-inset-bottom));
+            padding-top: calc(60px + env(safe-area-inset-top)) !important;
         }
     }
 }
 
-/* ===== Landscape Mobile ===== */
-@media (max-width: 768px) and (orientation: landscape) {
-    .hero {
-        height: auto;
-        min-height: 100vh;
-        padding: 80px 20px 40px;
-    }
-    
-    .hero-title {
-        font-size: 22px;
-    }
-    
-    .hero-subtitle {
-        font-size: 14px;
-        margin-bottom: 20px;
-    }
-    
-    .hero-cta {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    .btn {
-        width: auto;
-        max-width: none;
-        padding: 12px 24px;
-    }
-    
-    .highlights-apple-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    
-    .values-apple-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
-    
-    .programs-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .news-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+/* ===== DARK MODE MOBILE FIXES ===== */
+
+/* Dark Mode - Header */
+body.dark-mode header.ios-header {
+    background: #000000 !important;
+    border-bottom: 1px solid rgba(255,255,255,0.1) !important;
 }
 
-/* ===== Very Small Screens (< 375px) ===== */
-@media (max-width: 374px) {
-    .ios-logo-text {
-        max-width: 100px;
-        font-size: 12px;
-    }
-    
-    .hero-title {
-        font-size: 22px;
-    }
-    
-    .btn {
-        padding: 12px 20px;
-        font-size: 14px;
-    }
-    
-    .values-apple-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .org-id-card {
-        padding: 16px;
-    }
-    
-    .org-id-photo {
-        width: 50px;
-        height: 50px;
-    }
-    
-    .org-id-photo img {
-        width: 50px;
-        height: 50px;
-    }
+body.dark-mode header.ios-header .ios-logo-text {
+    background: none !important;
+    -webkit-text-fill-color: #ffffff !important;
+    color: #ffffff !important;
 }
 
-/* ===== Print Styles ===== */
-@media print {
-    .ios-header,
-    .whatsapp-draggable,
-    .hero-video {
-        display: none;
-    }
-    
-    body {
-        padding-top: 0;
-    }
+body.dark-mode header.ios-header .theme-toggle {
+    background: rgba(255,255,255,0.1) !important;
+    border: 1px solid rgba(255,255,255,0.2) !important;
+}
+
+body.dark-mode header.ios-header .theme-toggle svg {
+    color: #ffffff !important;
+    fill: #ffffff !important;
+}
+
+body.dark-mode header.ios-header .ios-mobile-toggle span {
+    background: #ffffff !important;
+}
+
+/* Dark Mode - Mobile Menu */
+body.dark-mode #nav-menu.ios-nav,
+body.dark-mode ul#nav-menu,
+body.dark-mode .ios-nav {
+    background: #000000 !important;
+}
+
+body.dark-mode #nav-menu.ios-nav li,
+body.dark-mode .ios-nav li {
+    border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+}
+
+body.dark-mode #nav-menu.ios-nav .nav-link,
+body.dark-mode .ios-nav .nav-link {
+    color: #ffffff !important;
+}
+
+/* Dark Mode - Section Titles */
+body.dark-mode #about .section-title,
+body.dark-mode .about .section-title,
+body.dark-mode .section-title {
+    color: #ffffff !important;
+}
+
+body.dark-mode .subsection-title {
+    color: #ffffff !important;
+}
+
+/* Dark Mode - About */
+body.dark-mode .about {
+    background: #000000 !important;
+}
+
+body.dark-mode .about .apple-hero-title {
+    color: #ffffff !important;
+}
+
+body.dark-mode .about .apple-hero-description {
+    color: rgba(255,255,255,0.9) !important;
+}
+
+body.dark-mode .about .apple-hero-icon {
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+}
+
+/* Dark Mode - Values */
+body.dark-mode .values-apple-grid .liquid-glass-title {
+    color: #ffffff !important;
+}
+
+body.dark-mode .values-apple-grid .liquid-glass-icon {
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+}
+
+/* Dark Mode - Programs */
+body.dark-mode .programs {
+    background: #1c1c1e !important;
+}
+
+body.dark-mode .programs .program-card {
+    background: #2c2c2e !important;
+}
+
+body.dark-mode .programs .program-content h3 {
+    color: #ffffff !important;
+}
+
+body.dark-mode .programs .program-content p {
+    color: rgba(255,255,255,0.8) !important;
+}
+
+/* Dark Mode - News */
+body.dark-mode .news {
+    background: #000000 !important;
+}
+
+body.dark-mode .news .news-item {
+    background: #1c1c1e !important;
+}
+
+body.dark-mode .news .news-title {
+    color: #ffffff !important;
+}
+
+body.dark-mode .news .news-excerpt {
+    color: rgba(255,255,255,0.8) !important;
+}
+
+/* Dark Mode - Contact */
+body.dark-mode .contact {
+    background: #1c1c1e !important;
+}
+
+body.dark-mode .contact .contact-form-box,
+body.dark-mode .contact .contact-info-box {
+    background: #2c2c2e !important;
+}
+
+/* Dark Mode - Footer */
+body.dark-mode .footer {
+    background: #000000 !important;
+    border-top: 1px solid rgba(255,255,255,0.1) !important;
+}
+
+body.dark-mode .footer .footer-section h4 {
+    color: #ffffff !important;
+}
+
+/* Dark Mode - Highlights Cards */
+body.dark-mode .home-highlights-apple .liquid-glass-title {
+    color: #ffffff !important;
+}
+
+body.dark-mode .home-highlights-apple .liquid-glass-icon {
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
 }
 
