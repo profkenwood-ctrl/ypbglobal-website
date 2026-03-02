@@ -8953,3 +8953,92 @@ function initYouTubeLite() {
     });
 }
 /* END OF CONSOLIDATED JS */
+
+// ===== NEWS PAGES ROUTING SYSTEM =====
+(function() {
+    // Handle hash-based routing for consolidated pages
+    function showSection(hash) {
+        // Hide all consolidated pages
+        document.querySelectorAll('.consolidated-page').forEach(function(section) {
+            section.style.display = 'none';
+        });
+
+        // Show target section if exists
+        if (hash) {
+            var target = document.getElementById(hash);
+            if (target && target.classList.contains('consolidated-page')) {
+                target.style.display = 'block';
+                window.scrollTo(0, 0);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    // Function to toggle visibility for consolidated pages
+    function toggleConsolidatedPage(isConsolidated) {
+        var mainContent = document.getElementById('main-content');
+        var footer = document.querySelector('.footer');
+        var footerSeparator = document.querySelector('.footer-separator-apple');
+        
+        if (isConsolidated) {
+            // Hide main content and footer when showing consolidated page
+            if (mainContent) mainContent.style.display = 'none';
+            if (footer) footer.style.display = 'none';
+            if (footerSeparator) footerSeparator.style.display = 'none';
+        } else {
+            // Show main content and footer when on main page
+            if (mainContent) mainContent.style.display = 'block';
+            if (footer) footer.style.display = 'block';
+            if (footerSeparator) footerSeparator.style.display = 'block';
+        }
+    }
+
+    // Function to apply translations to consolidated pages
+    function applyTranslations() {
+        var savedLang = localStorage.getItem('ypbg-language') || 'id';
+        if (typeof translateAllPage === 'function') {
+            translateAllPage(savedLang);
+        }
+    }
+
+    // Function to re-initialize YouTube Lite for consolidated pages
+    function initYouTubeForConsolidated() {
+        if (typeof initYouTubeLite === 'function') {
+            initYouTubeLite();
+        }
+    }
+
+    // Initial load
+    var hash = window.location.hash.replace('#', '');
+    if (showSection(hash)) {
+        toggleConsolidatedPage(true);
+        // Apply translations and init YouTube after a short delay to ensure DOM is ready
+        setTimeout(function() {
+            applyTranslations();
+            initYouTubeForConsolidated();
+        }, 100);
+    }
+
+    // Listen for hash changes
+    window.addEventListener('hashchange', function() {
+        var hash = window.location.hash.replace('#', '');
+        if (showSection(hash)) {
+            toggleConsolidatedPage(true);
+            // Apply translations and init YouTube after a short delay to ensure DOM is ready
+            setTimeout(function() {
+                applyTranslations();
+                initYouTubeForConsolidated();
+            }, 100);
+        } else {
+            toggleConsolidatedPage(false);
+        }
+    });
+
+    // Update all news links to use hash
+    document.querySelectorAll('a[href*="news/berita"]').forEach(function(link) {
+        var href = link.getAttribute('href');
+        var basename = href.split('/').pop().replace('.html', '');
+        link.setAttribute('href', '#news-' + basename);
+    });
+})();
