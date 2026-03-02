@@ -1,0 +1,597 @@
+/* ===================================
+   YPBG Mobile Styles - iOS 26 Style
+   Responsive Design for Mobile Devices
+   =================================== */
+
+/* Mobile Navigation - Hamburger Menu */
+.mobile-nav-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9998;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.mobile-nav-overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+.mobile-nav-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 85%;
+    max-width: 320px;
+    height: 100vh;
+    background: #ffffff;
+    z-index: 9999;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.15);
+}
+
+.mobile-nav-menu.active {
+    display: block;
+    transform: translateX(0);
+}
+
+body.dark-mode .mobile-nav-menu {
+    background: #1c1c1e;
+}
+
+.mobile-nav-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .mobile-nav-header {
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.mobile-nav-close {
+    width: 36px;
+    height: 36px;
+    background: var(--bg-secondary, #f5f5f7);
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+body.dark-mode .mobile-nav-close {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+}
+
+.mobile-nav-close:hover {
+    background: var(--accent-primary, #0071e3);
+    color: #ffffff;
+}
+
+.mobile-nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-nav-item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+body.dark-mode .mobile-nav-item {
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+.mobile-nav-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 20px;
+    color: var(--text-primary, #1d1d1f);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+body.dark-mode .mobile-nav-link {
+    color: #f5f5f7;
+}
+
+.mobile-nav-link:hover {
+    background: rgba(0, 113, 227, 0.08);
+    color: var(--accent-primary, #0071e3);
+}
+
+body.dark-mode .mobile-nav-link:hover {
+    background: rgba(41, 151, 255, 0.15);
+    color: #5ac8fa;
+}
+
+.mobile-nav-icon {
+    font-size: 20px;
+    width: 28px;
+    text-align: center;
+}
+
+/* Mobile Header Adjustments */
+@media (max-width: 768px) {
+    .ios-header {
+        height: 56px;
+    }
+    
+    .ios-header nav {
+        padding: 0 16px;
+    }
+    
+    .ios-logo-text {
+        font-size: 13px;
+        max-width: 150px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    
+    .ios-nav {
+        display: none;
+    }
+    
+    .ios-mobile-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        width: 44px;
+        height: 44px;
+        padding: 10px;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+    
+    .ios-mobile-toggle span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: var(--text-primary, #1d1d1f);
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+    
+    body.dark-mode .ios-mobile-toggle span {
+        background: #f5f5f7;
+    }
+    
+    .ios-mobile-toggle[aria-expanded="true"] span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .ios-mobile-toggle[aria-expanded="true"] span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .ios-mobile-toggle[aria-expanded="true"] span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+    
+    .nav-controls {
+        gap: 8px;
+    }
+    
+    .theme-toggle {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .lang-toggle {
+        padding: 6px 10px;
+    }
+    
+    .lang-current {
+        font-size: 12px;
+    }
+}
+
+/* Mobile Hero Section */
+@media (max-width: 768px) {
+    .hero {
+        height: auto;
+        min-height: 100vh;
+        padding: 80px 16px 60px;
+    }
+    
+    .hero-video {
+        object-fit: cover;
+        object-position: center;
+    }
+    
+    .hero-title {
+        font-size: 32px;
+        line-height: 1.2;
+        margin-bottom: 16px;
+    }
+    
+    .hero-subtitle {
+        font-size: 16px;
+        line-height: 1.5;
+        margin-bottom: 32px;
+    }
+    
+    .hero-cta {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .hero-cta .btn {
+        width: 100%;
+        max-width: 280px;
+        margin: 0 auto;
+    }
+}
+
+/* Mobile Highlights Grid */
+@media (max-width: 768px) {
+    .highlights-apple-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 0 16px;
+    }
+    
+    .liquid-glass-card {
+        height: 280px;
+    }
+    
+    .liquid-glass-content {
+        padding: 24px 20px;
+    }
+    
+    .liquid-glass-icon {
+        font-size: 48px;
+        margin-bottom: 16px;
+    }
+    
+    .liquid-glass-title {
+        font-size: 28px;
+    }
+    
+    .liquid-glass-description {
+        font-size: 14px;
+    }
+}
+
+/* Mobile About Section */
+@media (max-width: 768px) {
+    .visi-misi-apple {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 0 16px;
+    }
+    
+    .apple-hero-card {
+        height: 320px;
+    }
+    
+    .apple-hero-content {
+        padding: 24px;
+    }
+    
+    .apple-hero-icon {
+        font-size: 48px;
+    }
+    
+    .apple-hero-title {
+        font-size: 36px;
+    }
+    
+    .apple-hero-description {
+        font-size: 15px;
+    }
+    
+    .values-apple-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        padding: 0 16px;
+    }
+    
+    .values-apple-grid .liquid-glass-card {
+        height: 200px;
+    }
+    
+    .values-apple-grid .liquid-glass-content {
+        padding: 16px;
+    }
+    
+    .values-apple-grid .liquid-glass-icon {
+        font-size: 36px;
+        margin-bottom: 8px;
+    }
+    
+    .values-apple-grid .liquid-glass-title {
+        font-size: 18px;
+    }
+    
+    .values-apple-grid .liquid-glass-description {
+        font-size: 12px;
+    }
+}
+
+/* Mobile Organization Chart */
+@media (max-width: 768px) {
+    .org-chart-apple {
+        padding: 0 16px;
+    }
+    
+    .org-level-apple {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+    }
+    
+    .org-id-card {
+        width: 100%;
+        max-width: 280px;
+        padding: 24px;
+    }
+    
+    .org-connector-apple {
+        width: 2px;
+        height: 24px;
+    }
+}
+
+/* Mobile Programs Section */
+@media (max-width: 768px) {
+    .programs-filter {
+        padding: 0 16px;
+        gap: 8px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 8px;
+    }
+    
+    .filter-btn {
+        padding: 10px 16px;
+        font-size: 13px;
+        white-space: nowrap;
+    }
+    
+    .programs-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 16px;
+    }
+    
+    .program-image {
+        height: 200px;
+    }
+    
+    .program-content {
+        padding: 24px 20px;
+    }
+    
+    .program-title {
+        font-size: 20px;
+    }
+    
+    .program-description {
+        font-size: 14px;
+        -webkit-line-clamp: 2;
+    }
+}
+
+/* Mobile News Section */
+@media (max-width: 768px) {
+    .news-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 16px;
+    }
+    
+    .news-content {
+        padding: 20px;
+    }
+    
+    .news-title {
+        font-size: 18px;
+    }
+    
+    .news-excerpt {
+        font-size: 14px;
+        -webkit-line-clamp: 2;
+    }
+}
+
+/* Mobile Contact Section */
+@media (max-width: 768px) {
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 0 16px;
+    }
+    
+    .contact-form-box,
+    .contact-info-box {
+        padding: 24px 20px;
+    }
+    
+    .map-container iframe {
+        height: 250px;
+    }
+}
+
+/* Mobile Footer */
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 0 16px;
+    }
+    
+    .footer-section {
+        text-align: center;
+    }
+    
+    .social-media-apple {
+        justify-content: center;
+    }
+    
+    .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+    
+    .footer-links li {
+        margin: 0;
+    }
+    
+    .footer-bottom {
+        padding: 24px 16px 16px;
+        font-size: 12px;
+    }
+}
+
+/* Mobile WhatsApp Button */
+@media (max-width: 768px) {
+    #whatsapp-draggable {
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .whatsapp-bubble-apple {
+        width: 52px !important;
+        height: 52px !important;
+    }
+    
+    .whatsapp-icon-apple {
+        width: 28px !important;
+        height: 28px !important;
+    }
+    
+    .whatsapp-tooltip {
+        display: none !important;
+    }
+}
+
+/* Mobile Typography */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 32px;
+        padding: 0 16px;
+    }
+    
+    .subsection-title {
+        font-size: 24px;
+        padding: 0 16px;
+    }
+    
+    .container {
+        padding: 0 16px;
+    }
+}
+
+/* Mobile Touch Improvements */
+@media (max-width: 768px) {
+    .btn {
+        min-height: 48px;
+        padding: 14px 24px;
+    }
+    
+    .filter-btn {
+        min-height: 44px;
+    }
+    
+    .lang-option {
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+    }
+    
+    html {
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    body {
+        overflow-x: hidden;
+    }
+    
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    video {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/* Mobile Dark Mode */
+@media (max-width: 768px) {
+    body.dark-mode .mobile-nav-menu {
+        background: #1c1c1e;
+    }
+    
+    body.dark-mode .mobile-nav-header {
+        border-bottom-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    body.dark-mode .mobile-nav-close {
+        background: rgba(255, 255, 255, 0.1);
+        color: #ffffff;
+    }
+    
+    body.dark-mode .mobile-nav-item {
+        border-bottom-color: rgba(255, 255, 255, 0.08);
+    }
+    
+    body.dark-mode .mobile-nav-link {
+        color: #f5f5f7;
+    }
+    
+    body.dark-mode .mobile-nav-link:hover {
+        background: rgba(41, 151, 255, 0.15);
+        color: #5ac8fa;
+    }
+}
+
+/* Mobile iPhone X safe area */
+@supports (padding: env(safe-area-inset-bottom)) {
+    @media (max-width: 768px) {
+        .footer-bottom {
+            padding-bottom: calc(16px + env(safe-area-inset-bottom));
+        }
+        
+        #whatsapp-draggable {
+            bottom: calc(28px + env(safe-area-inset-bottom));
+        }
+    }
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* END OF MOBILE STYLES */
